@@ -8,22 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		87A4772D219735B4005937AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A4772C219735B4005937AD /* AppDelegate.swift */; };
-		87A4772F219735B4005937AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A4772E219735B4005937AD /* ViewController.swift */; };
+		87A4772F219735B4005937AD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A4772E219735B4005937AD /* LoginViewController.swift */; };
 		87A47732219735B4005937AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87A47730219735B4005937AD /* Main.storyboard */; };
 		87A47735219735B4005937AD /* marketo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 87A47733219735B4005937AD /* marketo.xcdatamodeld */; };
 		87A47737219735B9005937AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87A47736219735B9005937AD /* Assets.xcassets */; };
 		87A4773A219735B9005937AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87A47738219735B9005937AD /* LaunchScreen.storyboard */; };
+		8855376D219752EA0007B3B5 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8855376C219752EA0007B3B5 /* LoginViewModel.swift */; };
+		88553772219761F00007B3B5 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88553771219761F00007B3B5 /* SignUpViewModel.swift */; };
+		885537742197622E0007B3B5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885537732197622E0007B3B5 /* SignUpViewController.swift */; };
+		885537772197649F0007B3B5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885537762197649F0007B3B5 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		87A47729219735B4005937AD /* marketo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marketo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A4772C219735B4005937AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		87A4772E219735B4005937AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		87A4772E219735B4005937AD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		87A47731219735B4005937AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		87A47734219735B4005937AD /* marketo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = marketo.xcdatamodel; sourceTree = "<group>"; };
 		87A47736219735B9005937AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87A47739219735B9005937AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87A4773B219735B9005937AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8855376C219752EA0007B3B5 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		88553771219761F00007B3B5 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		885537732197622E0007B3B5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		885537762197649F0007B3B5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +64,10 @@
 		87A4772B219735B4005937AD /* marketo */ = {
 			isa = PBXGroup;
 			children = (
+				88553775219763AC0007B3B5 /* Model */,
+				885537702197619E0007B3B5 /* SignUp */,
+				888346F8219744A500FB3D26 /* Login */,
 				87A4772C219735B4005937AD /* AppDelegate.swift */,
-				87A4772E219735B4005937AD /* ViewController.swift */,
 				87A47730219735B4005937AD /* Main.storyboard */,
 				87A47736219735B9005937AD /* Assets.xcassets */,
 				87A47738219735B9005937AD /* LaunchScreen.storyboard */,
@@ -65,6 +75,32 @@
 				87A47733219735B4005937AD /* marketo.xcdatamodeld */,
 			);
 			path = marketo;
+			sourceTree = "<group>";
+		};
+		885537702197619E0007B3B5 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				88553771219761F00007B3B5 /* SignUpViewModel.swift */,
+				885537732197622E0007B3B5 /* SignUpViewController.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		88553775219763AC0007B3B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				885537762197649F0007B3B5 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		888346F8219744A500FB3D26 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				87A4772E219735B4005937AD /* LoginViewController.swift */,
+				8855376C219752EA0007B3B5 /* LoginViewModel.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +174,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87A4772F219735B4005937AD /* ViewController.swift in Sources */,
+				885537742197622E0007B3B5 /* SignUpViewController.swift in Sources */,
+				8855376D219752EA0007B3B5 /* LoginViewModel.swift in Sources */,
+				87A4772F219735B4005937AD /* LoginViewController.swift in Sources */,
+				88553772219761F00007B3B5 /* SignUpViewModel.swift in Sources */,
 				87A47735219735B4005937AD /* marketo.xcdatamodeld in Sources */,
 				87A4772D219735B4005937AD /* AppDelegate.swift in Sources */,
+				885537772197649F0007B3B5 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
