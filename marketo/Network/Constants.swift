@@ -14,6 +14,8 @@ struct ProductionServer {
 struct APIUserParameterKey {
     static let email = "email"
     static let password = "password"
+    static let username = "username"
+    static let fullname = "fullname"
 }
 enum HTTPHeaderField: String {
     case authentication = "Authorization"

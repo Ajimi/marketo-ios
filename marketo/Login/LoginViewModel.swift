@@ -10,8 +10,18 @@ import Foundation
 
 class LoginViewModel: NSObject {
     
-    func authenticate(withUsername user : String,withPassword password:String){
-        print("user is : \(user) and  the password is \(password)")
+    let isLoggedIn:Bool? = false
+    
+    func authenticate(withUsername username : String,withPassword password:String){
+        UserService.login(email: username, password: password) { (result) in
+            switch result {
+            case .success(let accessToken):
+                print(accessToken)
+            // TODO : ADD AccessToken
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
 }

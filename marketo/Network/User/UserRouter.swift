@@ -19,7 +19,7 @@ protocol APIConfiguration: URLRequestConvertible {
 
 enum UserRouter: APIConfiguration {
     
-    case createUser(parameters: Parameters)
+    case createUser(user: User)
     case loginUser(email:String, password:String)
     case readUser(id: Int)
     
@@ -51,11 +51,14 @@ enum UserRouter: APIConfiguration {
     var parameters: Parameters? {
         switch self {
         case .loginUser(let email, let password):
-            return ["strategy": "local",APIUserParameterKey.email: email, APIUserParameterKey.password: password]
+            return ["strategy": "local",
+                    APIUserParameterKey.email: email,
+                    APIUserParameterKey.password: password]
         case .readUser:
             return nil
-        case .createUser(let parameters):
-            return parameters
+        case .createUser(let user):
+            return  [APIUserParameterKey.email : user.email , APIUserParameterKey.password : user.password ,
+                     APIUserParameterKey.username: user.username, APIUserParameterKey.fullname: user.fullName]
         }
     }
     

@@ -22,8 +22,8 @@ class UserService {
         return performRequest(route: UserRouter.loginUser(email: email, password: password), completion: completion)
     }
     
-    public static func signUp(email: String, password: String, completion:@escaping (Result<Any>)->Void) -> DataRequest {
-        return performRequest(route: UserRouter.loginUser(email: email, password: password), completion: completion)
+    public static func signUp(user:User, completion:@escaping (Result<Any>)->Void) -> DataRequest {
+        return performRequest(route: UserRouter.createUser(user: User), completion: completion)
     }
     
 }
