@@ -13,13 +13,18 @@
 		87A47735219735B4005937AD /* marketo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 87A47733219735B4005937AD /* marketo.xcdatamodeld */; };
 		87A47737219735B9005937AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87A47736219735B9005937AD /* Assets.xcassets */; };
 		87A4773A219735B9005937AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87A47738219735B9005937AD /* LaunchScreen.storyboard */; };
+		87FF639021977AE5008EE969 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF638F21977AE5008EE969 /* Constants.swift */; };
+		87FF639221977B22008EE969 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF639121977B22008EE969 /* UserRouter.swift */; };
+		87FF639421977C44008EE969 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF639321977C44008EE969 /* UserService.swift */; };
 		8855376D219752EA0007B3B5 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8855376C219752EA0007B3B5 /* LoginViewModel.swift */; };
 		88553772219761F00007B3B5 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88553771219761F00007B3B5 /* SignUpViewModel.swift */; };
 		885537742197622E0007B3B5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885537732197622E0007B3B5 /* SignUpViewController.swift */; };
 		885537772197649F0007B3B5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885537762197649F0007B3B5 /* User.swift */; };
+		D9A6BD54D153A4C1CDAA7903 /* Pods_marketo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 815D5919280C5D615384F382 /* Pods_marketo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		815D5919280C5D615384F382 /* Pods_marketo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_marketo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A47729219735B4005937AD /* marketo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marketo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A4772C219735B4005937AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87A4772E219735B4005937AD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -28,10 +33,15 @@
 		87A47736219735B9005937AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87A47739219735B9005937AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87A4773B219735B9005937AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87FF638F21977AE5008EE969 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		87FF639121977B22008EE969 /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
+		87FF639321977C44008EE969 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		8855376C219752EA0007B3B5 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		88553771219761F00007B3B5 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		885537732197622E0007B3B5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		885537762197649F0007B3B5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F4125A7CBB3A7492B14193A5 /* Pods-marketo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marketo.release.xcconfig"; path = "Pods/Target Support Files/Pods-marketo/Pods-marketo.release.xcconfig"; sourceTree = "<group>"; };
+		F70DDDA15A7428FD8777E53A /* Pods-marketo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marketo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-marketo/Pods-marketo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +49,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9A6BD54D153A4C1CDAA7903 /* Pods_marketo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01661DBA30A97D8F79FAED09 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F70DDDA15A7428FD8777E53A /* Pods-marketo.debug.xcconfig */,
+				F4125A7CBB3A7492B14193A5 /* Pods-marketo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		849EC38D6BF19C3DA52A17C0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				815D5919280C5D615384F382 /* Pods_marketo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		87A47720219735B3005937AD = {
 			isa = PBXGroup;
 			children = (
 				87A4772B219735B4005937AD /* marketo */,
 				87A4772A219735B4005937AD /* Products */,
+				01661DBA30A97D8F79FAED09 /* Pods */,
+				849EC38D6BF19C3DA52A17C0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +94,7 @@
 		87A4772B219735B4005937AD /* marketo */ = {
 			isa = PBXGroup;
 			children = (
+				87FF638D2197798A008EE969 /* Network */,
 				88553775219763AC0007B3B5 /* Model */,
 				885537702197619E0007B3B5 /* SignUp */,
 				888346F8219744A500FB3D26 /* Login */,
@@ -75,6 +106,24 @@
 				87A47733219735B4005937AD /* marketo.xcdatamodeld */,
 			);
 			path = marketo;
+			sourceTree = "<group>";
+		};
+		87FF638D2197798A008EE969 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				87FF638E21977ABB008EE969 /* User */,
+				87FF638F21977AE5008EE969 /* Constants.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		87FF638E21977ABB008EE969 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				87FF639121977B22008EE969 /* UserRouter.swift */,
+				87FF639321977C44008EE969 /* UserService.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		885537702197619E0007B3B5 /* SignUp */ = {
@@ -110,9 +159,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87A4773E219735B9005937AD /* Build configuration list for PBXNativeTarget "marketo" */;
 			buildPhases = (
+				A7160BF05A7CF20A225E51D6 /* [CP] Check Pods Manifest.lock */,
 				87A47725219735B3005937AD /* Sources */,
 				87A47726219735B3005937AD /* Frameworks */,
 				87A47727219735B3005937AD /* Resources */,
+				B1022369C96B087EAF674479 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -169,6 +220,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A7160BF05A7CF20A225E51D6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-marketo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1022369C96B087EAF674479 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-marketo/Pods-marketo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-marketo/Pods-marketo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		87A47725219735B3005937AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -178,9 +276,12 @@
 				8855376D219752EA0007B3B5 /* LoginViewModel.swift in Sources */,
 				87A4772F219735B4005937AD /* LoginViewController.swift in Sources */,
 				88553772219761F00007B3B5 /* SignUpViewModel.swift in Sources */,
+				87FF639221977B22008EE969 /* UserRouter.swift in Sources */,
 				87A47735219735B4005937AD /* marketo.xcdatamodeld in Sources */,
+				87FF639421977C44008EE969 /* UserService.swift in Sources */,
 				87A4772D219735B4005937AD /* AppDelegate.swift in Sources */,
 				885537772197649F0007B3B5 /* User.swift in Sources */,
+				87FF639021977AE5008EE969 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +425,7 @@
 		};
 		87A4773F219735B9005937AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F70DDDA15A7428FD8777E53A /* Pods-marketo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -341,6 +443,7 @@
 		};
 		87A47740219735B9005937AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4125A7CBB3A7492B14193A5 /* Pods-marketo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
