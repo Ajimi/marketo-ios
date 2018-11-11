@@ -13,6 +13,9 @@
 		87041AB721982FA100312FBF /* ProductRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AB621982FA100312FBF /* ProductRemoteRepository.swift */; };
 		87041AB921982FAF00312FBF /* ProductLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AB821982FAF00312FBF /* ProductLocalRepository.swift */; };
 		87041ABD2198308B00312FBF /* ProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041ABC2198308B00312FBF /* ProductRepository.swift */; };
+		8717BAE22198667600D7F5C9 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8717BAE12198667600D7F5C9 /* ProductViewController.swift */; };
+		8717BAE42198668700D7F5C9 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8717BAE32198668700D7F5C9 /* ProductViewModel.swift */; };
+		871F138A21985A4300B23D30 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871F138921985A4300B23D30 /* MainTabViewController.swift */; };
 		87A4772D219735B4005937AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A4772C219735B4005937AD /* AppDelegate.swift */; };
 		87A4772F219735B4005937AD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A4772E219735B4005937AD /* LoginViewController.swift */; };
 		87A47732219735B4005937AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87A47730219735B4005937AD /* Main.storyboard */; };
@@ -39,6 +42,9 @@
 		87041AB621982FA100312FBF /* ProductRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRemoteRepository.swift; sourceTree = "<group>"; };
 		87041AB821982FAF00312FBF /* ProductLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductLocalRepository.swift; sourceTree = "<group>"; };
 		87041ABC2198308B00312FBF /* ProductRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepository.swift; sourceTree = "<group>"; };
+		8717BAE12198667600D7F5C9 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		8717BAE32198668700D7F5C9 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
+		871F138921985A4300B23D30 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		87A47729219735B4005937AD /* marketo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marketo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A4772C219735B4005937AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87A4772E219735B4005937AD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +138,32 @@
 			path = Remote;
 			sourceTree = "<group>";
 		};
+		8717BADF2198663E00D7F5C9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8717BAE02198664D00D7F5C9 /* Product */,
+				871F1388219859F700B23D30 /* Main */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		8717BAE02198664D00D7F5C9 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				8717BAE12198667600D7F5C9 /* ProductViewController.swift */,
+				8717BAE32198668700D7F5C9 /* ProductViewModel.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		871F1388219859F700B23D30 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				871F138921985A4300B23D30 /* MainTabViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		87A47720219735B3005937AD = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +185,7 @@
 		87A4772B219735B4005937AD /* marketo */ = {
 			isa = PBXGroup;
 			children = (
+				8717BADF2198663E00D7F5C9 /* UI */,
 				88E99852219848C600D3FE04 /* Home */,
 				88E9984F219847E900D3FE04 /* Widget */,
 				87FF638D2197798A008EE969 /* Data */,
@@ -352,11 +385,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				871F138A21985A4300B23D30 /* MainTabViewController.swift in Sources */,
 				87041AA72198144300312FBF /* UserRepository.swift in Sources */,
 				885537742197622E0007B3B5 /* SignUpViewController.swift in Sources */,
 				8855376D219752EA0007B3B5 /* LoginViewModel.swift in Sources */,
 				87041ABD2198308B00312FBF /* ProductRepository.swift in Sources */,
+				8717BAE42198668700D7F5C9 /* ProductViewModel.swift in Sources */,
 				87041AB721982FA100312FBF /* ProductRemoteRepository.swift in Sources */,
+				8717BAE22198667600D7F5C9 /* ProductViewController.swift in Sources */,
 				88E998542198491200D3FE04 /* HomeViewController.swift in Sources */,
 				87A4772F219735B4005937AD /* LoginViewController.swift in Sources */,
 				88553772219761F00007B3B5 /* SignUpViewModel.swift in Sources */,

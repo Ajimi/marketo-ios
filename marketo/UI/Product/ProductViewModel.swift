@@ -1,5 +1,5 @@
-
-//  ProductRepository.swift
+//
+//  ProductViewModel.swift
 //  marketo
 //
 //  Created by selim ajimi on 11/11/18.
@@ -7,4 +7,4 @@
 //
 
 import Foundation
-	
+

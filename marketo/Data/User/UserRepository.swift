@@ -29,6 +29,10 @@ class UserRepository:UserDataSource {
         remoteRepository.login(a: user, completion: completion)
     }
     
+    func register(a user: User, completion:@escaping (Any)->Void){
+        remoteRepository.register(a: user, completion: completion)
+    }
+    
     func getAll() -> [User] {
         return [User]()
     }

@@ -22,6 +22,7 @@ class UserRemoteRepository{
     private func login(email: String, password: String, completion:@escaping (Result<Any>)->Void)  {
         performRequest(route: UserRouter.loginUser(email: email, password: password), completion: completion)
     }
+    
 
 }
 
@@ -30,6 +31,10 @@ extension UserRemoteRepository : UserDataSource{
     
     func login(a user: User, completion:@escaping (Result<Any>)->Void)  {
         self.login(email: user.email, password: user.password , completion: completion)
+    }
+    
+    func register(a user: User, completion:@escaping (Result<Any>)->Void)  {
+        performRequest(route: UserRouter.createUser(user: user), completion: completion)
     }
     
     func getAll() -> [User] {
