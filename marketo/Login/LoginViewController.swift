@@ -29,6 +29,12 @@ class LoginViewController: UIViewController {
         
     }
     
+    @IBAction func navigateToHome(_ sender: Any) {
+        
+        performSegue(withIdentifier: "goToHome", sender: nil)
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         
