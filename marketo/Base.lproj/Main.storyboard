@@ -470,7 +470,7 @@ FlBhc3N3b3JkA
         </scene>
     </scenes>
     <resources>
-        <image name="loginImage" width="1447" height="965"/>
-        <image name="logo" width="500" height="500"/>
+        <image name="loginImage" width="723" height="482"/>
+        <image name="logo" width="250" height="250"/>
     </resources>
 </document>
