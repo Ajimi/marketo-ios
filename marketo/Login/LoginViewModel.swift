@@ -18,10 +18,9 @@ class LoginViewModel: NSObject {
     
     func login(withUsername username : String,withPassword password:String) {
     
-        
         let repository = UserRepository()
         
-        repository.login(a: User(username: username, password: password) ) { (result) in
+        repository.login(a: User(username: username, password: password,email :username) ) { (result) in
             switch result as! Result<Any> {
             case .success(let accessToken):
                 print(accessToken)
