@@ -1,5 +1,5 @@
 //
-//  ProductViewController.swift
+//  ProductViewYamaalemViewController.swift
 //  marketo
 //
 //  Created by selim ajimi on 11/11/18.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class ProductViewController: UIViewController {
+class ProductViewYamaalemViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
+
 }
