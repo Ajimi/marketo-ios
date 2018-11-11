@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87041AA72198144300312FBF /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AA62198144300312FBF /* UserRepository.swift */; };
+		87041AA92198145600312FBF /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AA82198145600312FBF /* DataSource.swift */; };
+		87041AAE219819BC00312FBF /* UserLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AAD219819BC00312FBF /* UserLocalRepository.swift */; };
 		87A4772D219735B4005937AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A4772C219735B4005937AD /* AppDelegate.swift */; };
 		87A4772F219735B4005937AD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A4772E219735B4005937AD /* LoginViewController.swift */; };
 		87A47732219735B4005937AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87A47730219735B4005937AD /* Main.storyboard */; };
@@ -15,7 +18,7 @@
 		87A4773A219735B9005937AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87A47738219735B9005937AD /* LaunchScreen.storyboard */; };
 		87FF639021977AE5008EE969 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF638F21977AE5008EE969 /* Constants.swift */; };
 		87FF639221977B22008EE969 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF639121977B22008EE969 /* UserRouter.swift */; };
-		87FF639421977C44008EE969 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF639321977C44008EE969 /* UserService.swift */; };
+		87FF639421977C44008EE969 /* UserRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF639321977C44008EE969 /* UserRemoteRepository.swift */; };
 		8855376D219752EA0007B3B5 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8855376C219752EA0007B3B5 /* LoginViewModel.swift */; };
 		88553772219761F00007B3B5 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88553771219761F00007B3B5 /* SignUpViewModel.swift */; };
 		885537742197622E0007B3B5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885537732197622E0007B3B5 /* SignUpViewController.swift */; };
@@ -25,6 +28,9 @@
 
 /* Begin PBXFileReference section */
 		815D5919280C5D615384F382 /* Pods_marketo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_marketo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		87041AA62198144300312FBF /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		87041AA82198145600312FBF /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		87041AAD219819BC00312FBF /* UserLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocalRepository.swift; sourceTree = "<group>"; };
 		87A47729219735B4005937AD /* marketo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marketo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A4772C219735B4005937AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87A4772E219735B4005937AD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -35,7 +41,7 @@
 		87A4773B219735B9005937AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87FF638F21977AE5008EE969 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		87FF639121977B22008EE969 /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
-		87FF639321977C44008EE969 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		87FF639321977C44008EE969 /* UserRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRemoteRepository.swift; sourceTree = "<group>"; };
 		8855376C219752EA0007B3B5 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		88553771219761F00007B3B5 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		885537732197622E0007B3B5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +79,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		87041AA42198136100312FBF /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				87FF639121977B22008EE969 /* UserRouter.swift */,
+				87FF639321977C44008EE969 /* UserRemoteRepository.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		87041AA52198136C00312FBF /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				87041AAD219819BC00312FBF /* UserLocalRepository.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
 		87A47720219735B3005937AD = {
 			isa = PBXGroup;
 			children = (
@@ -94,7 +117,7 @@
 		87A4772B219735B4005937AD /* marketo */ = {
 			isa = PBXGroup;
 			children = (
-				87FF638D2197798A008EE969 /* Network */,
+				87FF638D2197798A008EE969 /* Data */,
 				88553775219763AC0007B3B5 /* Model */,
 				885537702197619E0007B3B5 /* SignUp */,
 				888346F8219744A500FB3D26 /* Login */,
@@ -108,20 +131,22 @@
 			path = marketo;
 			sourceTree = "<group>";
 		};
-		87FF638D2197798A008EE969 /* Network */ = {
+		87FF638D2197798A008EE969 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				87FF638E21977ABB008EE969 /* User */,
+				87041AA82198145600312FBF /* DataSource.swift */,
 				87FF638F21977AE5008EE969 /* Constants.swift */,
 			);
-			path = Network;
+			path = Data;
 			sourceTree = "<group>";
 		};
 		87FF638E21977ABB008EE969 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				87FF639121977B22008EE969 /* UserRouter.swift */,
-				87FF639321977C44008EE969 /* UserService.swift */,
+				87041AA52198136C00312FBF /* Local */,
+				87041AA42198136100312FBF /* Remote */,
+				87041AA62198144300312FBF /* UserRepository.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -272,16 +297,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87041AA72198144300312FBF /* UserRepository.swift in Sources */,
 				885537742197622E0007B3B5 /* SignUpViewController.swift in Sources */,
 				8855376D219752EA0007B3B5 /* LoginViewModel.swift in Sources */,
 				87A4772F219735B4005937AD /* LoginViewController.swift in Sources */,
 				88553772219761F00007B3B5 /* SignUpViewModel.swift in Sources */,
 				87FF639221977B22008EE969 /* UserRouter.swift in Sources */,
 				87A47735219735B4005937AD /* marketo.xcdatamodeld in Sources */,
-				87FF639421977C44008EE969 /* UserService.swift in Sources */,
+				87FF639421977C44008EE969 /* UserRemoteRepository.swift in Sources */,
 				87A4772D219735B4005937AD /* AppDelegate.swift in Sources */,
 				885537772197649F0007B3B5 /* User.swift in Sources */,
 				87FF639021977AE5008EE969 /* Constants.swift in Sources */,
+				87041AAE219819BC00312FBF /* UserLocalRepository.swift in Sources */,
+				87041AA92198145600312FBF /* DataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

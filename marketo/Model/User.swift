@@ -12,10 +12,10 @@ class User{
     
     var fullName : String
     var username : String
-    var password : String?
+    var password : String
     var email : String
     
-    init(fullName : String, username : String,password : String?, email:String) {
+    init(fullName : String = "", username : String = "" ,password : String = "", email:String = "") {
         self.fullName = fullName
         self.username = username
         self.password = password
