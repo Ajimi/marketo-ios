@@ -34,7 +34,7 @@ extension SignUpViewModel {
     func register(completion:@escaping (Any)->Void)  {
         let repository = UserRepository()
         
-        repository.register(a: user, completion: completion)
+        //repository.register(a: user, completion: completion)
     }
 }
 
