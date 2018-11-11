@@ -37,7 +37,7 @@ extension UserRemoteRepository : UserDataSource{
         performRequest(route: UserRouter.createUser(user: user), completion: completion)
     }
     
-    func getAll() -> [User] {
+    func getAll(completion:@escaping (Any)->Void) -> [User] {
         return [User]()
     }
     

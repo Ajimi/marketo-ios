@@ -17,6 +17,14 @@ struct APIUserParameterKey {
     static let username = "username"
     static let fullname = "fullname"
 }
+struct APIProductParameterKey {
+    static let name = "name"
+    static let priceInMarket = "priceInMarket"
+    static let description = "description"
+}
+struct APIPriceParameterKey {
+    static let price = "price"
+}
 enum HTTPHeaderField: String {
     case authentication = "Authorization"
     case contentType = "Content-Type"

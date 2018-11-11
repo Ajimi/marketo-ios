@@ -41,7 +41,7 @@ extension UserLocalRepository{
 
 // MARK: - Local Repository
 extension UserLocalRepository: UserDataSource{
-    func getAll() -> [User] {
+    func getAll(completion:@escaping (Any)->Void) -> [User] {
         return [User]()
     }
     

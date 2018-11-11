@@ -31,10 +31,25 @@
 		885537772197649F0007B3B5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885537762197649F0007B3B5 /* User.swift */; };
 		88E998512198483900D3FE04 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E998502198483900D3FE04 /* Extension.swift */; };
 		88E998542198491200D3FE04 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E998532198491200D3FE04 /* HomeViewController.swift */; };
+		88E998562198717600D3FE04 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E998552198717600D3FE04 /* Product.swift */; };
+		88E998582198722B00D3FE04 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E998572198722B00D3FE04 /* Price.swift */; };
+		88E9985A2198764600D3FE04 /* ProductRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E998592198764600D3FE04 /* ProductRouter.swift */; };
+		88E9985C2198769C00D3FE04 /* ApiConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E9985B2198769C00D3FE04 /* ApiConfiguration.swift */; };
 		D9A6BD54D153A4C1CDAA7903 /* Pods_marketo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 815D5919280C5D615384F382 /* Pods_marketo.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		88E9986921987E9200D3FE04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87A47721219735B3005937AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 87A47728219735B3005937AD;
+			remoteInfo = marketo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		45D941B64E8D5DB93E13DF9E /* Pods_marketoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_marketoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		815D5919280C5D615384F382 /* Pods_marketo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_marketo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87041AA62198144300312FBF /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		87041AA82198145600312FBF /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
@@ -62,6 +77,11 @@
 		885537762197649F0007B3B5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		88E998502198483900D3FE04 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		88E998532198491200D3FE04 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		88E998552198717600D3FE04 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		88E998572198722B00D3FE04 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
+		88E998592198764600D3FE04 /* ProductRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRouter.swift; sourceTree = "<group>"; };
+		88E9985B2198769C00D3FE04 /* ApiConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfiguration.swift; sourceTree = "<group>"; };
+		88E9986421987E9200D3FE04 /* marketoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = marketoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4125A7CBB3A7492B14193A5 /* Pods-marketo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marketo.release.xcconfig"; path = "Pods/Target Support Files/Pods-marketo/Pods-marketo.release.xcconfig"; sourceTree = "<group>"; };
 		F70DDDA15A7428FD8777E53A /* Pods-marketo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marketo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-marketo/Pods-marketo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +92,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9A6BD54D153A4C1CDAA7903 /* Pods_marketo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88E9986121987E9200D3FE04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				815D5919280C5D615384F382 /* Pods_marketo.framework */,
+				45D941B64E8D5DB93E13DF9E /* Pods_marketoTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -134,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				87041AB621982FA100312FBF /* ProductRemoteRepository.swift */,
+				88E998592198764600D3FE04 /* ProductRouter.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -182,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				87A47729219735B4005937AD /* marketo.app */,
+				88E9986421987E9200D3FE04 /* marketoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,6 +239,7 @@
 				87FF638E21977ABB008EE969 /* User */,
 				87041AA82198145600312FBF /* DataSource.swift */,
 				87FF638F21977AE5008EE969 /* Constants.swift */,
+				88E9985B2198769C00D3FE04 /* ApiConfiguration.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -236,6 +267,8 @@
 			isa = PBXGroup;
 			children = (
 				885537762197649F0007B3B5 /* User.swift */,
+				88E998552198717600D3FE04 /* Product.swift */,
+				88E998572198722B00D3FE04 /* Price.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -287,6 +320,24 @@
 			productReference = 87A47729219735B4005937AD /* marketo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		88E9986321987E9200D3FE04 /* marketoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88E9986B21987E9200D3FE04 /* Build configuration list for PBXNativeTarget "marketoTests" */;
+			buildPhases = (
+				88E9986021987E9200D3FE04 /* Sources */,
+				88E9986121987E9200D3FE04 /* Frameworks */,
+				88E9986221987E9200D3FE04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				88E9986A21987E9200D3FE04 /* PBXTargetDependency */,
+			);
+			name = marketoTests;
+			productName = marketoTests;
+			productReference = 88E9986421987E9200D3FE04 /* marketoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -299,6 +350,10 @@
 				TargetAttributes = {
 					87A47728219735B3005937AD = {
 						CreatedOnToolsVersion = 10.0;
+					};
+					88E9986321987E9200D3FE04 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 87A47728219735B3005937AD;
 					};
 				};
 			};
@@ -316,6 +371,7 @@
 			projectRoot = "";
 			targets = (
 				87A47728219735B3005937AD /* marketo */,
+				88E9986321987E9200D3FE04 /* marketoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -328,6 +384,13 @@
 				87A4773A219735B9005937AD /* LaunchScreen.storyboard in Resources */,
 				87A47737219735B9005937AD /* Assets.xcassets in Resources */,
 				87A47732219735B4005937AD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88E9986221987E9200D3FE04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,14 +451,18 @@
 				871F138A21985A4300B23D30 /* MainTabViewController.swift in Sources */,
 				87041AA72198144300312FBF /* UserRepository.swift in Sources */,
 				885537742197622E0007B3B5 /* SignUpViewController.swift in Sources */,
+				88E9985C2198769C00D3FE04 /* ApiConfiguration.swift in Sources */,
 				8855376D219752EA0007B3B5 /* LoginViewModel.swift in Sources */,
 				87041ABD2198308B00312FBF /* ProductRepository.swift in Sources */,
+				88E9985A2198764600D3FE04 /* ProductRouter.swift in Sources */,
+				88E998562198717600D3FE04 /* Product.swift in Sources */,
 				8717BAE42198668700D7F5C9 /* ProductViewModel.swift in Sources */,
 				87041AB721982FA100312FBF /* ProductRemoteRepository.swift in Sources */,
 				8717BAE22198667600D7F5C9 /* ProductViewController.swift in Sources */,
 				88E998542198491200D3FE04 /* HomeViewController.swift in Sources */,
 				87A4772F219735B4005937AD /* LoginViewController.swift in Sources */,
 				88553772219761F00007B3B5 /* SignUpViewModel.swift in Sources */,
+				88E998582198722B00D3FE04 /* Price.swift in Sources */,
 				87FF639221977B22008EE969 /* UserRouter.swift in Sources */,
 				87A47735219735B4005937AD /* marketo.xcdatamodeld in Sources */,
 				87FF639421977C44008EE969 /* UserRemoteRepository.swift in Sources */,
@@ -409,7 +476,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		88E9986021987E9200D3FE04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		88E9986A21987E9200D3FE04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 87A47728219735B3005937AD /* marketo */;
+			targetProxy = 88E9986921987E9200D3FE04 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		87A47730219735B4005937AD /* Main.storyboard */ = {
@@ -583,6 +665,44 @@
 			};
 			name = Release;
 		};
+		88E9986C21987E9200D3FE04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = marketoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = esprit.marketoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/marketo.app/marketo";
+			};
+			name = Debug;
+		};
+		88E9986D21987E9200D3FE04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = marketoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = esprit.marketoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/marketo.app/marketo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -600,6 +720,15 @@
 			buildConfigurations = (
 				87A4773F219735B9005937AD /* Debug */,
 				87A47740219735B9005937AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88E9986B21987E9200D3FE04 /* Build configuration list for PBXNativeTarget "marketoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88E9986C21987E9200D3FE04 /* Debug */,
+				88E9986D21987E9200D3FE04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

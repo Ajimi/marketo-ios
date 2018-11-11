@@ -1,57 +1,69 @@
 //
-//  UserRouter.swift
+//  ProductRoute.swift
 //  marketo
 //
-//  Created by selim ajimi on 11/10/18.
+//  Created by Moncef Guettat on 11/11/18.
 //  Copyright © 2018 selim ajimi. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-
-enum UserRouter: APIConfiguration {
+enum ProductRouter : APIConfiguration {
     
-    case createUser(user: User)
-    case loginUser(email:String, password:String)
-    case readUser(id: Int)
+    case getAll()
+    case get(id : Int)
+    case create(Product: Product)
+    case delete(Product: Product)
+    case update(Product: Product)
     
     // MARK: - HTTPMethod
     var method: HTTPMethod {
         switch self {
-        case .createUser:
-            return .post
-        case .loginUser:
-            return .post
-        case .readUser:
+        case .getAll:
             return .get
+        case .get:
+            return .get
+        case .create:
+            return .post
+        case .delete:
+            return .delete
+        case .update:
+            return .put
         }
     }
     
     // MARK: - Path
     var path: String {
         switch self {
-        case .createUser:
-            return "/users"
-        case .loginUser:
-            return "/authentication"
-        case .readUser(let id):
-            return "/users/\(id)"
+        case .getAll:
+            return ""
+        case .get(let id):
+            return "/\(id)"
+        case .create:
+            return ""
+        case .delete(let product):
+            return "/\(product.id!)"
+        case .update(let product):
+            return "/\(product.id!)"
         }
     }
     
     // MARK: - Parameters
     var parameters: Parameters? {
         switch self {
-        case .loginUser(let email, let password):
-            return ["strategy": "local",
-                    APIUserParameterKey.email: email,
-                    APIUserParameterKey.password: password]
-        case .readUser:
+        case .getAll:
             return nil
-        case .createUser(let user):
-            return  [APIUserParameterKey.email : user.email , APIUserParameterKey.password : user.password ,
-                     APIUserParameterKey.username: user.username, APIUserParameterKey.fullname: user.fullName]
+        case .create(let product):
+            return  [APIProductParameterKey.name : product.name ,
+                     APIProductParameterKey.description : product.description]
+        case .delete:
+            return nil
+        case .get:
+            return nil
+        case .update(let product):
+            return  [APIProductParameterKey.name : product.name ,
+                     APIProductParameterKey.description : product.description]
         }
     }
     
@@ -59,7 +71,7 @@ enum UserRouter: APIConfiguration {
     func asURLRequest() throws -> URLRequest {
         let url = try ProductionServer.baseURL.asURL()
         
-        var urlRequest = URLRequest(url: url.appendingPathComponent(path))
+        var urlRequest = URLRequest(url: url.appendingPathComponent("/products"+path))
         
         // HTTP Method
         urlRequest.httpMethod = method.rawValue
@@ -79,4 +91,5 @@ enum UserRouter: APIConfiguration {
         
         return urlRequest
     }
+    
 }

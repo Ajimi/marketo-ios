@@ -12,7 +12,7 @@ protocol DataSource {
     
     associatedtype T
     
-    func getAll() -> [T]
+    func getAll(completion:@escaping (Any)->Void) -> [T]
     func get( identifier:Int ) -> T?
     func create( a:T ) -> Bool
     func update( a:T ) -> Bool

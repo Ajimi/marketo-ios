@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class HomeViewController: UIViewController {
 
@@ -16,6 +17,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         logoImage.roundedImage()
         // Do any additional setup after loading the view.
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
