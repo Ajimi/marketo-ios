@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SignUpViewController: UIViewController {
     
@@ -24,6 +25,8 @@ class SignUpViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+   
+    
     @IBAction func signUpCommand(_ sender: UIButton) {
         
         signUpViewModel.user = User(
@@ -34,41 +37,49 @@ class SignUpViewController: UIViewController {
         signUpViewModel.confirmationPassword = self.confimPassword.text!
         
         if (self.signUpViewModel.isValid){
-            self.present(
-                createAlert(withTitle: "Done!", withMessage: "Sing Up Complete")!,
-                animated: true,
-                completion: nil)
-        }else
-        {
-            self.present(
-                createAlert(withTitle: "Invalid Entries", withMessage: signUpViewModel.prepareMessage())!,
-                animated: true,
-                completion: nil)
+            tryConnect();
+        } else {
+            showAlert(withTitle: "Invalid Entries", withMessage: signUpViewModel.prepareMessage())
         }
-        
-        
-        
+    }
+}
+
+
+
+// MARK: - User Creation Extension
+extension SignUpViewController {
+    func tryConnect() {
+        signUpViewModel.register(completion: { (result) in
+            self.checkResponseFor(response: result as! Result<Any>)
+        })
+    }
+    
+    func checkResponseFor(response : Result<Any>) {
+        switch response {
+        case .success(let user):
+            self.showAlert(withTitle: "Done!", withMessage :"SignUp Complete")
+            print(user)
+        // TODO: - Check Errors 
+        case .failure(let error):
+            print(error.localizedDescription)
+        }
+    }
+}
+
+// MARK: - Alert Extensions
+extension SignUpViewController {
+    fileprivate func showAlert(withTitle: String, withMessage: String) {
+        self.present(
+            createAlert(withTitle: withTitle, withMessage: withMessage)!,
+            animated: true,
+            completion: nil)
     }
     
     func createAlert(withTitle title : String, withMessage message : String) -> UIAlertController?  {
         let action = UIAlertAction(title: "ok", style: .cancel, handler: nil)
-        
         let alert =  UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
         alert.addAction(action)
         
         return alert
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-    
 }
