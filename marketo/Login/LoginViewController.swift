@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginCommand(_ sender: UIButton) {
-        loginViewModel.authenticate(withUsername: username.text!, withPassword: password.text!)
+        loginViewModel.login(withUsername: username.text!, withPassword: password.text!)
     }
     
     @IBAction func navigateToSignUp(_ sender: UIButton) {

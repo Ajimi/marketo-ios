@@ -7,19 +7,29 @@
 //
 
 import Foundation
+import Alamofire
+
+
+
 
 class LoginViewModel: NSObject {
     
-    let isLoggedIn:Bool? = false
+    var isLoggedIn:Bool? = false
     
-    func authenticate(withUsername username : String,withPassword password:String){
-        UserService.login(email: username, password: password) { (result) in
-            switch result {
+    func login(withUsername username : String,withPassword password:String) {
+    
+        
+        let repository = UserRepository()
+        
+        repository.login(a: User(username: username, password: password) ) { (result) in
+            switch result as! Result<Any> {
             case .success(let accessToken):
                 print(accessToken)
+                self.isLoggedIn = true
             // TODO : ADD AccessToken
             case .failure(let error):
                 print(error.localizedDescription)
+                self.isLoggedIn = false
             }
         }
     }
