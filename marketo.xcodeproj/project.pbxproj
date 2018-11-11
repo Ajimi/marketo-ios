@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		87041AA72198144300312FBF /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AA62198144300312FBF /* UserRepository.swift */; };
 		87041AA92198145600312FBF /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AA82198145600312FBF /* DataSource.swift */; };
-		87041AAE219819BC00312FBF /* UserLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AAD219819BC00312FBF /* UserLocalRepository.swift */; };
+		87041AB321982F2600312FBF /* UserLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AB221982F2600312FBF /* UserLocalRepository.swift */; };
 		87A4772D219735B4005937AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A4772C219735B4005937AD /* AppDelegate.swift */; };
 		87A4772F219735B4005937AD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A4772E219735B4005937AD /* LoginViewController.swift */; };
 		87A47732219735B4005937AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87A47730219735B4005937AD /* Main.storyboard */; };
@@ -30,7 +30,7 @@
 		815D5919280C5D615384F382 /* Pods_marketo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_marketo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87041AA62198144300312FBF /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		87041AA82198145600312FBF /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
-		87041AAD219819BC00312FBF /* UserLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocalRepository.swift; sourceTree = "<group>"; };
+		87041AB221982F2600312FBF /* UserLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocalRepository.swift; sourceTree = "<group>"; };
 		87A47729219735B4005937AD /* marketo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marketo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A4772C219735B4005937AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87A4772E219735B4005937AD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -88,10 +88,17 @@
 			path = Remote;
 			sourceTree = "<group>";
 		};
-		87041AA52198136C00312FBF /* Local */ = {
+		87041AAF21982E9700312FBF /* Product */ = {
 			isa = PBXGroup;
 			children = (
-				87041AAD219819BC00312FBF /* UserLocalRepository.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		87041AB121982EEA00312FBF /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				87041AB221982F2600312FBF /* UserLocalRepository.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -134,6 +141,7 @@
 		87FF638D2197798A008EE969 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				87041AAF21982E9700312FBF /* Product */,
 				87FF638E21977ABB008EE969 /* User */,
 				87041AA82198145600312FBF /* DataSource.swift */,
 				87FF638F21977AE5008EE969 /* Constants.swift */,
@@ -144,7 +152,7 @@
 		87FF638E21977ABB008EE969 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				87041AA52198136C00312FBF /* Local */,
+				87041AB121982EEA00312FBF /* Local */,
 				87041AA42198136100312FBF /* Remote */,
 				87041AA62198144300312FBF /* UserRepository.swift */,
 			);
@@ -307,8 +315,8 @@
 				87FF639421977C44008EE969 /* UserRemoteRepository.swift in Sources */,
 				87A4772D219735B4005937AD /* AppDelegate.swift in Sources */,
 				885537772197649F0007B3B5 /* User.swift in Sources */,
+				87041AB321982F2600312FBF /* UserLocalRepository.swift in Sources */,
 				87FF639021977AE5008EE969 /* Constants.swift in Sources */,
-				87041AAE219819BC00312FBF /* UserLocalRepository.swift in Sources */,
 				87041AA92198145600312FBF /* DataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

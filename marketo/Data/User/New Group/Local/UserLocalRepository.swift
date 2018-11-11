@@ -40,7 +40,7 @@ extension UserLocalRepository{
 }
 
 // MARK: - Local Repository
-extension UserLocalRepository: UserDataSource{
+extension UserLocalRepository: UserDataSource{    
     func getAll() -> [User] {
         return [User]()
     }
