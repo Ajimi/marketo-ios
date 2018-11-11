@@ -10,6 +10,9 @@
 		87041AA72198144300312FBF /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AA62198144300312FBF /* UserRepository.swift */; };
 		87041AA92198145600312FBF /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AA82198145600312FBF /* DataSource.swift */; };
 		87041AB321982F2600312FBF /* UserLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AB221982F2600312FBF /* UserLocalRepository.swift */; };
+		87041AB721982FA100312FBF /* ProductRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AB621982FA100312FBF /* ProductRemoteRepository.swift */; };
+		87041AB921982FAF00312FBF /* ProductLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AB821982FAF00312FBF /* ProductLocalRepository.swift */; };
+		87041ABD2198308B00312FBF /* ProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041ABC2198308B00312FBF /* ProductRepository.swift */; };
 		87A4772D219735B4005937AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A4772C219735B4005937AD /* AppDelegate.swift */; };
 		87A4772F219735B4005937AD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A4772E219735B4005937AD /* LoginViewController.swift */; };
 		87A47732219735B4005937AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87A47730219735B4005937AD /* Main.storyboard */; };
@@ -31,6 +34,9 @@
 		87041AA62198144300312FBF /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		87041AA82198145600312FBF /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		87041AB221982F2600312FBF /* UserLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocalRepository.swift; sourceTree = "<group>"; };
+		87041AB621982FA100312FBF /* ProductRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRemoteRepository.swift; sourceTree = "<group>"; };
+		87041AB821982FAF00312FBF /* ProductLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductLocalRepository.swift; sourceTree = "<group>"; };
+		87041ABC2198308B00312FBF /* ProductRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepository.swift; sourceTree = "<group>"; };
 		87A47729219735B4005937AD /* marketo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marketo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A4772C219735B4005937AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87A4772E219735B4005937AD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +97,9 @@
 		87041AAF21982E9700312FBF /* Product */ = {
 			isa = PBXGroup;
 			children = (
+				87041AB521982F8300312FBF /* Remote */,
+				87041AB421982F7900312FBF /* Local */,
+				87041ABC2198308B00312FBF /* ProductRepository.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -101,6 +110,22 @@
 				87041AB221982F2600312FBF /* UserLocalRepository.swift */,
 			);
 			path = Local;
+			sourceTree = "<group>";
+		};
+		87041AB421982F7900312FBF /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				87041AB821982FAF00312FBF /* ProductLocalRepository.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		87041AB521982F8300312FBF /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				87041AB621982FA100312FBF /* ProductRemoteRepository.swift */,
+			);
+			path = Remote;
 			sourceTree = "<group>";
 		};
 		87A47720219735B3005937AD = {
@@ -308,12 +333,15 @@
 				87041AA72198144300312FBF /* UserRepository.swift in Sources */,
 				885537742197622E0007B3B5 /* SignUpViewController.swift in Sources */,
 				8855376D219752EA0007B3B5 /* LoginViewModel.swift in Sources */,
+				87041ABD2198308B00312FBF /* ProductRepository.swift in Sources */,
+				87041AB721982FA100312FBF /* ProductRemoteRepository.swift in Sources */,
 				87A4772F219735B4005937AD /* LoginViewController.swift in Sources */,
 				88553772219761F00007B3B5 /* SignUpViewModel.swift in Sources */,
 				87FF639221977B22008EE969 /* UserRouter.swift in Sources */,
 				87A47735219735B4005937AD /* marketo.xcdatamodeld in Sources */,
 				87FF639421977C44008EE969 /* UserRemoteRepository.swift in Sources */,
 				87A4772D219735B4005937AD /* AppDelegate.swift in Sources */,
+				87041AB921982FAF00312FBF /* ProductLocalRepository.swift in Sources */,
 				885537772197649F0007B3B5 /* User.swift in Sources */,
 				87041AB321982F2600312FBF /* UserLocalRepository.swift in Sources */,
 				87FF639021977AE5008EE969 /* Constants.swift in Sources */,
