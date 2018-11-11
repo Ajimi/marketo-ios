@@ -25,17 +25,43 @@ class SignUpViewModel: NSObject {
         }
     }
     
-    func prepareMessage() -> String {
-        var message : String = ""
-        for br : BrokenRule in brokenRules{
-            message += "-" + br.propertyName + ": " + br.message + "\n"
-        }
-        return message
-    }
     
 }
 
+
+// MARK : - Create USER
 extension SignUpViewModel {
+    func register(completion:@escaping (Any)->Void)  {
+        let repository = UserRepository()
+        
+        repository.register(a: user, completion: completion)
+    }
+}
+
+
+
+// MARK : -  Validation
+extension SignUpViewModel {
+    private func validate() {
+        checkPassword()
+        checkEmail()
+    }
+    
+    private func checkPassword() {
+        if confirmationPassword != user.password {
+            addBrokenRule(propertyName: "Confirm Password", message: "Password Does Not Match")
+        }
+        
+        if (user.password.count < 8){
+            addBrokenRule(propertyName: "Passwprd Length", message: "Password Must Be At Least 8 Characters Long")
+        }
+    }
+    
+    private func checkEmail(){
+        if !isValidEmail(testStr: user.email) {
+            addBrokenRule(propertyName: "Email", message: "Email Format Should Be Valid (aze@aze.io)")
+        }
+    }
     
     private func isValidEmail(testStr:String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._-]+@[A-Za-z]+\\.[A-Za-z]{2,64}"
@@ -44,23 +70,17 @@ extension SignUpViewModel {
         return emailTest.evaluate(with: testStr)
     }
     
-    private func validate() {
-        
-        if (confirmationPassword != user.password)
-        {
-            brokenRules.append(BrokenRule(propertyName: "Confirm Password", message: "Password Does Not Match"))
+    
+    func prepareMessage() -> String {
+        var message : String = ""
+        for br : BrokenRule in brokenRules{
+            message += "-" + br.propertyName + ": " + br.message + "\n"
         }
-        
-        if (user.password.count ?? 0 < 8)
-        {
-            brokenRules.append(BrokenRule(propertyName: "Passwprd Length", message: "Password Must Be At Least 8 Characters Long"))
-        }
-        
-        if (!isValidEmail(testStr: user.email)){
-            brokenRules.append(BrokenRule(propertyName: "Email", message: "Email Format Should Be Valid (aze@aze.io)"))
-        }
-        
-        
+        return message
     }
     
+    
+    func addBrokenRule(propertyName: String, message:String) {
+        brokenRules.append(BrokenRule(propertyName: propertyName, message: message))
+    }
 }
