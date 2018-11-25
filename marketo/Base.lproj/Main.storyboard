@@ -259,91 +259,6 @@ FlBhc3N3b3JkA
             </objects>
             <point key="canvasLocation" x="1050" y="161"/>
         </scene>
-        <!--Category-->
-        <scene sceneID="Too-cj-LxE">
-            <objects>
-                <viewController id="vqf-oZ-HYO" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xrg-fD-i8d">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="UXi-o1-YZZ"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Category" id="G8c-Cv-6rR"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tPX-JC-tJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3089" y="573"/>
-        </scene>
-        <!--Cart-->
-        <scene sceneID="bVp-yK-BaY">
-            <objects>
-                <viewController id="deh-aX-9qe" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="MZg-28-k0Q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="ClC-sH-yTs"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Cart" id="u7f-7e-AgV"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cHt-4h-NSU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4002" y="572"/>
-        </scene>
-        <!--Favourite-->
-        <scene sceneID="hLh-zz-W6P">
-            <objects>
-                <viewController id="SEN-Dj-Hlg" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Mn9-nb-OPo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="G0N-fT-n75"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Favourite" id="vI3-nP-wNt"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PGG-Ar-V8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4862" y="570"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="PE2-EH-b93">
-            <objects>
-                <viewController id="qb3-cA-sea" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nWR-GD-b6P">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="G1C-a9-bqo"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="7Du-0y-d0H"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FkK-xr-uQb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5598" y="571"/>
-        </scene>
-        <!--Main Tab View Controller-->
-        <scene sceneID="odC-LS-xZs">
-            <objects>
-                <tabBarController storyboardIdentifier="MainTabViewController" id="LUz-pU-u0l" customClass="MainTabViewController" customModule="marketo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="D1D-Nb-ote">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="vqf-oZ-HYO" kind="relationship" relationship="viewControllers" id="u17-bh-ZC1"/>
-                        <segue destination="deh-aX-9qe" kind="relationship" relationship="viewControllers" id="FXa-7O-DmP"/>
-                        <segue destination="SEN-Dj-Hlg" kind="relationship" relationship="viewControllers" id="Wnv-Pf-0pR"/>
-                        <segue destination="qb3-cA-sea" kind="relationship" relationship="viewControllers" id="VVQ-om-qWC"/>
-                        <segue destination="oS8-P4-eEz" kind="relationship" relationship="viewControllers" id="qfE-c2-3hD"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xek-f7-lFV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2548" y="-125"/>
-        </scene>
         <!--Home View Controller-->
         <scene sceneID="ZdZ-m9-lig">
             <objects>
@@ -380,7 +295,7 @@ FlBhc3N3b3JkA
                                 </constraints>
                                 <state key="normal" title="GRAB A CART !"/>
                                 <connections>
-                                    <segue destination="LUz-pU-u0l" kind="presentation" id="8Uv-18-fZt"/>
+                                    <action selector="grabACartAction:" destination="phc-e7-yZl" eventType="touchUpInside" id="IbZ-Ah-Z8s"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -435,71 +350,9 @@ FlBhc3N3b3JkA
             </objects>
             <point key="canvasLocation" x="65" y="-591"/>
         </scene>
-        <!--Product Table View View Controller-->
-        <scene sceneID="VRU-Hc-Xtq">
-            <objects>
-                <tableViewController id="g2G-xt-IuZ" customClass="ProductTableViewViewController" customModule="marketo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="j37-HG-8hA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" textLabel="FiC-nh-42D" style="IBUITableViewCellStyleDefault" id="usp-hB-kak">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="usp-hB-kak" id="Z8O-Ck-yQc">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" tag="2" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FiC-nh-42D">
-                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="g2G-xt-IuZ" id="vDi-vR-KSQ"/>
-                            <outlet property="delegate" destination="g2G-xt-IuZ" id="hRF-cT-9ue"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="QZg-tH-PGy"/>
-                    <connections>
-                        <outlet property="viewModel" destination="hQc-9f-6AE" id="XED-hH-4oK"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QCi-h5-t9F" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="hQc-9f-6AE" customClass="ProductViewModel" customModule="marketo" customModuleProvider="target"/>
-            </objects>
-            <point key="canvasLocation" x="2298" y="1912"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="ULc-kJ-SjI">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oS8-P4-eEz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="l3z-Z8-ePR"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xa3-bQ-T2L">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.93233782050000003" green="0.55161160229999995" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="g2G-xt-IuZ" kind="relationship" relationship="rootViewController" id="6Co-hm-dQM"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Kib-FZ-p0J" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1994" y="1079"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="loginImage" width="723" height="482"/>
-        <image name="logo" width="250" height="250"/>
+        <image name="loginImage" width="1447" height="965"/>
+        <image name="logo" width="500" height="500"/>
     </resources>
 </document>
