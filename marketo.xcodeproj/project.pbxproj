@@ -32,6 +32,7 @@
 		885537772197649F0007B3B5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885537762197649F0007B3B5 /* User.swift */; };
 		88BC8F4D21AAD3EB0013D4EB /* FeaturedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BC8F4C21AAD3EB0013D4EB /* FeaturedViewController.swift */; };
 		88BC8F5421AB190C0013D4EB /* CommandStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88BC8F5321AB190C0013D4EB /* CommandStoryboard.storyboard */; };
+		88BC8F5721AB24540013D4EB /* AlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BC8F5621AB24540013D4EB /* AlertExtension.swift */; };
 		88E998512198483900D3FE04 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E998502198483900D3FE04 /* Extension.swift */; };
 		88E998542198491200D3FE04 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E998532198491200D3FE04 /* HomeViewController.swift */; };
 		88E998562198717600D3FE04 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E998552198717600D3FE04 /* Product.swift */; };
@@ -81,6 +82,7 @@
 		885537762197649F0007B3B5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		88BC8F4C21AAD3EB0013D4EB /* FeaturedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedViewController.swift; sourceTree = "<group>"; };
 		88BC8F5321AB190C0013D4EB /* CommandStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommandStoryboard.storyboard; sourceTree = "<group>"; };
+		88BC8F5621AB24540013D4EB /* AlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertExtension.swift; sourceTree = "<group>"; };
 		88E998502198483900D3FE04 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		88E998532198491200D3FE04 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		88E998552198717600D3FE04 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 		8717BADF2198663E00D7F5C9 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				88BC8F5521AB242A0013D4EB /* Extension */,
 				88BC8F4B21AAD3BF0013D4EB /* Featured */,
 				88E99852219848C600D3FE04 /* Home */,
 				88E9984F219847E900D3FE04 /* Widget */,
@@ -297,6 +300,14 @@
 			children = (
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		88BC8F5521AB242A0013D4EB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				88BC8F5621AB24540013D4EB /* AlertExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		88E9984F219847E900D3FE04 /* Widget */ = {
@@ -489,6 +500,7 @@
 				87FECD9921AABC5C00805944 /* Dynamic.swift in Sources */,
 				885537772197649F0007B3B5 /* User.swift in Sources */,
 				88E998512198483900D3FE04 /* Extension.swift in Sources */,
+				88BC8F5721AB24540013D4EB /* AlertExtension.swift in Sources */,
 				88BC8F4D21AAD3EB0013D4EB /* FeaturedViewController.swift in Sources */,
 				87041AB321982F2600312FBF /* UserLocalRepository.swift in Sources */,
 				87FF639021977AE5008EE969 /* Constants.swift in Sources */,

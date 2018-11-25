@@ -17,18 +17,22 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let alert = UIAlertController(title: nil, message: "Connecting...", preferredStyle: .alert)
         loginViewModel.uiState.bindAndFire(listener: { (uiModel) in
             if (uiModel.showProgress) {
-                print("in progression")
+                self.showWaiting(alert: alert)
                 // showProgression()
             }
             if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
-                print("there Was an error \(errorMessage)")
-                self.displayErrorMessage(errorMessage: errorMessage)
+                alert.dismiss(animated: true, completion: {
+                    self.showAlert(withTitle: "", withMessage: errorMessage)
+                })
             }
             
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let successMessage = showSucces.consume() {
-                print(successMessage)
+                alert.dismiss(animated: true, completion: {
+                    self.showAlert(withTitle: "Conncted", withMessage: "Sign In Successful")
+                })
             }
         })
     }
