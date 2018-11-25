@@ -31,6 +31,7 @@
 		885537742197622E0007B3B5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885537732197622E0007B3B5 /* SignUpViewController.swift */; };
 		885537772197649F0007B3B5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885537762197649F0007B3B5 /* User.swift */; };
 		88BC8F4D21AAD3EB0013D4EB /* FeaturedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BC8F4C21AAD3EB0013D4EB /* FeaturedViewController.swift */; };
+		88BC8F5421AB190C0013D4EB /* CommandStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88BC8F5321AB190C0013D4EB /* CommandStoryboard.storyboard */; };
 		88E998512198483900D3FE04 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E998502198483900D3FE04 /* Extension.swift */; };
 		88E998542198491200D3FE04 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E998532198491200D3FE04 /* HomeViewController.swift */; };
 		88E998562198717600D3FE04 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E998552198717600D3FE04 /* Product.swift */; };
@@ -79,6 +80,7 @@
 		885537732197622E0007B3B5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		885537762197649F0007B3B5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		88BC8F4C21AAD3EB0013D4EB /* FeaturedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedViewController.swift; sourceTree = "<group>"; };
+		88BC8F5321AB190C0013D4EB /* CommandStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommandStoryboard.storyboard; sourceTree = "<group>"; };
 		88E998502198483900D3FE04 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		88E998532198491200D3FE04 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		88E998552198717600D3FE04 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				87A47733219735B4005937AD /* marketo.xcdatamodeld */,
 				87FECD9821AABC5C00805944 /* Dynamic.swift */,
 				87FECD9A21AAC7FC00805944 /* Event.swift */,
+				88BC8F5321AB190C0013D4EB /* CommandStoryboard.storyboard */,
 			);
 			path = marketo;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				87A4773A219735B9005937AD /* LaunchScreen.storyboard in Resources */,
 				87A47737219735B9005937AD /* Assets.xcassets in Resources */,
 				87A47732219735B4005937AD /* Main.storyboard in Resources */,
+				88BC8F5421AB190C0013D4EB /* CommandStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
