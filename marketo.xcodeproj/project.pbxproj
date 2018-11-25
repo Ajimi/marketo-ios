@@ -229,8 +229,7 @@
 				87A47738219735B9005937AD /* LaunchScreen.storyboard */,
 				87A4773B219735B9005937AD /* Info.plist */,
 				87A47733219735B4005937AD /* marketo.xcdatamodeld */,
-				87FECD9821AABC5C00805944 /* Dynamic.swift */,
-				87FECD9A21AAC7FC00805944 /* Event.swift */,
+				88BC8F5921AB2CC40013D4EB /* Util */,
 				88BC8F5321AB190C0013D4EB /* CommandStoryboard.storyboard */,
 			);
 			path = marketo;
@@ -308,6 +307,15 @@
 				88BC8F5621AB24540013D4EB /* AlertExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		88BC8F5921AB2CC40013D4EB /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				87FECD9821AABC5C00805944 /* Dynamic.swift */,
+				87FECD9A21AAC7FC00805944 /* Event.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		88E9984F219847E900D3FE04 /* Widget */ = {
@@ -436,12 +444,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-marketo/Pods-marketo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
