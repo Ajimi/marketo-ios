@@ -1,16 +1,22 @@
 PODS:
-  - Alamofire (4.7.3)
+  - Alamofire (5.0.0.beta.1)
 
 DEPENDENCIES:
-  - Alamofire
+  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `alamofire5`)
 
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - Alamofire
+EXTERNAL SOURCES:
+  Alamofire:
+    :branch: alamofire5
+    :git: https://github.com/Alamofire/Alamofire.git
+
+CHECKOUT OPTIONS:
+  Alamofire:
+    :commit: e6fe1ba90a5ea32e4678bda574abbbd45f3fdf41
+    :git: https://github.com/Alamofire/Alamofire.git
 
 SPEC CHECKSUMS:
-  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  Alamofire: 2ef6d6c984c5d21c366e9b41a9ae7dfee2b67a44
 
-PODFILE CHECKSUM: cd6d6a9e4702c6d1f09a3cd257826999ec4d9252
+PODFILE CHECKSUM: 88a30bc6cd2dd14ce3d81512595737f96fca7b16
 
 COCOAPODS: 1.5.3

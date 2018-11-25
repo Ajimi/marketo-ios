@@ -11,26 +11,46 @@ import Alamofire
 
 
 
-
 class LoginViewModel: NSObject {
     
-    var isLoggedIn:Bool? = false
+//    var isLoggedIn = Dynamic<Bool>(false)
+//    var errorEvent = Dynamic<String>("")
+    var uiState =  Dynamic<LoginUiModel>(LoginUiModel(showProgress: false, showError: nil , showSuccess: nil))
+    let repository = UserRepository()
+    
     
     func login(withUsername username : String,withPassword password:String) {
     
-        let repository = UserRepository()
         
+        emitUiState(showProgress: true)
         repository.login(a: User(username: username, password: password,email :username) ) { (result) in
-            switch result as! Result<Any> {
+            switch result {
             case .success(let accessToken):
                 print(accessToken)
-                self.isLoggedIn = true
-            // TODO : ADD AccessToken
+                self.emitUiState(showProgress: false,showSuccess: Event(with: "Connected"))
             case .failure(let error):
-                print(error.localizedDescription)
-                self.isLoggedIn = false
+                self.emitUiState(showError: Event(with: error.localizedDescription))
             }
         }
     }
     
 }
+
+extension LoginViewModel {
+    private func emitUiState(
+    showProgress: Bool = false,
+    showError: Event<String>? = nil,
+    showSuccess: Event<String>? = nil
+    ) {
+        let uiModel = LoginUiModel(showProgress: showProgress, showError: showError, showSuccess: showSuccess)
+        uiState.value = uiModel
+    }
+}
+
+
+struct LoginUiModel {
+    var showProgress: Bool
+    var showError: Event<String>?
+    var showSuccess: Event<String>?
+}
+

@@ -16,7 +16,21 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        loginViewModel.uiState.bindAndFire(listener: { (uiModel) in
+            if (uiModel.showProgress) {
+                print("in progression")
+                // showProgression()
+            }
+            if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
+                print("there Was an error \(errorMessage)")
+                self.displayErrorMessage(errorMessage: errorMessage)
+            }
+            
+            if let showSucces = uiModel.showSuccess, !showSucces.consumed, let successMessage = showSucces.consume() {
+                print(successMessage)
+            }
+        })
     }
 
     @IBAction func loginCommand(_ sender: UIButton) {
@@ -24,9 +38,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func navigateToSignUp(_ sender: UIButton) {
-    
         performSegue(withIdentifier: "goToSignUp", sender: nil)
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -36,3 +48,17 @@ class LoginViewController: UIViewController {
     }
 }
 
+extension LoginViewController : UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        resignFirstResponder()
+    }
+}
+
+extension LoginViewController {
+    func displayErrorMessage(errorMessage: String) {
+        let alertController = UIAlertController(title: nil, message: errorMessage, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+}

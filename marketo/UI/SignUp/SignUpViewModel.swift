@@ -6,6 +6,7 @@
 //  Copyright © 2018 selim ajimi. All rights reserved.
 //
 import UIKit
+import Alamofire
 
 struct BrokenRule{
     var propertyName : String
@@ -14,6 +15,9 @@ struct BrokenRule{
 
 class SignUpViewModel: NSObject {
     
+    // Use Dependency Injection
+    let repository = UserRepository()
+
     var user : User!
     var confirmationPassword : String!
     var brokenRules : [BrokenRule]!
@@ -24,20 +28,37 @@ class SignUpViewModel: NSObject {
             return self.brokenRules.count == 0 ? true : false
         }
     }
-    
-    
+    var uiState =  Dynamic<SignUpUiModel>(SignUpUiModel(showProgress: false, showError: nil , showSuccess: nil))
+
 }
 
 
 // MARK : - Create USER
 extension SignUpViewModel {
-    func register(completion:@escaping (Any)->Void)  {
-        let repository = UserRepository()
-        
-        //repository.register(a: user, completion: completion)
+    func register() {
+        // Todo USE Dependency Injection
+        emitUiState(showProgress: true)
+        if isValid {
+            repository.register(a: user, completion: checkResponseFor)
+        } else {
+            emitUiState(showError: Event(with: self.prepareMessage()))
+        }
     }
-}
 
+    func checkResponseFor(response : Result<User>) {
+        switch response {
+        case .success(let user):
+            print(user)
+            self.emitUiState(showSuccess: Event(with: user))
+        // TODO: - Check Errors
+        case .failure(let error):
+//            print(error.asAFError?.responseCode as! Int)
+            emitUiState(showError: Event(with: error.localizedDescription))
+            print(error.localizedDescription)
+        }
+    }
+    
+}
 
 
 // MARK : -  Validation
@@ -52,13 +73,13 @@ extension SignUpViewModel {
             addBrokenRule(propertyName: "Confirm Password", message: "Password Does Not Match")
         }
         
-        if (user.password.count < 8){
+        if (user.password!.count < 8){
             addBrokenRule(propertyName: "Passwprd Length", message: "Password Must Be At Least 8 Characters Long")
         }
     }
     
     private func checkEmail(){
-        if !isValidEmail(testStr: user.email) {
+        if !isValidEmail(testStr: user.email!) {
             addBrokenRule(propertyName: "Email", message: "Email Format Should Be Valid (aze@aze.io)")
         }
     }
@@ -83,4 +104,25 @@ extension SignUpViewModel {
     func addBrokenRule(propertyName: String, message:String) {
         brokenRules.append(BrokenRule(propertyName: propertyName, message: message))
     }
+}
+
+
+
+extension SignUpViewModel {
+    private func emitUiState(
+        showProgress: Bool = false,
+        showError: Event<String>? = nil,
+        showSuccess: Event<User>? = nil
+        ) {
+        
+        let uiModel = SignUpUiModel(showProgress: showProgress, showError: showError, showSuccess: showSuccess)
+        uiState.value = uiModel
+    }
+}
+
+
+struct SignUpUiModel {
+    var showProgress: Bool
+    var showError: Event<String>?
+    var showSuccess: Event<User>?
 }

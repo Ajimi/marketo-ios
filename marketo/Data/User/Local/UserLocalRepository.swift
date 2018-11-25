@@ -20,8 +20,6 @@ class UserLocalRepository{
         })
         return container
     }()
-    
-    
 }
 
 // MARK: - Save Context
@@ -40,25 +38,7 @@ extension UserLocalRepository{
 }
 
 // MARK: - Local Repository
-extension UserLocalRepository: UserDataSource{
-    func getAll(completion:@escaping (Any)->Void) -> [User] {
-        return [User]()
-    }
+extension UserLocalRepository{
     
-    func get(identifier: Int) -> User? {
-        return User(fullName: "", username: "", password: "", email: "")
-    }
-    
-    func create(a: User) -> Bool {
-        return true
-    }
-    
-    func update(a: User) -> Bool {
-        return true
-    }
-    
-    func delete(a: User) -> Bool {
-        return true
-    }
 }
 

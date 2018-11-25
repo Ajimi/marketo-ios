@@ -6,5 +6,9 @@ target 'marketo' do
   use_frameworks!
 
   # Pods for marketo
-  pod 'Alamofire'
+  
+ 
+ pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'alamofire5'
+ 
+
 end

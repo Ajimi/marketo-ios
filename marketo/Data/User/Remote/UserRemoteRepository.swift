@@ -13,54 +13,29 @@ import Alamofire
 
 
 class UserRemoteRepository{
-    private func performRequest(route:UserRouter, completion:@escaping (Result<Any>)->Void){
-        Alamofire.request(route)
-            .responseJSON{ (response: DataResponse<Any>) in
+    
+    @discardableResult
+    private func performRequest<T:Decodable>(route:UserRouter, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (Result<T>)->Void) -> DataRequest {
+        return AF.request(route)
+            .validate(statusCode : 200..<300)
+            .responseJSONDecodable (decoder: decoder){ (response: DataResponse<T>) in
                 completion(response.result)
         }
     }
-    private func login(email: String, password: String, completion:@escaping (Result<Any>)->Void)  {
+  
+    private func login(email: String, password: String, completion:@escaping (Result<AccessToken>)->Void)  {
         performRequest(route: UserRouter.loginUser(email: email, password: password), completion: completion)
     }
-    
-
 }
 
 // Mark UserRepository implementation
-extension UserRemoteRepository : UserDataSource{
+extension UserRemoteRepository{
     
-    func login(a user: User, completion:@escaping (Result<Any>)->Void)  {
-        self.login(email: user.email, password: user.password , completion: completion)
+    func login(a user: User, completion:@escaping (Result<AccessToken>)->Void)  {
+        self.login(email: user.email!, password: user.password! , completion: completion)
     }
     
-    func register(a user: User, completion:@escaping (Result<Any>)->Void)  {
+    func register(a user: User, completion:@escaping (Result<User>)->Void)  {
         performRequest(route: UserRouter.createUser(user: user), completion: completion)
     }
-    
-    func getAll(completion:@escaping (Any)->Void) -> [User] {
-        return [User]()
-    }
-    
-    func get(identifier: Int) -> User? {
-        return User(fullName: "", username: "", password: "", email: "")
-    }
-    
-    func create(a: User) -> Bool {
-        return true
-    }
-    
-    func update(a: User) -> Bool {
-        return true
-    }
-    
-    func delete(a: User) -> Bool {
-        return true
-    }
-    
-    
-//
-//    public func signUp(user:User, completion:@escaping (Result<Any>)->Void) {
-//        performRequest(route: UserRouter.createUser(user: user), completion: completion)
-//    }
-    
 }

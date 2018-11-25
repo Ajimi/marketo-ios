@@ -14,7 +14,7 @@ protocol UserDataSource: DataSource {
     
 }
 
-class UserRepository:UserDataSource {
+class UserRepository {
     
     // Constructor must have local data source and remote data souree
     let remoteRepository: UserRemoteRepository
@@ -25,32 +25,12 @@ class UserRepository:UserDataSource {
         self.localRepository = localRepository
     }
     
-    func login(a user: User, completion:@escaping (Any)->Void){
+    func login(a user: User, completion:@escaping (Result<AccessToken>)->Void){
         remoteRepository.login(a: user, completion: completion)
     }
     
-    func register(a user: User, completion:@escaping (Any)->Void){
+    func register(a user: User, completion:@escaping (Result<User>)->Void){
         remoteRepository.register(a: user, completion: completion)
-    }
-    
-    func getAll(completion:@escaping (Any)->Void) -> [User] {
-        return [User]()
-    }
-    
-    func get(identifier: Int) -> User? {
-        return User(fullName: "", username: "", password: "", email: "")
-    }
-    
-    func create(a: User) -> Bool {
-        return true
-    }
-    
-    func update(a: User) -> Bool {
-        return true
-    }
-    
-    func delete(a: User) -> Bool {
-        return true
     }
     
 }

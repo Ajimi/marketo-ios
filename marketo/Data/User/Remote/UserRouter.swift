@@ -50,8 +50,8 @@ enum UserRouter: APIConfiguration {
         case .readUser:
             return nil
         case .createUser(let user):
-            return  [APIUserParameterKey.email : user.email , APIUserParameterKey.password : user.password ,
-                     APIUserParameterKey.username: user.username, APIUserParameterKey.fullname: user.fullName]
+            return  [APIUserParameterKey.email : user.email as! String , APIUserParameterKey.password : user.password as! String]
+            // Todo add  USERNAME AND OTHER STUFF
         }
     }
     
@@ -61,14 +61,11 @@ enum UserRouter: APIConfiguration {
         
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
         
-        // HTTP Method
         urlRequest.httpMethod = method.rawValue
         
-        // Common Headers
         urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.acceptType.rawValue)
         urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
         
-        // Parameters
         if let parameters = parameters {
             do {
                 urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])

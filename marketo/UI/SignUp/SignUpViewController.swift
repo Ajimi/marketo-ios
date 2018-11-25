@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController , UITextFieldDelegate{
     
     @IBOutlet var signUpViewModel : SignUpViewModel!
     @IBOutlet weak var fullName: UITextField!
@@ -19,28 +19,60 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     
     
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        resignFirstResponder()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        
+        fullName.delegate = self
+        username.delegate = self
+        password.delegate = self
+        confimPassword.delegate = self
+        email.delegate = self
+        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+        signUpViewModel.uiState.bindAndFire(listener: { (uiModel) in
+            if (uiModel.showProgress) {
+                print("in progression")
+                self.showWaiting(alert: alert)
+                // showProgression()
+            }
+            if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
+                print("there Was an error \(errorMessage)")
+                alert.dismiss(animated: true, completion: {
+                    self.showAlert(withTitle: "", withMessage: errorMessage)
+                })
+            }
+            
+            if let showSucces = uiModel.showSuccess, !showSucces.consumed, let successMessage = showSucces.consume() {
+                print(successMessage)
+                alert.dismiss(animated: true, completion: {
+                    self.showAlert(withTitle: "User Created", withMessage: "User Created Successful")
+                })
+          
+            }
+        })
     }
     
-   
+
     
     @IBAction func signUpCommand(_ sender: UIButton) {
-        
         signUpViewModel.user = User(
             fullName: self.fullName.text!,
             username: self.username.text!,
             password: self.password.text!,
             email: self.email.text!)
         signUpViewModel.confirmationPassword = self.confimPassword.text!
+        signUpViewModel.register()
         
-        if (self.signUpViewModel.isValid){
-            tryConnect();
-        } else {
-            showAlert(withTitle: "Invalid Entries", withMessage: signUpViewModel.prepareMessage())
-        }
     }
 }
 
@@ -49,20 +81,7 @@ class SignUpViewController: UIViewController {
 // MARK: - User Creation Extension
 extension SignUpViewController {
     func tryConnect() {
-        signUpViewModel.register(completion: { (result) in
-            self.checkResponseFor(response: result as! Result<Any>)
-        })
-    }
-    
-    func checkResponseFor(response : Result<Any>) {
-        switch response {
-        case .success(let user):
-            self.showAlert(withTitle: "Done!", withMessage :"SignUp Complete")
-            print(user)
-        // TODO: - Check Errors 
-        case .failure(let error):
-            print(error.localizedDescription)
-        }
+        signUpViewModel.register()
     }
 }
 
@@ -82,4 +101,16 @@ extension SignUpViewController {
         
         return alert
     }
+    
+    func showWaiting(alert:UIAlertController){
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.gray
+        loadingIndicator.startAnimating();
+        
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+    }
+    
 }
+

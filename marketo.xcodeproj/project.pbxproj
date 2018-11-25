@@ -13,8 +13,6 @@
 		87041AB721982FA100312FBF /* ProductRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AB621982FA100312FBF /* ProductRemoteRepository.swift */; };
 		87041AB921982FAF00312FBF /* ProductLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AB821982FAF00312FBF /* ProductLocalRepository.swift */; };
 		87041ABD2198308B00312FBF /* ProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041ABC2198308B00312FBF /* ProductRepository.swift */; };
-		870D68BC219884690024AED1 /* ProductViewYamaalemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870D68BB219884690024AED1 /* ProductViewYamaalemViewController.swift */; };
-		8717BAE42198668700D7F5C9 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8717BAE32198668700D7F5C9 /* ProductViewModel.swift */; };
 		871F138A21985A4300B23D30 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871F138921985A4300B23D30 /* MainTabViewController.swift */; };
 		87A4772D219735B4005937AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A4772C219735B4005937AD /* AppDelegate.swift */; };
 		87A4772F219735B4005937AD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A4772E219735B4005937AD /* LoginViewController.swift */; };
@@ -22,6 +20,9 @@
 		87A47735219735B4005937AD /* marketo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 87A47733219735B4005937AD /* marketo.xcdatamodeld */; };
 		87A47737219735B9005937AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87A47736219735B9005937AD /* Assets.xcassets */; };
 		87A4773A219735B9005937AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87A47738219735B9005937AD /* LaunchScreen.storyboard */; };
+		87FECD9921AABC5C00805944 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FECD9821AABC5C00805944 /* Dynamic.swift */; };
+		87FECD9B21AAC7FC00805944 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FECD9A21AAC7FC00805944 /* Event.swift */; };
+		87FECD9D21AAD59E00805944 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FECD9C21AAD59E00805944 /* AccessToken.swift */; };
 		87FF639021977AE5008EE969 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF638F21977AE5008EE969 /* Constants.swift */; };
 		87FF639221977B22008EE969 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF639121977B22008EE969 /* UserRouter.swift */; };
 		87FF639421977C44008EE969 /* UserRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF639321977C44008EE969 /* UserRemoteRepository.swift */; };
@@ -57,8 +58,6 @@
 		87041AB621982FA100312FBF /* ProductRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRemoteRepository.swift; sourceTree = "<group>"; };
 		87041AB821982FAF00312FBF /* ProductLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductLocalRepository.swift; sourceTree = "<group>"; };
 		87041ABC2198308B00312FBF /* ProductRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepository.swift; sourceTree = "<group>"; };
-		870D68BB219884690024AED1 /* ProductViewYamaalemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewYamaalemViewController.swift; sourceTree = "<group>"; };
-		8717BAE32198668700D7F5C9 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		871F138921985A4300B23D30 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		87A47729219735B4005937AD /* marketo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marketo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A4772C219735B4005937AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +67,9 @@
 		87A47736219735B9005937AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87A47739219735B9005937AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87A4773B219735B9005937AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87FECD9821AABC5C00805944 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		87FECD9A21AAC7FC00805944 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		87FECD9C21AAD59E00805944 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		87FF638F21977AE5008EE969 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		87FF639121977B22008EE969 /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
 		87FF639321977C44008EE969 /* UserRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRemoteRepository.swift; sourceTree = "<group>"; };
@@ -174,19 +176,9 @@
 				88E9984F219847E900D3FE04 /* Widget */,
 				885537702197619E0007B3B5 /* SignUp */,
 				888346F8219744A500FB3D26 /* Login */,
-				8717BAE02198664D00D7F5C9 /* Product */,
 				871F1388219859F700B23D30 /* Main */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		8717BAE02198664D00D7F5C9 /* Product */ = {
-			isa = PBXGroup;
-			children = (
-				8717BAE32198668700D7F5C9 /* ProductViewModel.swift */,
-				870D68BB219884690024AED1 /* ProductViewYamaalemViewController.swift */,
-			);
-			path = Product;
 			sourceTree = "<group>";
 		};
 		871F1388219859F700B23D30 /* Main */ = {
@@ -228,6 +220,8 @@
 				87A47738219735B9005937AD /* LaunchScreen.storyboard */,
 				87A4773B219735B9005937AD /* Info.plist */,
 				87A47733219735B4005937AD /* marketo.xcdatamodeld */,
+				87FECD9821AABC5C00805944 /* Dynamic.swift */,
+				87FECD9A21AAC7FC00805944 /* Event.swift */,
 			);
 			path = marketo;
 			sourceTree = "<group>";
@@ -269,6 +263,7 @@
 				885537762197649F0007B3B5 /* User.swift */,
 				88E998552198717600D3FE04 /* Product.swift */,
 				88E998572198722B00D3FE04 /* Price.swift */,
+				87FECD9C21AAD59E00805944 /* AccessToken.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,7 +304,7 @@
 				87A47725219735B3005937AD /* Sources */,
 				87A47726219735B3005937AD /* Frameworks */,
 				87A47727219735B3005937AD /* Resources */,
-				B1022369C96B087EAF674479 /* [CP] Embed Pods Frameworks */,
+				64DC6782856E8B16ADAADDB5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -397,6 +392,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		64DC6782856E8B16ADAADDB5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-marketo/Pods-marketo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-marketo/Pods-marketo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A7160BF05A7CF20A225E51D6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -419,28 +436,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B1022369C96B087EAF674479 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-marketo/Pods-marketo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-marketo/Pods-marketo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -456,10 +451,10 @@
 				87041ABD2198308B00312FBF /* ProductRepository.swift in Sources */,
 				88E9985A2198764600D3FE04 /* ProductRouter.swift in Sources */,
 				88E998562198717600D3FE04 /* Product.swift in Sources */,
-				8717BAE42198668700D7F5C9 /* ProductViewModel.swift in Sources */,
 				87041AB721982FA100312FBF /* ProductRemoteRepository.swift in Sources */,
-				870D68BC219884690024AED1 /* ProductViewYamaalemViewController.swift in Sources */,
+				87FECD9D21AAD59E00805944 /* AccessToken.swift in Sources */,
 				88E998542198491200D3FE04 /* HomeViewController.swift in Sources */,
+				87FECD9B21AAC7FC00805944 /* Event.swift in Sources */,
 				87A4772F219735B4005937AD /* LoginViewController.swift in Sources */,
 				88553772219761F00007B3B5 /* SignUpViewModel.swift in Sources */,
 				88E998582198722B00D3FE04 /* Price.swift in Sources */,
@@ -468,6 +463,7 @@
 				87FF639421977C44008EE969 /* UserRemoteRepository.swift in Sources */,
 				87A4772D219735B4005937AD /* AppDelegate.swift in Sources */,
 				87041AB921982FAF00312FBF /* ProductLocalRepository.swift in Sources */,
+				87FECD9921AABC5C00805944 /* Dynamic.swift in Sources */,
 				885537772197649F0007B3B5 /* User.swift in Sources */,
 				88E998512198483900D3FE04 /* Extension.swift in Sources */,
 				87041AB321982F2600312FBF /* UserLocalRepository.swift in Sources */,

@@ -12,7 +12,7 @@ import Alamofire
 class ProductRemoteRepository{
     
     private func performRequest(route:ProductRouter, completion:@escaping (Result<Any>)->Void){
-        Alamofire.request(route)
+        AF.request(route)
             .responseJSON{ (response: DataResponse<Any>) in
                 completion(response.result)
         }
