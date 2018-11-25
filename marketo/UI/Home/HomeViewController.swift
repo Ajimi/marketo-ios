@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class HomeViewController: UIViewController {
 
@@ -34,10 +33,14 @@ class HomeViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
+    @IBAction func grabACartAction(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "CommandStoryboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "MainTabViewController") as UIViewController
+        present(vc, animated: true, completion: nil)
+    }
+    
     @IBAction func navigateToSignNn(_ sender: UIButton) {
-        
-        performSegue(withIdentifier: "goToSignIn", sender: nil)
-        
+            
     }
     
     /*

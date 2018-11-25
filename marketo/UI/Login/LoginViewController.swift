@@ -38,7 +38,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func navigateToSignUp(_ sender: UIButton) {
-        performSegue(withIdentifier: "goToSignUp", sender: nil)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
