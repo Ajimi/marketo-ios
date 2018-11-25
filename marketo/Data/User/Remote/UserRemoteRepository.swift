@@ -10,8 +10,6 @@ import Foundation
 import Alamofire
 
 
-
-
 class UserRemoteRepository{
     
     @discardableResult
