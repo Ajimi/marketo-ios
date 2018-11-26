@@ -20,8 +20,6 @@ class LoginViewModel: NSObject {
     
     
     func login(withUsername username : String,withPassword password:String) {
-    
-        
         emitUiState(showProgress: true)
         repository.login(a: User(username: username, password: password,email :username) ) { (result) in
             switch result {

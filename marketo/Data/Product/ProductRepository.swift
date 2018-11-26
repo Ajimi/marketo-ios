@@ -7,7 +7,7 @@
 //
 
 import Foundation
-	
+import Alamofire
 protocol ProductDataSource: DataSource {
     // TODO :Add methods
     
@@ -27,31 +27,9 @@ class ProductRepository {
     
 }
 
-extension ProductRepository: ProductDataSource{
+extension ProductRepository {
     
-    func getAll(completion:@escaping (Any)->Void) -> [Product] {
+    func getAll(completion:@escaping (Result<ProductList>)->Void) {
         remoteRepository.getAll(completion: completion)
-        return [Product]()
-        //remoteRepository.getAll()
-    }
-    
-    func get(identifier: Int) -> Product? {
-        return nil
-        //remoteRepository.get(identifier: 1)
-    }
-    
-    func create(a: Product) -> Bool {
-        return true
-        //remoteRepository.create(a: Product())
-    }
-    
-    func update(a: Product) -> Bool {
-        return true
-        //remoteRepository.update(a: Product())
-    }
-    
-    func delete(a: Product) -> Bool {
-        return true
-        //remoteRepository.delete(a: Product())
     }
 }

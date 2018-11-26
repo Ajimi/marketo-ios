@@ -11,38 +11,19 @@ import Alamofire
 
 class ProductRemoteRepository{
     
-    private func performRequest(route:ProductRouter, completion:@escaping (Result<Any>)->Void){
-        AF.request(route)
-            .responseJSON{ (response: DataResponse<Any>) in
+    @discardableResult
+    private func performRequest<T:Decodable>(route:ProductRouter, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (Result<T>)->Void) -> DataRequest {
+        return AF.request(route)
+            .validate(statusCode : 200..<300)
+            .responseJSONDecodable (decoder: decoder){ (response: DataResponse<T>) in
                 completion(response.result)
         }
     }
 }
 
-extension ProductRemoteRepository: ProductDataSource{
+extension ProductRemoteRepository{
     
-    func getAll(completion:@escaping (Any)->Void) -> [Product] {
+    func getAll(completion:@escaping (Result<ProductList>)->Void) {
         performRequest(route : ProductRouter.getAll(), completion:completion)
-        return [Product]()
-    }
-    
-    func get(identifier: Int) -> Product? {
-        return nil
-        //remoteRepository.get(identifier: 1)
-    }
-    
-    func create(a: Product) -> Bool {
-        return true
-        //remoteRepository.create(a: Product())
-    }
-    
-    func update(a: Product) -> Bool {
-        return true
-        //remoteRepository.update(a: Product())
-    }
-    
-    func delete(a: Product) -> Bool {
-        return true
-        //remoteRepository.delete(a: Product())
     }
 }

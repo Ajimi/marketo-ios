@@ -27,7 +27,9 @@ class UserRepository {
     
     func login(a user: User, completion:@escaping (Result<AccessToken>)->Void){
         // TO DO : add Error handling and
+        
         remoteRepository.login(a: user, completion: completion)
+        
     }
     
     func register(a user: User, completion:@escaping (Result<User>)->Void){

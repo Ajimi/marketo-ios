@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6v1-fQ-e5H">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,6 +9,90 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Product Collection View Controller-->
+        <scene sceneID="lAH-E3-9Mx">
+            <objects>
+                <collectionViewController id="Egn-FO-coj" customClass="ProductCollectionViewController" customModule="marketo" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="yxI-tI-oK4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eMU-yi-sUX">
+                            <size key="itemSize" width="147" height="131"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="productViewCell" id="xwu-6t-KCy" customClass="ProductViewCell" customModule="marketo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="147" height="131"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="147" height="131"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ftA-MZ-nUv">
+                                            <rect key="frame" x="0.0" y="-10" width="147" height="65.5"/>
+                                        </imageView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="95q-Tj-b7d">
+                                            <rect key="frame" x="20" y="65" width="42" height="45"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Otz-ut-WTl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3K-Dz-KQa">
+                                                    <rect key="frame" x="0.0" y="30.5" width="42" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3MI-4d-7VS">
+                                            <rect key="frame" x="77" y="92" width="55" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Favorite"/>
+                                            <connections>
+                                                <action selector="addToFavourite:" destination="xwu-6t-KCy" eventType="touchUpInside" id="SjV-3N-jfE"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="ftA-MZ-nUv" firstAttribute="width" secondItem="xwu-6t-KCy" secondAttribute="width" id="1KZ-8p-bA2"/>
+                                    <constraint firstItem="95q-Tj-b7d" firstAttribute="top" secondItem="ftA-MZ-nUv" secondAttribute="bottom" constant="9.5" id="8c8-7o-60v"/>
+                                    <constraint firstItem="ftA-MZ-nUv" firstAttribute="height" secondItem="xwu-6t-KCy" secondAttribute="height" multiplier="1:2" id="FhV-ul-wq7"/>
+                                    <constraint firstAttribute="trailing" secondItem="95q-Tj-b7d" secondAttribute="trailing" constant="85" id="FkV-tr-RaM"/>
+                                    <constraint firstItem="ftA-MZ-nUv" firstAttribute="top" secondItem="xwu-6t-KCy" secondAttribute="top" constant="-10" id="MHR-nP-Qve"/>
+                                    <constraint firstItem="95q-Tj-b7d" firstAttribute="leading" secondItem="xwu-6t-KCy" secondAttribute="leading" constant="20" id="dIk-4D-eOk"/>
+                                    <constraint firstItem="ftA-MZ-nUv" firstAttribute="centerX" secondItem="xwu-6t-KCy" secondAttribute="centerX" id="uEJ-yF-PQM"/>
+                                    <constraint firstAttribute="bottom" secondItem="95q-Tj-b7d" secondAttribute="bottom" constant="21" id="z2D-s8-2sP"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageProduct" destination="ftA-MZ-nUv" id="dww-vc-uY6"/>
+                                    <outlet property="nameProduct" destination="Otz-ut-WTl" id="xex-VS-7LA"/>
+                                    <outlet property="priceProduct" destination="w3K-Dz-KQa" id="qUi-Oi-2Dx"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Egn-FO-coj" id="W7K-4j-pH8"/>
+                            <outlet property="delegate" destination="Egn-FO-coj" id="zPn-P1-zJn"/>
+                        </connections>
+                    </collectionView>
+                    <connections>
+                        <outlet property="viewModel" destination="P0B-r9-c3N" id="2Ud-wL-D9p"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VQu-Db-pxp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="P0B-r9-c3N" customClass="ProductListViewModel" customModule="marketo" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="228" y="852.3238380809596"/>
+        </scene>
         <!--SIGN IN-->
         <scene sceneID="tne-QT-ifu">
             <objects>

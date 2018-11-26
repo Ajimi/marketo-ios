@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C5F9E2921ABE79100BE9E1C /* ProductCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F9E2821ABE79100BE9E1C /* ProductCollectionViewController.swift */; };
+		2C5F9E2B21ABE7A300BE9E1C /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F9E2A21ABE7A300BE9E1C /* ProductListViewModel.swift */; };
+		2C5F9E2F21ABEADA00BE9E1C /* ProductViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F9E2E21ABEADA00BE9E1C /* ProductViewCell.swift */; };
+		2C5F9E3221ABFF7300BE9E1C /* ProductCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F9E3121ABFF7300BE9E1C /* ProductCellViewModel.swift */; };
+		2C5F9E3421AC04B200BE9E1C /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F9E3321AC04B200BE9E1C /* Configurable.swift */; };
+		2C5F9E3621AC094800BE9E1C /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F9E3521AC094800BE9E1C /* PersistenceManager.swift */; };
 		87041AA72198144300312FBF /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AA62198144300312FBF /* UserRepository.swift */; };
 		87041AA92198145600312FBF /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AA82198145600312FBF /* DataSource.swift */; };
 		87041AB321982F2600312FBF /* UserLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AB221982F2600312FBF /* UserLocalRepository.swift */; };
@@ -53,6 +59,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C5F9E2821ABE79100BE9E1C /* ProductCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewController.swift; sourceTree = "<group>"; };
+		2C5F9E2A21ABE7A300BE9E1C /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
+		2C5F9E2E21ABEADA00BE9E1C /* ProductViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewCell.swift; sourceTree = "<group>"; };
+		2C5F9E3121ABFF7300BE9E1C /* ProductCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCellViewModel.swift; sourceTree = "<group>"; };
+		2C5F9E3321AC04B200BE9E1C /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
+		2C5F9E3521AC094800BE9E1C /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		45D941B64E8D5DB93E13DF9E /* Pods_marketoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_marketoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		815D5919280C5D615384F382 /* Pods_marketo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_marketo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87041AA62198144300312FBF /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
@@ -122,6 +134,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		2C5F9E3021ABFF5000BE9E1C /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				2C5F9E2821ABE79100BE9E1C /* ProductCollectionViewController.swift */,
+				2C5F9E2A21ABE7A300BE9E1C /* ProductListViewModel.swift */,
+				2C5F9E2E21ABEADA00BE9E1C /* ProductViewCell.swift */,
+				2C5F9E3121ABFF7300BE9E1C /* ProductCellViewModel.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
 		849EC38D6BF19C3DA52A17C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +208,7 @@
 				885537702197619E0007B3B5 /* SignUp */,
 				888346F8219744A500FB3D26 /* Login */,
 				871F1388219859F700B23D30 /* Main */,
+				2C5F9E3021ABFF5000BE9E1C /* Product */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -231,6 +255,7 @@
 				87A47733219735B4005937AD /* marketo.xcdatamodeld */,
 				88BC8F5921AB2CC40013D4EB /* Util */,
 				88BC8F5321AB190C0013D4EB /* CommandStoryboard.storyboard */,
+				2C5F9E3321AC04B200BE9E1C /* Configurable.swift */,
 			);
 			path = marketo;
 			sourceTree = "<group>";
@@ -314,6 +339,7 @@
 			children = (
 				87FECD9821AABC5C00805944 /* Dynamic.swift */,
 				87FECD9A21AAC7FC00805944 /* Event.swift */,
+				2C5F9E3521AC094800BE9E1C /* PersistenceManager.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -444,6 +470,9 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-marketo/Pods-marketo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -451,6 +480,9 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,6 +521,7 @@
 			files = (
 				871F138A21985A4300B23D30 /* MainTabViewController.swift in Sources */,
 				87041AA72198144300312FBF /* UserRepository.swift in Sources */,
+				2C5F9E3221ABFF7300BE9E1C /* ProductCellViewModel.swift in Sources */,
 				885537742197622E0007B3B5 /* SignUpViewController.swift in Sources */,
 				88E9985C2198769C00D3FE04 /* ApiConfiguration.swift in Sources */,
 				8855376D219752EA0007B3B5 /* LoginViewModel.swift in Sources */,
@@ -497,12 +530,15 @@
 				88E998562198717600D3FE04 /* Product.swift in Sources */,
 				87041AB721982FA100312FBF /* ProductRemoteRepository.swift in Sources */,
 				87FECD9D21AAD59E00805944 /* AccessToken.swift in Sources */,
+				2C5F9E3621AC094800BE9E1C /* PersistenceManager.swift in Sources */,
 				88E998542198491200D3FE04 /* HomeViewController.swift in Sources */,
 				87FECD9B21AAC7FC00805944 /* Event.swift in Sources */,
 				87A4772F219735B4005937AD /* LoginViewController.swift in Sources */,
 				88553772219761F00007B3B5 /* SignUpViewModel.swift in Sources */,
 				88E998582198722B00D3FE04 /* Price.swift in Sources */,
+				2C5F9E2921ABE79100BE9E1C /* ProductCollectionViewController.swift in Sources */,
 				87FF639221977B22008EE969 /* UserRouter.swift in Sources */,
+				2C5F9E2F21ABEADA00BE9E1C /* ProductViewCell.swift in Sources */,
 				87A47735219735B4005937AD /* marketo.xcdatamodeld in Sources */,
 				87FF639421977C44008EE969 /* UserRemoteRepository.swift in Sources */,
 				87A4772D219735B4005937AD /* AppDelegate.swift in Sources */,
@@ -511,7 +547,9 @@
 				885537772197649F0007B3B5 /* User.swift in Sources */,
 				88E998512198483900D3FE04 /* Extension.swift in Sources */,
 				88BC8F5721AB24540013D4EB /* AlertExtension.swift in Sources */,
+				2C5F9E3421AC04B200BE9E1C /* Configurable.swift in Sources */,
 				88BC8F4D21AAD3EB0013D4EB /* FeaturedViewController.swift in Sources */,
+				2C5F9E2B21ABE7A300BE9E1C /* ProductListViewModel.swift in Sources */,
 				87041AB321982F2600312FBF /* UserLocalRepository.swift in Sources */,
 				87FF639021977AE5008EE969 /* Constants.swift in Sources */,
 				87041AA92198145600312FBF /* DataSource.swift in Sources */,
