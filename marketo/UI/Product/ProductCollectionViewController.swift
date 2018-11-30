@@ -14,7 +14,7 @@ class ProductCollectionViewController: UICollectionViewController {
 
     
     @IBOutlet var viewModel: ProductListViewModel!
-    var products = [ProductItem]()
+    var products = Products()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,7 @@ class ProductCollectionViewController: UICollectionViewController {
             }
             
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let productsResponse = showSucces.consume() {
-                self.products = productsResponse.data
+                self.products = productsResponse
                 print("ProductCoollection View \(self.products)")
                 self.collectionView.reloadData()
             }

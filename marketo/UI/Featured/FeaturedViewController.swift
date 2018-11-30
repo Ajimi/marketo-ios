@@ -8,18 +8,72 @@
 
 import UIKit
 
+
+private let categoryHomeReuseIdentifier = "CategoryHomeCell"
+
+private let productHomeTrendingReuseIdentifier = "ProductTrendingHomeCell"
+
 class FeaturedViewController: UIViewController, UICollectionViewDataSource {
     
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var trendingProductCollectionView: UICollectionView!
+    
+    let viewModel = FeaturedViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        
+        
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.updateUI()
+        
+        
+        // ALL PRODUCTS
+        viewModel.uiProductState.bindAndFire(listener: { (uiModel) in
+            if (uiModel.showProgress) {
+                print("In progress")
+            }
+            if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
+                print("there Was an error \(errorMessage)")
+            }
+            
+            if let showSucces = uiModel.showSuccess, !showSucces.consumed, let productsResponse = showSucces.consume() {
+                print(productsResponse)
+            }
+        })
+        
+        // ALL PRODUCTS
+        viewModel.uiTrendingState.bindAndFire(listener: { (uiModel) in
+            if (uiModel.showProgress) {
+                print("In progress")
+            }
+            if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
+                print("there Was an error \(errorMessage)")
+            }
+            
+            if let showSucces = uiModel.showSuccess, !showSucces.consumed, let productsResponse = showSucces.consume() {
+                print(productsResponse)
+            }
+        })
+        
+        // ALL PRODUCTS
+        viewModel.uiDiscountedState.bindAndFire(listener: { (uiModel) in
+            if (uiModel.showProgress) {
+                print("In progress")
+            }
+            if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
+                print("there Was an error \(errorMessage)")
+            }
+            
+            if let showSucces = uiModel.showSuccess, !showSucces.consumed, let productsResponse = showSucces.consume() {
+                print(productsResponse)
+            }
+        })
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
@@ -31,15 +85,17 @@ class FeaturedViewController: UIViewController, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if (collectionView == self.collectionView){
-            let cel = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCell", for: indexPath)
-            return cel;
+        if (collectionView == self.categoriesCollectionView){
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryHomeReuseIdentifier, for: indexPath) as! CategoryHomeCollectionViewCell
+            return cell;
         }else{
-            let cel = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCatCell", for: indexPath)
-            return cel;
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: productHomeTrendingReuseIdentifier, for: indexPath) as! TrendingProductCollectionViewCell
+            
+            return cell;
         }
     }
-    
+
+}
 
     /*
     // MARK: - Navigation
@@ -50,5 +106,3 @@ class FeaturedViewController: UIViewController, UICollectionViewDataSource {
         // Pass the selected object to the new view controller.
     }
     */
-
-}

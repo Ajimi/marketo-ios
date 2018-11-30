@@ -57,7 +57,6 @@ extension SignUpViewModel {
             print(error.localizedDescription)
         }
     }
-    
 }
 
 

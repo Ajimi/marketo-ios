@@ -20,6 +20,8 @@ class ProductViewCell: UICollectionViewCell {
         // viewModel.addToFavourite()
         print(viewModel.product.name)
     }
+    
+    
     func configure(withViewModel viewModel: ProductCellViewModel){
         self.viewModel = viewModel
         

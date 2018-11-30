@@ -18,10 +18,10 @@ protocol RowViewModel {
 class ProductCellViewModel {
    
     
-    var product: ProductItem
+    var product: Product
     let repository = ProductRepository()
     
-    init(with product:ProductItem) {
+    init(with product:Product) {
         self.product = product
     }
     

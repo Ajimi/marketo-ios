@@ -13,7 +13,7 @@ class ProductListViewModel: NSObject {
     
      var uiState =  Dynamic<ProductListUiModel>(ProductListUiModel(showProgress: false, showError: nil , showSuccess: nil))
     
-    var products = [ProductItem]()
+    var products = Products()
     
     let repository = ProductRepository()
     
@@ -22,7 +22,7 @@ class ProductListViewModel: NSObject {
         repository.getAll(completion: getAllResponse)
     }
     
-    func getAllResponse(response : Result<ProductList>) {
+    func getAllResponse(response : Result<Products>) {
         switch response {
         case .success(let products):
             print(products)
@@ -40,7 +40,7 @@ extension ProductListViewModel {
     private func emitUiState(
         showProgress: Bool = false,
         showError: Event<String>? = nil,
-        showSuccess: Event<ProductList>? = nil
+        showSuccess: Event<Products>? = nil
         ) {
         
         let uiModel = ProductListUiModel(showProgress: showProgress, showError: showError, showSuccess: showSuccess)
@@ -51,6 +51,6 @@ extension ProductListViewModel {
 struct ProductListUiModel {
     var showProgress: Bool
     var showError: Event<String>?
-    var showSuccess: Event<ProductList>?
+    var showSuccess: Event<Products>?
 }
 
