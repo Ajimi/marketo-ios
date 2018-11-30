@@ -12,10 +12,10 @@ import Alamofire
 enum ProductRouter : APIConfiguration {
     
     case getAll()
+    case getFeatured()
+    case getDiscounted()
     case get(id : Int)
-    case create(Product: Product)
-    case delete(Product: Product)
-    case update(Product: Product)
+    
     
     // MARK: - HTTPMethod
     var method: HTTPMethod {
@@ -24,12 +24,10 @@ enum ProductRouter : APIConfiguration {
             return .get
         case .get:
             return .get
-        case .create:
-            return .post
-        case .delete:
-            return .delete
-        case .update:
-            return .put
+        case .getFeatured:
+            return .get
+        case .getDiscounted:
+            return .get
         }
     }
     
@@ -40,12 +38,10 @@ enum ProductRouter : APIConfiguration {
             return ""
         case .get(let id):
             return "/\(id)"
-        case .create:
-            return ""
-        case .delete(let product):
-            return "/\(product.id!)"
-        case .update(let product):
-            return "/\(product.id!)"
+        case .getFeatured:
+            return "" // TODO CHANGE THE PATH featureds
+        case .getDiscounted:
+            return "" // TODO CHANGE THE PATH TO discounted
         }
     }
     
@@ -54,16 +50,12 @@ enum ProductRouter : APIConfiguration {
         switch self {
         case .getAll:
             return nil
-        case .create(let product):
-            return  [APIProductParameterKey.name : product.name ,
-                     APIProductParameterKey.description : product.description]
-        case .delete:
-            return nil
         case .get:
             return nil
-        case .update(let product):
-            return  [APIProductParameterKey.name : product.name ,
-                     APIProductParameterKey.description : product.description]
+        case .getFeatured:
+            return nil
+        case .getDiscounted:
+            return nil
         }
     }
     

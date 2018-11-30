@@ -23,7 +23,17 @@ class ProductRemoteRepository{
 
 extension ProductRemoteRepository{
     
-    func getAll(completion:@escaping (Result<ProductList>)->Void) {
+    func getAll(completion:@escaping (Result<Products>)->Void) {
         performRequest(route : ProductRouter.getAll(), completion:completion)
+    }
+    
+    func getTrending(completion:@escaping (Result<Products>)->Void) {
+        performRequest(route: ProductRouter.getFeatured(), completion: completion)
+        // TODO CHANGE THE ROUTER TO getFeatured
+    }
+    
+    func getDiscounted(completion:@escaping (Result<Products>)->Void) {
+        performRequest(route: ProductRouter.getDiscounted(), completion: completion)
+        // TODO CHANGE THE ROUTER TO getFeatured
     }
 }

@@ -23,13 +23,21 @@ class ProductRepository {
         self.remoteRepository = remoteRepository
         self.localRepository = localRepository
     }
-    
-    
 }
 
 extension ProductRepository {
     
-    func getAll(completion:@escaping (Result<ProductList>)->Void) {
+    func getAll(completion:@escaping (Result<Products>)->Void) {
         remoteRepository.getAll(completion: completion)
     }
+    
+    func getTrending(completion:@escaping (Result<Products>)->Void) {
+        remoteRepository.getTrending(completion: completion)
+    }
+    
+    
+    func getDiscounted(completion:@escaping (Result<Products>)->Void) {
+        remoteRepository.getDiscounted(completion: completion)
+    }
+    
 }
