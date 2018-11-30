@@ -23,7 +23,10 @@ class FeaturedViewModel: ViewModel {
     var uiCategoryState = Dynamic<UiState<Int>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
     var uiTrendingState = Dynamic<UiState<Products>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
     var uiDiscountedState = Dynamic<UiState<Products>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
-    
+
+    var products:Products = Products()
+    var trendingProducts:Products = Products()
+    var discountedProducts:Products = Products()
 
     func updateUI() {
         uiCategoryState.value = emitUiState(showSuccess: Event(with: 1))
@@ -39,6 +42,7 @@ class FeaturedViewModel: ViewModel {
         loadProductUseCase.execute { (response) in
             switch response {
             case .success(let products):
+                self.products = products
                 self.uiProductState.value = self.emitUiState(showSuccess: Event(with: products))
             case .failure(let error):
                 self.uiProductState.value = self.emitUiState(showProgress: false, showError: Event(with: error.localizedDescription))
@@ -51,6 +55,7 @@ class FeaturedViewModel: ViewModel {
         loadTrendingProductUseCase.execute { (response) in
             switch response {
             case .success(let products):
+                self.trendingProducts = products
                 self.uiTrendingState.value = self.emitUiState(showSuccess: Event(with: products))
             case .failure(let error):
                 self.uiTrendingState.value = self.emitUiState(showProgress: false, showError: Event(with: error.localizedDescription))
@@ -64,11 +69,20 @@ class FeaturedViewModel: ViewModel {
         loadDiscountedProductUseCase.execute { (response) in
             switch response {
             case .success(let products):
+                self.discountedProducts = products
                 self.uiDiscountedState.value = self.emitUiState(showSuccess: Event(with: products))
             case .failure(let error):
                 self.uiDiscountedState.value = self.emitUiState(showProgress: false, showError: Event(with: error.localizedDescription))
             }
         }
+    }
+    
+    func addToBaskeProducts()  {
+        
+    }
+    
+    func addToWishListProducts() {
+         
     }
 }
 
