@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,11 +14,11 @@
             <objects>
                 <viewController title="Home" id="aPb-3n-qoJ" customClass="FeaturedViewController" customModule="marketo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kaa-bb-ViV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="Looking for Something ?" translatesAutoresizingMaskIntoConstraints="NO" id="mMq-yC-Bd9">
-                                <rect key="frame" x="0.0" y="88" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="Mcr-hm-jFb"/>
@@ -28,10 +28,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home1" translatesAutoresizingMaskIntoConstraints="NO" id="i2C-PF-Anp">
-                                <rect key="frame" x="16" y="157" width="343" height="252"/>
+                                <rect key="frame" x="16" y="133" width="343" height="165"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X2h-g6-IYs">
-                                <rect key="frame" x="16" y="423" width="343" height="64"/>
+                                <rect key="frame" x="16" y="312" width="343" height="64"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="QmX-iJ-GII"/>
@@ -43,7 +43,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="itemCatCell" id="joe-dz-9Tc">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryHomeCell" id="joe-dz-9Tc" customClass="CategoryHomeCollectionViewCell" customModule="marketo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -71,6 +71,10 @@
                                             <constraint firstAttribute="bottom" secondItem="gax-fr-368" secondAttribute="bottom" constant="13" id="h9h-gw-ZV6"/>
                                             <constraint firstAttribute="trailing" secondItem="u1z-9P-89M" secondAttribute="trailing" id="ocu-vr-dqL"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="image" destination="gax-fr-368" id="chy-us-iDi"/>
+                                            <outlet property="name" destination="u1z-9P-89M" id="rvR-40-QPa"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -78,7 +82,7 @@
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LtV-Rr-H8K">
-                                <rect key="frame" x="16" y="501" width="343" height="170"/>
+                                <rect key="frame" x="16" y="390" width="343" height="170"/>
                                 <color key="backgroundColor" red="1" green="0.97254901959999995" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Qzh-Fq-i1w">
                                     <size key="itemSize" width="124" height="170"/>
@@ -87,7 +91,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="itemCell" id="cg6-oo-GRP">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductTrendingHomeCell" id="cg6-oo-GRP" customClass="TrendingProductCollectionViewCell" customModule="marketo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="124" height="170"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -106,6 +110,9 @@
                                             <constraint firstAttribute="trailing" secondItem="zie-4A-gGl" secondAttribute="trailing" id="Pga-1y-V97"/>
                                             <constraint firstItem="zie-4A-gGl" firstAttribute="leading" secondItem="cg6-oo-GRP" secondAttribute="leading" id="mW4-db-C4H"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="image" destination="zie-4A-gGl" id="T4N-AV-czl"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -134,8 +141,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Featued" id="po2-t8-EiP"/>
                     <connections>
-                        <outlet property="categoriesCollectionView" destination="X2h-g6-IYs" id="cA2-Sa-zJ8"/>
-                        <outlet property="collectionView" destination="LtV-Rr-H8K" id="NDb-zr-Z63"/>
+                        <outlet property="categoriesCollectionView" destination="X2h-g6-IYs" id="Qqx-DM-pp3"/>
+                        <outlet property="trendingProductCollectionView" destination="LtV-Rr-H8K" id="fkQ-CU-WC4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXN-Fx-iXi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -147,7 +154,7 @@
             <objects>
                 <viewController id="aEo-tm-wZi" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qFv-3M-o7b">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.97254901959999995" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="wXW-Ya-cxM"/>
@@ -163,7 +170,7 @@
             <objects>
                 <viewController id="TZS-Nf-jwA" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dtQ-hg-gMl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.97254901959999995" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Njo-Aw-2Tk"/>
@@ -179,7 +186,7 @@
             <objects>
                 <viewController title="Favorite" id="bvA-Ao-sPi" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IDT-j1-pGw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.97254901959999995" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="ZER-TS-LVg"/>
@@ -195,7 +202,7 @@
             <objects>
                 <viewController title="More" id="s8u-7t-DgO" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qKV-I5-H2W">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.97254901959999995" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="KQJ-LE-FEK"/>
@@ -237,7 +244,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="shop" id="7ni-YZ-43Z"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lBk-m4-o1n">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.92941176469999998" green="0.5568627451" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -266,7 +273,7 @@
                     <tabBarItem key="tabBarItem" title="Category" image="layers" id="YD6-aF-1fb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lul-IS-jcR">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.92941176469999998" green="0.5568627451" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -290,7 +297,7 @@
                     <tabBarItem key="tabBarItem" title="Cart" image="shopping_cart_loaded" id="num-m9-7YH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="21k-J4-Q6w">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.92941176469999998" green="0.5568627451" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -314,7 +321,7 @@
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="zxr-kK-Vg1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VoQ-aT-4Ki">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.92941176469999998" green="0.5568627451" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -338,7 +345,7 @@
                     <tabBarItem key="tabBarItem" systemItem="more" id="HuF-8d-Wfx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="b2W-1N-Paj">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.92941176469999998" green="0.5568627451" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
