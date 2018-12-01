@@ -9,7 +9,7 @@
 import UIKit
 
 
-private let categoryHomeReuseIdentifier = "CategoryHomeCell"
+private let pavilionHomeReuseIdentifier = "PavilionHomeCell"
 
 private let productHomeTrendingReuseIdentifier = "ProductTrendingHomeCell"
 
@@ -18,7 +18,7 @@ private let productHomeDiscountedReuseIdentifier = "ProductDiscountedHomeCell"
 
 class FeaturedViewController: UIViewController, UICollectionViewDataSource {
     
-    @IBOutlet weak var categoriesCollectionView: UICollectionView!
+    @IBOutlet weak var pavilionsCollectionView: UICollectionView!
     
     @IBOutlet weak var trendingProductCollectionView: UICollectionView!
     
@@ -44,6 +44,7 @@ class FeaturedViewController: UIViewController, UICollectionViewDataSource {
             
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let productsResponse = showSucces.consume() {
                 print(productsResponse)
+                self.trendingProductCollectionView.reloadData()
             }
         })
         
@@ -58,31 +59,63 @@ class FeaturedViewController: UIViewController, UICollectionViewDataSource {
             
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let productsResponse = showSucces.consume() {
                 print(productsResponse)
+                self.discountedProductCollectionView.reloadData()
             }
         })
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        
+        // Pavilion
+        viewModel.uiPavilionsState.bindAndFire(listener: { (uiModel) in
+            if (uiModel.showProgress) {
+                print("In progress")
+            }
+            if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
+                print("there Was an error \(errorMessage)")
+            }
+            
+            if let showSucces = uiModel.showSuccess, !showSucces.consumed, let productsResponse = showSucces.consume() {
+                print(productsResponse)
+                self.pavilionsCollectionView.reloadData()
+            }
+        })
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if (collectionView == self.pavilionsCollectionView){
+            return viewModel.trendingProducts.count
+        }
+        else if (collectionView == self.trendingProductCollectionView){
+            return viewModel.trendingProducts.count
+        }
+        else{
+            return viewModel.discountedProducts.count
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if (collectionView == self.categoriesCollectionView){
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryHomeReuseIdentifier, for: indexPath) as! CategoryHomeCollectionViewCell
+        if (collectionView == self.pavilionsCollectionView){
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: pavilionHomeReuseIdentifier, for: indexPath) as! PavilionHomeCollectionViewCell
+            
+            cell.configure(with: viewModel.pavilions[indexPath.row])
+            
             return cell;
         }
         else if (collectionView == self.trendingProductCollectionView){
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: productHomeTrendingReuseIdentifier, for: indexPath) as! TrendingProductCollectionViewCell
             
+            cell.configure(with: viewModel.trendingProducts[indexPath.row])
+            
             return cell;
         }
         else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: productHomeDiscountedReuseIdentifier, for: indexPath) as! DiscountedProductCollectionViewCell
+            
+            cell.configure(with: viewModel.discountedProducts[indexPath.row])
+            
             return cell;
         }
     }
