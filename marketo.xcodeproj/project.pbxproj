@@ -26,10 +26,6 @@
 		2C038F7221B1947100B84B0E /* BasketRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C038F7121B1947100B84B0E /* BasketRouter.swift */; };
 		2C038F7421B1948600B84B0E /* BasketRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C038F7321B1948600B84B0E /* BasketRepository.swift */; };
 		2C038F7621B1985D00B84B0E /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C038F7521B1985D00B84B0E /* Basket.swift */; };
-		2C5F9E2921ABE79100BE9E1C /* ProductCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F9E2821ABE79100BE9E1C /* ProductCollectionViewController.swift */; };
-		2C5F9E2B21ABE7A300BE9E1C /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F9E2A21ABE7A300BE9E1C /* ProductListViewModel.swift */; };
-		2C5F9E2F21ABEADA00BE9E1C /* ProductViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F9E2E21ABEADA00BE9E1C /* ProductViewCell.swift */; };
-		2C5F9E3221ABFF7300BE9E1C /* ProductCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F9E3121ABFF7300BE9E1C /* ProductCellViewModel.swift */; };
 		2C5F9E3421AC04B200BE9E1C /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F9E3321AC04B200BE9E1C /* UseCase.swift */; };
 		2C5F9E3621AC094800BE9E1C /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F9E3521AC094800BE9E1C /* PersistenceManager.swift */; };
 		87041AA72198144300312FBF /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AA62198144300312FBF /* UserRepository.swift */; };
@@ -46,12 +42,6 @@
 		87A47735219735B4005937AD /* marketo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 87A47733219735B4005937AD /* marketo.xcdatamodeld */; };
 		87A47737219735B9005937AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87A47736219735B9005937AD /* Assets.xcassets */; };
 		87A4773A219735B9005937AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87A47738219735B9005937AD /* LaunchScreen.storyboard */; };
-		87ADBE4621AB3B1700E98D98 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ADBE4521AB3B1700E98D98 /* PersistenceManager.swift */; };
-		87ADBE4D21AB3CCA00E98D98 /* ProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ADBE4C21AB3CCA00E98D98 /* ProductTableViewController.swift */; };
-		87ADBE4F21AB3CF000E98D98 /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ADBE4E21AB3CF000E98D98 /* ProductListViewModel.swift */; };
-		87ADBE5521AB3F9900E98D98 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ADBE5421AB3F9900E98D98 /* ProductTableViewCell.swift */; };
-		87ADBE5721AB3FB100E98D98 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ADBE5621AB3FB100E98D98 /* ProductCollectionViewCell.swift */; };
-		87ADBE5921AB42C800E98D98 /* ProductCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ADBE5821AB42C800E98D98 /* ProductCollectionView.swift */; };
 		87FECD9921AABC5C00805944 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FECD9821AABC5C00805944 /* Dynamic.swift */; };
 		87FECD9B21AAC7FC00805944 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FECD9A21AAC7FC00805944 /* Event.swift */; };
 		87FECD9D21AAD59E00805944 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FECD9C21AAD59E00805944 /* AccessToken.swift */; };
@@ -108,10 +98,6 @@
 		2C038F7121B1947100B84B0E /* BasketRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketRouter.swift; sourceTree = "<group>"; };
 		2C038F7321B1948600B84B0E /* BasketRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketRepository.swift; sourceTree = "<group>"; };
 		2C038F7521B1985D00B84B0E /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
-		2C5F9E2821ABE79100BE9E1C /* ProductCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewController.swift; sourceTree = "<group>"; };
-		2C5F9E2A21ABE7A300BE9E1C /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
-		2C5F9E2E21ABEADA00BE9E1C /* ProductViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewCell.swift; sourceTree = "<group>"; };
-		2C5F9E3121ABFF7300BE9E1C /* ProductCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCellViewModel.swift; sourceTree = "<group>"; };
 		2C5F9E3321AC04B200BE9E1C /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		2C5F9E3521AC094800BE9E1C /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		45D941B64E8D5DB93E13DF9E /* Pods_marketoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_marketoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,7 +118,6 @@
 		87A47736219735B9005937AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87A47739219735B9005937AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87A4773B219735B9005937AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		87ADBE4521AB3B1700E98D98 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		87ADBE4C21AB3CCA00E98D98 /* ProductTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewController.swift; sourceTree = "<group>"; };
 		87ADBE4E21AB3CF000E98D98 /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
 		87ADBE5421AB3F9900E98D98 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
@@ -278,17 +263,6 @@
 			path = Local;
 			sourceTree = "<group>";
 		};
-		2C5F9E3021ABFF5000BE9E1C /* Product */ = {
-			isa = PBXGroup;
-			children = (
-				2C5F9E2821ABE79100BE9E1C /* ProductCollectionViewController.swift */,
-				2C5F9E2A21ABE7A300BE9E1C /* ProductListViewModel.swift */,
-				2C5F9E2E21ABEADA00BE9E1C /* ProductViewCell.swift */,
-				2C5F9E3121ABFF7300BE9E1C /* ProductCellViewModel.swift */,
-			);
-			path = Product;
-			sourceTree = "<group>";
-		};
 		849EC38D6BF19C3DA52A17C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,7 +327,6 @@
 				885537702197619E0007B3B5 /* SignUp */,
 				888346F8219744A500FB3D26 /* Login */,
 				871F1388219859F700B23D30 /* Main */,
-				2C5F9E3021ABFF5000BE9E1C /* Product */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -401,7 +374,6 @@
 				87A47733219735B4005937AD /* marketo.xcdatamodeld */,
 				88BC8F5921AB2CC40013D4EB /* Util */,
 				88BC8F5321AB190C0013D4EB /* CommandStoryboard.storyboard */,
-				87ADBE4521AB3B1700E98D98 /* PersistenceManager.swift */,
 			);
 			path = marketo;
 			sourceTree = "<group>";
@@ -700,12 +672,9 @@
 				2C038F7021B1945C00B84B0E /* BasketRemoteRepository.swift in Sources */,
 				87041AA72198144300312FBF /* UserRepository.swift in Sources */,
 				2C038F7221B1947100B84B0E /* BasketRouter.swift in Sources */,
-				2C5F9E3221ABFF7300BE9E1C /* ProductCellViewModel.swift in Sources */,
 				885537742197622E0007B3B5 /* SignUpViewController.swift in Sources */,
 				88E9985C2198769C00D3FE04 /* ApiConfiguration.swift in Sources */,
-				87ADBE4D21AB3CCA00E98D98 /* ProductTableViewController.swift in Sources */,
 				8855376D219752EA0007B3B5 /* LoginViewModel.swift in Sources */,
-				87ADBE5921AB42C800E98D98 /* ProductCollectionView.swift in Sources */,
 				87041ABD2198308B00312FBF /* ProductRepository.swift in Sources */,
 				88E9985A2198764600D3FE04 /* ProductRouter.swift in Sources */,
 				88E998562198717600D3FE04 /* Product.swift in Sources */,
@@ -717,16 +686,12 @@
 				2C5F9E3621AC094800BE9E1C /* PersistenceManager.swift in Sources */,
 				88E998542198491200D3FE04 /* HomeViewController.swift in Sources */,
 				87FECD9B21AAC7FC00805944 /* Event.swift in Sources */,
-				87ADBE5721AB3FB100E98D98 /* ProductCollectionViewCell.swift in Sources */,
 				87A4772F219735B4005937AD /* LoginViewController.swift in Sources */,
-				87ADBE4F21AB3CF000E98D98 /* ProductListViewModel.swift in Sources */,
 				88553772219761F00007B3B5 /* SignUpViewModel.swift in Sources */,
 				2C038F6E21B1942900B84B0E /* BasketLocalRepository.swift in Sources */,
 				88E998582198722B00D3FE04 /* Price.swift in Sources */,
 				2C038F5221B15DF200B84B0E /* SaveProductToBaskeUseCase.swift in Sources */,
-				2C5F9E2921ABE79100BE9E1C /* ProductCollectionViewController.swift in Sources */,
 				87FF639221977B22008EE969 /* UserRouter.swift in Sources */,
-				2C5F9E2F21ABEADA00BE9E1C /* ProductViewCell.swift in Sources */,
 				2C038F4E21B15DB100B84B0E /* LoadTrendingProductUseCase.swift in Sources */,
 				87A47735219735B4005937AD /* marketo.xcdatamodeld in Sources */,
 				87FF639421977C44008EE969 /* UserRemoteRepository.swift in Sources */,
@@ -741,15 +706,12 @@
 				2C038F6421B191D800B84B0E /* CategoryRemoteRepository.swift in Sources */,
 				2C038F6021B191B900B84B0E /* CategoryRepository.swift in Sources */,
 				885537772197649F0007B3B5 /* User.swift in Sources */,
-				87ADBE4621AB3B1700E98D98 /* PersistenceManager.swift in Sources */,
-				87ADBE5521AB3F9900E98D98 /* ProductTableViewCell.swift in Sources */,
 				88E998512198483900D3FE04 /* Extension.swift in Sources */,
 				88BC8F5721AB24540013D4EB /* AlertExtension.swift in Sources */,
 				2C5F9E3421AC04B200BE9E1C /* UseCase.swift in Sources */,
 				88BC8F4D21AAD3EB0013D4EB /* FeaturedViewController.swift in Sources */,
 				2C038F7621B1985D00B84B0E /* Basket.swift in Sources */,
 				2C038F4821B15CBE00B84B0E /* FeaturedViewModel.swift in Sources */,
-				2C5F9E2B21ABE7A300BE9E1C /* ProductListViewModel.swift in Sources */,
 				2C038F7421B1948600B84B0E /* BasketRepository.swift in Sources */,
 				87041AB321982F2600312FBF /* UserLocalRepository.swift in Sources */,
 				87FF639021977AE5008EE969 /* Constants.swift in Sources */,
