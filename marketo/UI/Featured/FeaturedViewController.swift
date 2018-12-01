@@ -13,40 +13,27 @@ private let categoryHomeReuseIdentifier = "CategoryHomeCell"
 
 private let productHomeTrendingReuseIdentifier = "ProductTrendingHomeCell"
 
+private let productHomeDiscountedReuseIdentifier = "ProductDiscountedHomeCell"
+
+
 class FeaturedViewController: UIViewController, UICollectionViewDataSource {
     
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
     
     @IBOutlet weak var trendingProductCollectionView: UICollectionView!
     
+    @IBOutlet weak var discountedProductCollectionView: UICollectionView!
+    
     let viewModel = FeaturedViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         viewModel.updateUI()
         
-        
-        // ALL PRODUCTS
-        viewModel.uiProductState.bindAndFire(listener: { (uiModel) in
-            if (uiModel.showProgress) {
-                print("In progress")
-            }
-            if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
-                print("there Was an error \(errorMessage)")
-            }
-            
-            if let showSucces = uiModel.showSuccess, !showSucces.consumed, let productsResponse = showSucces.consume() {
-                print(productsResponse)
-            }
-        })
-        
-        // ALL PRODUCTS
+        // Trending PRODUCTS
         viewModel.uiTrendingState.bindAndFire(listener: { (uiModel) in
             if (uiModel.showProgress) {
                 print("In progress")
@@ -60,7 +47,7 @@ class FeaturedViewController: UIViewController, UICollectionViewDataSource {
             }
         })
         
-        // ALL PRODUCTS
+        // Discounted PRODUCTS
         viewModel.uiDiscountedState.bindAndFire(listener: { (uiModel) in
             if (uiModel.showProgress) {
                 print("In progress")
@@ -88,9 +75,14 @@ class FeaturedViewController: UIViewController, UICollectionViewDataSource {
         if (collectionView == self.categoriesCollectionView){
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryHomeReuseIdentifier, for: indexPath) as! CategoryHomeCollectionViewCell
             return cell;
-        }else{
+        }
+        else if (collectionView == self.trendingProductCollectionView){
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: productHomeTrendingReuseIdentifier, for: indexPath) as! TrendingProductCollectionViewCell
             
+            return cell;
+        }
+        else{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: productHomeDiscountedReuseIdentifier, for: indexPath) as! DiscountedProductCollectionViewCell
             return cell;
         }
     }
