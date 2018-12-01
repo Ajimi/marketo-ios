@@ -10,6 +10,7 @@ import Foundation
 
 class FeaturedViewModel: ViewModel {
     
+    let loadPavilionUseCase:LoadPavilionUseCase = LoadPavilionUseCase()
     let loadProductUseCase:LoadProductUseCase = LoadProductUseCase()
     let loadTrendingProductUseCase = LoadTrendingProductUseCase()
     let loadDiscountedProductUseCase = LoadDiscountedProductUseCase()
@@ -17,23 +18,35 @@ class FeaturedViewModel: ViewModel {
     let loadCategoryUseCase = ""
     let saveProductToBaskeUseCase = ""
     
-    
-    
     var uiProductState =  Dynamic<UiState<Products>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
-    var uiCategoryState = Dynamic<UiState<Int>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
+    var uiPavilionsState = Dynamic<UiState<Pavilions>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
     var uiTrendingState = Dynamic<UiState<Products>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
     var uiDiscountedState = Dynamic<UiState<Products>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
 
     var products:Products = Products()
+    var pavilions:Pavilions = Pavilions()
     var trendingProducts:Products = Products()
     var discountedProducts:Products = Products()
 
     func updateUI() {
-        uiCategoryState.value = emitUiState(showSuccess: Event(with: 1))
-        
+        loadAllPavilions()
         loadAllProducts()
         loadTrendingProducts()
         loadDiscountedProducts()
+    }
+    
+    func loadAllPavilions() {
+        
+        self.uiPavilionsState.value = self.emitUiState(showProgress: true)
+        loadPavilionUseCase.execute { (response) in
+            switch response {
+            case .success(let pavilions):
+                self.pavilions = pavilions
+                self.uiPavilionsState.value = self.emitUiState(showSuccess: Event(with: pavilions))
+            case .failure(let error):
+                self.uiPavilionsState.value = self.emitUiState(showProgress: false, showError: Event(with: error.localizedDescription))
+            }
+        }
     }
     
     func loadAllProducts() {
