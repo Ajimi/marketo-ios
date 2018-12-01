@@ -255,7 +255,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="v0e-5m-DbZ" customClass="CategoryCollectionViewCell" customModule="marketo" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCell" id="v0e-5m-DbZ" customClass="CategoryCollectionViewCell" customModule="marketo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="66" height="66"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -508,7 +508,7 @@
     <resources>
         <image name="home1" width="950" height="534"/>
         <image name="layers" width="30" height="30"/>
-        <image name="logo" width="500" height="500"/>
+        <image name="logo" width="250" height="250"/>
         <image name="shop" width="30" height="30"/>
         <image name="shopping_cart_loaded" width="30" height="30"/>
     </resources>

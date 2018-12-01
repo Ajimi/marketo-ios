@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
             
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let successMessage = showSucces.consume() {
                 alert.dismiss(animated: true, completion: {
-                    self.showAlert(withTitle: "Conncted", withMessage: "Sign In Successful")
+                    self.showAlert(withTitle: "Conncted", withMessage: successMessage)
                 })
             }
         })

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6v1-fQ-e5H">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rdN-hd-AEn">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -228,6 +228,110 @@ FlBhc3N3b3JkA
             </objects>
             <point key="canvasLocation" x="65" y="161"/>
         </scene>
+        <!--Product Table View Controller-->
+        <scene sceneID="LUa-z5-fkM">
+            <objects>
+                <tableViewController id="T2g-0l-4I3" customClass="ProductTableViewController" customModule="marketo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hKj-qD-292">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProductTableViewCell" rowHeight="170" id="DaW-27-0dG" customClass="ProductTableViewCell" customModule="marketo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="170"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DaW-27-0dG" id="gsQ-WM-u7S">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="169.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FKj-y3-8fD">
+                                            <rect key="frame" x="0.0" y="10" width="375" height="149.5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OoV-es-OJ5">
+                                                <size key="itemSize" width="50" height="50"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductCollectionViewCell" id="EVJ-es-A1p" customClass="ProductCollectionViewCell" customModule="marketo" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="135" height="145"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="135" height="145"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="rKi-oz-qx9">
+                                                                <rect key="frame" x="10" y="0.0" width="115" height="72.5"/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emG-9d-VGF">
+                                                                <rect key="frame" x="20" y="81" width="42" height="21"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ue6-JX-btw">
+                                                                <rect key="frame" x="20" y="104" width="29" height="14"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psh-iW-2h5">
+                                                                <rect key="frame" x="94" y="109" width="30" height="28"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                                <state key="normal" title="Add"/>
+                                                            </button>
+                                                        </subviews>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstItem="Ue6-JX-btw" firstAttribute="top" secondItem="emG-9d-VGF" secondAttribute="bottom" constant="2" id="2F9-zs-BgZ"/>
+                                                        <constraint firstAttribute="bottom" secondItem="psh-iW-2h5" secondAttribute="bottom" constant="8" id="47k-OG-SMY"/>
+                                                        <constraint firstItem="emG-9d-VGF" firstAttribute="firstBaseline" secondItem="rKi-oz-qx9" secondAttribute="baseline" constant="24.5" symbolType="layoutAnchor" id="J0u-4y-xBw"/>
+                                                        <constraint firstAttribute="trailing" secondItem="psh-iW-2h5" secondAttribute="trailing" constant="11" id="JnA-ha-6Rh"/>
+                                                        <constraint firstItem="rKi-oz-qx9" firstAttribute="width" secondItem="EVJ-es-A1p" secondAttribute="width" constant="-20" id="K5D-g3-hQk"/>
+                                                        <constraint firstItem="rKi-oz-qx9" firstAttribute="height" secondItem="EVJ-es-A1p" secondAttribute="height" multiplier="1:2" id="NVs-s1-ZG9"/>
+                                                        <constraint firstItem="rKi-oz-qx9" firstAttribute="centerX" secondItem="EVJ-es-A1p" secondAttribute="centerX" id="alp-U9-hdL"/>
+                                                        <constraint firstItem="rKi-oz-qx9" firstAttribute="top" secondItem="EVJ-es-A1p" secondAttribute="top" id="jI6-f7-eCH"/>
+                                                        <constraint firstItem="emG-9d-VGF" firstAttribute="leading" secondItem="EVJ-es-A1p" secondAttribute="leading" constant="20" id="kFX-qh-sXH"/>
+                                                        <constraint firstItem="Ue6-JX-btw" firstAttribute="leading" secondItem="EVJ-es-A1p" secondAttribute="leading" constant="20" id="sbM-Qj-ScI"/>
+                                                    </constraints>
+                                                    <size key="customSize" width="135" height="145"/>
+                                                    <connections>
+                                                        <outlet property="productExtre" destination="Ue6-JX-btw" id="sNs-KF-4mH"/>
+                                                        <outlet property="productImage" destination="rKi-oz-qx9" id="fNS-mc-kN3"/>
+                                                        <outlet property="productLabel" destination="emG-9d-VGF" id="ogU-0M-m6e"/>
+                                                    </connections>
+                                                </collectionViewCell>
+                                            </cells>
+                                        </collectionView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="FKj-y3-8fD" firstAttribute="centerX" secondItem="gsQ-WM-u7S" secondAttribute="centerX" id="c6S-vB-D4n"/>
+                                        <constraint firstItem="FKj-y3-8fD" firstAttribute="centerY" secondItem="gsQ-WM-u7S" secondAttribute="centerY" id="maI-aC-fvV"/>
+                                        <constraint firstItem="FKj-y3-8fD" firstAttribute="width" secondItem="gsQ-WM-u7S" secondAttribute="width" id="oH2-fE-OuV"/>
+                                        <constraint firstItem="FKj-y3-8fD" firstAttribute="height" secondItem="gsQ-WM-u7S" secondAttribute="height" constant="-20" id="vQP-2q-Tlf"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="productCollection" destination="FKj-y3-8fD" id="wsq-qI-I4B"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="T2g-0l-4I3" id="RnH-6u-nd7"/>
+                            <outlet property="delegate" destination="T2g-0l-4I3" id="oHO-az-79O"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="EZ8-qe-tOz"/>
+                    <connections>
+                        <outlet property="viewModel" destination="mNw-hM-Mue" id="Aoy-EJ-gLu"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1rf-jF-Gme" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="mNw-hM-Mue" customClass="ProductListViewModel" customModule="marketo" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="1124" y="977"/>
+        </scene>
         <!--SIGN UP-->
         <scene sceneID="2ly-M9-ZKZ">
             <objects>
@@ -434,9 +538,27 @@ FlBhc3N3b3JkA
             </objects>
             <point key="canvasLocation" x="65" y="-591"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aSf-88-e8R">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rdN-hd-AEn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1ZH-rh-Syt">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="T2g-0l-4I3" kind="relationship" relationship="rootViewController" id="bwC-w9-1m0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2CW-cS-ci1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64.799999999999997" y="977.36131934032994"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="loginImage" width="1447" height="965"/>
-        <image name="logo" width="500" height="500"/>
+        <image name="loginImage" width="723" height="482"/>
+        <image name="logo" width="250" height="250"/>
     </resources>
 </document>

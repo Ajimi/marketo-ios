@@ -8,12 +8,11 @@
 
 import UIKit
 
-class CategoryCollectionViewCell: UICollectionViewCell,Configurable{
+class CategoryCollectionViewCell: UICollectionViewCell, Configurab {
     
     @IBOutlet weak var image : UIImageView!
     @IBOutlet weak var label : UILabel!
     
-    func configure(with content: Any?) {
-        
-    }
+    
+    
 }
