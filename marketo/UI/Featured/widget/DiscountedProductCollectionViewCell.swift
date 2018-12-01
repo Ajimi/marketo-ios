@@ -10,4 +10,8 @@ import UIKit
 
 class DiscountedProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var image: UIImageView!
+    
+    func configure(with product: Product){
+        // TODO ADD IMAGE
+    }
 }

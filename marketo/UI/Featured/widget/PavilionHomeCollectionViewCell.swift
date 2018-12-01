@@ -8,8 +8,13 @@
 
 import UIKit
 
-class CategoryHomeCollectionViewCell: UICollectionViewCell {
+class PavilionHomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var name: UILabel!
+    
+    func configure(with pavilion: Pavilion){
+        self.name.text = pavilion.name
+        // TODO ALAMOFIRE IMAGE
+    }
     
 }

@@ -10,4 +10,10 @@ import UIKit
 
 class TrendingProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    
+    
+    func configure(with product: Product){
+        // TODO ADD IMAGE
+    }
 }
