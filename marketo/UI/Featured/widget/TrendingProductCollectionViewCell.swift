@@ -14,6 +14,7 @@ class TrendingProductCollectionViewCell: UICollectionViewCell {
     
     
     func configure(with product: Product){
+        name.text = product.name
         // TODO ADD IMAGE
     }
 }

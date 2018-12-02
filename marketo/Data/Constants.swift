@@ -11,6 +11,11 @@ import Foundation
 struct ProductionServer {
     static let baseURL = "https://market-appi.herokuapp.com"
 }
+struct AuthenticationKey{
+    static let keyAccessToken = "AccessToken"
+    static let keyUserId = "UserId"
+    static let keyUserName = "UserName"
+}
 struct APIUserParameterKey {
     static let email = "email"
     static let password = "password"

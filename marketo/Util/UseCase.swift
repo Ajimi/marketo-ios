@@ -8,4 +8,6 @@
 
 import Foundation
 
-
+enum LoginErrors:Error {
+    case canceled(message: String)
+}

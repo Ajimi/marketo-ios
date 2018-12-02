@@ -7,40 +7,46 @@
 //
 
 import Foundation
-import CoreData
 
 class UserLocalRepository{
-    // MARK: - Core Data stack
-    lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "marketo")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
+    
+    let authTokenRepository : AuthTokenRepository = AuthTokenRepository()
+    
+    var user:User? {
+        get {
+            let userId = UserDefaults.standard.string(forKey: AuthenticationKey.keyUserId) ?? nil
+            let username = UserDefaults.standard.string(forKey: AuthenticationKey.keyUserName) ?? nil
+            guard userId != nil, username != nil else {
+                return nil
             }
-        })
-        return container
-    }()
-}
-
-
-// MARK: - Save Context
-extension UserLocalRepository{
-    func saveContext () {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            return User(fullName: "",username: username!,password: "",email: "")
+        }
+        set(value) {
+            if let user = value {
+                UserDefaults.standard.set(user.id ,forKey: AuthenticationKey.keyUserId)
+                UserDefaults.standard.set(user.username ,forKey: AuthenticationKey.keyUserName)
             }
         }
     }
+    
 }
-
 
 // MARK: - Local Repository
 extension UserLocalRepository{
     
+    func login(a user : User , withAccessToken accessToken : String){
+        self.user = user
+        authTokenRepository.authToken = accessToken
+    }
+    
+    func logout(){
+        authTokenRepository.clearData()
+    }
+    
+    func isLoggedIn() -> Bool{
+        return authTokenRepository.authToken != nil
+    }
 }
+
+
 

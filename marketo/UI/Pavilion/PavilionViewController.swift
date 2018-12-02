@@ -28,9 +28,8 @@ class PavilionViewController: UIViewController,UICollectionViewDataSource,UIColl
             if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
                 print("there Was an error \(errorMessage)")
             }
-            
-            if let showSucces = uiModel.showSuccess, !showSucces.consumed, let productsResponse = showSucces.consume() {
-                print(productsResponse)
+            if let showSucces = uiModel.showSuccess, !showSucces.consumed, let pavilionsResponse = showSucces.consume() {
+                print(pavilionsResponse)
                 self.pavilionCollectionView.reloadData()
             }
         })
@@ -47,7 +46,7 @@ class PavilionViewController: UIViewController,UICollectionViewDataSource,UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = pavilionCollectionView.dequeueReusableCell(withReuseIdentifier: pavilionReuseIdentifier, for: indexPath) as! PavilionCollectionViewCell
-        cell.configure(with: pavilions[indexPath.row])
+        cell.configure(with: viewModel.pavilions[indexPath.item])
         return cell
     }
     

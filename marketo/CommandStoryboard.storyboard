@@ -70,6 +70,7 @@
                                                 <connections>
                                                     <outlet property="image" destination="gax-fr-368" id="chy-us-iDi"/>
                                                     <outlet property="name" destination="u1z-9P-89M" id="rvR-40-QPa"/>
+                                                    <segue destination="EEI-TI-Uii" kind="show" id="Nkh-fS-cDq"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -252,8 +253,8 @@
                     <navigationItem key="navigationItem" title="Featued" id="po2-t8-EiP"/>
                     <size key="freeformSize" width="375" height="880"/>
                     <connections>
-                        <outlet property="categoriesCollectionView" destination="X2h-g6-IYs" id="Qqx-DM-pp3"/>
                         <outlet property="discountedProductCollectionView" destination="a70-0X-BJO" id="NKn-gs-Z9X"/>
+                        <outlet property="pavilionsCollectionView" destination="X2h-g6-IYs" id="pBK-o8-6sB"/>
                         <outlet property="trendingProductCollectionView" destination="LtV-Rr-H8K" id="fkQ-CU-WC4"/>
                     </connections>
                 </viewController>
@@ -319,6 +320,7 @@
                                         <connections>
                                             <outlet property="image" destination="c4f-nb-Eq0" id="Vr3-7v-NfQ"/>
                                             <outlet property="label" destination="sDQ-A2-tfw" id="7KI-65-tTc"/>
+                                            <segue destination="EEI-TI-Uii" kind="show" id="B2o-rh-1ew"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -348,6 +350,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NBt-lm-jAb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3653.5999999999999" y="1323.6881559220392"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="OPh-Eb-jhR">
+            <objects>
+                <viewController id="EEI-TI-Uii" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XEU-Jk-8C5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0AH-IV-bnC">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Nex-bF-Jgx">
+                                    <size key="itemSize" width="114" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="4XK-LA-A9E">
+                                        <rect key="frame" x="0.0" y="0.0" width="114" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="114" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="8mR-vP-EZR"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SYy-wo-GKX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3653.5999999999999" y="2045.1274362818592"/>
         </scene>
         <!--Cart-->
         <scene sceneID="Ygf-1D-pEI">
@@ -556,4 +597,7 @@
         <image name="shopping_cart" width="30" height="30"/>
         <image name="shopping_cart_loaded" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Nkh-fS-cDq"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -49,7 +49,7 @@ enum CategoryRouter : APIConfiguration {
     func asURLRequest() throws -> URLRequest {
         let url = try ProductionServer.baseURL.asURL()
         
-        var urlRequest = URLRequest(url: url.appendingPathComponent("/categories\(path)"))
+        var urlRequest = URLRequest(url: url.appendingPathComponent("/pavilions\(path)"))
         
         // HTTP Method
         urlRequest.httpMethod = method.rawValue

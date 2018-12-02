@@ -72,8 +72,9 @@ class FeaturedViewController: UIViewController, UICollectionViewDataSource {
                 print("there Was an error \(errorMessage)")
             }
             
-            if let showSucces = uiModel.showSuccess, !showSucces.consumed, let productsResponse = showSucces.consume() {
-                print(productsResponse)
+            if let showSucces = uiModel.showSuccess, !showSucces.consumed, let pavilionsResponse = showSucces.consume() {
+                print("hhhhhhhh")
+                print(pavilionsResponse)
                 self.pavilionsCollectionView.reloadData()
             }
         })
@@ -85,7 +86,7 @@ class FeaturedViewController: UIViewController, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if (collectionView == self.pavilionsCollectionView){
-            return viewModel.trendingProducts.count
+            return viewModel.pavilions.count
         }
         else if (collectionView == self.trendingProductCollectionView){
             return viewModel.trendingProducts.count
@@ -100,21 +101,21 @@ class FeaturedViewController: UIViewController, UICollectionViewDataSource {
         if (collectionView == self.pavilionsCollectionView){
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: pavilionHomeReuseIdentifier, for: indexPath) as! PavilionHomeCollectionViewCell
             
-            cell.configure(with: viewModel.pavilions[indexPath.row])
+            cell.configure(with: viewModel.pavilions[indexPath.item])
             
             return cell;
         }
         else if (collectionView == self.trendingProductCollectionView){
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: productHomeTrendingReuseIdentifier, for: indexPath) as! TrendingProductCollectionViewCell
             
-            cell.configure(with: viewModel.trendingProducts[indexPath.row])
+            cell.configure(with: viewModel.trendingProducts[indexPath.item])
             
             return cell;
         }
         else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: productHomeDiscountedReuseIdentifier, for: indexPath) as! DiscountedProductCollectionViewCell
             
-            cell.configure(with: viewModel.discountedProducts[indexPath.row])
+            cell.configure(with: viewModel.discountedProducts[indexPath.item])
             
             return cell;
         }

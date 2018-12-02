@@ -48,6 +48,13 @@
 		87FF639021977AE5008EE969 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF638F21977AE5008EE969 /* Constants.swift */; };
 		87FF639221977B22008EE969 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF639121977B22008EE969 /* UserRouter.swift */; };
 		87FF639421977C44008EE969 /* UserRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF639321977C44008EE969 /* UserRemoteRepository.swift */; };
+		88175FB421B42532003C76C7 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88175FB321B42531003C76C7 /* credentials.plist */; };
+		88175FB721B42847003C76C7 /* LoginFacebookUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88175FB621B42847003C76C7 /* LoginFacebookUseCase.swift */; };
+		88175FB921B4286D003C76C7 /* LoginGoogleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88175FB821B4286D003C76C7 /* LoginGoogleUseCase.swift */; };
+		88175FBB21B435D3003C76C7 /* AuthTokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88175FBA21B435D3003C76C7 /* AuthTokenRepository.swift */; };
+		88175FBD21B44BD1003C76C7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88175FBC21B44BD1003C76C7 /* HomeViewModel.swift */; };
+		88175FC021B44D17003C76C7 /* IsLoggedInUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88175FBF21B44D17003C76C7 /* IsLoggedInUseCase.swift */; };
+		88175FC221B459B0003C76C7 /* LogoutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88175FC121B459B0003C76C7 /* LogoutUseCase.swift */; };
 		8855376D219752EA0007B3B5 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8855376C219752EA0007B3B5 /* LoginViewModel.swift */; };
 		88553772219761F00007B3B5 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88553771219761F00007B3B5 /* SignUpViewModel.swift */; };
 		885537742197622E0007B3B5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885537732197622E0007B3B5 /* SignUpViewController.swift */; };
@@ -135,6 +142,13 @@
 		87FF638F21977AE5008EE969 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		87FF639121977B22008EE969 /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
 		87FF639321977C44008EE969 /* UserRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRemoteRepository.swift; sourceTree = "<group>"; };
+		88175FB321B42531003C76C7 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = credentials.plist; path = "../../../../../../../Volumes/VMware Shared Folders/Shared/credentials.plist"; sourceTree = "<group>"; };
+		88175FB621B42847003C76C7 /* LoginFacebookUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFacebookUseCase.swift; sourceTree = "<group>"; };
+		88175FB821B4286D003C76C7 /* LoginGoogleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginGoogleUseCase.swift; sourceTree = "<group>"; };
+		88175FBA21B435D3003C76C7 /* AuthTokenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenRepository.swift; sourceTree = "<group>"; };
+		88175FBC21B44BD1003C76C7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		88175FBF21B44D17003C76C7 /* IsLoggedInUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsLoggedInUseCase.swift; sourceTree = "<group>"; };
+		88175FC121B459B0003C76C7 /* LogoutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutUseCase.swift; sourceTree = "<group>"; };
 		8855376C219752EA0007B3B5 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		88553771219761F00007B3B5 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		885537732197622E0007B3B5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +208,7 @@
 		2C038F4921B15D5000B84B0E /* domain */ = {
 			isa = PBXGroup;
 			children = (
+				88175FB521B42819003C76C7 /* login */,
 				8855D79921B312F000B5F0E8 /* pavilion */,
 				2C038F4A21B15D6F00B84B0E /* product */,
 			);
@@ -384,6 +399,7 @@
 				87A47736219735B9005937AD /* Assets.xcassets */,
 				87A47738219735B9005937AD /* LaunchScreen.storyboard */,
 				87A4773B219735B9005937AD /* Info.plist */,
+				88175FB321B42531003C76C7 /* credentials.plist */,
 				87A47733219735B4005937AD /* marketo.xcdatamodeld */,
 				88BC8F5921AB2CC40013D4EB /* Util */,
 				88BC8F5321AB190C0013D4EB /* CommandStoryboard.storyboard */,
@@ -412,8 +428,20 @@
 				87041AB121982EEA00312FBF /* Local */,
 				87041AA42198136100312FBF /* Remote */,
 				87041AA62198144300312FBF /* UserRepository.swift */,
+				88175FBA21B435D3003C76C7 /* AuthTokenRepository.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		88175FB521B42819003C76C7 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				88175FB621B42847003C76C7 /* LoginFacebookUseCase.swift */,
+				88175FB821B4286D003C76C7 /* LoginGoogleUseCase.swift */,
+				88175FBF21B44D17003C76C7 /* IsLoggedInUseCase.swift */,
+				88175FC121B459B0003C76C7 /* LogoutUseCase.swift */,
+			);
+			path = login;
 			sourceTree = "<group>";
 		};
 		885537702197619E0007B3B5 /* SignUp */ = {
@@ -556,6 +584,7 @@
 			isa = PBXGroup;
 			children = (
 				88E998532198491200D3FE04 /* HomeViewController.swift */,
+				88175FBC21B44BD1003C76C7 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -572,6 +601,7 @@
 				87A47726219735B3005937AD /* Frameworks */,
 				87A47727219735B3005937AD /* Resources */,
 				64DC6782856E8B16ADAADDB5 /* [CP] Embed Pods Frameworks */,
+				01012114A31E8090BA73CBF3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -645,6 +675,7 @@
 			files = (
 				87A4773A219735B9005937AD /* LaunchScreen.storyboard in Resources */,
 				87A47737219735B9005937AD /* Assets.xcassets in Resources */,
+				88175FB421B42532003C76C7 /* credentials.plist in Resources */,
 				87A47732219735B4005937AD /* Main.storyboard in Resources */,
 				88BC8F5421AB190C0013D4EB /* CommandStoryboard.storyboard in Resources */,
 			);
@@ -660,6 +691,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		01012114A31E8090BA73CBF3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-marketo/Pods-marketo-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-marketo/Pods-marketo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		64DC6782856E8B16ADAADDB5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -670,6 +723,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-marketo/Pods-marketo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -677,6 +738,14 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -716,6 +785,7 @@
 				2C038F5421B15DFE00B84B0E /* AddProductToFavoriteUseCase.swift in Sources */,
 				2C038F5721B15F4C00B84B0E /* PavilionHomeCollectionViewCell.swift in Sources */,
 				2C038F6621B191FB00B84B0E /* CategoryLocalRepository.swift in Sources */,
+				88175FBD21B44BD1003C76C7 /* HomeViewModel.swift in Sources */,
 				2C038F5D21B1755800B84B0E /* Validation.swift in Sources */,
 				88C7A44421B2A2B7005BDF16 /* DiscountedProductCollectionViewCell.swift in Sources */,
 				871F138A21985A4300B23D30 /* MainTabViewController.swift in Sources */,
@@ -735,6 +805,7 @@
 				88C7A44721B2A6DF005BDF16 /* PavilionViewController.swift in Sources */,
 				2C5F9E3621AC094800BE9E1C /* PersistenceManager.swift in Sources */,
 				88E998542198491200D3FE04 /* HomeViewController.swift in Sources */,
+				88175FC221B459B0003C76C7 /* LogoutUseCase.swift in Sources */,
 				87FECD9B21AAC7FC00805944 /* Event.swift in Sources */,
 				87A4772F219735B4005937AD /* LoginViewController.swift in Sources */,
 				88553772219761F00007B3B5 /* SignUpViewModel.swift in Sources */,
@@ -747,11 +818,13 @@
 				8855D7A421B3147F00B5F0E8 /* PavilionLocalRepository .swift in Sources */,
 				87FF639421977C44008EE969 /* UserRemoteRepository.swift in Sources */,
 				2C038F4C21B15D7F00B84B0E /* LoadProductUseCase.swift in Sources */,
+				88175FB721B42847003C76C7 /* LoginFacebookUseCase.swift in Sources */,
 				88C7A44C21B2AB3A005BDF16 /* Configurable.swift in Sources */,
 				2C038F5921B15FA400B84B0E /* TrendingProductCollectionViewCell.swift in Sources */,
 				87A4772D219735B4005937AD /* AppDelegate.swift in Sources */,
 				874AA80521B2B2290054E069 /* Pavilion.swift in Sources */,
 				87041AB921982FAF00312FBF /* ProductLocalRepository.swift in Sources */,
+				88175FC021B44D17003C76C7 /* IsLoggedInUseCase.swift in Sources */,
 				87FECD9921AABC5C00805944 /* Dynamic.swift in Sources */,
 				88C7A44A21B2A933005BDF16 /* PavilionCollectionViewCell.swift in Sources */,
 				2C038F6421B191D800B84B0E /* CategoryRemoteRepository.swift in Sources */,
@@ -764,11 +837,13 @@
 				8855D79621B30FCD00B5F0E8 /* PavilionViewModel.swift in Sources */,
 				8855D7A221B3144000B5F0E8 /* PavilionRemoteRepository.swift in Sources */,
 				2C038F7621B1985D00B84B0E /* Basket.swift in Sources */,
+				88175FB921B4286D003C76C7 /* LoginGoogleUseCase.swift in Sources */,
 				2C038F4821B15CBE00B84B0E /* FeaturedViewModel.swift in Sources */,
 				2C038F7421B1948600B84B0E /* BasketRepository.swift in Sources */,
 				87041AB321982F2600312FBF /* UserLocalRepository.swift in Sources */,
 				87FF639021977AE5008EE969 /* Constants.swift in Sources */,
 				8855D7A021B3141C00B5F0E8 /* PavilionRepository .swift in Sources */,
+				88175FBB21B435D3003C76C7 /* AuthTokenRepository.swift in Sources */,
 				87041AA92198145600312FBF /* DataSource.swift in Sources */,
 				2C038F5021B15DE600B84B0E /* LoadDiscountedProductUseCase.swift in Sources */,
 				8855D79821B3111400B5F0E8 /* Products.swift in Sources */,

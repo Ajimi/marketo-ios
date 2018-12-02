@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import FacebookCore
+import FacebookLogin
+import GoogleSignIn
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController,GIDSignInUIDelegate  {
 
     @IBOutlet var loginViewModel : LoginViewModel!
     @IBOutlet weak var username: UITextField!
@@ -16,6 +19,10 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginViewModel.vc = self
+        
+        GIDSignIn.sharedInstance().uiDelegate=self
+
         
         let alert = UIAlertController(title: nil, message: "Connecting...", preferredStyle: .alert)
         loginViewModel.uiState.bindAndFire(listener: { (uiModel) in
@@ -41,13 +48,31 @@ class LoginViewController: UIViewController {
         loginViewModel.login(withUsername: username.text!, withPassword: password.text!)
     }
     
+    @IBAction func loginFacebook(_ sender: UIButton){
+        loginViewModel.loginFacebook()
+    }
+    
+    @IBAction func loginGmail(_ sender: UIButton){
+        loginViewModel.loginGoogle()
+    }
+    
+    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
+    }
+    
+    func sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    
     @IBAction func navigateToSignUp(_ sender: UIButton) {
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        
         
     }
 }
