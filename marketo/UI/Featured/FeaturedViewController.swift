@@ -44,7 +44,9 @@ class FeaturedViewController: UIViewController, UICollectionViewDataSource {
             
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let productsResponse = showSucces.consume() {
                 print(productsResponse)
-                self.trendingProductCollectionView.reloadData()
+                DispatchQueue.main.async {
+                    self.trendingProductCollectionView.reloadData()
+                }
             }
         })
         
@@ -59,7 +61,9 @@ class FeaturedViewController: UIViewController, UICollectionViewDataSource {
             
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let productsResponse = showSucces.consume() {
                 print(productsResponse)
-                self.discountedProductCollectionView.reloadData()
+                DispatchQueue.main.async {
+                    self.discountedProductCollectionView.reloadData()
+                }
             }
         })
         
@@ -75,7 +79,9 @@ class FeaturedViewController: UIViewController, UICollectionViewDataSource {
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let pavilionsResponse = showSucces.consume() {
                 print("hhhhhhhh")
                 print(pavilionsResponse)
-                self.pavilionsCollectionView.reloadData()
+                DispatchQueue.main.async {
+                    self.pavilionsCollectionView.reloadData()
+                }
             }
         })
     }

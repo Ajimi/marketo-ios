@@ -17,8 +17,7 @@ class HomeViewController: UIViewController {
     let viewModel = HomeViewModel()
     
     fileprivate func checkLoggedInUser() {
-        print(String(viewModel.isLoggedIn())+" seliiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiim")
-        if (viewModel.isLoggedIn()){
+        if viewModel.isLoggedIn() {
             loginButton.isHidden = true
             logoutButton.isHidden = false
         }else{
@@ -43,15 +42,16 @@ class HomeViewController: UIViewController {
         checkLoggedInUser()
         
         // Do any additional setup after loading the view.
-        let alert = createAlert(withTitle: "", withMessage: "Logging Out") as! UIAlertController
+        let alert = UIAlertController(title: "", message: "Logging Out", preferredStyle: .alert)
         viewModel.uiLogoutState.bindAndFire(listener: { (uiModel) in
             if (uiModel.showProgress) {
                 self.showWaiting(alert: alert)
             }
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let successMessage = showSucces.consume() {
-                alert.dismiss(animated: true, completion: {
+                alert.dismiss(animated: true, completion: nil)
+                DispatchQueue.main.async {
                     self.checkLoggedInUser()
-                })
+                }
             }
         })
     }

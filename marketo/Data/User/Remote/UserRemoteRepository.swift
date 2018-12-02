@@ -18,7 +18,6 @@ class UserRemoteRepository{
             .validate(statusCode : 200..<300)
             .responseJSONDecodable (decoder: decoder){ (response: DataResponse<T>) in
                 completion(response.result)
-
         }
     }
   

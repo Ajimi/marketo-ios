@@ -36,15 +36,21 @@ extension UserLocalRepository{
     
     func login(a user : User , withAccessToken accessToken : String){
         self.user = user
-        authTokenRepository.authToken = accessToken
+        authTokenRepository.saveToken(token: accessToken)
     }
     
     func logout(){
         authTokenRepository.clearData()
+        UserDefaults.standard.removeObject(forKey: AuthenticationKey.keyUserId)
+        UserDefaults.standard.removeObject(forKey: AuthenticationKey.keyUserName)
     }
     
     func isLoggedIn() -> Bool{
-        return authTokenRepository.authToken != nil
+        if let token = authTokenRepository.getToken(){
+            print(token)
+            return true
+        }
+        return false
     }
 }
 

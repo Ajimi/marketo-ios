@@ -10,15 +10,19 @@ import Foundation
 
 class AuthTokenRepository {
     
-    var authToken : String? = UserDefaults.standard.string(forKey: AuthenticationKey.keyAccessToken) ?? nil{
-        didSet{
-            UserDefaults.standard.set(authToken, forKey: AuthenticationKey.keyAccessToken)
-        }
-    }
+    var authToken : String? = UserDefaults.standard.string(forKey: AuthenticationKey.keyAccessToken)
     
     func clearData (){
         UserDefaults.standard.removeObject(forKey: AuthenticationKey.keyAccessToken)
-        authToken = nil
+        authToken = UserDefaults.standard.string(forKey: AuthenticationKey.keyAccessToken)
+    }
+    
+    func saveToken(token: String) {
+        UserDefaults.standard.set(token, forKey: AuthenticationKey.keyAccessToken)
+    }
+    
+    func getToken() -> String?{
+        return UserDefaults.standard.string(forKey: AuthenticationKey.keyAccessToken)
     }
     
 }

@@ -27,19 +27,25 @@ class LoginViewController: UIViewController,GIDSignInUIDelegate  {
         let alert = UIAlertController(title: nil, message: "Connecting...", preferredStyle: .alert)
         loginViewModel.uiState.bindAndFire(listener: { (uiModel) in
             if (uiModel.showProgress) {
-                self.showWaiting(alert: alert)
+                DispatchQueue.main.async {
+                    self.showWaiting(alert: alert)
+                }
                 // showProgression()
             }
             if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
-                alert.dismiss(animated: true, completion: {
-                    self.showAlert(withTitle: "", withMessage: errorMessage)
-                })
+                DispatchQueue.main.async {
+                    alert.dismiss(animated: true, completion: {
+                        self.showAlert(withTitle: "", withMessage: errorMessage)
+                    })
+                }
             }
             
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let successMessage = showSucces.consume() {
-                alert.dismiss(animated: true, completion: {
-                    self.showAlert(withTitle: "Conncted", withMessage: successMessage)
-                })
+                DispatchQueue.main.async {
+                    alert.dismiss(animated: true, completion: {
+                        self.navigationController?.popToRootViewController(animated: true)
+                    })
+                }
             }
         })
     }
