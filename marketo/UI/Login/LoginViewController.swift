@@ -60,6 +60,7 @@ class LoginViewController: UIViewController,GIDSignInUIDelegate  {
     
     @IBAction func loginGmail(_ sender: UIButton){
         loginViewModel.loginGoogle()
+        print("hello")
     }
     
     func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {

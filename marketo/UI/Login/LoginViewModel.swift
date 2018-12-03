@@ -37,6 +37,7 @@ class LoginViewModel: NSObject {
         loginGoogleUseCase.execute() { (result) in
             switch result{
             case .success(let accessToken):
+                print("Successss")
                 print(accessToken)
                 self.emitUiState(showProgress: false,showSuccess: Event(with: "Connected"))
             case .failure(let error):

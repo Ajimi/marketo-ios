@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/Othmen/Documents/Osbena/marketo-ios/marketo/Data/Favorite/FavoriteLocalRepository.swift">
+   </FileRef>
+   <FileRef
       location = "group:marketo.xcodeproj">
    </FileRef>
    <FileRef
