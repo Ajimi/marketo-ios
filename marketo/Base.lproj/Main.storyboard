@@ -304,9 +304,11 @@ FlBhc3N3b3JkA
                                     <action selector="grabACartAction:" destination="phc-e7-yZl" eventType="touchUpInside" id="IbZ-Ah-Z8s"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eUA-SK-d3A">
-                                <rect key="frame" x="139" y="580" width="97" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eUA-SK-d3A">
+                                <rect key="frame" x="139" y="588.5" width="97" height="27.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27.5" id="mGM-fE-6g7"/>
+                                </constraints>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="SIGN OUT">
@@ -326,8 +328,10 @@ FlBhc3N3b3JkA
                         <color key="backgroundColor" red="1" green="0.97254901959999995" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.92941176469999998" green="0.5568627451" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Naa-2N-jjK" firstAttribute="bottom" secondItem="eUA-SK-d3A" secondAttribute="bottom" constant="51" id="5sa-4a-0Sq"/>
                             <constraint firstItem="yYB-Te-hQX" firstAttribute="width" secondItem="4jV-lh-88V" secondAttribute="width" multiplier="3:5" id="6Lw-fm-YpA"/>
                             <constraint firstItem="fPN-VQ-Cad" firstAttribute="leading" secondItem="Naa-2N-jjK" secondAttribute="leading" constant="114" id="9cd-HP-hvo"/>
+                            <constraint firstItem="eUA-SK-d3A" firstAttribute="leading" secondItem="Naa-2N-jjK" secondAttribute="leading" constant="139" id="9ti-kn-1er"/>
                             <constraint firstItem="yYB-Te-hQX" firstAttribute="centerX" secondItem="4jV-lh-88V" secondAttribute="centerX" id="Ehs-Wc-igw"/>
                             <constraint firstItem="fPN-VQ-Cad" firstAttribute="centerY" secondItem="Naa-2N-jjK" secondAttribute="centerY" id="H1w-KB-QCa"/>
                             <constraint firstItem="Naa-2N-jjK" firstAttribute="trailing" secondItem="aCl-dh-kY7" secondAttribute="trailing" constant="139" id="MvL-pM-Wwm"/>
@@ -335,6 +339,7 @@ FlBhc3N3b3JkA
                             <constraint firstItem="aCl-dh-kY7" firstAttribute="leading" secondItem="Naa-2N-jjK" secondAttribute="leading" constant="139" id="QGR-gP-VA5"/>
                             <constraint firstItem="Naa-2N-jjK" firstAttribute="trailing" secondItem="fPN-VQ-Cad" secondAttribute="trailing" constant="115" id="TcF-1V-lhh"/>
                             <constraint firstItem="yYB-Te-hQX" firstAttribute="top" secondItem="Naa-2N-jjK" secondAttribute="top" constant="30" id="bw2-gP-gUM"/>
+                            <constraint firstItem="Naa-2N-jjK" firstAttribute="trailing" secondItem="eUA-SK-d3A" secondAttribute="trailing" constant="139" id="f9k-9D-c3k"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Naa-2N-jjK"/>
                     </view>

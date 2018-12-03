@@ -48,7 +48,6 @@
 		87FF639021977AE5008EE969 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF638F21977AE5008EE969 /* Constants.swift */; };
 		87FF639221977B22008EE969 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF639121977B22008EE969 /* UserRouter.swift */; };
 		87FF639421977C44008EE969 /* UserRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF639321977C44008EE969 /* UserRemoteRepository.swift */; };
-		88175FB421B42532003C76C7 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88175FB321B42531003C76C7 /* credentials.plist */; };
 		88175FB721B42847003C76C7 /* LoginFacebookUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88175FB621B42847003C76C7 /* LoginFacebookUseCase.swift */; };
 		88175FB921B4286D003C76C7 /* LoginGoogleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88175FB821B4286D003C76C7 /* LoginGoogleUseCase.swift */; };
 		88175FBB21B435D3003C76C7 /* AuthTokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88175FBA21B435D3003C76C7 /* AuthTokenRepository.swift */; };
@@ -146,7 +145,6 @@
 		87FF638F21977AE5008EE969 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		87FF639121977B22008EE969 /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
 		87FF639321977C44008EE969 /* UserRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRemoteRepository.swift; sourceTree = "<group>"; };
-		88175FB321B42531003C76C7 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = credentials.plist; path = "../../../../../../../Volumes/VMware Shared Folders/Shared/credentials.plist"; sourceTree = "<group>"; };
 		88175FB621B42847003C76C7 /* LoginFacebookUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFacebookUseCase.swift; sourceTree = "<group>"; };
 		88175FB821B4286D003C76C7 /* LoginGoogleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginGoogleUseCase.swift; sourceTree = "<group>"; };
 		88175FBA21B435D3003C76C7 /* AuthTokenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenRepository.swift; sourceTree = "<group>"; };
@@ -410,7 +408,6 @@
 				87A47736219735B9005937AD /* Assets.xcassets */,
 				87A47738219735B9005937AD /* LaunchScreen.storyboard */,
 				87A4773B219735B9005937AD /* Info.plist */,
-				88175FB321B42531003C76C7 /* credentials.plist */,
 				87A47733219735B4005937AD /* marketo.xcdatamodeld */,
 				88BC8F5921AB2CC40013D4EB /* Util */,
 				88BC8F5321AB190C0013D4EB /* CommandStoryboard.storyboard */,
@@ -703,7 +700,6 @@
 			files = (
 				87A4773A219735B9005937AD /* LaunchScreen.storyboard in Resources */,
 				87A47737219735B9005937AD /* Assets.xcassets in Resources */,
-				88175FB421B42532003C76C7 /* credentials.plist in Resources */,
 				87A47732219735B4005937AD /* Main.storyboard in Resources */,
 				88BC8F5421AB190C0013D4EB /* CommandStoryboard.storyboard in Resources */,
 			);
