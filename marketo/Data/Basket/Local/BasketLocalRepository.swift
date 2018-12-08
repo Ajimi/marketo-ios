@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CoreData
 import Alamofire
 
 enum DataBaseError : Error {
@@ -16,13 +15,6 @@ enum DataBaseError : Error {
 }
 
 class BasketLocalRepository: LocalRepository {
-    
-    
-    // getBasket(completion Result<Baskets>)
-    // deleteProduct(product, completion Result<Bool>)
-    // deleteAll(completion Result<Bool>)
-    // modifyQuantity(for product,with value,completion Result<Bool>)
-    // addProduct(product,completion Result<Bool>)
     
     
     

@@ -1,5 +1,5 @@
 //
-//  SaveProductToBaskeUseCase.swift
+//  AddProductToFavourite.swift
 //  marketo
 //
 //  Created by Othmen on 11/30/18.
@@ -10,16 +10,15 @@ import Foundation
 
 import Foundation
 import Alamofire
-class SaveProductToBasketUseCase {
+class AddProductToFavoriteUseCase {
     
-    let productRepository : ProductRepository
-    init(productRepository: ProductRepository = ProductRepository()){
-        self.productRepository = productRepository
+    let favoriteRepository : FavoriteRepository
+    init(favoriteRepository: FavoriteRepository = FavoriteRepository()){
+        self.favoriteRepository = favoriteRepository
     }
     
-    func execute(completion:@escaping (Result<Products>)->Void) {
-        
-        productRepository.getTrending { (response) in
+    func execute(with product:Product,completion:@escaping (Result<Bool>)->Void) {
+        favoriteRepository.addProduct(product: product){ (response) in
             switch response {
             case .success(_):
                 completion(response)

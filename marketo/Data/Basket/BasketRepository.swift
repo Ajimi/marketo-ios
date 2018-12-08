@@ -27,3 +27,25 @@ class BasketRepository {
     
     
 }
+
+extension BasketRepository{
+    func getBasket(completion:@escaping (Result<Basket>)->Void) {
+        localRepository.getBasket(completion: completion)
+    }
+    
+    func deleteProduct(product:ProductInBasket,completion:@escaping (Result<Bool>)->Void){
+        localRepository.deleteProduct(product: product, completion: completion)
+    }
+    
+    func deleteAll(completion:@escaping (Result<Bool>)->Void){
+        localRepository.deleteAll(completion: completion)
+    }
+    
+    func addProduct(product:ProductInBasket,completion:@escaping (Result<Bool>)->Void){
+        localRepository.addProduct(product: product, completion: completion)
+    }
+    
+    func modifyProductQuantity(for product:ProductInBasket,with value:Int,completion:@escaping (Result<Bool>)->Void){
+        localRepository.modifyProductQuantity(for: product, with: value, completion: completion)
+    }
+}
