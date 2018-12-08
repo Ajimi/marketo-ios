@@ -100,7 +100,7 @@ class ModifyQuantityForProductUseCase {
         self.basketRepository = basketRepository
     }
     
-    func execute(productInBasket: ProductInBasket, newValue: Int , completion:@escaping(Result<Bool>) -> Void) {
+    func execute(for productInBasket: ProductInBasket,with newValue: Int , completion:@escaping(Result<Bool>) -> Void) {
         basketRepository.modifyProductQuantity(for: productInBasket,with: newValue) { (response) in
             switch response {
             case .success(_):

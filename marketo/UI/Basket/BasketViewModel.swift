@@ -46,4 +46,28 @@ class BasketViewModel: ViewModel{
         }
     }
     
+    func modifyQuantity(for product: ProductInBasket, with value:Int) {
+        modifyQuantityForProductUseCase.execute(for: product, with: value) { (response) in
+            switch response {
+            case .success(let success):
+                self.uiModifyProductState.value = self.emitUiState(showSuccess: Event(with:success))
+            case .failure(let error):
+                print(error)
+                self.uiModifyProductState.value = self.emitUiState(showError: Event(with:"message"))
+            }
+        }
+    }
+    
+    func truncateBasket(){
+        deleteAllProductFromBasketUseCase.execute { (response) in
+            switch response {
+            case .success(_):
+                self.uiTruncateBasketState.value = self.emitUiState(showSuccess: Event(with:true))
+            case .failure(let error):
+                print(error)
+                self.uiTruncateBasketState.value = self.emitUiState(showError:Event(with:"message"))
+            }
+        }
+    }
+    
 }
