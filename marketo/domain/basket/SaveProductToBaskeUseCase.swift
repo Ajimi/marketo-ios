@@ -39,8 +39,8 @@ class LoadProductsFromBasketUseCase {
         self.basketRepository = basketRepository
     }
     
-    func execute(completion:@escaping (Result<Basket>)->Void) {
-        basketRepository.getBasket   { (response) in
+    func execute(completion:@escaping (Result<ProductsInBasket>)->Void) {
+        basketRepository.getProductsInBasket{ (response) in
             switch response {
             case .success(_):
                 completion(response)
@@ -49,7 +49,6 @@ class LoadProductsFromBasketUseCase {
                     throw error
                 }))
             }
-            
         }
     }
 }

@@ -30,7 +30,11 @@ class BasketRepository {
 
 extension BasketRepository{
     func getBasket(completion:@escaping (Result<Basket>)->Void) {
-        localRepository.getBasket(completion: completion)
+        localRepository.getBasket(completion)
+    }
+    
+    func getProductsInBasket(completion:@escaping (Result<ProductsInBasket>)->Void) {
+        localRepository.getProductsInBasket(completion: completion)
     }
     
     func deleteProduct(product:ProductInBasket,completion:@escaping (Result<Bool>)->Void){

@@ -497,17 +497,9 @@
 			isa = PBXGroup;
 			children = (
 				8802E64921BC371E004BB179 /* BasketViewController.swift */,
-				8802E64821BC36C9004BB179 /* widgets */,
 				8802E64B21BC3D00004BB179 /* BasketViewModel.swift */,
 			);
 			path = Basket;
-			sourceTree = "<group>";
-		};
-		8802E64821BC36C9004BB179 /* widgets */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = widgets;
 			sourceTree = "<group>";
 		};
 		8802E65C21BC417E004BB179 /* ManagedObject */ = {

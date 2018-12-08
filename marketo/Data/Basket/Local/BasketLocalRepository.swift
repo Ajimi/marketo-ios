@@ -14,15 +14,18 @@ enum DataBaseError : Error {
 
 }
 
+typealias ProductsInBasket = [ProductInBasket]
+
 class BasketLocalRepository: LocalRepository {
     
+
     
     
 }
 
 extension BasketLocalRepository{
     
-    func getBasket(completion:@escaping (Result<Basket>)->Void) {
+    func getBasket(_ completion: (Result<Basket>) -> Void) {
         let baskets = persistenceManager.fetch(Basket.self)
         
         if(baskets.isEmpty){
@@ -33,6 +36,22 @@ extension BasketLocalRepository{
             completion(Result{
                 return baskets.first!
             })
+        }
+    }
+    
+    func getProductsInBasket(completion:@escaping (Result<ProductsInBasket>)->Void) {
+        getBasket { response in
+            switch response {
+            case .success(let basket):
+                //TO DO: add empty test
+                completion(Result{
+                    return basket.products?.allObjects as! ProductsInBasket
+                })
+            case .failure(let error):
+                completion(Result{
+                    throw error
+                })
+            }
         }
     }
     
