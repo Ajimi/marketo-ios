@@ -8,4 +8,9 @@
 
 import Foundation
 
-class 
+class LocalRepository{
+
+    let persistenceManager = PersistenceManager.shared
+    
+
+}

@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.18" systemVersion="18A293u" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Basket" representedClassName="Basket" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="modifiedAt" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="products" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ProductInBasket" inverseName="basket" inverseEntity="ProductInBasket" syncable="YES"/>
+    </entity>
     <entity name="FavoriteProduct" representedClassName="FavoriteProduct" syncable="YES">
         <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="ProductInBasket" representedClassName="ProductInBasket" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="basket" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Basket" inverseName="products" inverseEntity="Basket" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="FavoriteProduct" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="FavoriteProduct" positionX="100.9765625" positionY="-121.98828125" width="128" height="75"/>
+        <element name="Basket" positionX="-63" positionY="0" width="128" height="120"/>
+        <element name="ProductInBasket" positionX="249.96875" positionY="-14.99609375" width="128" height="120"/>
     </elements>
 </model>

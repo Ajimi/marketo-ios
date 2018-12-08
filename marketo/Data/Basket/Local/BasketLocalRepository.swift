@@ -7,7 +7,102 @@
 //
 
 import Foundation
+import CoreData
+import Alamofire
 
-class BasketLocalRepository {
+enum DataBaseError : Error {
+    case EmptyError
+
+}
+
+class BasketLocalRepository: LocalRepository {
     
+    
+    // getBasket(completion Result<Baskets>)
+    // deleteProduct(product, completion Result<Bool>)
+    // deleteAll(completion Result<Bool>)
+    // modifyQuantity(for product,with value,completion Result<Bool>)
+    // addProduct(product,completion Result<Bool>)
+    
+    
+    
+}
+
+extension BasketLocalRepository{
+    
+    func getBasket(completion:@escaping (Result<Basket>)->Void) {
+        let baskets = persistenceManager.fetch(Basket.self)
+        
+        if(baskets.isEmpty){
+            completion(Result{
+                throw DataBaseError.EmptyError
+            })
+        }else{
+            completion(Result{
+                return baskets.first!
+            })
+        }
+    }
+    
+    func deleteProduct(product:ProductInBasket,completion:@escaping (Result<Bool>)->Void){
+        getBasket { response in
+            switch response {
+            case .success(let basket):
+                basket.removeFromProducts(product)
+                self.persistenceManager.save()
+                completion(Result{
+                    return true
+                })
+            case .failure(let error):
+                completion(Result{
+                    throw error
+                })
+            }
+        }
+    }
+    
+    func deleteAll(completion:@escaping (Result<Bool>)->Void){
+        getBasket { response in
+            switch response {
+            case .success(let basket):
+                basket.removeFromProducts(basket.products!)
+                self.persistenceManager.save()
+                completion(Result{
+                    return true
+                })
+            case .failure(let error):
+                completion(Result{
+                    throw error
+                })
+            }
+        }
+    }
+    
+    func addProduct(product:ProductInBasket,completion:@escaping (Result<Bool>)->Void){
+        getBasket { response in
+            switch response {
+            case .success(let basket):
+                basket.addToProducts(product)
+                self.persistenceManager.save()
+                completion(Result{
+                    return true
+                })
+            case .failure(let error):
+                completion(Result{
+                    throw error
+                })
+            }
+        }
+    }
+    
+    func modifyProductQuantity(for product:ProductInBasket,with value:Int,completion:@escaping (Result<Bool>)->Void){
+        product.quantity = Int32(value)
+        
+        persistenceManager.save()
+        
+        completion(Result{
+            return true
+        })
+    }
+
 }

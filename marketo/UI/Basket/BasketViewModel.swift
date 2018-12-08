@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+class BasketViewModel: ViewModel{
+    
+    let isLoggedInUseCase : IsLoggedInUseCase = IsLoggedInUseCase()
+    let logoutUseCase : LogoutUseCase = LogoutUseCase()
+
+    
+}

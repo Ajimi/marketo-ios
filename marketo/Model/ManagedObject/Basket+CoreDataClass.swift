@@ -10,6 +10,7 @@
 import Foundation
 import CoreData
 
+
 @objc(Basket)
 public class Basket: NSManagedObject {
 

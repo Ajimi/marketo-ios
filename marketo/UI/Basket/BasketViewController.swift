@@ -8,13 +8,31 @@
 
 import UIKit
 
-class BasketViewController: UIViewController {
-
+class BasketViewController: UITableViewController {
+    
+    struct Storyboard {
+        static let numberOfItemsCell = "numberOfItemsCell"      // cell 0
+        static let itemCell = "itemCell"                        // cell 1
+        static let cartDetailCell = "cartDetailCell"            // cell 2
+        static let cartTotalCell = "cartTotalCell"              // cell 3
+        static let checkoutButtonCell = "checkoutButtonCell"    // cell 4
+    }
+    
+    var products = [Product]()
+    
+    
     override func viewDidLoad() {
+        
+        tableView.dataSource = self
+        tableView.delegate = self
         super.viewDidLoad()
+        
+        self.tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableView.automaticDimension
 
         // Do any additional setup after loading the view.
     }
+    
     
 
     /*
@@ -27,4 +45,39 @@ class BasketViewController: UIViewController {
     }
     */
 
+}
+
+extension BasketViewController{
+    
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let shoes = products {
+            return shoes.count + 4
+        } else {
+            return 1
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+//        guard let shoes = shoes else {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.numberOfItemsCell, for: indexPath)
+//
+//            return cell
+//        }
+        
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.numberOfItemsCell, for: indexPath)
+            return cell
+        } else if indexPath.row == products.count + 3 {
+            // checkoutButtonCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.checkoutButtonCell, for: indexPath)
+            
+            return cell
+        } else {
+            // itemCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.itemCell, for: indexPath)
+            return cell
+        }
+    }
 }
