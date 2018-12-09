@@ -13,19 +13,23 @@ class FavoriteViewModel: ViewModel {
     let loadFavoriteProductUseCase = LoadFavoriteProductUseCase()
     
     var uiFavoriteProductState =  Dynamic<UiState<FavoriteProducts>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
-    var uiDeleteFavoriteProductState = Dynamic<UiState<Bool>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
+    var uiDeleteFavoriteProductState = Dynamic<UiState<IndexPath>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
+    
+    
+    
+    var favoriteProducts = FavoriteProducts()
+    
     
     func updateUI() {
         loadFavoriteProducts()
     }
     
-    var favoriteProducts = Dynamic<FavoriteProducts>(FavoriteProducts())
     
     func loadFavoriteProducts() {
         loadFavoriteProductUseCase.execute { (response) in
             switch response {
             case .success(let products):
-                self.favoriteProducts.value = products
+                self.favoriteProducts = products
                 self.uiFavoriteProductState.value = self.emitUiState(showSuccess: Event(with: products))
             case .failure(let error):
                 self.uiFavoriteProductState.value = self.emitUiState(showProgress: false, showError: Event(with: error.localizedDescription))
@@ -33,18 +37,15 @@ class FavoriteViewModel: ViewModel {
         }
     }
     
-    func removeProductFromFavorite(favoriteProduct:FavoriteProduct) {
-        deleteProductFromFavoriteUseCase.execute(with: favoriteProduct) { (response) in
+    func removeProductFromFavorite(at indexPath: IndexPath) {
+        deleteProductFromFavoriteUseCase.execute(with: favoriteProducts[indexPath.row]) { (response) in
             switch response {
-            case .success(let state):
-                if let index = self.favoriteProducts.value.index(of: favoriteProduct) {
-                    self.favoriteProducts.value.remove(at: index)
-                }
-                // Update Local Value
-                self.uiDeleteFavoriteProductState.value = self.emitUiState(showSuccess: Event(with: state))
+            case .success(_):
+                self.favoriteProducts.remove(at: indexPath.row)
+                self.uiDeleteFavoriteProductState.value = self.emitUiState(showSuccess: Event(with: indexPath))
             case .failure(let error):
                 print(error)
-                self.uiDeleteFavoriteProductState.value = self.emitUiState(showSuccess:Event(with: false))
+                self.uiDeleteFavoriteProductState.value = self.emitUiState(showError:Event(with: "false"))
             }
         }
     }

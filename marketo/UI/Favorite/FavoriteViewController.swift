@@ -13,63 +13,85 @@ let favoriteProdCell = "favoriteProdCell"
 typealias FavoriteProducts =  [FavoriteProduct]
 
 
-class FavoriteViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class FavoriteViewController: UIViewController,UITableViewDataSource,UITableViewDelegate, FavoriteProductTableViewCellDelegate {
     
-    var favoriteProducts = FavoriteProducts()
+    let viewModel = FavoriteViewModel()
+    
 
     
     @IBOutlet weak var favoriteProductsTableView : UITableView!
     
-    fileprivate func fetchFavoriteProducts() {
-//        let pers = PersistenceManager.shared
-//        favoriteProducts = pers.fetch(FavoriteProduct.self)
-        favoriteProductsTableView.reloadData()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.updateUI()
+        favoriteProductsState()
 
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        fetchFavoriteProducts()
+        
     }
 
+    fileprivate func favoriteProductsState() {
+        viewModel.uiFavoriteProductState.bindAndFire(listener: { (uiModel) in
+            if (uiModel.showProgress) {
+                print("In progress")
+            }
+            if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
+                print("there Was an error \(errorMessage)")
+            }
+            if let showSucces = uiModel.showSuccess, !showSucces.consumed, let _ = showSucces.consume() {
+                DispatchQueue.main.async {
+                    self.favoriteProductsTableView.reloadData()
+                }
+            }
+        })
+    }
     
+    fileprivate func deleteFavoriteProductState() {
+        viewModel.uiDeleteFavoriteProductState.bindAndFire { uiModel in
+            if (uiModel.showProgress) {
+                print("In progress")
+            }
+            if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
+                print("there Was an error \(errorMessage)")
+            }
+            if let showSucces = uiModel.showSuccess, !showSucces.consumed, let indexPath = showSucces.consume() {
+                DispatchQueue.main.async {
+                    self.favoriteProductsTableView.deleteRows(at: [indexPath], with: .fade)
+                }
+            }
+        }
+    }
+    
+
+}
+
+
+extension FavoriteViewController {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return favoriteProducts.count
+        return viewModel.favoriteProducts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = favoriteProductsTableView.dequeueReusableCell(withIdentifier: favoriteProdCell) as! FavoriteProductTableViewCell
         
-        cell.configure(with: favoriteProducts[indexPath.item])
+        cell.configure(with: viewModel.favoriteProducts[indexPath.item])
         
         return cell
     }
+}
 
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete{
-            let pers = PersistenceManager.shared
-            pers.delete(favoriteProducts[indexPath.item])
-            favoriteProducts.remove(at: indexPath.item)
-            favoriteProductsTableView.deleteRows(at: [indexPath], with: .fade)
-        }
+
+// MARK:-Delegated Method for Remove Button
+extension FavoriteViewController {
+    func favoriteProductCellDidTapRemove(_ sender: FavoriteProductTableViewCell) {
+        guard let tappedIndexPath = basketTableView.indexPath(for: sender) else { return }
+        viewModel.removeProductFromFavorite(at: tappedIndexPath)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

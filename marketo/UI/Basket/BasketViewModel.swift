@@ -89,7 +89,6 @@ class BasketViewModel: ViewModel{
             case .success(_):
                 self.products.removeAll()
                 self.uiTruncateBasketState.value = self.emitUiState(showSuccess: Event(with:true))
-                // TODO EMPTY PRODUCT ARRAY
             case .failure(let error):
                 print(error)
                 self.uiTruncateBasketState.value = self.emitUiState(showError:Event(with:"Error Happened"))

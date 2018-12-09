@@ -43,6 +43,7 @@
 		843405FB21BD2E2600A4851D /* BasketProducTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843405FA21BD2E2600A4851D /* BasketProducTableViewCellDelegate.swift */; };
 		843405FD21BD425400A4851D /* CheckoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843405FC21BD425400A4851D /* CheckoutTableViewCell.swift */; };
 		8434060021BD429200A4851D /* CheckoutTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843405FF21BD429200A4851D /* CheckoutTableViewCellDelegate.swift */; };
+		8434060321BD476F00A4851D /* FavoriteProductTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8434060221BD476F00A4851D /* FavoriteProductTableViewCellDelegate.swift */; };
 		87041AA72198144300312FBF /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AA62198144300312FBF /* UserRepository.swift */; };
 		87041AA92198145600312FBF /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AA82198145600312FBF /* DataSource.swift */; };
 		87041AB321982F2600312FBF /* UserLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AB221982F2600312FBF /* UserLocalRepository.swift */; };
@@ -157,6 +158,7 @@
 		843405FA21BD2E2600A4851D /* BasketProducTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketProducTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		843405FC21BD425400A4851D /* CheckoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutTableViewCell.swift; sourceTree = "<group>"; };
 		843405FF21BD429200A4851D /* CheckoutTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutTableViewCellDelegate.swift; sourceTree = "<group>"; };
+		8434060221BD476F00A4851D /* FavoriteProductTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProductTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		87041AA62198144300312FBF /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		87041AA82198145600312FBF /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		87041AB221982F2600312FBF /* UserLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocalRepository.swift; sourceTree = "<group>"; };
@@ -384,6 +386,14 @@
 			path = delegates;
 			sourceTree = "<group>";
 		};
+		8434060121BD474E00A4851D /* delegates */ = {
+			isa = PBXGroup;
+			children = (
+				8434060221BD476F00A4851D /* FavoriteProductTableViewCellDelegate.swift */,
+			);
+			path = delegates;
+			sourceTree = "<group>";
+		};
 		849EC38D6BF19C3DA52A17C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -589,6 +599,7 @@
 		8854E24921B47BA200FBCC31 /* Favorite */ = {
 			isa = PBXGroup;
 			children = (
+				8434060121BD474E00A4851D /* delegates */,
 				8854E24C21B47CBD00FBCC31 /* widgets */,
 				8854E24A21B47BDF00FBCC31 /* FavoriteViewController.swift */,
 				843405E921BC789A00A4851D /* FavoriteViewModel.swift */,
@@ -1019,6 +1030,7 @@
 				2C038F6421B191D800B84B0E /* CategoryRemoteRepository.swift in Sources */,
 				2C038F6021B191B900B84B0E /* CategoryRepository.swift in Sources */,
 				2C84FB7621B530C400BA6173 /* FavoriteRemoteRepository.swift in Sources */,
+				8434060321BD476F00A4851D /* FavoriteProductTableViewCellDelegate.swift in Sources */,
 				8854E24B21B47BDF00FBCC31 /* FavoriteViewController.swift in Sources */,
 				885537772197649F0007B3B5 /* User.swift in Sources */,
 				8434060021BD429200A4851D /* CheckoutTableViewCellDelegate.swift in Sources */,

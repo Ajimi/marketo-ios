@@ -13,10 +13,16 @@ class FavoriteProductTableViewCell: UITableViewCell,Configurable {
     @IBOutlet weak var imageProduct: UIImageView!
     @IBOutlet weak var name: UILabel!
     
+
+    weak var delegate: FavoriteProductTableViewCellDelegate?
+
+    var favoriteProduct: FavoriteProduct?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -24,8 +30,13 @@ class FavoriteProductTableViewCell: UITableViewCell,Configurable {
         // Configure the view for the selected state
     }
     
-    func configure(with content: FavoriteProduct) {
-        name.text = content.name
+    func configure(with favoriteProduct: FavoriteProduct) {
+        self.favoriteProduct = favoriteProduct
+        name.text = favoriteProduct.name
     }
 
+    // TODO: MONCEF IB ACTION BRAS MIMTEK
+    @IBAction func didTapRemove(_ sender: Any){
+        delegate?.favoriteProductCellDidTapRemove(self)
+    }
 }

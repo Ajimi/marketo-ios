@@ -76,7 +76,7 @@ class BasketViewController: UITableViewController, BasketProducTableViewCellDele
             if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
                 print("there Was an error \(errorMessage)")
             }
-            if let showSucces = uiModel.showSuccess, !showSucces.consumed, let indexPath = showSucces.consume() {
+            if let showSucces = uiModel.showSuccess, !showSucces.consumed, let _ = showSucces.consume() {
                 DispatchQueue.main.async {
                     self.basketTableView.reloadData()
                 }
@@ -127,12 +127,12 @@ extension BasketViewController{
     }
     
     func basketCellDidTapStepper(_ sender: BasketProductTableViewCell, _ value: Int) {
-        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        guard let tappedIndexPath = basketTableView.indexPath(for: sender) else { return }
         viewModel.modifyQuantity(at: tappedIndexPath, with: value)
     }
     
     func basketCellDidTapRemove(_ sender: BasketProductTableViewCell) {
-        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        guard let tappedIndexPath = basketTableView.indexPath(for: sender) else { return }
         viewModel.deleteProductFromBasket(at: tappedIndexPath)
     }
     
