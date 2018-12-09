@@ -104,7 +104,14 @@ class FeaturedViewModel: ViewModel {
     }
     
     func addTrendingProductToFavorite(at indexPath: IndexPath) {
-        
+        addProductToFavoriteUseCase.execute(with: trendingProducts[indexPath.row]) { response in
+            switch response {
+            case .success(let suc):
+                print(suc)
+            case.failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 
