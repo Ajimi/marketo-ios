@@ -470,7 +470,6 @@
                                                 <constraint firstAttribute="trailing" secondItem="GWR-SD-DTR" secondAttribute="trailing" id="mq9-eo-oGP"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -747,8 +746,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="142" height="167"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="K8h-aQ-pY9">
-                                                    <rect key="frame" x="0.0" y="0.0" width="142" height="146"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="tvE-1b-20U">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="82.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Zo-F1-TwZ">
                                                     <rect key="frame" x="0.0" y="146" width="142" height="21"/>
