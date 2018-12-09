@@ -30,8 +30,9 @@ class BasketViewController: UITableViewController, BasketProducTableViewCellDele
         deleteProductState()
         
         
-        self.basketTableView.estimatedRowHeight = basketTableView.rowHeight
+        basketTableView.estimatedRowHeight = basketTableView.rowHeight
         basketTableView.rowHeight = UITableView.automaticDimension
+        basketTableView.tableFooterView = UIView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
