@@ -18,8 +18,9 @@ class SaveProductToBasketUseCase {
         self.basketRepository = basketRepository
     }
     
-    func execute(productInBasket: ProductInBasket, completion:@escaping(Result<Bool>) -> Void ){
-        basketRepository.addProduct(product: productInBasket){ (response) in
+    func execute(product: Product, completion:@escaping(Result<Bool>) -> Void ){
+        
+        basketRepository.addProduct(product: product){ (response) in
             switch response {
             case .success(_):
                 completion(response)

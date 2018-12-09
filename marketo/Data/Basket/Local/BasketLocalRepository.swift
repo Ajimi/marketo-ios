@@ -115,11 +115,11 @@ extension BasketLocalRepository{
         }
     }
     
-    func addProduct(product:ProductInBasket,completion:@escaping (Result<Bool>)->Void){
+    func addProduct(product:Product,completion:@escaping (Result<Bool>)->Void){
         getBasket { response in
             switch response {
             case .success(let basket):
-                basket.addToProducts(product)
+                basket.addToProducts(buildProductInBasket(product: product))
                 self.persistenceManager.save()
                 completion(Result{
                     return true
@@ -131,6 +131,15 @@ extension BasketLocalRepository{
             }
         }
     }
+    
+    func buildProductInBasket(product:Product) -> ProductInBasket {
+        let productInBasket = ProductInBasket(context: persistenceManager.context)
+        productInBasket.name = product.name
+        productInBasket.id = product.id
+        productInBasket.image = product.image
+        return productInBasket
+    }
+    
     
     func modifyProductQuantity(for product:ProductInBasket,with value:Int,completion:@escaping (Result<Bool>)->Void){
         product.quantity = Int32(value)

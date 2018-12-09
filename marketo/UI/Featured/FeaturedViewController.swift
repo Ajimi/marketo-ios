@@ -16,7 +16,8 @@ private let productHomeTrendingReuseIdentifier = "ProductTrendingHomeCell"
 private let productHomeDiscountedReuseIdentifier = "ProductDiscountedHomeCell"
 
 
-class FeaturedViewController: UIViewController, UICollectionViewDataSource {
+class FeaturedViewController: UIViewController, UICollectionViewDataSource , TrendingProductCollectionViewCellDelegate {
+    
     
     @IBOutlet weak var pavilionsCollectionView: UICollectionView!
     
@@ -130,5 +131,17 @@ extension FeaturedViewController{
             return cell;
         }
     }
+
+    func trendingCellDidTapFavorite(_ sender: TrendingProductCollectionViewCell) {
+        guard let tappedIndexPath = trendingProductCollectionView.indexPath(for: sender) else { return }
+        viewModel.addProductToFavorite(at: tappedIndexPath)
+    }
     
+    func trendingCellDidTapBasket(_ sender: TrendingProductCollectionViewCell) {
+        guard let tappedIndexPath = trendingProductCollectionView.indexPath(for: sender) else { return }
+        viewModel.addProductToBasket(at: tappedIndexPath)
+        
+    }
 }
+
+

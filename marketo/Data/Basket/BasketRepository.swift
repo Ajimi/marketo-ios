@@ -42,7 +42,7 @@ extension BasketRepository{
         localRepository.deleteAll(completion: completion)
     }
     
-    func addProduct(product:ProductInBasket,completion:@escaping (Result<Bool>)->Void){
+    func addProduct(product:Product,completion:@escaping (Result<Bool>)->Void){
         localRepository.addProduct(product: product, completion: completion)
     }
     

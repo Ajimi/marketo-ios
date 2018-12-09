@@ -15,8 +15,10 @@ class FeaturedViewModel: ViewModel {
     let loadTrendingProductUseCase = LoadTrendingProductUseCase()
     let loadDiscountedProductUseCase = LoadDiscountedProductUseCase()
     
-    let loadCategoryUseCase = ""
-    let saveProductToBaskeUseCase = ""
+    let saveProductToBasketUseCase =  SaveProductToBasketUseCase()
+    let addProductToFavoriteUseCase =  AddProductToFavoriteUseCase()
+
+    
     
     var uiProductState =  Dynamic<UiState<Products>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
     var uiPavilionsState = Dynamic<UiState<Pavilions>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
@@ -90,12 +92,19 @@ class FeaturedViewModel: ViewModel {
         }
     }
     
-    func addToBaskeProducts()  {
-        
+    func addTrendingProductToBasket(at indexPath: IndexPath)  {
+        saveProductToBasketUseCase.execute(product: trendingProducts[indexPath.row]) { (response) in
+            switch response {
+            case .success(let suc):
+                print(suc)
+            case.failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
-    func addToWishListProducts() {
-         
+    func addTrendingProductToFavorite(at indexPath: IndexPath) {
+        
     }
 }
 
