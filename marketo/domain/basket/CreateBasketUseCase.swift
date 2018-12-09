@@ -9,20 +9,22 @@
 import Foundation
 import Alamofire
 
-class LoadProductsFromBasketUseCase {
+class CreateBasketUseCase {
     
     let basketRepository : BasketRepository
     init(basketRepository: BasketRepository = BasketRepository()){
         self.basketRepository = basketRepository
     }
     
-    func execute(completion:@escaping (Result<Bool>)->Void) {
+    func execute(completion:@escaping (Result<Basket>)->Void) {
         basketRepository.createBasket{ (response) in
             switch response {
             case .success(_):
                 completion(response)
             case .failure(let error):
-                completion(error)
+                completion(Result{
+                    throw error
+                })
             }
         }
     }
