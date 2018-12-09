@@ -9,13 +9,8 @@
 import Foundation
 
 import Alamofire
-protocol BasketDataSource: DataSource {
-    // TODO :Add methods
-    
-}
 
 class BasketRepository {
-    
     // Constructor must have local data source and remote data souree
     let remoteRepository: BasketRemoteRepository
     let localRepository: BasketLocalRepository
@@ -24,11 +19,13 @@ class BasketRepository {
         self.remoteRepository = remoteRepository
         self.localRepository = localRepository
     }
-    
-    
 }
 
 extension BasketRepository{
+    func createBasket(completion : (Result<Basket>) -> Void)  {
+        localRepository.createBasket(completion: completion)
+    }
+    
     func getBasket(completion:@escaping (Result<Basket>)->Void) {
         localRepository.getBasket(completion)
     }

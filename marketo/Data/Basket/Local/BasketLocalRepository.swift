@@ -25,6 +25,25 @@ class BasketLocalRepository: LocalRepository {
 
 extension BasketLocalRepository{
     
+    func createBasket(completion : (Result<Basket>) -> Void)  {
+        getBasket { (response) in
+            switch response {
+            case .success(let currentBasket):
+                
+                completion(Result{
+                    return currentBasket
+                })
+            case .failure(_):
+                // TODO check ERROR TYPE if empty type then create new basket else throw the error
+                let basket = Basket(context: self.persistenceManager.context)
+                completion(Result{
+                    return basket
+                })
+            }
+        }
+    }
+
+    
     func getBasket(_ completion: (Result<Basket>) -> Void) {
         let baskets = persistenceManager.fetch(Basket.self)
         
@@ -44,9 +63,16 @@ extension BasketLocalRepository{
             switch response {
             case .success(let basket):
                 //TO DO: add empty test
-                completion(Result{
-                    return basket.products?.allObjects as! ProductsInBasket
-                })
+                if let products = basket.products {
+                    completion(Result{
+                        return products.allObjects as! ProductsInBasket
+                    })
+                } else {
+                    completion(Result{
+                        throw DataBaseError.EmptyError
+                    })
+                }
+                
             case .failure(let error):
                 completion(Result{
                     throw error
@@ -108,9 +134,7 @@ extension BasketLocalRepository{
     
     func modifyProductQuantity(for product:ProductInBasket,with value:Int,completion:@escaping (Result<Bool>)->Void){
         product.quantity = Int32(value)
-        
         persistenceManager.save()
-        
         completion(Result{
             return true
         })
