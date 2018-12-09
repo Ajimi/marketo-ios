@@ -26,7 +26,7 @@ class TrendingProductCollectionViewCell: UICollectionViewCell,Configurable {
     @IBAction func addToBasket(_ sender: UIButton) {
         delegate?.trendingCellDidTapFavorite(self)
     }
-        
+    
     func configure(with product: Product){
         self.product = product
         name.text = product.name

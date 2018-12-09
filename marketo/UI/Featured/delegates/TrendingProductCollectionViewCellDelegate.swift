@@ -11,3 +11,4 @@ protocol TrendingProductCollectionViewCellDelegate : class {
     func trendingCellDidTapFavorite(_ sender: TrendingProductCollectionViewCell)
     func trendingCellDidTapBasket(_ sender: TrendingProductCollectionViewCell)
 }
+
