@@ -25,7 +25,7 @@ class FavoriteViewController: UIViewController,UICollectionViewDelegate,UICollec
         super.viewDidLoad()
         viewModel.updateUI()
         favoriteProductsState()
-
+        deleteFavoriteProductState()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,7 +78,7 @@ extension FavoriteViewController {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = favoriteProductsCollecionView.dequeueReusableCell(withReuseIdentifier: favoriteProdCell,for: indexPath) as! FavoriteProductCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: favoriteProdCell,for: indexPath) as! FavoriteProductCollectionViewCell
         
         cell.configure(with: viewModel.favoriteProducts[indexPath.item])
         
@@ -93,5 +93,4 @@ extension FavoriteViewController {
         guard let tappedIndexPath = favoriteProductsCollecionView.indexPath(for: sender) else { return }
         viewModel.removeProductFromFavorite(at: tappedIndexPath)
     }
-    
 }
