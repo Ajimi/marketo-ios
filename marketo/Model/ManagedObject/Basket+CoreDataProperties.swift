@@ -2,7 +2,7 @@
 //  Basket+CoreDataProperties.swift
 //  marketo
 //
-//  Created by Moncef Guettat on 12/8/18.
+//  Created by Admin on 12/9/18.
 //  Copyright © 2018 selim ajimi. All rights reserved.
 //
 //
@@ -17,8 +17,8 @@ extension Basket {
         return NSFetchRequest<Basket>(entityName: "Basket")
     }
 
-    @NSManaged public var id: String?
     @NSManaged public var createdAt: String?
+    @NSManaged public var id: String?
     @NSManaged public var modifiedAt: String?
     @NSManaged public var userId: String?
     @NSManaged public var products: NSSet?

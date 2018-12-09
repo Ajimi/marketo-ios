@@ -30,6 +30,8 @@ final class PersistenceManager {
     
     // MARK: - Core Data Saving supportÒ
     func save() {
+        context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        
         if context.hasChanges {
             do {
                 try context.save()

@@ -2,7 +2,7 @@
 //  FavoriteProduct+CoreDataProperties.swift
 //  marketo
 //
-//  Created by Moncef Guettat on 12/8/18.
+//  Created by Admin on 12/9/18.
 //  Copyright © 2018 selim ajimi. All rights reserved.
 //
 //
@@ -19,5 +19,6 @@ extension FavoriteProduct {
 
     @NSManaged public var imageName: String?
     @NSManaged public var name: String?
+    @NSManaged public var id: String?
 
 }

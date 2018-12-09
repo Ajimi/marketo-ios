@@ -8,8 +8,14 @@
         <relationship name="products" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ProductInBasket" inverseName="basket" inverseEntity="ProductInBasket" syncable="YES"/>
     </entity>
     <entity name="FavoriteProduct" representedClassName="FavoriteProduct" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="ProductInBasket" representedClassName="ProductInBasket" syncable="YES">
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
@@ -17,10 +23,15 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="quantity" optional="YES" attributeType="Integer 32" defaultValueString="1" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="basket" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Basket" inverseName="products" inverseEntity="Basket" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <elements>
         <element name="Basket" positionX="-63" positionY="0" width="128" height="120"/>
-        <element name="FavoriteProduct" positionX="100.9765625" positionY="-121.98828125" width="128" height="75"/>
+        <element name="FavoriteProduct" positionX="100.9765625" positionY="-121.98828125" width="128" height="90"/>
         <element name="ProductInBasket" positionX="249.96875" positionY="-14.99609375" width="128" height="120"/>
     </elements>
 </model>

@@ -2,7 +2,7 @@
 //  ProductInBasket+CoreDataProperties.swift
 //  marketo
 //
-//  Created by Moncef Guettat on 12/8/18.
+//  Created by Admin on 12/9/18.
 //  Copyright © 2018 selim ajimi. All rights reserved.
 //
 //
@@ -18,8 +18,8 @@ extension ProductInBasket {
     }
 
     @NSManaged public var id: String?
-    @NSManaged public var name: String?
     @NSManaged public var image: String?
+    @NSManaged public var name: String?
     @NSManaged public var quantity: Int32
     @NSManaged public var basket: Basket?
 

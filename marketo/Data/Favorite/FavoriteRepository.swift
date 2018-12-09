@@ -29,7 +29,6 @@ extension FavoriteRepository {
         localRepository.deleteProduct(product: product, completion: completion)
     }
     
-    
     func addProduct(product:Product,completion:@escaping (Result<Bool>)->Void){
         localRepository.addProduct(product: product, completion: completion)
     }

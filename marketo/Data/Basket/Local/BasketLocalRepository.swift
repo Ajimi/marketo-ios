@@ -130,7 +130,6 @@ extension BasketLocalRepository{
             switch response {
             case .success(let basket):
                 basket.addToProducts(buildProductInBasket(product: product))
-                print(basket)
                 self.persistenceManager.save()
                 completion(Result{
                     return true
@@ -145,8 +144,8 @@ extension BasketLocalRepository{
     
     func buildProductInBasket(product:Product) -> ProductInBasket {
         let productInBasket = ProductInBasket(context: persistenceManager.context)
-        productInBasket.name = product.name
         productInBasket.id = product.id
+        productInBasket.name = product.name
         productInBasket.image = product.image
         return productInBasket
     }
