@@ -91,7 +91,10 @@ class BasketViewController: UITableViewController, BasketProducTableViewCellDele
 
 extension BasketViewController{
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return viewModel.products.count + 2
+        guard viewModel.products.count != 0 else {
+            return 1
+        }
+        return viewModel.products.count + 2
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
