@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let numberOfBasketProductReuseIdentifier = "numberOfBasketProductsItemsCell"
+private let numberOfBasketProductReuseIdentifier = "numberOfBasketProductsCell"
 private let basketProductReuseIdentifier = "basketProductCell"
 private let checkoutButtonReuseIdentifier = "checkoutButtonCell"
 

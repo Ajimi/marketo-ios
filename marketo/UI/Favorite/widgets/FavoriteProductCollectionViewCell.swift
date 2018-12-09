@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FavoriteProductTableViewCell: UITableViewCell,Configurable {
+class FavoriteProductCollectionViewCell: UICollectionViewCell,Configurable {
 
     @IBOutlet weak var imageProduct: UIImageView!
     @IBOutlet weak var name: UILabel!
@@ -17,18 +17,7 @@ class FavoriteProductTableViewCell: UITableViewCell,Configurable {
     weak var delegate: FavoriteProductTableViewCellDelegate?
 
     var favoriteProduct: FavoriteProduct?
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     func configure(with favoriteProduct: FavoriteProduct) {
         self.favoriteProduct = favoriteProduct
