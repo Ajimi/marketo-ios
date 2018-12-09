@@ -134,14 +134,15 @@ extension FeaturedViewController{
 
     func trendingCellDidTapFavorite(_ sender: TrendingProductCollectionViewCell) {
         guard let tappedIndexPath = trendingProductCollectionView.indexPath(for: sender) else { return }
-        viewModel.addProductToFavorite(at: tappedIndexPath)
+        viewModel.addTrendingProductToFavorite(at: tappedIndexPath)
     }
     
     func trendingCellDidTapBasket(_ sender: TrendingProductCollectionViewCell) {
         guard let tappedIndexPath = trendingProductCollectionView.indexPath(for: sender) else { return }
-        viewModel.addProductToBasket(at: tappedIndexPath)
+        viewModel.addTrendingProductToBasket(at: tappedIndexPath)
         
     }
 }
 
 
+	
