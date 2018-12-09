@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-let favoriteProdCell = "favoriteProdCell"
+let favoriteProdCell = "favoriteProductCell"
 typealias FavoriteProducts =  [FavoriteProduct]
 
 
