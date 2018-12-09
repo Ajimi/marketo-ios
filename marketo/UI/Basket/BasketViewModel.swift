@@ -25,9 +25,7 @@ class BasketViewModel: ViewModel{
     var uiModifyProductState = Dynamic<UiState<Bool>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
     
     var products:ProductsInBasket = ProductsInBasket()
-    
 
-    
     func updateUI() {
         loadProductsFromBasket()
     }
@@ -65,7 +63,7 @@ class BasketViewModel: ViewModel{
                 self.uiModifyProductState.value = self.emitUiState(showSuccess: Event(with:state))
             case .failure(let error):
                 print(error)
-                self.uiModifyProductState.value = self.emitUiState(showError: Event(with:"message"))
+                self.uiModifyProductState.value = self.emitUiState(showError: Event(with:"Error happened"))
             }
         }
     }
@@ -77,7 +75,7 @@ class BasketViewModel: ViewModel{
                 self.uiTruncateBasketState.value = self.emitUiState(showSuccess: Event(with:true))
             case .failure(let error):
                 print(error)
-                self.uiTruncateBasketState.value = self.emitUiState(showError:Event(with:"message"))
+                self.uiTruncateBasketState.value = self.emitUiState(showError:Event(with:"Error Happened"))
             }
         }
     }

@@ -18,8 +18,16 @@ class DeleteProductFromFavorite {
     }
     
     func execute(with product: FavoriteProduct,completion:@escaping (Result<Bool>)->Void) {
-        
-        favoriteRepository.deleteProduct(product: product, completion: completion)
-        
+        favoriteRepository.deleteProduct(product: product) { response in
+            switch response {
+            case .success(_):
+                completion(response)
+            case .failure(let error):
+                completion(Result(value : {
+                    // TODO ERROR HANDLING HAPPEN HERE
+                    throw error
+                }))
+            }
+        }
     }
 }

@@ -1,37 +1,30 @@
 //
-//  SaveProductToBaskeUseCase.swift
+//  DeleteAllProductFromBasketUseCase.swift
 //  marketo
 //
-//  Created by Othmen on 11/30/18.
+//  Created by Admin on 12/9/18.
 //  Copyright © 2018 selim ajimi. All rights reserved.
 //
 
 import Foundation
-
-import Foundation
 import Alamofire
 
-class SaveProductToBasketUseCase {
-    
+class DeleteAllProductFromBasketUseCase {
     let basketRepository : BasketRepository
     init(basketRepository: BasketRepository = BasketRepository()){
         self.basketRepository = basketRepository
     }
     
-    func execute(productInBasket: ProductInBasket, completion:@escaping(Result<Bool>) -> Void ){
-        basketRepository.addProduct(product: productInBasket){ (response) in
+    func execute(completion:@escaping (Result<Bool>)->Void) {
+        basketRepository.deleteAll { (response) in
             switch response {
             case .success(_):
                 completion(response)
             case .failure(let error):
-                completion(Result{
+                completion(Result(value : {
                     throw error
-                })
+                }))
             }
         }
     }
 }
-
-
-
-

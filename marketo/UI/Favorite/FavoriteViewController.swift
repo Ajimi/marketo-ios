@@ -10,16 +10,19 @@ import UIKit
 import CoreData
 
 let favoriteProdCell = "favoriteProdCell"
+typealias FavoriteProducts =  [FavoriteProduct]
+
 
 class FavoriteViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
-    var favoriteProducts = [FavoriteProduct]()
+    var favoriteProducts = FavoriteProducts()
 
+    
     @IBOutlet weak var favoriteProductsTableView : UITableView!
     
     fileprivate func fetchFavoriteProducts() {
-        let pers = PersistenceManager.shared
-        favoriteProducts = pers.fetch(FavoriteProduct.self)
+//        let pers = PersistenceManager.shared
+//        favoriteProducts = pers.fetch(FavoriteProduct.self)
         favoriteProductsTableView.reloadData()
     }
     

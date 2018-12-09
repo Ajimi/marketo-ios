@@ -32,6 +32,11 @@
 		2C84FB7221B530A000BA6173 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		2C84FB7621B530C400BA6173 /* FavoriteRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84FB7521B530C400BA6173 /* FavoriteRemoteRepository.swift */; };
 		2C84FB7821B530D700BA6173 /* FavoriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84FB7721B530D700BA6173 /* FavoriteRouter.swift */; };
+		843405EA21BC789A00A4851D /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843405E921BC789A00A4851D /* FavoriteViewModel.swift */; };
+		843405EC21BC793F00A4851D /* ModifyQuantityForProductUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843405EB21BC793F00A4851D /* ModifyQuantityForProductUseCase.swift */; };
+		843405EE21BC7A3300A4851D /* LoadProductsFromBasketUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843405ED21BC7A3300A4851D /* LoadProductsFromBasketUseCase.swift */; };
+		843405F021BC7AAB00A4851D /* DeleteProductFromBasketUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843405EF21BC7AAB00A4851D /* DeleteProductFromBasketUseCase.swift */; };
+		843405F221BC7AEE00A4851D /* DeleteAllProductFromBasketUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843405F121BC7AEE00A4851D /* DeleteAllProductFromBasketUseCase.swift */; };
 		87041AA72198144300312FBF /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AA62198144300312FBF /* UserRepository.swift */; };
 		87041AA92198145600312FBF /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AA82198145600312FBF /* DataSource.swift */; };
 		87041AB321982F2600312FBF /* UserLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AB221982F2600312FBF /* UserLocalRepository.swift */; };
@@ -133,6 +138,11 @@
 		2C84FB7721B530D700BA6173 /* FavoriteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRouter.swift; sourceTree = "<group>"; };
 		45D941B64E8D5DB93E13DF9E /* Pods_marketoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_marketoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		815D5919280C5D615384F382 /* Pods_marketo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_marketo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		843405E921BC789A00A4851D /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		843405EB21BC793F00A4851D /* ModifyQuantityForProductUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyQuantityForProductUseCase.swift; sourceTree = "<group>"; };
+		843405ED21BC7A3300A4851D /* LoadProductsFromBasketUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadProductsFromBasketUseCase.swift; sourceTree = "<group>"; };
+		843405EF21BC7AAB00A4851D /* DeleteProductFromBasketUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteProductFromBasketUseCase.swift; sourceTree = "<group>"; };
+		843405F121BC7AEE00A4851D /* DeleteAllProductFromBasketUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAllProductFromBasketUseCase.swift; sourceTree = "<group>"; };
 		87041AA62198144300312FBF /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		87041AA82198145600312FBF /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		87041AB221982F2600312FBF /* UserLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocalRepository.swift; sourceTree = "<group>"; };
@@ -538,6 +548,10 @@
 			isa = PBXGroup;
 			children = (
 				2C038F5121B15DF200B84B0E /* SaveProductToBaskeUseCase.swift */,
+				843405EB21BC793F00A4851D /* ModifyQuantityForProductUseCase.swift */,
+				843405ED21BC7A3300A4851D /* LoadProductsFromBasketUseCase.swift */,
+				843405EF21BC7AAB00A4851D /* DeleteProductFromBasketUseCase.swift */,
+				843405F121BC7AEE00A4851D /* DeleteAllProductFromBasketUseCase.swift */,
 			);
 			path = basket;
 			sourceTree = "<group>";
@@ -547,6 +561,7 @@
 			children = (
 				8854E24C21B47CBD00FBCC31 /* widgets */,
 				8854E24A21B47BDF00FBCC31 /* FavoriteViewController.swift */,
+				843405E921BC789A00A4851D /* FavoriteViewModel.swift */,
 			);
 			path = Favorite;
 			sourceTree = "<group>";
@@ -918,6 +933,7 @@
 				87041AB721982FA100312FBF /* ProductRemoteRepository.swift in Sources */,
 				2C84FB7821B530D700BA6173 /* FavoriteRouter.swift in Sources */,
 				2C038F6921B1924700B84B0E /* CategoryRouter.swift in Sources */,
+				843405F221BC7AEE00A4851D /* DeleteAllProductFromBasketUseCase.swift in Sources */,
 				87FECD9D21AAD59E00805944 /* AccessToken.swift in Sources */,
 				2C038F5B21B16BB200B84B0E /* ViewModel.swift in Sources */,
 				88C7A44721B2A6DF005BDF16 /* PavilionViewController.swift in Sources */,
@@ -933,6 +949,7 @@
 				2C038F6E21B1942900B84B0E /* BasketLocalRepository.swift in Sources */,
 				8802E66821BC41BA004BB179 /* Basket+CoreDataProperties.swift in Sources */,
 				88E998582198722B00D3FE04 /* Price.swift in Sources */,
+				843405EA21BC789A00A4851D /* FavoriteViewModel.swift in Sources */,
 				2C038F5221B15DF200B84B0E /* SaveProductToBaskeUseCase.swift in Sources */,
 				8802E66321BC41BA004BB179 /* ProductInBasket+CoreDataClass.swift in Sources */,
 				87FF639221977B22008EE969 /* UserRouter.swift in Sources */,
@@ -961,6 +978,7 @@
 				88BC8F5721AB24540013D4EB /* AlertExtension.swift in Sources */,
 				2C5F9E3421AC04B200BE9E1C /* UseCase.swift in Sources */,
 				88BC8F4D21AAD3EB0013D4EB /* FeaturedViewController.swift in Sources */,
+				843405F021BC7AAB00A4851D /* DeleteProductFromBasketUseCase.swift in Sources */,
 				8855D79621B30FCD00B5F0E8 /* PavilionViewModel.swift in Sources */,
 				8855D7A221B3144000B5F0E8 /* PavilionRemoteRepository.swift in Sources */,
 				88175FB921B4286D003C76C7 /* LoginGoogleUseCase.swift in Sources */,
@@ -971,9 +989,11 @@
 				87FF639021977AE5008EE969 /* Constants.swift in Sources */,
 				8802E64C21BC3D00004BB179 /* BasketViewModel.swift in Sources */,
 				8802E66421BC41BA004BB179 /* ProductInBasket+CoreDataProperties.swift in Sources */,
+				843405EC21BC793F00A4851D /* ModifyQuantityForProductUseCase.swift in Sources */,
 				8855D7A021B3141C00B5F0E8 /* PavilionRepository .swift in Sources */,
 				88175FBB21B435D3003C76C7 /* AuthTokenRepository.swift in Sources */,
 				87041AA92198145600312FBF /* DataSource.swift in Sources */,
+				843405EE21BC7A3300A4851D /* LoadProductsFromBasketUseCase.swift in Sources */,
 				8802E66621BC41BA004BB179 /* FavoriteProduct+CoreDataProperties.swift in Sources */,
 				2C038F5021B15DE600B84B0E /* LoadDiscountedProductUseCase.swift in Sources */,
 				8855D79821B3111400B5F0E8 /* Products.swift in Sources */,
