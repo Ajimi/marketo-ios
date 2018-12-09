@@ -24,7 +24,6 @@ class FavoriteProductCollectionViewCell: UICollectionViewCell,Configurable {
         name.text = favoriteProduct.name
     }
 
-    // TODO: MONCEF IB ACTION BRAS MIMTEK
     @IBAction func didTapRemove(_ sender: Any){
         delegate?.favoriteProductCellDidTapRemove(self)
     }

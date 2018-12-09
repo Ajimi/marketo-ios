@@ -9,5 +9,5 @@
 import Foundation
 
 protocol FavoriteProductTableViewCellDelegate: class{
-    func favoriteProductCellDidTapRemove(_ sender: FavoriteProductTableViewCell)
+    func favoriteProductCellDidTapRemove(_ sender: FavoriteProductCollectionViewCell)
 }

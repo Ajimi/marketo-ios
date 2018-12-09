@@ -13,13 +13,13 @@ let favoriteProdCell = "favoriteProdCell"
 typealias FavoriteProducts =  [FavoriteProduct]
 
 
-class FavoriteViewController: UIViewController,UITableViewDataSource,UITableViewDelegate, FavoriteProductTableViewCellDelegate {
+class FavoriteViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, FavoriteProductTableViewCellDelegate {
     
     let viewModel = FavoriteViewModel()
     
 
     
-    @IBOutlet weak var favoriteProductsTableView : UITableView!
+    @IBOutlet weak var favoriteProductsCollecionView : UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,7 @@ class FavoriteViewController: UIViewController,UITableViewDataSource,UITableView
             }
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let _ = showSucces.consume() {
                 DispatchQueue.main.async {
-                    self.favoriteProductsTableView.reloadData()
+                    self.favoriteProductsCollecionView.reloadData()
                 }
             }
         })
@@ -58,7 +58,7 @@ class FavoriteViewController: UIViewController,UITableViewDataSource,UITableView
             }
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let indexPath = showSucces.consume() {
                 DispatchQueue.main.async {
-                    self.favoriteProductsTableView.deleteRows(at: [indexPath], with: .fade)
+                    self.favoriteProductsCollecionView.deleteItems(at: [indexPath])
                 }
             }
         }
@@ -69,16 +69,16 @@ class FavoriteViewController: UIViewController,UITableViewDataSource,UITableView
 
 
 extension FavoriteViewController {
-    func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.favoriteProducts.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = favoriteProductsTableView.dequeueReusableCell(withIdentifier: favoriteProdCell) as! FavoriteProductTableViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = favoriteProductsCollecionView.dequeueReusableCell(withReuseIdentifier: favoriteProdCell,for: indexPath) as! FavoriteProductCollectionViewCell
         
         cell.configure(with: viewModel.favoriteProducts[indexPath.item])
         
@@ -89,8 +89,8 @@ extension FavoriteViewController {
 
 // MARK:-Delegated Method for Remove Button
 extension FavoriteViewController {
-    func favoriteProductCellDidTapRemove(_ sender: FavoriteProductTableViewCell) {
-        guard let tappedIndexPath = basketTableView.indexPath(for: sender) else { return }
+    func favoriteProductCellDidTapRemove(_ sender: FavoriteProductCollectionViewCell) {
+        guard let tappedIndexPath = favoriteProductsCollecionView.indexPath(for: sender) else { return }
         viewModel.removeProductFromFavorite(at: tappedIndexPath)
     }
     

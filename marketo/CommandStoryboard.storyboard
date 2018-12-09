@@ -126,6 +126,9 @@
                                                             <state key="normal" image="shopping_cart">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="addToBasket:" destination="cg6-oo-GRP" eventType="touchUpInside" id="eor-XZ-8FX"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTf-8N-tYM">
                                                             <rect key="frame" x="0.0" y="0.0" width="62" height="30"/>
@@ -790,6 +793,9 @@
                         <viewLayoutGuide key="safeArea" id="ZER-TS-LVg"/>
                     </view>
                     <navigationItem key="navigationItem" title="Favorite" id="S3a-Yj-8qI"/>
+                    <connections>
+                        <outlet property="favoriteProductsCollecionView" destination="Huu-mx-zGt" id="fUt-ha-oFo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Obe-Jh-Ga5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -848,6 +854,7 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.92941176469999998" green="0.5568627451" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="textShadowColor" red="0.98106676339999999" green="0.88853303650000004" blue="0.7139044108" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>

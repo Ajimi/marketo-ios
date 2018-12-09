@@ -23,7 +23,6 @@ class TrendingProductCollectionViewCell: UICollectionViewCell,Configurable {
     }
     
     
-    // TODO: - Add IBACTION ya moncef
     @IBAction func addToBasket(_ sender: UIButton) {
         delegate?.trendingCellDidTapFavorite(self)
     }
