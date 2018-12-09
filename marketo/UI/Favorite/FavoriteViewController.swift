@@ -18,11 +18,14 @@ class FavoriteViewController: UIViewController,UICollectionViewDelegate,UICollec
     let viewModel = FavoriteViewModel()
     
 
-    
+    // FIX: -collection instead of Collecion
     @IBOutlet weak var favoriteProductsCollecionView : UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        favoriteProductsCollecionView.delegate = self
+        favoriteProductsCollecionView.dataSource = self
         viewModel.updateUI()
         favoriteProductsState()
         deleteFavoriteProductState()
@@ -64,8 +67,6 @@ class FavoriteViewController: UIViewController,UICollectionViewDelegate,UICollec
             }
         }
     }
-    
-
 }
 
 
@@ -79,9 +80,12 @@ extension FavoriteViewController {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: favoriteProdCell,for: indexPath) as! FavoriteProductCollectionViewCell
+        let cell = favoriteProductsCollecionView.dequeueReusableCell(withReuseIdentifier: favoriteProdCell,for: indexPath) as! FavoriteProductCollectionViewCell
         
-        cell.configure(with: viewModel.favoriteProducts[indexPath.item])
+        print(indexPath.row)
+        cell.configure(with: viewModel.favoriteProducts[indexPath.row])
+        
+        cell.delegate = self
         
         return cell
     }

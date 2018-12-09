@@ -22,6 +22,7 @@ class FavoriteProductCollectionViewCell: UICollectionViewCell,Configurable {
     func configure(with favoriteProduct: FavoriteProduct) {
         self.favoriteProduct = favoriteProduct
         name.text = favoriteProduct.name
+        print("Product ", favoriteProduct.name!)
     }
 
     @IBAction func didTapRemove(_ sender: Any){
