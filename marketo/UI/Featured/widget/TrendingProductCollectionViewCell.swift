@@ -15,14 +15,19 @@ class TrendingProductCollectionViewCell: UICollectionViewCell,Configurable {
     
     var product : Product?
     
+    // Delegate
+    weak var delegate: TrendingProductCollectionViewCellDelegate?
+    
     @IBAction func addToFavorite(_ sender: UIButton) {
-        let pers = PersistenceManager.shared
-        let favorite = FavoriteProduct(context: pers.context)
-        favorite.name = product?.name
-        favorite.imageName = product?.image
-        pers.save()
+        delegate?.trendingCellDidTapFavorite(self)
     }
     
+    
+    // TODO: - Add IBACTION ya moncef
+    @IBAction func addToBasket(_ sender: UIButton) {
+        delegate?.trendingCellDidTapFavorite(self)
+    }
+        
     func configure(with product: Product){
         self.product = product
         name.text = product.name
