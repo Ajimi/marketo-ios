@@ -20,6 +20,10 @@ class FavoriteViewModel: ViewModel {
     var favoriteProducts = FavoriteProducts()
     
     
+    func shouldShowEmptyState() -> Bool {
+        return favoriteProducts.count == 0
+    }
+    
     func updateUI() {
         loadFavoriteProducts()
     }

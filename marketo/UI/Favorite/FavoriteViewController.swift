@@ -18,6 +18,7 @@ class FavoriteViewController: UIViewController,UICollectionViewDelegate,UICollec
     let viewModel = FavoriteViewModel()
     
 
+    @IBOutlet weak var emptyState: UIViewFavoriteEmptyState!
     // FIX: -collection instead of Collecion
     @IBOutlet weak var favoriteProductsCollecionView : UICollectionView!
     
@@ -45,11 +46,17 @@ class FavoriteViewController: UIViewController,UICollectionViewDelegate,UICollec
             }
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let _ = showSucces.consume() {
                 DispatchQueue.main.async {
-                    print("data reloaded in favoriteVC")
                     self.favoriteProductsCollecionView.reloadData()
+                    let shouldShowEmptyState = self.viewModel.shouldShowEmptyState()
+                    self.toggleEmptyState(shouldShow: shouldShowEmptyState)
                 }
             }
         })
+    }
+    
+    func toggleEmptyState(shouldShow : Bool) {
+        favoriteProductsCollecionView.isHidden = !shouldShow
+        emptyState.isHidden = shouldShow
     }
     
     fileprivate func deleteFavoriteProductState() {
