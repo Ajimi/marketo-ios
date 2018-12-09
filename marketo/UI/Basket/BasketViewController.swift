@@ -23,12 +23,13 @@ class BasketViewController: UITableViewController, BasketProducTableViewCellDele
         tableView.dataSource = self
         tableView.delegate = self
         
+        viewModel.updateUI()
+        
         fetchProducts()
         
         super.viewDidLoad()
         self.tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
-
     }
     
     fileprivate func fetchProducts() {
@@ -49,21 +50,15 @@ class BasketViewController: UITableViewController, BasketProducTableViewCellDele
     }
     
     func basketCellDidTapStepper(_ sender: BasketProductTableViewCell, _ value: Int) {
-        //        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
-        //TODO viewModel.modifyCount() Complete
-        if let product = sender.product {
-            viewModel.modifyQuantity(for: product, with: value)
-        }
+        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        viewModel.modifyQuantity(at: tappedIndexPath, with: value)
     }
     
     func basketCellDidTapRemove(_ sender: BasketProductTableViewCell) {
-        //        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
-        if let product = sender.product {
-            viewModel.deleteProductFromBasket(product: product)
-        }
+        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        viewModel.deleteProductFromBasket(at: tappedIndexPath)
+        tableView.deleteRows(at: [tappedIndexPath], with: .fade)
     }
-    
-    
 }
 
 
@@ -72,7 +67,7 @@ extension BasketViewController{
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return  4
+            return viewModel.products.count + 2
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -92,22 +87,20 @@ extension BasketViewController{
             let cell = tableView.dequeueReusableCell(withIdentifier: numberOfBasketProductReuseIdentifier, for: indexPath) as! NumberOfBasketProductsTableViewCell
             
             cell.configure(with: viewModel.numberOfItem())
-
+            
             return cell
             
         } else if indexPath.row == viewModel.products.count + 1 {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: checkoutButtonReuseIdentifier, for: indexPath)
-            
+            // Todo add delegate
             return cell
-            
         } else {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: basketProductReuseIdentifier, for: indexPath) as! BasketProductTableViewCell
             
             cell.configure(with: viewModel.products[indexPath.row])
             cell.delegate = self
-            
             
             return cell
         }

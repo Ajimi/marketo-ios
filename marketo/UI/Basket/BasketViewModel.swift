@@ -17,7 +17,6 @@ class BasketViewModel: ViewModel{
     let saveProductToBasketUseCase =  SaveProductToBasketUseCase()
     let loadBasketUseCase = LoadBasktUseCase()
     
-    
    
     var uiBasketProductsState =  Dynamic<UiState<ProductsInBasket>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
     var uiSaveProductState = Dynamic<UiState<Bool>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
@@ -30,6 +29,7 @@ class BasketViewModel: ViewModel{
     
     func updateUI() {
         loadProductsFromBasket()
+        loadBasket()
     }
     
     func loadProductsFromBasket(){
@@ -40,7 +40,7 @@ class BasketViewModel: ViewModel{
                 self.products = products
                 self.uiBasketProductsState.value = self.emitUiState(showSuccess: Event(with: products))
             case .failure(let error):
-                self.uiBasketProductsState.value = self.emitUiState(showProgress: false, showError: Event(with: error.localizedDescription))
+                self.uiBasketProductsState.value = self.emitUiState(showError: Event(with: error.localizedDescription))
             }
         }
     }
@@ -56,20 +56,22 @@ class BasketViewModel: ViewModel{
         }
     }
     
-    func deleteProductFromBasket(product:ProductInBasket) {
-        deletProductFromBasktUseCase.execute(productInBasket: product) { (response) in
+    func deleteProductFromBasket(at indexPath:IndexPath) {
+        deletProductFromBasktUseCase.execute(productInBasket: products[indexPath.row]) { (response) in
             switch response {
             case .success(let state):
+                // TODO Delete PRODUCT FROM Product ARRAY
                 self.uiDeleteProductState.value = self.emitUiState(showSuccess: Event(with: state))
+            
             case .failure(let error):
                 print(error)
-                self.uiDeleteProductState.value = self.emitUiState(showSuccess:Event(with: false))
+                self.uiDeleteProductState.value = self.emitUiState(showError:Event(with: "Error happened"))
             }
         }
     }
     
-    func modifyQuantity(for product: ProductInBasket, with value:Int) {
-        modifyQuantityForProductUseCase.execute(for: product, with: value) { (response) in
+    func modifyQuantity(at indexPath: IndexPath, with value:Int) {
+        modifyQuantityForProductUseCase.execute(for: products[indexPath.row], with: value) { (response) in
             switch response {
             case .success(let state):
                 self.uiModifyProductState.value = self.emitUiState(showSuccess: Event(with:state))
@@ -85,6 +87,7 @@ class BasketViewModel: ViewModel{
             switch response {
             case .success(_):
                 self.uiTruncateBasketState.value = self.emitUiState(showSuccess: Event(with:true))
+                // TODO EMPTY PRODUCT ARRAY
             case .failure(let error):
                 print(error)
                 self.uiTruncateBasketState.value = self.emitUiState(showError:Event(with:"Error Happened"))
