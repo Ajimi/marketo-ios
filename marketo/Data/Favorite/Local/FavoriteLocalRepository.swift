@@ -16,15 +16,26 @@ class FavoriteLocalRepository: LocalRepository {
 }
 
 extension FavoriteLocalRepository{
+    func getProducts(completion: (Result<FavoriteProducts>) -> Void) {
+        let products = persistenceManager.fetch(FavoriteProduct.self)
+        
+        if(products.isEmpty){
+            completion(Result{
+                throw DataBaseError.EmptyError
+            })
+        }else{
+            completion(Result{
+                return products
+            })
+        }
+    }
+    
     
     func deleteProduct(product:FavoriteProduct,completion:@escaping (Result<Bool>)->Void){
-        
         persistenceManager.delete(product)
         completion(Result{
             return true
         })
-        
-        
     }
     
     func addProduct(product:Product,completion:@escaping (Result<Bool>)->Void){

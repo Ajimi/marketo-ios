@@ -21,16 +21,16 @@ class FavoriteRepository {
 
 extension FavoriteRepository {
     
-    func deleteProduct(product:FavoriteProduct,completion:@escaping (Result<Bool>)->Void){
-        
-        localRepository.deleteProduct(product: product, completion: completion)
-        
-        
+    func getProducts(completion:@escaping(Result<FavoriteProducts>) -> Void) {
+        localRepository.getProducts(completion: completion)
     }
     
+    func deleteProduct(product:FavoriteProduct,completion:@escaping (Result<Bool>)->Void){
+        localRepository.deleteProduct(product: product, completion: completion)
+    }
+    
+    
     func addProduct(product:Product,completion:@escaping (Result<Bool>)->Void){
-        
         localRepository.addProduct(product: product, completion: completion)
-        
     }
 }
