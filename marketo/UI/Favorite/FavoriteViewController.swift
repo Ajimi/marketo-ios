@@ -30,12 +30,15 @@ class FavoriteViewController: UIViewController,UICollectionViewDelegate,UICollec
         viewModel.updateUI()
         favoriteProductsState()
         deleteFavoriteProductState()
+        updateEmptyState()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         viewModel.updateUI()
+        updateEmptyState()
     }
 
+    
     fileprivate func favoriteProductsState() {
         viewModel.uiFavoriteProductState.bindAndFire(listener: { (uiModel) in
             if (uiModel.showProgress) {
@@ -47,11 +50,15 @@ class FavoriteViewController: UIViewController,UICollectionViewDelegate,UICollec
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let _ = showSucces.consume() {
                 DispatchQueue.main.async {
                     self.favoriteProductsCollecionView.reloadData()
-                    let shouldShowEmptyState = self.viewModel.shouldShowEmptyState()
-                    self.toggleEmptyState(shouldShow: shouldShowEmptyState)
+                    self.updateEmptyState()
                 }
             }
         })
+    }
+    
+    fileprivate func updateEmptyState() {
+        let shouldShowEmptyState = viewModel.shouldShowEmptyState()
+        toggleEmptyState(shouldShow: shouldShowEmptyState)
     }
     
     func toggleEmptyState(shouldShow : Bool) {
@@ -70,9 +77,8 @@ class FavoriteViewController: UIViewController,UICollectionViewDelegate,UICollec
             }
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let indexPath = showSucces.consume() {
                 DispatchQueue.main.async {
-                    let shouldShowEmptyState = self.viewModel.shouldShowEmptyState()
-                    self.toggleEmptyState(shouldShow: shouldShowEmptyState)
                     self.favoriteProductsCollecionView.deleteItems(at: [indexPath])
+                    self.updateEmptyState()
                 }
             }
         }

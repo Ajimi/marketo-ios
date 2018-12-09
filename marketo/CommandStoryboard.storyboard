@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -288,28 +288,28 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oPp-8x-8rq">
-                                <rect key="frame" x="0.0" y="120" width="375" height="221"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="yJP-wj-fmq">
-                                    <size key="itemSize" width="73" height="72"/>
+                                    <size key="itemSize" width="110" height="113"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PavilionCell" id="v0e-5m-DbZ" customClass="PavilionCollectionViewCell" customModule="marketo" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="5" width="73" height="72"/>
+                                        <rect key="frame" x="5" y="5" width="110" height="113"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="73" height="72"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="110" height="113"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="home1" translatesAutoresizingMaskIntoConstraints="NO" id="c4f-nb-Eq0">
-                                                    <rect key="frame" x="3" y="3" width="67" height="48.5"/>
+                                                    <rect key="frame" x="3" y="3" width="104" height="80.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDQ-A2-tfw">
-                                                    <rect key="frame" x="0.0" y="54.5" width="73" height="14.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <rect key="frame" x="0.0" y="86.5" width="110" height="23.5"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -324,7 +324,7 @@
                                             <constraint firstItem="sDQ-A2-tfw" firstAttribute="top" secondItem="c4f-nb-Eq0" secondAttribute="bottom" constant="3" id="rOI-ob-6xC"/>
                                             <constraint firstAttribute="trailing" secondItem="c4f-nb-Eq0" secondAttribute="trailing" constant="3" id="zaw-D6-xRi"/>
                                         </constraints>
-                                        <size key="customSize" width="73" height="72"/>
+                                        <size key="customSize" width="110" height="113"/>
                                         <connections>
                                             <outlet property="image" destination="c4f-nb-Eq0" id="Vr3-7v-NfQ"/>
                                             <outlet property="label" destination="sDQ-A2-tfw" id="7KI-65-tTc"/>
@@ -342,8 +342,8 @@
                         <constraints>
                             <constraint firstItem="vZb-v9-O9m" firstAttribute="leading" secondItem="wXW-Ya-cxM" secondAttribute="leading" id="7Cl-Rr-MCY"/>
                             <constraint firstItem="oPp-8x-8rq" firstAttribute="trailing" secondItem="wXW-Ya-cxM" secondAttribute="trailing" id="CfP-yR-Sxs"/>
-                            <constraint firstItem="wXW-Ya-cxM" firstAttribute="bottom" secondItem="oPp-8x-8rq" secondAttribute="bottom" constant="277" id="Fcg-N2-whd"/>
                             <constraint firstItem="vZb-v9-O9m" firstAttribute="trailing" secondItem="wXW-Ya-cxM" secondAttribute="trailing" id="TFH-Q8-bqW"/>
+                            <constraint firstItem="oPp-8x-8rq" firstAttribute="bottom" secondItem="wXW-Ya-cxM" secondAttribute="bottom" id="Ukk-57-bdM"/>
                             <constraint firstItem="oPp-8x-8rq" firstAttribute="top" secondItem="vZb-v9-O9m" secondAttribute="bottom" id="gLx-5Q-Qbi"/>
                             <constraint firstItem="oPp-8x-8rq" firstAttribute="leading" secondItem="wXW-Ya-cxM" secondAttribute="leading" id="ixe-Ks-8T3"/>
                             <constraint firstItem="vZb-v9-O9m" firstAttribute="top" secondItem="wXW-Ya-cxM" secondAttribute="top" id="rlX-Nu-XzP"/>
@@ -1004,6 +1004,6 @@
         <image name="shopping_cart_loaded" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Nkh-fS-cDq"/>
+        <segue reference="B2o-rh-1ew"/>
     </inferredMetricsTieBreakers>
 </document>
