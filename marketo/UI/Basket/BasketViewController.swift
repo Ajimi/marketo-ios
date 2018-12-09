@@ -19,22 +19,22 @@ class BasketViewController: UITableViewController, BasketProducTableViewCellDele
     
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         
         basketTableView.dataSource = self
         basketTableView.delegate = self
         
         viewModel.updateUI()
-        
-        basketHandler()
+        basketProductsState()
         deleteProductState()
         
-        super.viewDidLoad()
+        
         self.tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
     }
     
     
-    fileprivate func basketHandler() {
+    fileprivate func basketProductsState() {
         // Pavilion
         viewModel.uiBasketProductsState.bindAndFire(listener: { (uiModel) in
             if (uiModel.showProgress) {
@@ -68,6 +68,22 @@ class BasketViewController: UITableViewController, BasketProducTableViewCellDele
         }
     }
     
+    fileprivate func truncateProductState() {
+        viewModel.uiTruncateBasketState.bindAndFire { uiModel in
+            if (uiModel.showProgress) {
+                print("In progress")
+            }
+            if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
+                print("there Was an error \(errorMessage)")
+            }
+            if let showSucces = uiModel.showSuccess, !showSucces.consumed, let indexPath = showSucces.consume() {
+                DispatchQueue.main.async {
+                    self.basketTableView.reloadData()   
+                }
+            }
+        }
+    }
+    
     func basketCellDidTapStepper(_ sender: BasketProductTableViewCell, _ value: Int) {
         guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
         viewModel.modifyQuantity(at: tappedIndexPath, with: value)
@@ -95,7 +111,7 @@ extension BasketViewController{
             
             return cell
             
-        }	
+        }
         
         if indexPath.row == 0 {
             
