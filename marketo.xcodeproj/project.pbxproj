@@ -41,6 +41,8 @@
 		843405F621BD15D300A4851D /* LoadBasketUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843405F521BD15D300A4851D /* LoadBasketUseCase.swift */; };
 		843405F821BD161F00A4851D /* CreateBasketUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843405F721BD161F00A4851D /* CreateBasketUseCase.swift */; };
 		843405FB21BD2E2600A4851D /* BasketProducTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843405FA21BD2E2600A4851D /* BasketProducTableViewCellDelegate.swift */; };
+		843405FD21BD425400A4851D /* CheckoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843405FC21BD425400A4851D /* CheckoutTableViewCell.swift */; };
+		8434060021BD429200A4851D /* CheckoutTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843405FF21BD429200A4851D /* CheckoutTableViewCellDelegate.swift */; };
 		87041AA72198144300312FBF /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AA62198144300312FBF /* UserRepository.swift */; };
 		87041AA92198145600312FBF /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AA82198145600312FBF /* DataSource.swift */; };
 		87041AB321982F2600312FBF /* UserLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AB221982F2600312FBF /* UserLocalRepository.swift */; };
@@ -153,6 +155,8 @@
 		843405F521BD15D300A4851D /* LoadBasketUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadBasketUseCase.swift; sourceTree = "<group>"; };
 		843405F721BD161F00A4851D /* CreateBasketUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBasketUseCase.swift; sourceTree = "<group>"; };
 		843405FA21BD2E2600A4851D /* BasketProducTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketProducTableViewCellDelegate.swift; sourceTree = "<group>"; };
+		843405FC21BD425400A4851D /* CheckoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutTableViewCell.swift; sourceTree = "<group>"; };
+		843405FF21BD429200A4851D /* CheckoutTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		87041AA62198144300312FBF /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		87041AA82198145600312FBF /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		87041AB221982F2600312FBF /* UserLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocalRepository.swift; sourceTree = "<group>"; };
@@ -371,6 +375,15 @@
 			path = Remote;
 			sourceTree = "<group>";
 		};
+		843405FE21BD427400A4851D /* delegates */ = {
+			isa = PBXGroup;
+			children = (
+				843405FA21BD2E2600A4851D /* BasketProducTableViewCellDelegate.swift */,
+				843405FF21BD429200A4851D /* CheckoutTableViewCellDelegate.swift */,
+			);
+			path = delegates;
+			sourceTree = "<group>";
+		};
 		849EC38D6BF19C3DA52A17C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -519,10 +532,10 @@
 		8802E64721BC36B1004BB179 /* Basket */ = {
 			isa = PBXGroup;
 			children = (
+				843405FE21BD427400A4851D /* delegates */,
 				88BD11DD21BD20FD004A3816 /* widgets */,
 				8802E64921BC371E004BB179 /* BasketViewController.swift */,
 				8802E64B21BC3D00004BB179 /* BasketViewModel.swift */,
-				843405FA21BD2E2600A4851D /* BasketProducTableViewCellDelegate.swift */,
 			);
 			path = Basket;
 			sourceTree = "<group>";
@@ -706,6 +719,7 @@
 			children = (
 				88BD11E321BD21F3004A3816 /* BasketProductTableViewCell.swift */,
 				88BD11E521BD2228004A3816 /* NumberOfBasketProductsTableViewCell.swift */,
+				843405FC21BD425400A4851D /* CheckoutTableViewCell.swift */,
 			);
 			path = widgets;
 			sourceTree = "<group>";
@@ -968,6 +982,7 @@
 				88E998542198491200D3FE04 /* HomeViewController.swift in Sources */,
 				88175FC221B459B0003C76C7 /* LogoutUseCase.swift in Sources */,
 				2C84FB6B21B52D6000BA6173 /* DeleteProductFromFavoriteUseCase.swift in Sources */,
+				843405FD21BD425400A4851D /* CheckoutTableViewCell.swift in Sources */,
 				8802E66521BC41BA004BB179 /* FavoriteProduct+CoreDataClass.swift in Sources */,
 				87FECD9B21AAC7FC00805944 /* Event.swift in Sources */,
 				87A4772F219735B4005937AD /* LoginViewController.swift in Sources */,
@@ -1006,6 +1021,7 @@
 				2C84FB7621B530C400BA6173 /* FavoriteRemoteRepository.swift in Sources */,
 				8854E24B21B47BDF00FBCC31 /* FavoriteViewController.swift in Sources */,
 				885537772197649F0007B3B5 /* User.swift in Sources */,
+				8434060021BD429200A4851D /* CheckoutTableViewCellDelegate.swift in Sources */,
 				88E998512198483900D3FE04 /* Extension.swift in Sources */,
 				88BC8F5721AB24540013D4EB /* AlertExtension.swift in Sources */,
 				2C5F9E3421AC04B200BE9E1C /* UseCase.swift in Sources */,
