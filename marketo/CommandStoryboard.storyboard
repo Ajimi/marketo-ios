@@ -746,8 +746,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="142" height="167"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="tvE-1b-20U">
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="tvE-1b-20U">
                                                     <rect key="frame" x="15" y="0.0" width="345" height="82.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Zo-F1-TwZ">
                                                     <rect key="frame" x="0.0" y="146" width="142" height="21"/>
@@ -772,16 +773,13 @@
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="3Zo-F1-TwZ" firstAttribute="top" secondItem="K8h-aQ-pY9" secondAttribute="bottom" id="2XY-8H-Ck9"/>
-                                            <constraint firstItem="K8h-aQ-pY9" firstAttribute="leading" secondItem="a59-UH-46b" secondAttribute="leading" id="CR1-K3-Kax"/>
+                                            <constraint firstAttribute="leading" secondItem="a59-UH-46b" secondAttribute="leading" id="CR1-K3-Kax"/>
                                             <constraint firstItem="3Zo-F1-TwZ" firstAttribute="leading" secondItem="a59-UH-46b" secondAttribute="leading" id="Xgs-7q-OGH"/>
                                             <constraint firstAttribute="bottom" secondItem="3Zo-F1-TwZ" secondAttribute="bottom" id="d1z-Y4-EvM"/>
-                                            <constraint firstAttribute="trailing" secondItem="K8h-aQ-pY9" secondAttribute="trailing" id="fDM-IM-UZS"/>
                                             <constraint firstAttribute="trailing" secondItem="3Zo-F1-TwZ" secondAttribute="trailing" id="n0l-IO-n92"/>
-                                            <constraint firstItem="K8h-aQ-pY9" firstAttribute="top" secondItem="a59-UH-46b" secondAttribute="top" id="smN-sA-G6d"/>
+                                            <constraint firstAttribute="top" secondItem="a59-UH-46b" secondAttribute="top" id="smN-sA-G6d"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="imageProduct" destination="K8h-aQ-pY9" id="Gvw-d2-CEm"/>
                                             <outlet property="name" destination="3Zo-F1-TwZ" id="RCq-5l-m61"/>
                                         </connections>
                                     </collectionViewCell>
