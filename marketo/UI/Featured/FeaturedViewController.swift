@@ -44,7 +44,7 @@ class FeaturedViewController: UIViewController, UICollectionViewDataSource , Tre
             }
             
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let productsResponse = showSucces.consume() {
-                print(productsResponse)
+                //print(productsResponse)
                 DispatchQueue.main.async {
                     self.trendingProductCollectionView.reloadData()
                 }
@@ -61,7 +61,7 @@ class FeaturedViewController: UIViewController, UICollectionViewDataSource , Tre
             }
             
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let productsResponse = showSucces.consume() {
-                print(productsResponse)
+                //print(productsResponse)
                 DispatchQueue.main.async {
                     self.discountedProductCollectionView.reloadData()
                 }
@@ -79,7 +79,7 @@ class FeaturedViewController: UIViewController, UICollectionViewDataSource , Tre
             
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let pavilionsResponse = showSucces.consume() {
                 print("hhhhhhhh")
-                print(pavilionsResponse)
+                //print(pavilionsResponse)
                 DispatchQueue.main.async {
                     self.pavilionsCollectionView.reloadData()
                 }
@@ -113,7 +113,6 @@ extension FeaturedViewController{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: pavilionHomeReuseIdentifier, for: indexPath) as! PavilionHomeCollectionViewCell
             
             cell.configure(with: viewModel.pavilions[indexPath.item])
-            
             return cell;
         }
         else if (collectionView == self.trendingProductCollectionView){
@@ -121,7 +120,6 @@ extension FeaturedViewController{
             
             cell.configure(with: viewModel.trendingProducts[indexPath.item])
             cell.delegate = self
-            
             return cell;
         }
         else{
