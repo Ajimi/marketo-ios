@@ -8,13 +8,12 @@
 
 import UIKit
 
-class BasketProductTableViewCell: UITableViewCell,Configurable {
+class BasketProductTableViewCell: UITableViewCell,Configurable{
+    
+    // Delegate
+    weak var delegate: BasketProducTableViewCellDelegate?
 
-    func configure(with content: ProductInBasket) {
-        productImage.image = UIImage(named: "")
-        productName.text = content.name!
-        quantity.text = Int(stepper.value).description
-    }
+    var product: ProductInBasket? // Check if weak works
     
     @IBOutlet weak var productImage: UIImageView!
     
@@ -23,12 +22,26 @@ class BasketProductTableViewCell: UITableViewCell,Configurable {
     @IBOutlet weak var quantity: UILabel!
     
     @IBOutlet weak var stepper: UIStepper!
+
+    
+    
+    func configure(with product: ProductInBasket) {
+        self.product = product
+
+        productImage.image = UIImage(named: "") // Todo get Image
+        productName.text = product.name!
+        quantity.text = Int(stepper.value).description
+    }
+    
     
     @IBAction func deleteProduct(_ sender: Any) {
         
+        delegate?.basketCellDidTapRemove(self)
     }
     
     @IBAction func changeQuantity(_ sender: UIStepper) {
-        quantity.text = Int(sender.value).description
+        let number = Int(sender.value)
+        quantity.text = number.description
+        delegate?.basketCellDidTapStepper(self, number)
     }
 }

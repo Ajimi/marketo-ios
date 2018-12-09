@@ -12,7 +12,17 @@ private let numberOfBasketProductReuseIdentifier = "numberOfBasketProductsItemsC
 private let basketProductReuseIdentifier = "basketProductCell"
 private let checkoutButtonReuseIdentifier = "checkoutButtonCell"
 
-class BasketViewController: UITableViewController {
+class BasketViewController: UITableViewController, BasketProducTableViewCellDelegate {
+    func basketCellDidTapStepper(_ sender: BasketProductTableViewCell, _ value: Int) {
+//        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        //TODO viewModel.modifyCount() Complete
+    }
+    
+    func basketCellDidTapRemove(_ sender: BasketProductTableViewCell) {
+        //        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+    }
+    
+   
     
     @IBOutlet weak var basketTableView : UITableView!
     
@@ -48,7 +58,7 @@ class BasketViewController: UITableViewController {
             }
         })
     }
-
+    
 }
 
 
@@ -91,6 +101,7 @@ extension BasketViewController{
             let cell = tableView.dequeueReusableCell(withIdentifier: basketProductReuseIdentifier, for: indexPath) as! BasketProductTableViewCell
             
             cell.configure(with: viewModel.products[indexPath.row])
+            cell.delegate = self
             
             
             return cell

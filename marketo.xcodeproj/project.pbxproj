@@ -40,6 +40,7 @@
 		843405F421BD11BD00A4851D /* LoadFavoriteProductUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843405F321BD11BD00A4851D /* LoadFavoriteProductUseCase.swift */; };
 		843405F621BD15D300A4851D /* LoadBasketUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843405F521BD15D300A4851D /* LoadBasketUseCase.swift */; };
 		843405F821BD161F00A4851D /* CreateBasketUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843405F721BD161F00A4851D /* CreateBasketUseCase.swift */; };
+		843405FB21BD2E2600A4851D /* BasketProducTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843405FA21BD2E2600A4851D /* BasketProducTableViewCellDelegate.swift */; };
 		87041AA72198144300312FBF /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AA62198144300312FBF /* UserRepository.swift */; };
 		87041AA92198145600312FBF /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AA82198145600312FBF /* DataSource.swift */; };
 		87041AB321982F2600312FBF /* UserLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AB221982F2600312FBF /* UserLocalRepository.swift */; };
@@ -151,6 +152,7 @@
 		843405F321BD11BD00A4851D /* LoadFavoriteProductUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFavoriteProductUseCase.swift; sourceTree = "<group>"; };
 		843405F521BD15D300A4851D /* LoadBasketUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadBasketUseCase.swift; sourceTree = "<group>"; };
 		843405F721BD161F00A4851D /* CreateBasketUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBasketUseCase.swift; sourceTree = "<group>"; };
+		843405FA21BD2E2600A4851D /* BasketProducTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketProducTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		87041AA62198144300312FBF /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		87041AA82198145600312FBF /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		87041AB221982F2600312FBF /* UserLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocalRepository.swift; sourceTree = "<group>"; };
@@ -520,6 +522,7 @@
 				88BD11DD21BD20FD004A3816 /* widgets */,
 				8802E64921BC371E004BB179 /* BasketViewController.swift */,
 				8802E64B21BC3D00004BB179 /* BasketViewModel.swift */,
+				843405FA21BD2E2600A4851D /* BasketProducTableViewCellDelegate.swift */,
 			);
 			path = Basket;
 			sourceTree = "<group>";
@@ -977,6 +980,7 @@
 				2C038F5221B15DF200B84B0E /* SaveProductToBaskeUseCase.swift in Sources */,
 				8802E66321BC41BA004BB179 /* ProductInBasket+CoreDataClass.swift in Sources */,
 				87FF639221977B22008EE969 /* UserRouter.swift in Sources */,
+				843405FB21BD2E2600A4851D /* BasketProducTableViewCellDelegate.swift in Sources */,
 				2C038F4E21B15DB100B84B0E /* LoadTrendingProductUseCase.swift in Sources */,
 				87A47735219735B4005937AD /* marketo.xcdatamodeld in Sources */,
 				8855D7A421B3147F00B5F0E8 /* PavilionLocalRepository .swift in Sources */,

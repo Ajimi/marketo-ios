@@ -8,9 +8,8 @@
 
 import Foundation
 protocol BasketProducTableViewCellDelegate : class {
-    func basketCellDidTapIncrement(_ sender: BasketProductTableViewCell)
+    func basketCellDidTapStepper(_ sender: BasketProductTableViewCell, _ value: Int)
     func basketCellDidTapRemove(_ sender: BasketProductTableViewCell)
-    func basketCellDidTapDecrement(_ sender: BasketProductTableViewCell)
 }
 
 
