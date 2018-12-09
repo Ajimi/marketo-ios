@@ -13,17 +13,6 @@ private let basketProductReuseIdentifier = "basketProductCell"
 private let checkoutButtonReuseIdentifier = "checkoutButtonCell"
 
 class BasketViewController: UITableViewController, BasketProducTableViewCellDelegate {
-    func basketCellDidTapStepper(_ sender: BasketProductTableViewCell, _ value: Int) {
-//        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
-        //TODO viewModel.modifyCount() Complete
-    }
-    
-    func basketCellDidTapRemove(_ sender: BasketProductTableViewCell) {
-        //        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
-    }
-    
-   
-    
     @IBOutlet weak var basketTableView : UITableView!
     
     let viewModel = BasketViewModel()
@@ -58,6 +47,22 @@ class BasketViewController: UITableViewController, BasketProducTableViewCellDele
             }
         })
     }
+    
+    func basketCellDidTapStepper(_ sender: BasketProductTableViewCell, _ value: Int) {
+        //        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        //TODO viewModel.modifyCount() Complete
+        if let product = sender.product {
+            viewModel.modifyQuantity(for: product, with: value)
+        }
+    }
+    
+    func basketCellDidTapRemove(_ sender: BasketProductTableViewCell) {
+        //        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        if let product = sender.product {
+            viewModel.deleteProductFromBasket(product: product)
+        }
+    }
+    
     
 }
 
