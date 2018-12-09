@@ -57,11 +57,11 @@ class BasketViewModel: ViewModel{
     }
     
     func deleteProductFromBasket(at indexPath:IndexPath) {
-        deletProductFromBasktUseCase.execute(productInBasket: products[indexPath.row]) { (response) in
+        deletProductFromBasktUseCase.execute(productInBasket: products[indexPath.row-1]) { (response) in
             switch response {
             case .success(let state):
                 print(state)
-                self.products.remove(at: indexPath.row)
+                self.products.remove(at: indexPath.row-1)
                 self.uiDeleteProductState.value = self.emitUiState(showSuccess: Event(with: indexPath))
 
             case .failure(let error):
@@ -72,7 +72,7 @@ class BasketViewModel: ViewModel{
     }
     
     func modifyQuantity(at indexPath: IndexPath, with value:Int) {
-        modifyQuantityForProductUseCase.execute(for: products[indexPath.row], with: value) { (response) in
+        modifyQuantityForProductUseCase.execute(for: products[indexPath.row-1], with: value) { (response) in
             switch response {
             case .success(let state):
                 self.uiModifyProductState.value = self.emitUiState(showSuccess: Event(with:state))
