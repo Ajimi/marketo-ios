@@ -17,6 +17,7 @@ class BasketViewController: UITableViewController, BasketProducTableViewCellDele
     
     let viewModel = BasketViewModel()
     
+    let firstRowIndexPath = IndexPath(row: 0, section: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +30,16 @@ class BasketViewController: UITableViewController, BasketProducTableViewCellDele
         deleteProductState()
         
         
-        self.tableView.estimatedRowHeight = tableView.rowHeight
-        tableView.rowHeight = UITableView.automaticDimension
+        self.basketTableView.estimatedRowHeight = basketTableView.rowHeight
+        basketTableView.rowHeight = UITableView.automaticDimension
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        viewModel.updateUI()
+        basketTableView.reloadData()
+
     }
     
     
@@ -62,7 +71,12 @@ class BasketViewController: UITableViewController, BasketProducTableViewCellDele
             }
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let indexPath = showSucces.consume() {
                 DispatchQueue.main.async {
-                    self.basketTableView.deleteRows(at: [indexPath], with: .fade)
+                    if (self.viewModel.products.count == 0){
+                        self.basketTableView.reloadData()
+                    }else{
+                        self.basketTableView.deleteRows(at: [indexPath], with: .fade)
+                    }
+                    self.basketTableView.reloadRows(at: [self.firstRowIndexPath], with: .fade)
                 }
             }
         }
@@ -109,7 +123,6 @@ extension BasketViewController{
         
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: numberOfBasketProductReuseIdentifier, for: indexPath) as! NumberOfBasketProductsTableViewCell
-            
             cell.configure(with: viewModel.numberOfItem())
             
             return cell
@@ -122,7 +135,7 @@ extension BasketViewController{
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: basketProductReuseIdentifier, for: indexPath) as! BasketProductTableViewCell
             
-            cell.configure(with: viewModel.products[indexPath.row])
+            cell.configure(with: viewModel.products[indexPath.row-1])
             cell.delegate = self
             
             return cell
