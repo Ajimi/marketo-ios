@@ -55,8 +55,9 @@ class FavoriteViewController: UIViewController,UICollectionViewDelegate,UICollec
     }
     
     func toggleEmptyState(shouldShow : Bool) {
-        favoriteProductsCollecionView.isHidden = !shouldShow
-        emptyState.isHidden = shouldShow
+        print(shouldShow, "FAA")
+        favoriteProductsCollecionView.isHidden = shouldShow
+        emptyState.isHidden = !shouldShow
     }
     
     fileprivate func deleteFavoriteProductState() {
@@ -69,6 +70,8 @@ class FavoriteViewController: UIViewController,UICollectionViewDelegate,UICollec
             }
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let indexPath = showSucces.consume() {
                 DispatchQueue.main.async {
+                    let shouldShowEmptyState = self.viewModel.shouldShowEmptyState()
+                    self.toggleEmptyState(shouldShow: shouldShowEmptyState)
                     self.favoriteProductsCollecionView.deleteItems(at: [indexPath])
                 }
             }

@@ -28,7 +28,6 @@ class FavoriteViewModel: ViewModel {
         loadFavoriteProducts()
     }
     
-    
     func loadFavoriteProducts() {
         loadFavoriteProductUseCase.execute { (response) in
             switch response {
