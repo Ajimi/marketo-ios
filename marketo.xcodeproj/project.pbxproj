@@ -505,18 +505,18 @@
 		87A4772B219735B4005937AD /* marketo */ = {
 			isa = PBXGroup;
 			children = (
+				88BC8F5321AB190C0013D4EB /* CommandStoryboard.storyboard */,
+				87A47730219735B4005937AD /* Main.storyboard */,
+				87A4772C219735B4005937AD /* AppDelegate.swift */,
 				2C038F4921B15D5000B84B0E /* domain */,
 				8717BADF2198663E00D7F5C9 /* UI */,
 				87FF638D2197798A008EE969 /* Data */,
 				88BC8F5921AB2CC40013D4EB /* Util */,
 				88553775219763AC0007B3B5 /* Model */,
-				87A47730219735B4005937AD /* Main.storyboard */,
-				87A4772C219735B4005937AD /* AppDelegate.swift */,
 				87A47736219735B9005937AD /* Assets.xcassets */,
-				87A47738219735B9005937AD /* LaunchScreen.storyboard */,
 				87A4773B219735B9005937AD /* Info.plist */,
+				87A47738219735B9005937AD /* LaunchScreen.storyboard */,
 				87A47733219735B4005937AD /* marketo.xcdatamodeld */,
-				88BC8F5321AB190C0013D4EB /* CommandStoryboard.storyboard */,
 			);
 			path = marketo;
 			sourceTree = "<group>";
