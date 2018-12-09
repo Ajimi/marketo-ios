@@ -27,7 +27,7 @@
 		2C038F7421B1948600B84B0E /* BasketRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C038F7321B1948600B84B0E /* BasketRepository.swift */; };
 		2C5F9E3421AC04B200BE9E1C /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F9E3321AC04B200BE9E1C /* UseCase.swift */; };
 		2C5F9E3621AC094800BE9E1C /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F9E3521AC094800BE9E1C /* PersistenceManager.swift */; };
-		2C84FB6B21B52D6000BA6173 /* DeleteProductFromFavoriteUsece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84FB6A21B52D6000BA6173 /* DeleteProductFromFavoriteUsece.swift */; };
+		2C84FB6B21B52D6000BA6173 /* DeleteProductFromFavoriteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84FB6A21B52D6000BA6173 /* DeleteProductFromFavoriteUseCase.swift */; };
 		2C84FB6E21B5307E00BA6173 /* FavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84FB6D21B5307E00BA6173 /* FavoriteRepository.swift */; };
 		2C84FB7221B530A000BA6173 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		2C84FB7621B530C400BA6173 /* FavoriteRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84FB7521B530C400BA6173 /* FavoriteRemoteRepository.swift */; };
@@ -135,7 +135,7 @@
 		2C038F7321B1948600B84B0E /* BasketRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketRepository.swift; sourceTree = "<group>"; };
 		2C5F9E3321AC04B200BE9E1C /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		2C5F9E3521AC094800BE9E1C /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
-		2C84FB6A21B52D6000BA6173 /* DeleteProductFromFavoriteUsece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteProductFromFavoriteUsece.swift; sourceTree = "<group>"; };
+		2C84FB6A21B52D6000BA6173 /* DeleteProductFromFavoriteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteProductFromFavoriteUseCase.swift; sourceTree = "<group>"; };
 		2C84FB6D21B5307E00BA6173 /* FavoriteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepository.swift; sourceTree = "<group>"; };
 		2C84FB7521B530C400BA6173 /* FavoriteRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRemoteRepository.swift; sourceTree = "<group>"; };
 		2C84FB7721B530D700BA6173 /* FavoriteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRouter.swift; sourceTree = "<group>"; };
@@ -339,7 +339,7 @@
 		2C84FB6921B52D2500BA6173 /* favorite */ = {
 			isa = PBXGroup;
 			children = (
-				2C84FB6A21B52D6000BA6173 /* DeleteProductFromFavoriteUsece.swift */,
+				2C84FB6A21B52D6000BA6173 /* DeleteProductFromFavoriteUseCase.swift */,
 				2C038F5321B15DFE00B84B0E /* AddProductToFavoriteUseCase.swift */,
 				843405F321BD11BD00A4851D /* LoadFavoriteProductUseCase.swift */,
 			);
@@ -950,7 +950,7 @@
 				2C5F9E3621AC094800BE9E1C /* PersistenceManager.swift in Sources */,
 				88E998542198491200D3FE04 /* HomeViewController.swift in Sources */,
 				88175FC221B459B0003C76C7 /* LogoutUseCase.swift in Sources */,
-				2C84FB6B21B52D6000BA6173 /* DeleteProductFromFavoriteUsece.swift in Sources */,
+				2C84FB6B21B52D6000BA6173 /* DeleteProductFromFavoriteUseCase.swift in Sources */,
 				8802E66521BC41BA004BB179 /* FavoriteProduct+CoreDataClass.swift in Sources */,
 				87FECD9B21AAC7FC00805944 /* Event.swift in Sources */,
 				87A4772F219735B4005937AD /* LoginViewController.swift in Sources */,
