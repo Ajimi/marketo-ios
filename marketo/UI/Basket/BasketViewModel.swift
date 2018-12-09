@@ -20,7 +20,7 @@ class BasketViewModel: ViewModel{
    
     var uiBasketProductsState =  Dynamic<UiState<ProductsInBasket>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
     var uiSaveProductState = Dynamic<UiState<Bool>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
-    var uiDeleteProductState = Dynamic<UiState<Bool>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
+    var uiDeleteProductState = Dynamic<UiState<IndexPath>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
     var uiTruncateBasketState = Dynamic<UiState<Bool>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
     var uiModifyProductState = Dynamic<UiState<Bool>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
     
@@ -60,9 +60,10 @@ class BasketViewModel: ViewModel{
         deletProductFromBasktUseCase.execute(productInBasket: products[indexPath.row]) { (response) in
             switch response {
             case .success(let state):
-                // TODO Delete PRODUCT FROM Product ARRAY
-                self.uiDeleteProductState.value = self.emitUiState(showSuccess: Event(with: state))
-            
+                print(state)
+                self.products.remove(at: indexPath.row)
+                self.uiDeleteProductState.value = self.emitUiState(showSuccess: Event(with: indexPath))
+
             case .failure(let error):
                 print(error)
                 self.uiDeleteProductState.value = self.emitUiState(showError:Event(with: "Error happened"))
@@ -86,6 +87,7 @@ class BasketViewModel: ViewModel{
         deleteAllProductFromBasketUseCase.execute { (response) in
             switch response {
             case .success(_):
+                self.products.removeAll()
                 self.uiTruncateBasketState.value = self.emitUiState(showSuccess: Event(with:true))
                 // TODO EMPTY PRODUCT ARRAY
             case .failure(let error):

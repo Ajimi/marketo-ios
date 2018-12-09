@@ -20,19 +20,21 @@ class BasketViewController: UITableViewController, BasketProducTableViewCellDele
     
     override func viewDidLoad() {
         
-        tableView.dataSource = self
-        tableView.delegate = self
+        basketTableView.dataSource = self
+        basketTableView.delegate = self
         
         viewModel.updateUI()
         
-        fetchProducts()
+        basketHandler()
+        deleteProductState()
         
         super.viewDidLoad()
         self.tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
     }
     
-    fileprivate func fetchProducts() {
+    
+    fileprivate func basketHandler() {
         // Pavilion
         viewModel.uiBasketProductsState.bindAndFire(listener: { (uiModel) in
             if (uiModel.showProgress) {
@@ -41,12 +43,29 @@ class BasketViewController: UITableViewController, BasketProducTableViewCellDele
             if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
                 print("there Was an error \(errorMessage)")
             }
-            if let showSucces = uiModel.showSuccess, !showSucces.consumed, let basketProductsResponse = showSucces.consume() {
+            if let showSucces = uiModel.showSuccess, !showSucces.consumed, let _ = showSucces.consume() {
                 DispatchQueue.main.async {
                     self.basketTableView.reloadData()
                 }
             }
         })
+    }
+    
+    
+    fileprivate func deleteProductState() {
+        viewModel.uiDeleteProductState.bindAndFire { uiModel in
+            if (uiModel.showProgress) {
+                print("In progress")
+            }
+            if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
+                print("there Was an error \(errorMessage)")
+            }
+            if let showSucces = uiModel.showSuccess, !showSucces.consumed, let indexPath = showSucces.consume() {
+                DispatchQueue.main.async {
+                    self.basketTableView.deleteRows(at: [indexPath], with: .fade)
+                }
+            }
+        }
     }
     
     func basketCellDidTapStepper(_ sender: BasketProductTableViewCell, _ value: Int) {
@@ -57,21 +76,17 @@ class BasketViewController: UITableViewController, BasketProducTableViewCellDele
     func basketCellDidTapRemove(_ sender: BasketProductTableViewCell) {
         guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
         viewModel.deleteProductFromBasket(at: tappedIndexPath)
-        tableView.deleteRows(at: [tappedIndexPath], with: .fade)
     }
 }
 
 
 
 extension BasketViewController{
-    
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return viewModel.products.count + 2
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard viewModel.products.count != 0 else {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: numberOfBasketProductReuseIdentifier, for: indexPath) as! NumberOfBasketProductsTableViewCell
@@ -80,7 +95,7 @@ extension BasketViewController{
             
             return cell
             
-        }
+        }	
         
         if indexPath.row == 0 {
             
