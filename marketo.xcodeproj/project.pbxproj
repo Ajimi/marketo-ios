@@ -365,6 +365,13 @@
 			path = Remote;
 			sourceTree = "<group>";
 		};
+		843405F921BD1E1500A4851D /* widgets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = widgets;
+			sourceTree = "<group>";
+		};
 		849EC38D6BF19C3DA52A17C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -513,6 +520,7 @@
 		8802E64721BC36B1004BB179 /* Basket */ = {
 			isa = PBXGroup;
 			children = (
+				843405F921BD1E1500A4851D /* widgets */,
 				8802E64921BC371E004BB179 /* BasketViewController.swift */,
 				8802E64B21BC3D00004BB179 /* BasketViewModel.swift */,
 			);

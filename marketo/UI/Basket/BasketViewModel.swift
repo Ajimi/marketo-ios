@@ -14,7 +14,8 @@ class BasketViewModel: ViewModel{
     let deletProductFromBasktUseCase = DeleteProductFromBasketUseCase()
     let deleteAllProductFromBasketUseCase = DeleteAllProductFromBasketUseCase()
     let modifyQuantityForProductUseCase = ModifyQuantityForProductUseCase()
-    let addProductUseCase =  SaveProductToBasketUseCase()
+    let saveProductToBasketUseCase =  SaveProductToBasketUseCase()
+    let loadBasketUseCase = LoadBasktUseCase()
     
     
    
@@ -24,12 +25,12 @@ class BasketViewModel: ViewModel{
     var uiTruncateBasketState = Dynamic<UiState<Bool>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
     var uiModifyProductState = Dynamic<UiState<Bool>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
     
-    var products:ProductsInBasket = ProductsInBasket()
-
+    var products:ProductsInBasket = ProductsInBasket() // change it to dynamic
+    var basket: Basket = Basket() // Change it to dynamic
+    
     func updateUI() {
         loadProductsFromBasket()
     }
-    
     
     func loadProductsFromBasket(){
         self.uiBasketProductsState.value = self.emitUiState(showProgress: true)
@@ -40,6 +41,17 @@ class BasketViewModel: ViewModel{
                 self.uiBasketProductsState.value = self.emitUiState(showSuccess: Event(with: products))
             case .failure(let error):
                 self.uiBasketProductsState.value = self.emitUiState(showProgress: false, showError: Event(with: error.localizedDescription))
+            }
+        }
+    }
+    
+    func loadBasket() {
+        loadBasketUseCase.execute { (response) in
+            switch response {
+            case .success(let basket):
+                self.basket = basket
+            case.failure(let error):
+                print(error.localizedDescription)
             }
         }
     }
@@ -79,5 +91,7 @@ class BasketViewModel: ViewModel{
             }
         }
     }
+    
+   
     
 }
