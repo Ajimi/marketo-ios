@@ -402,7 +402,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="numberOfItemsCell" rowHeight="70" id="Qzx-58-i6K" customClass="NumberOfItemsCell" customModule="Nike_Research" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="numberOfItemsCell" rowHeight="70" id="Qzx-58-i6K" customClass="NumberOfBasketProductsTableViewCell" customModule="marketo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qzx-58-i6K" id="WSu-4D-FvS">
@@ -423,17 +423,18 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="numberLabel" destination="xO8-FU-lTP" id="BWG-qU-mw9"/>
                                     <outlet property="numberOfItemsLabel" destination="xO8-FU-lTP" id="36v-U1-Qdz"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" rowHeight="145" id="3IQ-5y-9Jh" customClass="ShoppingCartItemCell" customModule="Nike_Research" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" rowHeight="145" id="3IQ-5y-9Jh" customClass="BasketProductTableViewCell" customModule="marketo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="98" width="375" height="145"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3IQ-5y-9Jh" id="xCb-ar-vRA">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="144.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="u05-bD-SF0">
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="u05-bD-SF0">
                                             <rect key="frame" x="132" y="24" width="219" height="96.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NIKE FREE RN FLYNKIT 2017 MEN'S RUNNING SHOE" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIR-ej-52k">
@@ -442,15 +443,18 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VDY-z8-goZ">
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VDY-z8-goZ">
                                                     <rect key="frame" x="0.0" y="41" width="219" height="26.5"/>
                                                     <subviews>
                                                         <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="9aX-81-PZc">
                                                             <rect key="frame" x="0.0" y="0.0" width="94" height="29"/>
                                                             <color key="tintColor" red="0.93537205459999995" green="0.6153541803" blue="0.1444794536" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <connections>
+                                                                <action selector="changeQuantity:" destination="3IQ-5y-9Jh" eventType="valueChanged" id="4sH-te-oeV"/>
+                                                            </connections>
                                                         </stepper>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTQ-ML-ZhS">
-                                                            <rect key="frame" x="109.5" y="0.0" width="109.5" height="26.5"/>
+                                                            <rect key="frame" x="114.5" y="0.0" width="104.5" height="26.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -466,8 +470,11 @@
                                                     <rect key="frame" x="0.0" y="67.5" width="45" height="29"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
                                                     <state key="normal" title="Remove">
-                                                        <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleColor" red="0.64848282631780818" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="deleteProduct:" destination="3IQ-5y-9Jh" eventType="touchUpInside" id="5kq-UP-DiW"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -491,6 +498,12 @@
                                         <constraint firstItem="u05-bD-SF0" firstAttribute="leading" secondItem="VuA-72-uQ6" secondAttribute="trailing" constant="12" id="voe-In-Yj6"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="productImage" destination="VuA-72-uQ6" id="Jco-sv-EQp"/>
+                                    <outlet property="productName" destination="SIR-ej-52k" id="j51-5P-jQh"/>
+                                    <outlet property="quantity" destination="pTQ-ML-ZhS" id="I9E-eG-aLZ"/>
+                                    <outlet property="stepper" destination="9aX-81-PZc" id="hkJ-Ph-hAY"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="checkoutButtonCell" rowHeight="65" id="EZd-KS-kxS">
                                 <rect key="frame" x="0.0" y="243" width="375" height="65"/>

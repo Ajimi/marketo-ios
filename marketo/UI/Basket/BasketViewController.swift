@@ -8,31 +8,50 @@
 
 import UIKit
 
+private let numberOfBasketProductReuseIdentifier = "numberOfBasketProductsItemsCell"
+private let basketProductReuseIdentifier = "basketProductCell"
+private let checkoutButtonReuseIdentifier = "checkoutButtonCell"
+
 class BasketViewController: UITableViewController {
     
-    struct Storyboard {
-        static let numberOfItemsCell = "numberOfItemsCell"      // cell 0
-        static let itemCell = "itemCell"                        // cell 1
-        static let cartDetailCell = "cartDetailCell"            // cell 2
-        static let cartTotalCell = "cartTotalCell"              // cell 3
-        static let checkoutButtonCell = "checkoutButtonCell"    // cell 4
-    }
+    @IBOutlet weak var basketTableView : UITableView!
     
-    var products = [Product]()
+    let viewModel = BasketViewModel()
     
     
     override func viewDidLoad() {
         
         tableView.dataSource = self
         tableView.delegate = self
-        super.viewDidLoad()
         
+        fetchProducts()
+        
+        super.viewDidLoad()
         self.tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
 
     }
+    
+    fileprivate func fetchProducts() {
+        // Pavilion
+        viewModel.uiBasketProductsState.bindAndFire(listener: { (uiModel) in
+            if (uiModel.showProgress) {
+                print("In progress")
+            }
+            if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
+                print("there Was an error \(errorMessage)")
+            }
+            if let showSucces = uiModel.showSuccess, !showSucces.consumed, let basketProductsResponse = showSucces.consume() {
+                DispatchQueue.main.async {
+                    self.basketTableView.reloadData()
+                }
+            }
+        })
+    }
 
 }
+
+
 
 extension BasketViewController{
     
@@ -43,24 +62,39 @@ extension BasketViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-//        guard let shoes = shoes else {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.numberOfItemsCell, for: indexPath)
-//
-//            return cell
-//        }
-        
-        if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.numberOfItemsCell, for: indexPath)
-            return cell
-        } else if indexPath.row == products.count + 3 {
-            // checkoutButtonCell
-            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.checkoutButtonCell, for: indexPath)
+        guard viewModel.products.count != 0 else {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: numberOfBasketProductReuseIdentifier, for: indexPath) as! NumberOfBasketProductsTableViewCell
+            
+            cell.configure(with: viewModel.numberOfItem())
             
             return cell
+            
+        }
+        
+        if indexPath.row == 0 {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: numberOfBasketProductReuseIdentifier, for: indexPath) as! NumberOfBasketProductsTableViewCell
+            
+            cell.configure(with: viewModel.numberOfItem())
+
+            return cell
+            
+        } else if indexPath.row == viewModel.products.count + 1 {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: checkoutButtonReuseIdentifier, for: indexPath)
+            
+            return cell
+            
         } else {
-            // itemCell
-            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.itemCell, for: indexPath)
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: basketProductReuseIdentifier, for: indexPath) as! BasketProductTableViewCell
+            
+            cell.configure(with: viewModel.products[indexPath.row])
+            
+            
             return cell
         }
     }
+    
 }

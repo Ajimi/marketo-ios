@@ -94,4 +94,23 @@ class BasketViewModel: ViewModel{
     
    
     
+    
+}
+
+extension BasketViewModel{
+    
+    func numberOfItem() -> String {
+        var word: String
+        let count = products.count
+        switch count {
+        case 0:
+            word = "NO ITEMS IN BASKET"
+        case 1:
+            word = "1 ITEM"
+        default:
+            word = "\(count) ITEMS"
+        }
+        
+        return word
+    }
 }
