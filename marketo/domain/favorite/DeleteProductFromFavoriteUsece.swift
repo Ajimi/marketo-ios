@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 
-class DeleteProductFromFavorite {
+class DeleteProductFromFavoriteUseCase {
     
     let favoriteRepository : FavoriteRepository
     init(favoriteRepository: FavoriteRepository = FavoriteRepository()){
