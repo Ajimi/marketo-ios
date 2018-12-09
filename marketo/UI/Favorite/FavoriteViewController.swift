@@ -29,7 +29,7 @@ class FavoriteViewController: UIViewController,UICollectionViewDelegate,UICollec
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        viewModel.updateUI()
     }
 
     fileprivate func favoriteProductsState() {
@@ -42,6 +42,7 @@ class FavoriteViewController: UIViewController,UICollectionViewDelegate,UICollec
             }
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let _ = showSucces.consume() {
                 DispatchQueue.main.async {
+                    print("data reloaded in favoriteVC")
                     self.favoriteProductsCollecionView.reloadData()
                 }
             }

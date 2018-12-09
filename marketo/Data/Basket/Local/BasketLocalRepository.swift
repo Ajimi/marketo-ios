@@ -34,8 +34,11 @@ extension BasketLocalRepository{
                     return currentBasket
                 })
             case .failure(_):
-                // TODO check ERROR TYPE if empty type then create new basket else throw the error
+                print("helllooooo")
+                // TODO: check ERROR TYPE if empty type then create new basket else throw the error
                 let basket = Basket(context: self.persistenceManager.context)
+                // TODO: Initalize basket
+                persistenceManager.save()
                 completion(Result{
                     return basket
                 })
@@ -48,6 +51,11 @@ extension BasketLocalRepository{
         let baskets = persistenceManager.fetch(Basket.self)
         
         if(baskets.isEmpty){
+            let basket = Basket(context: persistenceManager.context)
+            persistenceManager.save()
+            completion(Result{
+                return basket
+            })
             completion(Result{
                 throw DataBaseError.EmptyError
             })
@@ -108,6 +116,7 @@ extension BasketLocalRepository{
                     return true
                 })
             case .failure(let error):
+                print("failed here")
                 completion(Result{
                     throw error
                 })
@@ -116,10 +125,12 @@ extension BasketLocalRepository{
     }
     
     func addProduct(product:Product,completion:@escaping (Result<Bool>)->Void){
+        print("adding to basket")
         getBasket { response in
             switch response {
             case .success(let basket):
                 basket.addToProducts(buildProductInBasket(product: product))
+                print(basket)
                 self.persistenceManager.save()
                 completion(Result{
                     return true

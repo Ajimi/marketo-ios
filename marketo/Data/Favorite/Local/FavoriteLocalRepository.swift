@@ -19,6 +19,8 @@ extension FavoriteLocalRepository{
     func getProducts(completion: (Result<FavoriteProducts>) -> Void) {
         let products = persistenceManager.fetch(FavoriteProduct.self)
         
+        print("local repo")
+        print(products)
         if(products.isEmpty){
             completion(Result{
                 throw DataBaseError.EmptyError
@@ -44,6 +46,7 @@ extension FavoriteLocalRepository{
         favorite.name = product.name
         favorite.imageName = product.image
         persistenceManager.save()
+        print("Addproduct : to favorite")
         completion(Result{
             return true
         })

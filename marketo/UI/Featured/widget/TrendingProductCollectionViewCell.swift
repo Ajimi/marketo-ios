@@ -24,11 +24,11 @@ class TrendingProductCollectionViewCell: UICollectionViewCell,Configurable {
     
     
     @IBAction func addToBasket(_ sender: UIButton) {
-        delegate?.trendingCellDidTapFavorite(self)
+        delegate?.trendingCellDidTapBasket(self)
     }
     
     func configure(with product: Product){
-        self.product = product
+        self.product = product	
         name.text = product.name
         // TODO ADD IMAGE
     }
