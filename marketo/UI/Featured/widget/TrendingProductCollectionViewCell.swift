@@ -8,7 +8,8 @@
 
 import UIKit
 
-class TrendingProductCollectionViewCell: UICollectionViewCell {
+class TrendingProductCollectionViewCell: UICollectionViewCell,Configurable {
+    
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var name: UILabel!
     

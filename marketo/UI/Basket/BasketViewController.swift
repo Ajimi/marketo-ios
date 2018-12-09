@@ -137,4 +137,15 @@ extension BasketViewController{
         }
     }
     
+    func basketCellDidTapStepper(_ sender: BasketProductTableViewCell, _ value: Int) {
+        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        viewModel.modifyQuantity(at: tappedIndexPath, with: value)
+    }
+    
+    func basketCellDidTapRemove(_ sender: BasketProductTableViewCell) {
+        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        viewModel.deleteProductFromBasket(at: tappedIndexPath)
+        tableView.deleteRows(at: [tappedIndexPath], with: .fade)
+    }
+    
 }
