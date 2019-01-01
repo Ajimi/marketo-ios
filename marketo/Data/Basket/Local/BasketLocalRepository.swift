@@ -144,7 +144,7 @@ extension BasketLocalRepository{
     
     func buildProductInBasket(product:Product) -> ProductInBasket {
         let productInBasket = ProductInBasket(context: persistenceManager.context)
-        productInBasket.id = product.id
+        productInBasket.id = Int32(product.id)
         productInBasket.name = product.name
         productInBasket.image = product.image
         return productInBasket

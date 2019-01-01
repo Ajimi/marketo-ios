@@ -23,7 +23,11 @@ class CategoryRemoteRepository{
 
 extension CategoryRemoteRepository{
     
-    func getAll(completion:@escaping (Result<Products>)->Void) {
+    func getAll(completion:@escaping (Result<Categories>)->Void) {
         performRequest(route : CategoryRouter.getAll(), completion:completion)
+    }
+    
+    func getAllByPavilion(pavilion: Pavilion,completion:@escaping (Result<Categories>)->Void) {
+        performRequest(route : CategoryRouter.getAllByPavilion(pavilion: pavilion), completion:completion)
     }
 }

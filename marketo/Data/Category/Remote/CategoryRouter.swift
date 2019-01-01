@@ -12,6 +12,7 @@ import Alamofire
 enum CategoryRouter : APIConfiguration {
     
     case getAll()
+    case getAllByPavilion(pavilion:Pavilion)
     case get(id : Int)
     
     
@@ -19,6 +20,8 @@ enum CategoryRouter : APIConfiguration {
     var method: HTTPMethod {
         switch self {
         case .getAll:
+            return .get
+        case .getAllByPavilion:
             return .get
         case .get:
             return .get
@@ -30,6 +33,8 @@ enum CategoryRouter : APIConfiguration {
         switch self {
         case .getAll:
             return ""
+        case .getAllByPavilion(let pavilion):
+            return "?pavilionId?=\(pavilion.id)"
         case .get(let id):
             return "/\(id)"
         }
@@ -40,6 +45,8 @@ enum CategoryRouter : APIConfiguration {
         switch self {
         case .getAll:
             return nil
+        case .getAllByPavilion:
+            return nil
         case .get:
             return nil
         }
@@ -49,7 +56,7 @@ enum CategoryRouter : APIConfiguration {
     func asURLRequest() throws -> URLRequest {
         let url = try ProductionServer.baseURL.asURL()
         
-        var urlRequest = URLRequest(url: url.appendingPathComponent("/pavilions\(path)"))
+        var urlRequest = URLRequest(url: url.appendingPathComponent("/categories\(path)"))
         
         // HTTP Method
         urlRequest.httpMethod = method.rawValue

@@ -43,7 +43,7 @@ extension FavoriteLocalRepository{
     func addProduct(product:Product,completion:@escaping (Result<Bool>)->Void){
         
         let favorite = FavoriteProduct(context: persistenceManager.context)
-        favorite.id = product.id
+        favorite.id = Int32(product.id)
         favorite.name = product.name
         favorite.imageName = product.image
         persistenceManager.save()

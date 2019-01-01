@@ -48,7 +48,7 @@ class LoginViewModel: NSObject {
     
     func login(withUsername username : String,withPassword password:String) {
         emitUiState(showProgress: true)
-        repository.login(a: User(username: username, password: password,email :username) ) { (result) in
+        repository.login(a: User(username: username, password: password) ) { (result) in
             switch result {
             case .success:
                 self.emitUiState(showProgress: false,showSuccess: Event(with: "Connected"))

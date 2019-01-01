@@ -21,8 +21,8 @@ class UserRemoteRepository{
         }
     }
   
-    private func login(email: String, password: String, completion:@escaping (Result<AccessToken>)->Void)  {
-        performRequest(route: UserRouter.loginUser(email: email, password: password), completion: completion)
+    private func login(username: String, password: String, completion:@escaping (Result<AccessToken>)->Void)  {
+        performRequest(route: UserRouter.loginUser(username: username, password: password), completion: completion)
     }
 }
 
@@ -30,7 +30,7 @@ class UserRemoteRepository{
 extension UserRemoteRepository{
     
     func login(a user: User, completion:@escaping (Result<AccessToken>)->Void)  {
-        self.login(email: user.email!, password: user.password! , completion: completion)
+        self.login(username: user.username!, password: user.password! , completion: completion)
     }
     
     func register(a user: User, completion:@escaping (Result<User>)->Void)  {

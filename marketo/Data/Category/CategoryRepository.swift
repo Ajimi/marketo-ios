@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class CategoryRepository {
     let remoteRepository: CategoryRemoteRepository
@@ -15,5 +16,11 @@ class CategoryRepository {
     init(remoteRepository: CategoryRemoteRepository = CategoryRemoteRepository(), localRepository: CategoryLocalRepository = CategoryLocalRepository()) {
         self.remoteRepository = remoteRepository
         self.localRepository = localRepository
+    }
+}
+
+extension CategoryRepository{
+    func getAll(completion:@escaping (Result<Categories>)->Void) {
+        remoteRepository.getAll(completion: completion)
     }
 }

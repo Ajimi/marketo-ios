@@ -102,6 +102,12 @@
 		8855D7A221B3144000B5F0E8 /* PavilionRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8855D7A121B3144000B5F0E8 /* PavilionRemoteRepository.swift */; };
 		8855D7A421B3147F00B5F0E8 /* PavilionLocalRepository .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8855D7A321B3147F00B5F0E8 /* PavilionLocalRepository .swift */; };
 		8855D7A621B3151700B5F0E8 /* PavilionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8855D7A521B3151700B5F0E8 /* PavilionRouter.swift */; };
+		88B582A421DBBEEF00F8E108 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B582A321DBBEEF00F8E108 /* Price.swift */; };
+		88B582A621DBBF0300F8E108 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B582A521DBBF0300F8E108 /* Category.swift */; };
+		88B582A821DBBF1600F8E108 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B582A721DBBF1600F8E108 /* Type.swift */; };
+		88B582AA21DBBF2A00F8E108 /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B582A921DBBF2A00F8E108 /* Market.swift */; };
+		88B582AC21DBBF3F00F8E108 /* Mark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B582AB21DBBF3F00F8E108 /* Mark.swift */; };
+		88B582B121DBC08100F8E108 /* TypeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B582B021DBC08100F8E108 /* TypeRepository.swift */; };
 		88BC8F4D21AAD3EB0013D4EB /* FeaturedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BC8F4C21AAD3EB0013D4EB /* FeaturedViewController.swift */; };
 		88BC8F5421AB190C0013D4EB /* CommandStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88BC8F5321AB190C0013D4EB /* CommandStoryboard.storyboard */; };
 		88BC8F5721AB24540013D4EB /* AlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BC8F5621AB24540013D4EB /* AlertExtension.swift */; };
@@ -113,7 +119,6 @@
 		88C7A44C21B2AB3A005BDF16 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A44B21B2AB3A005BDF16 /* Configurable.swift */; };
 		88E998512198483900D3FE04 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E998502198483900D3FE04 /* Extension.swift */; };
 		88E998542198491200D3FE04 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E998532198491200D3FE04 /* HomeViewController.swift */; };
-		88E998582198722B00D3FE04 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E998572198722B00D3FE04 /* Price.swift */; };
 		88E9985A2198764600D3FE04 /* ProductRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E998592198764600D3FE04 /* ProductRouter.swift */; };
 		88E9985C2198769C00D3FE04 /* ApiConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E9985B2198769C00D3FE04 /* ApiConfiguration.swift */; };
 		D9A6BD54D153A4C1CDAA7903 /* Pods_marketo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 815D5919280C5D615384F382 /* Pods_marketo.framework */; };
@@ -233,6 +238,12 @@
 		8855D7A121B3144000B5F0E8 /* PavilionRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PavilionRemoteRepository.swift; sourceTree = "<group>"; };
 		8855D7A321B3147F00B5F0E8 /* PavilionLocalRepository .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PavilionLocalRepository .swift"; sourceTree = "<group>"; };
 		8855D7A521B3151700B5F0E8 /* PavilionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PavilionRouter.swift; sourceTree = "<group>"; };
+		88B582A321DBBEEF00F8E108 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
+		88B582A521DBBF0300F8E108 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		88B582A721DBBF1600F8E108 /* Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
+		88B582A921DBBF2A00F8E108 /* Market.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
+		88B582AB21DBBF3F00F8E108 /* Mark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mark.swift; sourceTree = "<group>"; };
+		88B582B021DBC08100F8E108 /* TypeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeRepository.swift; sourceTree = "<group>"; };
 		88BC8F4C21AAD3EB0013D4EB /* FeaturedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedViewController.swift; sourceTree = "<group>"; };
 		88BC8F5321AB190C0013D4EB /* CommandStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommandStoryboard.storyboard; sourceTree = "<group>"; };
 		88BC8F5621AB24540013D4EB /* AlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertExtension.swift; sourceTree = "<group>"; };
@@ -244,7 +255,6 @@
 		88C7A44B21B2AB3A005BDF16 /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 		88E998502198483900D3FE04 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		88E998532198491200D3FE04 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		88E998572198722B00D3FE04 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		88E998592198764600D3FE04 /* ProductRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRouter.swift; sourceTree = "<group>"; };
 		88E9985B2198769C00D3FE04 /* ApiConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfiguration.swift; sourceTree = "<group>"; };
 		88E9986421987E9200D3FE04 /* marketoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = marketoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -579,6 +589,9 @@
 		87FF638D2197798A008EE969 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				88B582AF21DBBF7500F8E108 /* Type */,
+				88B582AE21DBBF6D00F8E108 /* Market */,
+				88B582AD21DBBF6500F8E108 /* Mark */,
 				8855D79C21B313F200B5F0E8 /* Pavilion */,
 				2C84FB6C21B5306F00BA6173 /* Favorite */,
 				2C038F6A21B193D400B84B0E /* Basket */,
@@ -696,10 +709,14 @@
 			children = (
 				8802E65C21BC417E004BB179 /* ManagedObject */,
 				885537762197649F0007B3B5 /* User.swift */,
-				88E998572198722B00D3FE04 /* Price.swift */,
 				87FECD9C21AAD59E00805944 /* AccessToken.swift */,
 				874AA80421B2B2290054E069 /* Pavilion.swift */,
 				8855D79721B3111400B5F0E8 /* Products.swift */,
+				88B582A321DBBEEF00F8E108 /* Price.swift */,
+				88B582A521DBBF0300F8E108 /* Category.swift */,
+				88B582A721DBBF1600F8E108 /* Type.swift */,
+				88B582A921DBBF2A00F8E108 /* Market.swift */,
+				88B582AB21DBBF3F00F8E108 /* Mark.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -746,6 +763,28 @@
 				8855376C219752EA0007B3B5 /* LoginViewModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		88B582AD21DBBF6500F8E108 /* Mark */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mark;
+			sourceTree = "<group>";
+		};
+		88B582AE21DBBF6D00F8E108 /* Market */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Market;
+			sourceTree = "<group>";
+		};
+		88B582AF21DBBF7500F8E108 /* Type */ = {
+			isa = PBXGroup;
+			children = (
+				88B582B021DBC08100F8E108 /* TypeRepository.swift */,
+			);
+			name = Type;
 			sourceTree = "<group>";
 		};
 		88BC8F4B21AAD3BF0013D4EB /* Featured */ = {
@@ -1072,14 +1111,16 @@
 				88553772219761F00007B3B5 /* SignUpViewModel.swift in Sources */,
 				2C038F6E21B1942900B84B0E /* BasketLocalRepository.swift in Sources */,
 				8802E66821BC41BA004BB179 /* Basket+CoreDataProperties.swift in Sources */,
-				88E998582198722B00D3FE04 /* Price.swift in Sources */,
+				88B582A621DBBF0300F8E108 /* Category.swift in Sources */,
 				843405EA21BC789A00A4851D /* FavoriteViewModel.swift in Sources */,
+				88B582B121DBC08100F8E108 /* TypeRepository.swift in Sources */,
 				2C038F5221B15DF200B84B0E /* SaveProductToBaskeUseCase.swift in Sources */,
 				8802E66321BC41BA004BB179 /* ProductInBasket+CoreDataClass.swift in Sources */,
 				87FF639221977B22008EE969 /* UserRouter.swift in Sources */,
 				843405FB21BD2E2600A4851D /* BasketProducTableViewCellDelegate.swift in Sources */,
 				2C038F4E21B15DB100B84B0E /* LoadTrendingProductUseCase.swift in Sources */,
 				87A47735219735B4005937AD /* marketo.xcdatamodeld in Sources */,
+				88B582A821DBBF1600F8E108 /* Type.swift in Sources */,
 				8855D7A421B3147F00B5F0E8 /* PavilionLocalRepository .swift in Sources */,
 				88295E5A21BC59D500EF937E /* FavoriteLocalRepository.swift in Sources */,
 				87FF639421977C44008EE969 /* UserRemoteRepository.swift in Sources */,
@@ -1105,6 +1146,7 @@
 				2C84FB7621B530C400BA6173 /* FavoriteRemoteRepository.swift in Sources */,
 				8434060321BD476F00A4851D /* FavoriteProductTableViewCellDelegate.swift in Sources */,
 				8854E24B21B47BDF00FBCC31 /* FavoriteViewController.swift in Sources */,
+				88B582A421DBBEEF00F8E108 /* Price.swift in Sources */,
 				885537772197649F0007B3B5 /* User.swift in Sources */,
 				8434060021BD429200A4851D /* CheckoutTableViewCellDelegate.swift in Sources */,
 				88E998512198483900D3FE04 /* Extension.swift in Sources */,
@@ -1114,12 +1156,14 @@
 				843405F021BC7AAB00A4851D /* DeleteProductFromBasketUseCase.swift in Sources */,
 				8855D79621B30FCD00B5F0E8 /* PavilionViewModel.swift in Sources */,
 				8855D7A221B3144000B5F0E8 /* PavilionRemoteRepository.swift in Sources */,
+				88B582AA21DBBF2A00F8E108 /* Market.swift in Sources */,
 				88175FB921B4286D003C76C7 /* LoginGoogleUseCase.swift in Sources */,
 				8802E66A21BC45A1004BB179 /* LocalRepository.swift in Sources */,
 				2C038F4821B15CBE00B84B0E /* FeaturedViewModel.swift in Sources */,
 				2C038F7421B1948600B84B0E /* BasketRepository.swift in Sources */,
 				87041AB321982F2600312FBF /* UserLocalRepository.swift in Sources */,
 				87FF639021977AE5008EE969 /* Constants.swift in Sources */,
+				88B582AC21DBBF3F00F8E108 /* Mark.swift in Sources */,
 				8802E64C21BC3D00004BB179 /* BasketViewModel.swift in Sources */,
 				8802E66421BC41BA004BB179 /* ProductInBasket+CoreDataProperties.swift in Sources */,
 				843405EC21BC793F00A4851D /* ModifyQuantityForProductUseCase.swift in Sources */,

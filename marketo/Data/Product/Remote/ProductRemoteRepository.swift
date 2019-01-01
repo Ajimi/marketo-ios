@@ -16,6 +16,7 @@ class ProductRemoteRepository{
         return AF.request(route)
             .validate(statusCode : 200..<300)
             .responseJSONDecodable (decoder: decoder){ (response: DataResponse<T>) in
+                print(response.result)
                 completion(response.result)
         }
     }

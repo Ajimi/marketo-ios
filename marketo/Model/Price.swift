@@ -2,18 +2,42 @@
 //  Price.swift
 //  marketo
 //
-//  Created by Moncef Guettat on 11/11/18.
-//  Copyright © 2018 selim ajimi. All rights reserved.
+//  Created by Moncef Guettat on 1/1/19.
+//  Copyright © 2019 selim ajimi. All rights reserved.
 //
 
 import Foundation
 
-class Price {
+typealias Prices = [Price]
+
+class Price: Codable {
     
-    var id : Int?
-    var price : Double
+    let value: Int
+    let market: Market?
+    let product: Product?
+    let quantity: Int?
+    let productId : Int?
+    let marketId : Int?
+    let createdAt, updatedAt: String
     
-    init(price : Double) {
-        self.price = price
+    enum CodingKeys: String, CodingKey {
+        case value, createdAt, updatedAt
+        case productId = "productId"
+        case marketId = "marketId"
+        case market
+        case product
+        case quantity
     }
+    
+    init(value: Int,market: Market?,product: Product?,quantity: Int?,productId: Int?,marketId: Int?,createdAt: String,updatedAt: String){
+        self.value = value
+        self.market = market
+        self.product = product
+        self.quantity = quantity
+        self.productId = productId
+        self.marketId = marketId
+        self.createdAt = createdAt
+        self.updatedAt = updatedAt
+    }
+    
 }

@@ -13,7 +13,7 @@ import Alamofire
 enum UserRouter: APIConfiguration {
     
     case createUser(user: User)
-    case loginUser(email:String, password:String)
+    case loginUser(username:String, password:String)
     case readUser(id: Int)
     
     // MARK: - HTTPMethod
@@ -43,15 +43,18 @@ enum UserRouter: APIConfiguration {
     // MARK: - Parameters
     var parameters: Parameters? {
         switch self {
-        case .loginUser(let email, let password):
+        case .loginUser(let username, let password):
             return ["strategy": "local",
-                    APIUserParameterKey.email: email,
+                    APIUserParameterKey.username: username,
                     APIUserParameterKey.password: password]
         case .readUser:
             return nil
         case .createUser(let user):
-            return  [APIUserParameterKey.email : user.email as! String , APIUserParameterKey.password : user.password as! String]
-            // Todo add  USERNAME AND OTHER STUFF
+            return  [APIUserParameterKey.email : user.email as! String ,
+                     APIUserParameterKey.password : user.password as! String,
+                     APIUserParameterKey.fullname : user.fullName as! String,
+                     APIUserParameterKey.username: user.username as! String,
+                     APIUserParameterKey.type: user.type as! String]
         }
     }
     

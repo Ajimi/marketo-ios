@@ -17,7 +17,7 @@ extension ProductInBasket {
         return NSFetchRequest<ProductInBasket>(entityName: "ProductInBasket")
     }
 	
-    @NSManaged public var id: String?
+    @NSManaged public var id: Int32
     @NSManaged public var image: String?
     @NSManaged public var name: String?
     @NSManaged public var quantity: Int32

@@ -43,23 +43,18 @@ class SignUpViewController: UIViewController , UITextFieldDelegate{
         let alert = UIAlertController(title: nil, message: "Signin Up...", preferredStyle: .alert)
         signUpViewModel.uiState.bindAndFire(listener: { (uiModel) in
             if (uiModel.showProgress) {
-                print("in progression")
                 self.showWaiting(alert: alert)
-                // showProgression()
             }
             if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
-                print("there Was an error \(errorMessage)")
                 alert.dismiss(animated: true, completion: {
                     self.showAlert(withTitle: "", withMessage: errorMessage)
                 })
             }
             
-            if let showSucces = uiModel.showSuccess, !showSucces.consumed, let successMessage = showSucces.consume() {
-                print(successMessage)
+            if let showSucces = uiModel.showSuccess, !showSucces.consumed, let _ = showSucces.consume() {
                 alert.dismiss(animated: true, completion: {
                     self.showAlert(withTitle: "User Created", withMessage: "User Created Successful")
                 })
-          
             }
         })
     }
@@ -71,7 +66,8 @@ class SignUpViewController: UIViewController , UITextFieldDelegate{
             fullName: self.fullName.text!,
             username: self.username.text!,
             password: self.password.text!,
-            email: self.email.text!)
+            email: self.email.text!,
+            type: "local")
         signUpViewModel.confirmationPassword = self.confimPassword.text!
         signUpViewModel.register()
         

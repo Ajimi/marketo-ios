@@ -11,56 +11,48 @@ import Foundation
 typealias Products = [Product]
 
 class Product: Codable {
-    let id, name: String
-    let priceInMarket: [PriceInMarket]
-    let description: Description
-    let image: String
+    
+    let id : Int
+    let name: String
+    let prices: Prices?
+    let description: String
+    let image: String?
+    let typeId: Int?
+    let markId: Int?
+    let type: Type?
+    let mark: Mark?
     let createdAt, updatedAt: String
-    let v: Int
     
     enum CodingKeys: String, CodingKey {
-        case id = "_id"
-        case name, priceInMarket, description, image, createdAt, updatedAt
-        case v = "__v"
+        
+        case id, name, image, description, createdAt, updatedAt
+        case typeId = "typeId"
+        case markId = "markId"
+        case type, mark, prices
     }
     
-    init(id: String, name: String, priceInMarket: [PriceInMarket], description: Description, image: String, createdAt: String, updatedAt: String, v: Int) {
+    init(id: Int, name: String, prices: Prices?, description: String, image: String,typeId: Int?,markId: Int?, type: Type?, mark: Mark?,createdAt: String, updatedAt: String) {
         self.id = id
         self.name = name
-        self.priceInMarket = priceInMarket
+        self.prices = prices
         self.description = description
         self.image = image
+        self.typeId = typeId
+        self.markId = markId
+        self.type = type
+        self.mark = mark
         self.createdAt = createdAt
         self.updatedAt = updatedAt
-        self.v = v
     }
 }
 
-enum Description: String, Codable {
-    case concrete = "Concrete"
-    case cotton = "Cotton"
-    case fresh = "Fresh"
-    case frozen = "Frozen"
-    case granite = "Granite"
-    case metal = "Metal"
-    case plastic = "Plastic"
-    case rubber = "Rubber"
-    case soft = "Soft"
-    case steel = "Steel"
-    case wooden = "Wooden"
-}
 
-class PriceInMarket: Codable {
-    let id: String
-    let price: Int
-    
-    enum CodingKeys: String, CodingKey {
-        case id = "_id"
-        case price
-    }
-    
-    init(id: String, price: Int) {
-        self.id = id
-        self.price = price
-    }
-}
+
+
+
+
+
+
+
+
+

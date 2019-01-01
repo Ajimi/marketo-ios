@@ -9,7 +9,7 @@
 import Foundation
 
 struct ProductionServer {
-    static let baseURL = "https://market-appi.herokuapp.com"
+    static let baseURL = "https://marketo-ws.herokuapp.com"
 }
 struct AuthenticationKey{
     static let keyAccessToken = "AccessToken"
@@ -20,11 +20,12 @@ struct APIUserParameterKey {
     static let email = "email"
     static let password = "password"
     static let username = "username"
-    static let fullname = "fullname"
+    static let fullname = "fullName"
+    static let type = "type"
 }
 struct APIProductParameterKey {
     static let name = "name"
-    static let priceInMarket = "priceInMarket"
+    static let prices = "prices"
     static let description = "description"
 }
 struct APIPriceParameterKey {

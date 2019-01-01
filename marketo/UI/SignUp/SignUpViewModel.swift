@@ -48,13 +48,11 @@ extension SignUpViewModel {
     func checkResponseFor(response : Result<User>) {
         switch response {
         case .success(let user):
-            print(user)
             self.emitUiState(showSuccess: Event(with: user))
+            
         // TODO: - Check Errors
         case .failure(let error):
-//            print(error.asAFError?.responseCode as! Int)
             emitUiState(showError: Event(with: error.localizedDescription))
-            print(error.localizedDescription)
         }
     }
 }
