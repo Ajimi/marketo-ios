@@ -14,6 +14,9 @@ enum ProductRouter : APIConfiguration {
     case getAll()
     case getFeatured()
     case getDiscounted()
+    case getByType(type: Type)
+    case getByMark(mark: Mark)
+    case getByTypeAndMark(type: Type,mark: Mark)
     case get(id : Int)
     
     
@@ -27,6 +30,12 @@ enum ProductRouter : APIConfiguration {
         case .getFeatured:
             return .get
         case .getDiscounted:
+            return .get
+        case .getByType:
+            return .get
+        case .getByMark:
+            return .get
+        case .getByTypeAndMark:
             return .get
         }
     }
@@ -42,6 +51,12 @@ enum ProductRouter : APIConfiguration {
             return "" // TODO CHANGE THE PATH featureds
         case .getDiscounted:
             return "" // TODO CHANGE THE PATH TO discounted
+        case .getByType(let type):
+            return "?typeId=\(type.id)"
+        case .getByMark(let mark):
+            return "?markId=\(mark.id)"
+        case .getByTypeAndMark(let type,let mark):
+            return "?typeId=\(type.id)&markId=\(mark.id)"
         }
     }
     
@@ -55,6 +70,12 @@ enum ProductRouter : APIConfiguration {
         case .getFeatured:
             return nil
         case .getDiscounted:
+            return nil
+        case .getByType:
+            return nil
+        case .getByMark:
+            return nil
+        case .getByTypeAndMark:
             return nil
         }
     }

@@ -40,4 +40,15 @@ extension ProductRepository {
         remoteRepository.getDiscounted(completion: completion)
     }
     
+    func getAllByType(type : Type,completion:@escaping (Result<Products>)->Void){
+        remoteRepository.getAllByType(type: type, completion: completion)
+    }
+    
+    func getAllByMark(mark : Mark,completion:@escaping (Result<Products>)->Void){
+        remoteRepository.getAllByMark(mark: mark, completion: completion)
+    }
+    
+    func getAllByTypeAndMark(type:Type,mark:Mark,completion:@escaping (Result<Products>)->Void){
+        remoteRepository.getAllByTypeAndMark(type: type, mark: mark, completion: completion)
+    }
 }

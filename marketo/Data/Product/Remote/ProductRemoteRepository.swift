@@ -30,11 +30,21 @@ extension ProductRemoteRepository{
     
     func getTrending(completion:@escaping (Result<Products>)->Void) {
         performRequest(route: ProductRouter.getFeatured(), completion: completion)
-        // TODO CHANGE THE ROUTER TO getFeatured
     }
     
     func getDiscounted(completion:@escaping (Result<Products>)->Void) {
         performRequest(route: ProductRouter.getDiscounted(), completion: completion)
-        // TODO CHANGE THE ROUTER TO getFeatured
+    }
+    
+    func getAllByType(type : Type,completion:@escaping (Result<Products>)->Void){
+        performRequest(route: ProductRouter.getByType(type: type), completion: completion)
+    }
+    
+    func getAllByMark(mark : Mark,completion:@escaping (Result<Products>)->Void){
+        performRequest(route: ProductRouter.getByMark(mark: mark), completion: completion)
+    }
+    
+    func getAllByTypeAndMark(type:Type,mark:Mark,completion:@escaping (Result<Products>)->Void){
+        performRequest(route: ProductRouter.getByTypeAndMark(type: type, mark: mark), completion: completion)
     }
 }
