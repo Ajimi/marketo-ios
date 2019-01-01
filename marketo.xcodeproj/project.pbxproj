@@ -73,6 +73,17 @@
 		87FF639021977AE5008EE969 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF638F21977AE5008EE969 /* Constants.swift */; };
 		87FF639221977B22008EE969 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF639121977B22008EE969 /* UserRouter.swift */; };
 		87FF639421977C44008EE969 /* UserRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF639321977C44008EE969 /* UserRemoteRepository.swift */; };
+		8800F02421DBC87F00D5738E /* MarketRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800F02321DBC87F00D5738E /* MarketRepository.swift */; };
+		8800F02621DBC89200D5738E /* MarkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800F02521DBC89200D5738E /* MarkRepository.swift */; };
+		8800F02821DBC8BB00D5738E /* MarkRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800F02721DBC8BB00D5738E /* MarkRemoteRepository.swift */; };
+		8800F02A21DBC8D100D5738E /* MarketRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800F02921DBC8D100D5738E /* MarketRemoteRepository.swift */; };
+		8800F02C21DBC8EB00D5738E /* MarkLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800F02B21DBC8EB00D5738E /* MarkLocalRepository.swift */; };
+		8800F02E21DBC90300D5738E /* MarketLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800F02D21DBC90300D5738E /* MarketLocalRepository.swift */; };
+		8800F03021DBC91900D5738E /* MarkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800F02F21DBC91900D5738E /* MarkRouter.swift */; };
+		8800F03221DBC93000D5738E /* MarketRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800F03121DBC93000D5738E /* MarketRouter.swift */; };
+		8800F03621DBCB0800D5738E /* TypeRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800F03521DBCB0800D5738E /* TypeRemoteRepository.swift */; };
+		8800F03821DBCB3600D5738E /* TypeLocalRepositry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800F03721DBCB3600D5738E /* TypeLocalRepositry.swift */; };
+		8800F03A21DBCB5E00D5738E /* TypeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800F03921DBCB5E00D5738E /* TypeRouter.swift */; };
 		8802E64A21BC371E004BB179 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8802E64921BC371E004BB179 /* BasketViewController.swift */; };
 		8802E64C21BC3D00004BB179 /* BasketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8802E64B21BC3D00004BB179 /* BasketViewModel.swift */; };
 		8802E66321BC41BA004BB179 /* ProductInBasket+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8802E65D21BC41BA004BB179 /* ProductInBasket+CoreDataClass.swift */; };
@@ -209,6 +220,17 @@
 		87FF638F21977AE5008EE969 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		87FF639121977B22008EE969 /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
 		87FF639321977C44008EE969 /* UserRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRemoteRepository.swift; sourceTree = "<group>"; };
+		8800F02321DBC87F00D5738E /* MarketRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketRepository.swift; sourceTree = "<group>"; };
+		8800F02521DBC89200D5738E /* MarkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkRepository.swift; sourceTree = "<group>"; };
+		8800F02721DBC8BB00D5738E /* MarkRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkRemoteRepository.swift; sourceTree = "<group>"; };
+		8800F02921DBC8D100D5738E /* MarketRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketRemoteRepository.swift; sourceTree = "<group>"; };
+		8800F02B21DBC8EB00D5738E /* MarkLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkLocalRepository.swift; sourceTree = "<group>"; };
+		8800F02D21DBC90300D5738E /* MarketLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketLocalRepository.swift; sourceTree = "<group>"; };
+		8800F02F21DBC91900D5738E /* MarkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkRouter.swift; sourceTree = "<group>"; };
+		8800F03121DBC93000D5738E /* MarketRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketRouter.swift; sourceTree = "<group>"; };
+		8800F03521DBCB0800D5738E /* TypeRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeRemoteRepository.swift; sourceTree = "<group>"; };
+		8800F03721DBCB3600D5738E /* TypeLocalRepositry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeLocalRepositry.swift; sourceTree = "<group>"; };
+		8800F03921DBCB5E00D5738E /* TypeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeRouter.swift; sourceTree = "<group>"; };
 		8802E64921BC371E004BB179 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		8802E64B21BC3D00004BB179 /* BasketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewModel.swift; sourceTree = "<group>"; };
 		8802E65D21BC41BA004BB179 /* ProductInBasket+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductInBasket+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -617,6 +639,57 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		8800F01F21DBC84C00D5738E /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				8800F02921DBC8D100D5738E /* MarketRemoteRepository.swift */,
+				8800F03121DBC93000D5738E /* MarketRouter.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		8800F02021DBC85A00D5738E /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				8800F02D21DBC90300D5738E /* MarketLocalRepository.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		8800F02121DBC86200D5738E /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				8800F02721DBC8BB00D5738E /* MarkRemoteRepository.swift */,
+				8800F02F21DBC91900D5738E /* MarkRouter.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		8800F02221DBC86800D5738E /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				8800F02B21DBC8EB00D5738E /* MarkLocalRepository.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		8800F03321DBCAED00D5738E /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				8800F03721DBCB3600D5738E /* TypeLocalRepositry.swift */,
+			);
+			name = Local;
+			sourceTree = "<group>";
+		};
+		8800F03421DBCAF300D5738E /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				8800F03521DBCB0800D5738E /* TypeRemoteRepository.swift */,
+				8800F03921DBCB5E00D5738E /* TypeRouter.swift */,
+			);
+			name = Remote;
+			sourceTree = "<group>";
+		};
 		8802E64721BC36B1004BB179 /* Basket */ = {
 			isa = PBXGroup;
 			children = (
@@ -768,6 +841,9 @@
 		88B582AD21DBBF6500F8E108 /* Mark */ = {
 			isa = PBXGroup;
 			children = (
+				8800F02221DBC86800D5738E /* Local */,
+				8800F02121DBC86200D5738E /* Remote */,
+				8800F02521DBC89200D5738E /* MarkRepository.swift */,
 			);
 			path = Mark;
 			sourceTree = "<group>";
@@ -775,6 +851,9 @@
 		88B582AE21DBBF6D00F8E108 /* Market */ = {
 			isa = PBXGroup;
 			children = (
+				8800F02021DBC85A00D5738E /* Local */,
+				8800F01F21DBC84C00D5738E /* Remote */,
+				8800F02321DBC87F00D5738E /* MarketRepository.swift */,
 			);
 			path = Market;
 			sourceTree = "<group>";
@@ -782,6 +861,8 @@
 		88B582AF21DBBF7500F8E108 /* Type */ = {
 			isa = PBXGroup;
 			children = (
+				8800F03421DBCAF300D5738E /* Remote */,
+				8800F03321DBCAED00D5738E /* Local */,
 				88B582B021DBC08100F8E108 /* TypeRepository.swift */,
 			);
 			name = Type;
@@ -1084,7 +1165,9 @@
 				87041AA72198144300312FBF /* UserRepository.swift in Sources */,
 				2C84FB6E21B5307E00BA6173 /* FavoriteRepository.swift in Sources */,
 				843405F621BD15D300A4851D /* LoadBasketUseCase.swift in Sources */,
+				8800F03A21DBCB5E00D5738E /* TypeRouter.swift in Sources */,
 				2C038F7221B1947100B84B0E /* BasketRouter.swift in Sources */,
+				8800F02421DBC87F00D5738E /* MarketRepository.swift in Sources */,
 				885537742197622E0007B3B5 /* SignUpViewController.swift in Sources */,
 				8802E64A21BC371E004BB179 /* BasketViewController.swift in Sources */,
 				88E9985C2198769C00D3FE04 /* ApiConfiguration.swift in Sources */,
@@ -1098,6 +1181,7 @@
 				87FECD9D21AAD59E00805944 /* AccessToken.swift in Sources */,
 				2C038F5B21B16BB200B84B0E /* ViewModel.swift in Sources */,
 				88C7A44721B2A6DF005BDF16 /* PavilionViewController.swift in Sources */,
+				8800F02E21DBC90300D5738E /* MarketLocalRepository.swift in Sources */,
 				2C5F9E3621AC094800BE9E1C /* PersistenceManager.swift in Sources */,
 				88E998542198491200D3FE04 /* HomeViewController.swift in Sources */,
 				88175FC221B459B0003C76C7 /* LogoutUseCase.swift in Sources */,
@@ -1111,6 +1195,8 @@
 				88553772219761F00007B3B5 /* SignUpViewModel.swift in Sources */,
 				2C038F6E21B1942900B84B0E /* BasketLocalRepository.swift in Sources */,
 				8802E66821BC41BA004BB179 /* Basket+CoreDataProperties.swift in Sources */,
+				8800F03221DBC93000D5738E /* MarketRouter.swift in Sources */,
+				8800F03821DBCB3600D5738E /* TypeLocalRepositry.swift in Sources */,
 				88B582A621DBBF0300F8E108 /* Category.swift in Sources */,
 				843405EA21BC789A00A4851D /* FavoriteViewModel.swift in Sources */,
 				88B582B121DBC08100F8E108 /* TypeRepository.swift in Sources */,
@@ -1132,6 +1218,7 @@
 				88BD11E421BD21F3004A3816 /* BasketProductTableViewCell.swift in Sources */,
 				87A4772D219735B4005937AD /* AppDelegate.swift in Sources */,
 				843405F821BD161F00A4851D /* CreateBasketUseCase.swift in Sources */,
+				8800F02A21DBC8D100D5738E /* MarketRemoteRepository.swift in Sources */,
 				874AA80521B2B2290054E069 /* Pavilion.swift in Sources */,
 				87041AB921982FAF00312FBF /* ProductLocalRepository.swift in Sources */,
 				88175FC021B44D17003C76C7 /* IsLoggedInUseCase.swift in Sources */,
@@ -1142,9 +1229,11 @@
 				2C08161521BE692A00F94FB6 /* MarkTableViewCell.swift in Sources */,
 				843405F421BD11BD00A4851D /* LoadFavoriteProductUseCase.swift in Sources */,
 				2C038F6421B191D800B84B0E /* CategoryRemoteRepository.swift in Sources */,
+				8800F02621DBC89200D5738E /* MarkRepository.swift in Sources */,
 				2C038F6021B191B900B84B0E /* CategoryRepository.swift in Sources */,
 				2C84FB7621B530C400BA6173 /* FavoriteRemoteRepository.swift in Sources */,
 				8434060321BD476F00A4851D /* FavoriteProductTableViewCellDelegate.swift in Sources */,
+				8800F02C21DBC8EB00D5738E /* MarkLocalRepository.swift in Sources */,
 				8854E24B21B47BDF00FBCC31 /* FavoriteViewController.swift in Sources */,
 				88B582A421DBBEEF00F8E108 /* Price.swift in Sources */,
 				885537772197649F0007B3B5 /* User.swift in Sources */,
@@ -1152,6 +1241,7 @@
 				88E998512198483900D3FE04 /* Extension.swift in Sources */,
 				88BC8F5721AB24540013D4EB /* AlertExtension.swift in Sources */,
 				2C5F9E3421AC04B200BE9E1C /* UseCase.swift in Sources */,
+				8800F03021DBC91900D5738E /* MarkRouter.swift in Sources */,
 				88BC8F4D21AAD3EB0013D4EB /* FeaturedViewController.swift in Sources */,
 				843405F021BC7AAB00A4851D /* DeleteProductFromBasketUseCase.swift in Sources */,
 				8855D79621B30FCD00B5F0E8 /* PavilionViewModel.swift in Sources */,
@@ -1160,6 +1250,7 @@
 				88175FB921B4286D003C76C7 /* LoginGoogleUseCase.swift in Sources */,
 				8802E66A21BC45A1004BB179 /* LocalRepository.swift in Sources */,
 				2C038F4821B15CBE00B84B0E /* FeaturedViewModel.swift in Sources */,
+				8800F02821DBC8BB00D5738E /* MarkRemoteRepository.swift in Sources */,
 				2C038F7421B1948600B84B0E /* BasketRepository.swift in Sources */,
 				87041AB321982F2600312FBF /* UserLocalRepository.swift in Sources */,
 				87FF639021977AE5008EE969 /* Constants.swift in Sources */,
@@ -1179,6 +1270,7 @@
 				8855D79821B3111400B5F0E8 /* Products.swift in Sources */,
 				2C08161221BE67B200F94FB6 /* CategoryViewController.swift in Sources */,
 				8855D79B21B3130A00B5F0E8 /* LoadPavilionUseCase.swift in Sources */,
+				8800F03621DBCB0800D5738E /* TypeRemoteRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

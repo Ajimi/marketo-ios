@@ -7,3 +7,26 @@
 //
 
 import Foundation
+import Alamofire
+
+class TypeRepository {
+    let remoteRepository: TypeRemoteRepository
+    let localRepository: TypeLocalRepository
+    
+    init(remoteRepository: TypeRemoteRepository = TypeRemoteRepository(), localRepository: TypeLocalRepository = TypeLocalRepository()) {
+        self.remoteRepository = remoteRepository
+        self.localRepository = localRepository
+    }
+}
+
+extension TypeRepository {
+    
+    func getAll(completion:@escaping (Result<Types>)->Void) {
+        remoteRepository.getAll(completion: completion)
+    }
+    
+    func getAllByCategory(category: Category,completion:@escaping (Result<Types>)->Void) {
+        remoteRepository.getAllByCategory(category: category, completion: completion)
+    }
+    
+}

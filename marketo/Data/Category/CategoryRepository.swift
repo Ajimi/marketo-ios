@@ -23,4 +23,8 @@ extension CategoryRepository{
     func getAll(completion:@escaping (Result<Categories>)->Void) {
         remoteRepository.getAll(completion: completion)
     }
+    
+    func getAllByPavilion(pavilion: Pavilion,completion:@escaping (Result<Categories>)->Void) {
+        remoteRepository.getAllByPavilion(pavilion: pavilion, completion: completion)
+    }
 }
