@@ -23,6 +23,10 @@ struct APIUserParameterKey {
     static let fullname = "fullName"
     static let type = "type"
 }
+struct APIBasketProductParameterKey {
+    static let id = "productId"
+    static let quantity = "quantity"
+}
 struct APIProductParameterKey {
     static let name = "name"
     static let prices = "prices"

@@ -84,6 +84,9 @@
 		8800F03621DBCB0800D5738E /* TypeRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800F03521DBCB0800D5738E /* TypeRemoteRepository.swift */; };
 		8800F03821DBCB3600D5738E /* TypeLocalRepositry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800F03721DBCB3600D5738E /* TypeLocalRepositry.swift */; };
 		8800F03A21DBCB5E00D5738E /* TypeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800F03921DBCB5E00D5738E /* TypeRouter.swift */; };
+		88014E6021DCDB8A009D28F5 /* StatisticsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88014E5F21DCDB8A009D28F5 /* StatisticsRepository.swift */; };
+		88014E6321DCDBB5009D28F5 /* StatisticsRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88014E6221DCDBB5009D28F5 /* StatisticsRemoteRepository.swift */; };
+		88014E6521DCDCC1009D28F5 /* StatisticsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88014E6421DCDCC1009D28F5 /* StatisticsRouter.swift */; };
 		8802E64A21BC371E004BB179 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8802E64921BC371E004BB179 /* BasketViewController.swift */; };
 		8802E64C21BC3D00004BB179 /* BasketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8802E64B21BC3D00004BB179 /* BasketViewModel.swift */; };
 		8802E66321BC41BA004BB179 /* ProductInBasket+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8802E65D21BC41BA004BB179 /* ProductInBasket+CoreDataClass.swift */; };
@@ -231,6 +234,9 @@
 		8800F03521DBCB0800D5738E /* TypeRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeRemoteRepository.swift; sourceTree = "<group>"; };
 		8800F03721DBCB3600D5738E /* TypeLocalRepositry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeLocalRepositry.swift; sourceTree = "<group>"; };
 		8800F03921DBCB5E00D5738E /* TypeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeRouter.swift; sourceTree = "<group>"; };
+		88014E5F21DCDB8A009D28F5 /* StatisticsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsRepository.swift; sourceTree = "<group>"; };
+		88014E6221DCDBB5009D28F5 /* StatisticsRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsRemoteRepository.swift; sourceTree = "<group>"; };
+		88014E6421DCDCC1009D28F5 /* StatisticsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsRouter.swift; sourceTree = "<group>"; };
 		8802E64921BC371E004BB179 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		8802E64B21BC3D00004BB179 /* BasketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewModel.swift; sourceTree = "<group>"; };
 		8802E65D21BC41BA004BB179 /* ProductInBasket+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductInBasket+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -611,6 +617,7 @@
 		87FF638D2197798A008EE969 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				88014E5E21DCD933009D28F5 /* Statistics */,
 				88B582AF21DBBF7500F8E108 /* Type */,
 				88B582AE21DBBF6D00F8E108 /* Market */,
 				88B582AD21DBBF6500F8E108 /* Mark */,
@@ -688,6 +695,24 @@
 				8800F03921DBCB5E00D5738E /* TypeRouter.swift */,
 			);
 			name = Remote;
+			sourceTree = "<group>";
+		};
+		88014E5E21DCD933009D28F5 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				88014E6121DCDB96009D28F5 /* Remote */,
+				88014E5F21DCDB8A009D28F5 /* StatisticsRepository.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		88014E6121DCDB96009D28F5 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				88014E6221DCDBB5009D28F5 /* StatisticsRemoteRepository.swift */,
+				88014E6421DCDCC1009D28F5 /* StatisticsRouter.swift */,
+			);
+			path = Remote;
 			sourceTree = "<group>";
 		};
 		8802E64721BC36B1004BB179 /* Basket */ = {
@@ -1152,9 +1177,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C08161721BE693D00F94FB6 /* CategoryCollectionViewCell.swift in Sources */,
+				88014E6521DCDCC1009D28F5 /* StatisticsRouter.swift in Sources */,
 				2C038F5421B15DFE00B84B0E /* AddProductToFavoriteUseCase.swift in Sources */,
 				2C038F5721B15F4C00B84B0E /* PavilionHomeCollectionViewCell.swift in Sources */,
 				2C038F6621B191FB00B84B0E /* CategoryLocalRepository.swift in Sources */,
+				88014E6321DCDBB5009D28F5 /* StatisticsRemoteRepository.swift in Sources */,
 				88175FBD21B44BD1003C76C7 /* HomeViewModel.swift in Sources */,
 				2C038F5D21B1755800B84B0E /* Validation.swift in Sources */,
 				88C7A44421B2A2B7005BDF16 /* DiscountedProductCollectionViewCell.swift in Sources */,
@@ -1190,6 +1217,7 @@
 				2C08161F21BE6E9500F94FB6 /* ProductTableViewCell.swift in Sources */,
 				8802E66521BC41BA004BB179 /* FavoriteProduct+CoreDataClass.swift in Sources */,
 				87FECD9B21AAC7FC00805944 /* Event.swift in Sources */,
+				88014E6021DCDB8A009D28F5 /* StatisticsRepository.swift in Sources */,
 				87A4772F219735B4005937AD /* LoginViewController.swift in Sources */,
 				2C84FB7221B530A000BA6173 /* (null) in Sources */,
 				88553772219761F00007B3B5 /* SignUpViewModel.swift in Sources */,
