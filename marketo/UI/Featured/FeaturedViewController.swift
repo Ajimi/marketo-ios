@@ -138,7 +138,6 @@ extension FeaturedViewController{
     
     func trendingCellDidTapBasket(_ sender: TrendingProductCollectionViewCell) {
         guard let tappedIndexPath = trendingProductCollectionView.indexPath(for: sender) else { return }
-        print("basket cell")
         viewModel.addTrendingProductToBasket(at: tappedIndexPath)
     }
 }

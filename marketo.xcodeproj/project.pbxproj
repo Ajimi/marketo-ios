@@ -116,6 +116,17 @@
 		8855D7A221B3144000B5F0E8 /* PavilionRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8855D7A121B3144000B5F0E8 /* PavilionRemoteRepository.swift */; };
 		8855D7A421B3147F00B5F0E8 /* PavilionLocalRepository .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8855D7A321B3147F00B5F0E8 /* PavilionLocalRepository .swift */; };
 		8855D7A621B3151700B5F0E8 /* PavilionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8855D7A521B3151700B5F0E8 /* PavilionRouter.swift */; };
+		8858DFC621DE066D003971A7 /* LoadCategoriesByPavilionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8858DFC521DE066D003971A7 /* LoadCategoriesByPavilionUseCase.swift */; };
+		8858DFC821DE0693003971A7 /* LoadCategoriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8858DFC721DE0693003971A7 /* LoadCategoriesUseCase.swift */; };
+		8858DFCB21DE082E003971A7 /* LoadTypesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8858DFCA21DE082E003971A7 /* LoadTypesUseCase.swift */; };
+		8858DFCD21DE084E003971A7 /* LoadTypesByCategoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8858DFCC21DE084E003971A7 /* LoadTypesByCategoryUseCase.swift */; };
+		8858DFD021DE09AD003971A7 /* LoadMarksUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8858DFCF21DE09AD003971A7 /* LoadMarksUseCase.swift */; };
+		8858DFD221DE09C2003971A7 /* LoadMarksByTypeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8858DFD121DE09C2003971A7 /* LoadMarksByTypeUseCase.swift */; };
+		8858DFD421DE0ABC003971A7 /* LoadProductsByTypeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8858DFD321DE0ABC003971A7 /* LoadProductsByTypeUseCase.swift */; };
+		8858DFD621DE0ADE003971A7 /* LoadProductsByTypeAndMarkUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8858DFD521DE0ADE003971A7 /* LoadProductsByTypeAndMarkUseCase.swift */; };
+		8858DFD821DE0AF9003971A7 /* LoadProductsByMarkUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8858DFD721DE0AF9003971A7 /* LoadProductsByMarkUseCase.swift */; };
+		8858DFDA21DE0C72003971A7 /* LoadProductByIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8858DFD921DE0C72003971A7 /* LoadProductByIdUseCase.swift */; };
+		8858DFDC21DE0D07003971A7 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8858DFDB21DE0D07003971A7 /* CategoryViewModel.swift */; };
 		88B582A421DBBEEF00F8E108 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B582A321DBBEEF00F8E108 /* Price.swift */; };
 		88B582A621DBBF0300F8E108 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B582A521DBBF0300F8E108 /* Category.swift */; };
 		88B582A821DBBF1600F8E108 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B582A721DBBF1600F8E108 /* Type.swift */; };
@@ -266,6 +277,17 @@
 		8855D7A121B3144000B5F0E8 /* PavilionRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PavilionRemoteRepository.swift; sourceTree = "<group>"; };
 		8855D7A321B3147F00B5F0E8 /* PavilionLocalRepository .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PavilionLocalRepository .swift"; sourceTree = "<group>"; };
 		8855D7A521B3151700B5F0E8 /* PavilionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PavilionRouter.swift; sourceTree = "<group>"; };
+		8858DFC521DE066D003971A7 /* LoadCategoriesByPavilionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadCategoriesByPavilionUseCase.swift; sourceTree = "<group>"; };
+		8858DFC721DE0693003971A7 /* LoadCategoriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadCategoriesUseCase.swift; sourceTree = "<group>"; };
+		8858DFCA21DE082E003971A7 /* LoadTypesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadTypesUseCase.swift; sourceTree = "<group>"; };
+		8858DFCC21DE084E003971A7 /* LoadTypesByCategoryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadTypesByCategoryUseCase.swift; sourceTree = "<group>"; };
+		8858DFCF21DE09AD003971A7 /* LoadMarksUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMarksUseCase.swift; sourceTree = "<group>"; };
+		8858DFD121DE09C2003971A7 /* LoadMarksByTypeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMarksByTypeUseCase.swift; sourceTree = "<group>"; };
+		8858DFD321DE0ABC003971A7 /* LoadProductsByTypeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadProductsByTypeUseCase.swift; sourceTree = "<group>"; };
+		8858DFD521DE0ADE003971A7 /* LoadProductsByTypeAndMarkUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadProductsByTypeAndMarkUseCase.swift; sourceTree = "<group>"; };
+		8858DFD721DE0AF9003971A7 /* LoadProductsByMarkUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadProductsByMarkUseCase.swift; sourceTree = "<group>"; };
+		8858DFD921DE0C72003971A7 /* LoadProductByIdUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadProductByIdUseCase.swift; sourceTree = "<group>"; };
+		8858DFDB21DE0D07003971A7 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		88B582A321DBBEEF00F8E108 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		88B582A521DBBF0300F8E108 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		88B582A721DBBF1600F8E108 /* Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
@@ -321,6 +343,9 @@
 		2C038F4921B15D5000B84B0E /* domain */ = {
 			isa = PBXGroup;
 			children = (
+				8858DFCE21DE0970003971A7 /* mark */,
+				8858DFC921DE080C003971A7 /* type */,
+				8858DFC421DE0602003971A7 /* categpry */,
 				88295E5B21BC60B800EF937E /* basket */,
 				2C84FB6921B52D2500BA6173 /* favorite */,
 				88175FB521B42819003C76C7 /* login */,
@@ -336,6 +361,10 @@
 				2C038F4B21B15D7F00B84B0E /* LoadProductUseCase.swift */,
 				2C038F4D21B15DB100B84B0E /* LoadTrendingProductUseCase.swift */,
 				2C038F4F21B15DE600B84B0E /* LoadDiscountedProductUseCase.swift */,
+				8858DFD321DE0ABC003971A7 /* LoadProductsByTypeUseCase.swift */,
+				8858DFD521DE0ADE003971A7 /* LoadProductsByTypeAndMarkUseCase.swift */,
+				8858DFD721DE0AF9003971A7 /* LoadProductsByMarkUseCase.swift */,
+				8858DFD921DE0C72003971A7 /* LoadProductByIdUseCase.swift */,
 			);
 			path = product;
 			sourceTree = "<group>";
@@ -409,6 +438,7 @@
 			children = (
 				2C08161321BE690B00F94FB6 /* wideget */,
 				2C08161121BE67B200F94FB6 /* CategoryViewController.swift */,
+				8858DFDB21DE0D07003971A7 /* CategoryViewModel.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -854,6 +884,33 @@
 			path = Remote;
 			sourceTree = "<group>";
 		};
+		8858DFC421DE0602003971A7 /* categpry */ = {
+			isa = PBXGroup;
+			children = (
+				8858DFC521DE066D003971A7 /* LoadCategoriesByPavilionUseCase.swift */,
+				8858DFC721DE0693003971A7 /* LoadCategoriesUseCase.swift */,
+			);
+			path = categpry;
+			sourceTree = "<group>";
+		};
+		8858DFC921DE080C003971A7 /* type */ = {
+			isa = PBXGroup;
+			children = (
+				8858DFCA21DE082E003971A7 /* LoadTypesUseCase.swift */,
+				8858DFCC21DE084E003971A7 /* LoadTypesByCategoryUseCase.swift */,
+			);
+			path = type;
+			sourceTree = "<group>";
+		};
+		8858DFCE21DE0970003971A7 /* mark */ = {
+			isa = PBXGroup;
+			children = (
+				8858DFCF21DE09AD003971A7 /* LoadMarksUseCase.swift */,
+				8858DFD121DE09C2003971A7 /* LoadMarksByTypeUseCase.swift */,
+			);
+			path = mark;
+			sourceTree = "<group>";
+		};
 		888346F8219744A500FB3D26 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -951,8 +1008,8 @@
 		88C7A44521B2A6B1005BDF16 /* Pavilion */ = {
 			isa = PBXGroup;
 			children = (
-				88C7A44621B2A6DF005BDF16 /* PavilionViewController.swift */,
 				88C7A44821B2A916005BDF16 /* widget */,
+				88C7A44621B2A6DF005BDF16 /* PavilionViewController.swift */,
 				8855D79521B30FCD00B5F0E8 /* PavilionViewModel.swift */,
 			);
 			path = Pavilion;
@@ -1200,6 +1257,7 @@
 				88E9985C2198769C00D3FE04 /* ApiConfiguration.swift in Sources */,
 				8855376D219752EA0007B3B5 /* LoginViewModel.swift in Sources */,
 				87041ABD2198308B00312FBF /* ProductRepository.swift in Sources */,
+				8858DFD021DE09AD003971A7 /* LoadMarksUseCase.swift in Sources */,
 				88E9985A2198764600D3FE04 /* ProductRouter.swift in Sources */,
 				87041AB721982FA100312FBF /* ProductRemoteRepository.swift in Sources */,
 				2C84FB7821B530D700BA6173 /* FavoriteRouter.swift in Sources */,
@@ -1223,6 +1281,7 @@
 				88553772219761F00007B3B5 /* SignUpViewModel.swift in Sources */,
 				2C038F6E21B1942900B84B0E /* BasketLocalRepository.swift in Sources */,
 				8802E66821BC41BA004BB179 /* Basket+CoreDataProperties.swift in Sources */,
+				8858DFD221DE09C2003971A7 /* LoadMarksByTypeUseCase.swift in Sources */,
 				8800F03221DBC93000D5738E /* MarketRouter.swift in Sources */,
 				8800F03821DBCB3600D5738E /* TypeLocalRepositry.swift in Sources */,
 				88B582A621DBBF0300F8E108 /* Category.swift in Sources */,
@@ -1237,6 +1296,7 @@
 				88B582A821DBBF1600F8E108 /* Type.swift in Sources */,
 				8855D7A421B3147F00B5F0E8 /* PavilionLocalRepository .swift in Sources */,
 				88295E5A21BC59D500EF937E /* FavoriteLocalRepository.swift in Sources */,
+				8858DFCB21DE082E003971A7 /* LoadTypesUseCase.swift in Sources */,
 				87FF639421977C44008EE969 /* UserRemoteRepository.swift in Sources */,
 				2C038F4C21B15D7F00B84B0E /* LoadProductUseCase.swift in Sources */,
 				88175FB721B42847003C76C7 /* LoginFacebookUseCase.swift in Sources */,
@@ -1244,6 +1304,8 @@
 				88BD11E621BD2228004A3816 /* NumberOfBasketProductsTableViewCell.swift in Sources */,
 				2C038F5921B15FA400B84B0E /* TrendingProductCollectionViewCell.swift in Sources */,
 				88BD11E421BD21F3004A3816 /* BasketProductTableViewCell.swift in Sources */,
+				8858DFDA21DE0C72003971A7 /* LoadProductByIdUseCase.swift in Sources */,
+				8858DFDC21DE0D07003971A7 /* CategoryViewModel.swift in Sources */,
 				87A4772D219735B4005937AD /* AppDelegate.swift in Sources */,
 				843405F821BD161F00A4851D /* CreateBasketUseCase.swift in Sources */,
 				8800F02A21DBC8D100D5738E /* MarketRemoteRepository.swift in Sources */,
@@ -1252,11 +1314,13 @@
 				88175FC021B44D17003C76C7 /* IsLoggedInUseCase.swift in Sources */,
 				2C08161921BE694700F94FB6 /* TypeCollectionViewCell.swift in Sources */,
 				8802E66721BC41BA004BB179 /* Basket+CoreDataClass.swift in Sources */,
+				8858DFC621DE066D003971A7 /* LoadCategoriesByPavilionUseCase.swift in Sources */,
 				87FECD9921AABC5C00805944 /* Dynamic.swift in Sources */,
 				88C7A44A21B2A933005BDF16 /* PavilionCollectionViewCell.swift in Sources */,
 				2C08161521BE692A00F94FB6 /* MarkTableViewCell.swift in Sources */,
 				843405F421BD11BD00A4851D /* LoadFavoriteProductUseCase.swift in Sources */,
 				2C038F6421B191D800B84B0E /* CategoryRemoteRepository.swift in Sources */,
+				8858DFC821DE0693003971A7 /* LoadCategoriesUseCase.swift in Sources */,
 				8800F02621DBC89200D5738E /* MarkRepository.swift in Sources */,
 				2C038F6021B191B900B84B0E /* CategoryRepository.swift in Sources */,
 				2C84FB7621B530C400BA6173 /* FavoriteRemoteRepository.swift in Sources */,
@@ -1271,12 +1335,15 @@
 				2C5F9E3421AC04B200BE9E1C /* UseCase.swift in Sources */,
 				8800F03021DBC91900D5738E /* MarkRouter.swift in Sources */,
 				88BC8F4D21AAD3EB0013D4EB /* FeaturedViewController.swift in Sources */,
+				8858DFD421DE0ABC003971A7 /* LoadProductsByTypeUseCase.swift in Sources */,
 				843405F021BC7AAB00A4851D /* DeleteProductFromBasketUseCase.swift in Sources */,
 				8855D79621B30FCD00B5F0E8 /* PavilionViewModel.swift in Sources */,
 				8855D7A221B3144000B5F0E8 /* PavilionRemoteRepository.swift in Sources */,
 				88B582AA21DBBF2A00F8E108 /* Market.swift in Sources */,
+				8858DFD821DE0AF9003971A7 /* LoadProductsByMarkUseCase.swift in Sources */,
 				88175FB921B4286D003C76C7 /* LoginGoogleUseCase.swift in Sources */,
 				8802E66A21BC45A1004BB179 /* LocalRepository.swift in Sources */,
+				8858DFCD21DE084E003971A7 /* LoadTypesByCategoryUseCase.swift in Sources */,
 				2C038F4821B15CBE00B84B0E /* FeaturedViewModel.swift in Sources */,
 				8800F02821DBC8BB00D5738E /* MarkRemoteRepository.swift in Sources */,
 				2C038F7421B1948600B84B0E /* BasketRepository.swift in Sources */,
@@ -1286,6 +1353,7 @@
 				8802E64C21BC3D00004BB179 /* BasketViewModel.swift in Sources */,
 				8802E66421BC41BA004BB179 /* ProductInBasket+CoreDataProperties.swift in Sources */,
 				843405EC21BC793F00A4851D /* ModifyQuantityForProductUseCase.swift in Sources */,
+				8858DFD621DE0ADE003971A7 /* LoadProductsByTypeAndMarkUseCase.swift in Sources */,
 				8855D7A021B3141C00B5F0E8 /* PavilionRepository .swift in Sources */,
 				8434060621BD4E7600A4851D /* TrendingProductCollectionViewCellDelegate.swift in Sources */,
 				2C08161C21BE6DB700F94FB6 /* ProductListViewController.swift in Sources */,

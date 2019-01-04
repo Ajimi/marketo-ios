@@ -8,8 +8,14 @@
 
 import UIKit
 
-class TypeCollectionViewCell: UICollectionViewCell {
+class TypeCollectionViewCell: UICollectionViewCell,Configurable {
     
-    @IBOutlet weak var tyoeName : UILabel!
+    typealias DataType = Type
+    
+    @IBOutlet weak var typeName : UILabel!
+    
+    func configure(with content: Type) {
+        typeName.text = content.name
+    }
     
 }

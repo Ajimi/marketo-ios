@@ -8,8 +8,18 @@
 
 import UIKit
 
-class CategoryCollectionViewCell: UICollectionViewCell {
+class CategoryCollectionViewCell: UICollectionViewCell,Configurable {
+    
+    
+    typealias DataType = Category
+    
     
     @IBOutlet weak var categoryName : UILabel!
+    
+    
+    func configure(with content: Category) {
+        categoryName.text = content.name
+    }
+    
     
 }

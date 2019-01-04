@@ -328,7 +328,6 @@
                                         <connections>
                                             <outlet property="image" destination="c4f-nb-Eq0" id="Vr3-7v-NfQ"/>
                                             <outlet property="label" destination="sDQ-A2-tfw" id="7KI-65-tTc"/>
-                                            <segue destination="EEI-TI-Uii" kind="show" id="B2o-rh-1ew"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -353,6 +352,7 @@
                     <navigationItem key="navigationItem" title="Pavilion" id="jsF-FH-4jA"/>
                     <connections>
                         <outlet property="pavilionCollectionView" destination="oPp-8x-8rq" id="Az6-Dn-hvB"/>
+                        <segue destination="EEI-TI-Uii" kind="show" identifier="navigateToCategories" id="OUK-O7-Nrp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NBt-lm-jAb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -450,7 +450,7 @@
                                             <constraint firstAttribute="trailingMargin" secondItem="RhP-jX-3sW" secondAttribute="trailing" id="vsE-Dj-ETa"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="tyoeName" destination="RhP-jX-3sW" id="Gty-9G-1uB"/>
+                                            <outlet property="typeName" destination="RhP-jX-3sW" id="Gty-9G-1uB"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -537,7 +537,7 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="productCell" rowHeight="113" id="Jf7-CT-joW" customClass="ProductTableViewCell" customModule="marketo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="113"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jf7-CT-joW" id="x2y-3J-tRH">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jf7-CT-joW" id="x2y-3J-tRH">
                                     <rect key="frame" x="0.0" y="0.0" width="327" height="112.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -547,7 +547,7 @@
                                                 <constraint firstAttribute="width" constant="96" id="jt2-4I-IvK"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNd-WD-JpP">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNd-WD-JpP">
                                             <rect key="frame" x="121" y="11" width="213" height="47"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="47" id="10e-dZ-p05"/>
@@ -1207,6 +1207,6 @@
         <image name="shopping_cart_loaded" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="B2o-rh-1ew"/>
+        <segue reference="OUK-O7-Nrp"/>
     </inferredMetricsTieBreakers>
 </document>

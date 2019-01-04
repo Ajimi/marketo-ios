@@ -1,24 +1,24 @@
 //
-//  LoadProductUseCase`.swift
+//  LoadProductByIdUseCase.swift
 //  marketo
 //
-//  Created by Othmen on 11/30/18.
-//  Copyright © 2018 selim ajimi. All rights reserved.
+//  Created by Moncef Guettat on 1/3/19.
+//  Copyright © 2019 selim ajimi. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-class LoadProductUseCase {
+class LoadProductByIdUseCase {
     
     let productRepository : ProductRepository
     init(productRepository: ProductRepository = ProductRepository()){
         self.productRepository = productRepository
     }
     
-    func execute(completion:@escaping (Result<Products>)->Void) {
+    func execute(id : Int,completion:@escaping (Result<Product>)->Void) {
         
-        productRepository.getAll { (response) in
+        productRepository.get(id : id) { (response) in
             switch response {
             case .success(_):
                 completion(response)

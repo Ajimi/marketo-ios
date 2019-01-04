@@ -28,6 +28,10 @@ extension ProductRemoteRepository{
         performRequest(route : ProductRouter.getAll(), completion:completion)
     }
     
+    func get(id : Int,completion:@escaping (Result<Product>)->Void) {
+        performRequest(route : ProductRouter.get(id : id), completion:completion)
+    }
+    
     func getTrending(completion:@escaping (Result<Products>)->Void) {
         performRequest(route: ProductRouter.getFeatured(), completion: completion)
     }

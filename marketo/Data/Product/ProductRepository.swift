@@ -31,6 +31,10 @@ extension ProductRepository {
         remoteRepository.getAll(completion: completion)
     }
     
+    func get(id : Int,completion:@escaping (Result<Product>)->Void) {
+        remoteRepository.get(id:id,completion: completion)
+    }
+    
     func getTrending(completion:@escaping (Result<Products>)->Void) {
         remoteRepository.getTrending(completion: completion)
     }

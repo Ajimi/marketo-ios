@@ -8,8 +8,14 @@
 
 import UIKit
 
-class MarkTableViewCell: UITableViewCell {
-
+class MarkTableViewCell: UITableViewCell,Configurable {
+    
+    typealias DataType = Mark
+    
     @IBOutlet weak var markName : UILabel!
 
+    func configure(with content: Mark) {
+        markName.text = content.name
+    }
+    
 }

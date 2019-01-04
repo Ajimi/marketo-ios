@@ -1,24 +1,24 @@
 //
-//  LoadProductUseCase`.swift
+//  LoadProductsByTypeAndMarkUseCase.swift
 //  marketo
 //
-//  Created by Othmen on 11/30/18.
-//  Copyright © 2018 selim ajimi. All rights reserved.
+//  Created by Moncef Guettat on 1/3/19.
+//  Copyright © 2019 selim ajimi. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-class LoadProductUseCase {
+class LoadProductsByTypeAndMarkUseCase {
     
     let productRepository : ProductRepository
     init(productRepository: ProductRepository = ProductRepository()){
         self.productRepository = productRepository
     }
     
-    func execute(completion:@escaping (Result<Products>)->Void) {
+    func execute(type : Type,mark : Mark,completion:@escaping (Result<Products>)->Void) {
         
-        productRepository.getAll { (response) in
+        productRepository.getAllByTypeAndMark(type: type,mark: mark) { (response) in
             switch response {
             case .success(_):
                 completion(response)
@@ -31,4 +31,5 @@ class LoadProductUseCase {
             
         }
     }
+    
 }

@@ -34,7 +34,7 @@ enum CategoryRouter : APIConfiguration {
         case .getAll:
             return ""
         case .getAllByPavilion(let pavilion):
-            return "?pavilionId?=\(pavilion.id)"
+            return "?pavilionId?=\(pavilion.id.description)"
         case .get(let id):
             return "/\(id)"
         }
