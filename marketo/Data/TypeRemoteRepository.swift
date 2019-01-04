@@ -27,7 +27,7 @@ extension TypeRemoteRepository{
         performRequest(route : TypeRouter.getAll(), completion:completion)
     }
     
-    func getAllByCategory(category: Category,completion:@escaping (Result<Types>)->Void) {
-        performRequest(route : TypeRouter.getAllByCategory(category: category), completion:completion)
+    func getAllByCategory(categoryId: String,completion:@escaping (Result<Types>)->Void) {
+        performRequest(route : TypeRouter.getAllByCategory(categoryId: categoryId), completion:completion)
     }
 }

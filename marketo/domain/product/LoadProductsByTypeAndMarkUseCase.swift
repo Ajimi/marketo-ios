@@ -16,9 +16,9 @@ class LoadProductsByTypeAndMarkUseCase {
         self.productRepository = productRepository
     }
     
-    func execute(type : Type,mark : Mark,completion:@escaping (Result<Products>)->Void) {
+    func execute(typeId :String,markId : String,completion:@escaping (Result<Products>)->Void) {
         
-        productRepository.getAllByTypeAndMark(type: type,mark: mark) { (response) in
+        productRepository.getAllByTypeAndMark(typeId: typeId,markId: markId) { (response) in
             switch response {
             case .success(_):
                 completion(response)

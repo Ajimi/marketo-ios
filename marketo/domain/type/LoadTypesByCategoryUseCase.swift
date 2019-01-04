@@ -16,9 +16,9 @@ class LoadTypesByCategoryUseCase {
         self.typeRepository = typeRepository
     }
     
-    func execute(category:Category, completion:@escaping (Result<Types>)->Void) {
+    func execute(categoryId:String, completion:@escaping (Result<Types>)->Void) {
         
-        typeRepository.getAllByCategory(category: category) { (response) in
+        typeRepository.getAllByCategory(categoryId: categoryId) { (response) in
             switch response {
             case .success(_):
                 completion(response)

@@ -32,4 +32,8 @@ extension FavoriteRepository {
     func addProduct(product:Product,completion:@escaping (Result<Bool>)->Void){
         localRepository.addProduct(product: product, completion: completion)
     }
+    
+    func isFavoriteProduct(productId : String,completion:@escaping (Result<Bool>)->Void){
+        localRepository.isFavoriteProduct(productId: productId, completion: completion)
+    }
 }

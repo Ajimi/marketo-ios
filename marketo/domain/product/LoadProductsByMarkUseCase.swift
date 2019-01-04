@@ -16,9 +16,9 @@ class LoadProductsByMarkUseCase {
         self.productRepository = productRepository
     }
     
-    func execute(mark : Mark,completion:@escaping (Result<Products>)->Void) {
+    func execute(markId : String,completion:@escaping (Result<Products>)->Void) {
         
-        productRepository.getAllByMark(mark: mark) { (response) in
+        productRepository.getAllByMark(markId: markId) { (response) in
             switch response {
             case .success(_):
                 completion(response)

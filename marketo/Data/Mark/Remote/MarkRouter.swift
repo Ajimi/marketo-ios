@@ -12,7 +12,7 @@ import Alamofire
 enum MarkRouter: APIConfiguration{
     
     case getAll()
-    case getAllByType(type:Type)
+    case getAllByType(typeId:String)
     case get(id : Int)
     
     
@@ -33,8 +33,8 @@ enum MarkRouter: APIConfiguration{
         switch self {
         case .getAll:
             return ""
-        case .getAllByType(let type):
-            return "/type/\(type.id)"
+        case .getAllByType(let typeId):
+            return "/type/\(typeId)"
         case .get(let id):
             return "/\(id)"
         }
@@ -65,6 +65,8 @@ enum MarkRouter: APIConfiguration{
         urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.acceptType.rawValue)
         urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
         
+        
+        print(urlRequest)
         // Parameters
         if let parameters = parameters {
             do {

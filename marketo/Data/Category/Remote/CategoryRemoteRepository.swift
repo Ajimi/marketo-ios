@@ -27,7 +27,7 @@ extension CategoryRemoteRepository{
         performRequest(route : CategoryRouter.getAll(), completion:completion)
     }
     
-    func getAllByPavilion(pavilion: Pavilion,completion:@escaping (Result<Categories>)->Void) {
-        performRequest(route : CategoryRouter.getAllByPavilion(pavilion: pavilion), completion:completion)
+    func getAllByPavilion(pavilionId: String,completion:@escaping (Result<Categories>)->Void) {
+        performRequest(route : CategoryRouter.getAllByPavilion(pavilionId: pavilionId),completion:completion)
     }
 }

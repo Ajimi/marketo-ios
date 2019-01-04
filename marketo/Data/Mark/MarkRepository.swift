@@ -25,8 +25,8 @@ extension MarkRepository {
         remoteRepository.getAll(completion: completion)
     }
     
-    func getAllByType(type: Type,completion:@escaping (Result<Marks>)->Void) {
-        remoteRepository.getAllByType(type: type, completion: completion)
+    func getAllByType(typeId: String,completion:@escaping (Result<Marks>)->Void) {
+        remoteRepository.getAllByType(typeId: typeId, completion: completion)
     }
     
 }

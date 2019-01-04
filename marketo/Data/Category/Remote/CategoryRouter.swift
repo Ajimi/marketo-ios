@@ -12,7 +12,7 @@ import Alamofire
 enum CategoryRouter : APIConfiguration {
     
     case getAll()
-    case getAllByPavilion(pavilion:Pavilion)
+    case getAllByPavilion(pavilionId:String)
     case get(id : Int)
     
     
@@ -33,8 +33,8 @@ enum CategoryRouter : APIConfiguration {
         switch self {
         case .getAll:
             return ""
-        case .getAllByPavilion(let pavilion):
-            return "?pavilionId?=\(pavilion.id.description)"
+        case .getAllByPavilion:
+            return ""
         case .get(let id):
             return "/\(id)"
         }
@@ -45,8 +45,8 @@ enum CategoryRouter : APIConfiguration {
         switch self {
         case .getAll:
             return nil
-        case .getAllByPavilion:
-            return nil
+        case .getAllByPavilion(let id):
+            return ["pavilionId" : id]
         case .get:
             return nil
         }
@@ -65,15 +65,16 @@ enum CategoryRouter : APIConfiguration {
         urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.acceptType.rawValue)
         urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
         
+       
+        
         // Parameters
         if let parameters = parameters {
             do {
-                urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
+                urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
+                print(urlRequest)
             } catch {
-                throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
             }
         }
-        
         return urlRequest
     }
     

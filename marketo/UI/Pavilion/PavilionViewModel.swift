@@ -21,7 +21,6 @@ class PavilionViewModel: ViewModel {
     }
     
     func loadAllPavilions() {
-        
         self.uiPavilionsState.value = self.emitUiState(showProgress: true)
         loadPavilionUseCase.execute { (response) in
             switch response {

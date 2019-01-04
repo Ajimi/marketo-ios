@@ -16,9 +16,9 @@ class LoadProductsByTypeUseCase {
         self.productRepository = productRepository
     }
     
-    func execute(type : Type,completion:@escaping (Result<Products>)->Void) {
+    func execute(typeId : String,completion:@escaping (Result<Products>)->Void) {
         
-        productRepository.getAllByType(type: type) { (response) in
+        productRepository.getAllByType(typeId: typeId) { (response) in
             switch response {
             case .success(_):
                 completion(response)

@@ -73,7 +73,7 @@ class CategoryViewController: UIViewController {
             
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let _ = showSucces.consume() {
                 DispatchQueue.main.async {
-                    self.typesCollectionView.reloadData()
+                    self.marksTableView.reloadData()
                 }
             }
         }

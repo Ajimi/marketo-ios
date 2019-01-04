@@ -52,4 +52,15 @@ extension FavoriteLocalRepository{
             return true
         })
     }
+    
+    func isFavoriteProduct(productId: String, completion:@escaping (Result<Bool>)->Void){
+        
+      
+        persistenceManager.save()
+        print("Addproduct : to favorite")
+        completion(Result{
+            return true
+        })
+    }
 }
+

@@ -28,8 +28,8 @@ extension MarkRemoteRepository{
         performRequest(route : MarkRouter.getAll(), completion:completion)
     }
     
-    func getAllByType(type: Type,completion:@escaping (Result<Marks>)->Void) {
-        performRequest(route : MarkRouter.getAllByType(type: type), completion:completion)
+    func getAllByType(typeId: String,completion:@escaping (Result<Marks>)->Void) {
+        performRequest(route : MarkRouter.getAllByType(typeId: typeId), completion:completion)
     }
     
 }

@@ -16,9 +16,9 @@ class LoadCategoriesByPavilionUseCase {
         self.categoryRepository = categoryRepository
     }
     
-    func execute(pavilion : Pavilion,completion:@escaping (Result<Categories>)->Void) {
+    func execute(pavilionId : String,completion:@escaping (Result<Categories>)->Void) {
         
-        categoryRepository.getAllByPavilion(pavilion: pavilion) { (response) in
+        categoryRepository.getAllByPavilion(pavilionId: pavilionId) { (response) in
             switch response {
             case .success(_):
                 completion(response)

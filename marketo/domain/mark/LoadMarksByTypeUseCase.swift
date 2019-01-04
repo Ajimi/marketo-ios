@@ -16,9 +16,9 @@ class LoadMarksByTypeUseCase {
         self.markRepository = markRepository
     }
     
-    func execute(type:Type,completion:@escaping (Result<Marks>)->Void) {
+    func execute(typeId:String,completion:@escaping (Result<Marks>)->Void) {
         
-        markRepository.getAllByType(type:type) { (response) in
+        markRepository.getAllByType(typeId:typeId) { (response) in
             switch response {
             case .success(_):
                 completion(response)

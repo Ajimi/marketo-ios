@@ -25,8 +25,8 @@ extension TypeRepository {
         remoteRepository.getAll(completion: completion)
     }
     
-    func getAllByCategory(category: Category,completion:@escaping (Result<Types>)->Void) {
-        remoteRepository.getAllByCategory(category: category, completion: completion)
+    func getAllByCategory(categoryId: String,completion:@escaping (Result<Types>)->Void) {
+        remoteRepository.getAllByCategory(categoryId: categoryId, completion: completion)
     }
     
 }

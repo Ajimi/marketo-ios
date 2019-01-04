@@ -40,15 +40,15 @@ extension ProductRemoteRepository{
         performRequest(route: ProductRouter.getDiscounted(), completion: completion)
     }
     
-    func getAllByType(type : Type,completion:@escaping (Result<Products>)->Void){
-        performRequest(route: ProductRouter.getByType(type: type), completion: completion)
+    func getAllByType(typeId : String,completion:@escaping (Result<Products>)->Void){
+        performRequest(route: ProductRouter.getByType(typeId: typeId), completion: completion)
     }
     
-    func getAllByMark(mark : Mark,completion:@escaping (Result<Products>)->Void){
-        performRequest(route: ProductRouter.getByMark(mark: mark), completion: completion)
+    func getAllByMark(markId : String,completion:@escaping (Result<Products>)->Void){
+        performRequest(route: ProductRouter.getByMark(markId: markId), completion: completion)
     }
     
-    func getAllByTypeAndMark(type:Type,mark:Mark,completion:@escaping (Result<Products>)->Void){
-        performRequest(route: ProductRouter.getByTypeAndMark(type: type, mark: mark), completion: completion)
+    func getAllByTypeAndMark(typeId:String ,markId:String,completion:@escaping (Result<Products>)->Void){
+        performRequest(route: ProductRouter.getByTypeAndMark(typeId: typeId, markId: markId), completion: completion)
     }
 }
