@@ -12,7 +12,7 @@ import Alamofire
 class PavilionRemoteRepository{
     
     @discardableResult
-    private func performRequest<T:Decodable>(route:CategoryRouter, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (Result<T>)->Void) -> DataRequest {
+    private func performRequest<T:Decodable>(route:PavilionRouter, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (Result<T>)->Void) -> DataRequest {
         return AF.request(route)
             .validate(statusCode : 200..<300)
             .responseJSONDecodable (decoder: decoder){ (response: DataResponse<T>) in
@@ -24,6 +24,6 @@ class PavilionRemoteRepository{
 extension PavilionRemoteRepository{
     
     func getAll(completion:@escaping (Result<Pavilions>)->Void) {
-        performRequest(route : CategoryRouter.getAll(), completion:completion)
+        performRequest(route : PavilionRouter.getAll(), completion:completion)
     }
 }

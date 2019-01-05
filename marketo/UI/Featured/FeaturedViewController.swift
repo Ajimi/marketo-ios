@@ -15,8 +15,10 @@ private let productHomeTrendingReuseIdentifier = "ProductTrendingHomeCell"
 
 private let productHomeDiscountedReuseIdentifier = "ProductDiscountedHomeCell"
 
+private let navigateToCategorySegueIdentifier = "navigateToCategory"
 
-class FeaturedViewController: UIViewController, UICollectionViewDataSource , TrendingProductCollectionViewCellDelegate {
+
+class FeaturedViewController: UIViewController {
     
     
     @IBOutlet weak var pavilionsCollectionView: UICollectionView!
@@ -89,7 +91,7 @@ class FeaturedViewController: UIViewController, UICollectionViewDataSource , Tre
 
 }
 
-extension FeaturedViewController{
+extension FeaturedViewController : UICollectionViewDataSource,UICollectionViewDelegate,TrendingProductCollectionViewCellDelegate{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -130,6 +132,24 @@ extension FeaturedViewController{
             return cell;
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("dkhal")
+        switch collectionView {
+        case self.pavilionsCollectionView:
+            print("1")
+            performSegue(withIdentifier: navigateToCategorySegueIdentifier, sender: indexPath)
+        case self.trendingProductCollectionView:
+            print("2")
+            return
+        case self.discountedProductCollectionView:
+            print("3")
+            return
+        default:
+            print("all")
+            return
+        }
+    }
 
     func trendingCellDidTapFavorite(_ sender: TrendingProductCollectionViewCell) {
         guard let tappedIndexPath = trendingProductCollectionView.indexPath(for: sender) else { return }
@@ -139,6 +159,16 @@ extension FeaturedViewController{
     func trendingCellDidTapBasket(_ sender: TrendingProductCollectionViewCell) {
         guard let tappedIndexPath = trendingProductCollectionView.indexPath(for: sender) else { return }
         viewModel.addTrendingProductToBasket(at: tappedIndexPath)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == navigateToCategorySegueIdentifier{
+            if let destinationViewController = segue.destination as? CategoryViewController{
+                let indexPath = sender as! IndexPath
+                destinationViewController.pavilion = viewModel.pavilions[indexPath.item]
+            }
+        }
     }
 }
 

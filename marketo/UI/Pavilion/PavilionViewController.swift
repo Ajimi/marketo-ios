@@ -32,6 +32,7 @@ class PavilionViewController: UIViewController {
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let pavilionsResponse = showSucces.consume() {
                 print(pavilionsResponse)
                 DispatchQueue.main.async {
+                    //self.pavilionCollectionView.
                     self.pavilionCollectionView.reloadData()
                 }
             }

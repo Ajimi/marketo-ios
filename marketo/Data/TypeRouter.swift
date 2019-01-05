@@ -69,7 +69,6 @@ enum TypeRouter: APIConfiguration{
         if let parameters = parameters {
             do {
                 urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
-                print(urlRequest)
             } catch {
                 throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
             }

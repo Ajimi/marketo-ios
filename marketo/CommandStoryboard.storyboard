@@ -70,12 +70,12 @@
                                                 <connections>
                                                     <outlet property="image" destination="gax-fr-368" id="chy-us-iDi"/>
                                                     <outlet property="name" destination="u1z-9P-89M" id="rvR-40-QPa"/>
-                                                    <segue destination="EEI-TI-Uii" kind="show" id="Nkh-fS-cDq"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
                                         <connections>
                                             <outlet property="dataSource" destination="aPb-3n-qoJ" id="zPb-gW-9yW"/>
+                                            <outlet property="delegate" destination="aPb-3n-qoJ" id="TO0-bV-H0M"/>
                                         </connections>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pavilon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCC-at-pkV">
@@ -169,6 +169,7 @@
                                         </cells>
                                         <connections>
                                             <outlet property="dataSource" destination="aPb-3n-qoJ" id="foR-cE-9f6"/>
+                                            <outlet property="delegate" destination="aPb-3n-qoJ" id="iaw-sb-RKR"/>
                                         </connections>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Discounts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgr-ip-yV2">
@@ -264,6 +265,7 @@
                         <outlet property="discountedProductCollectionView" destination="a70-0X-BJO" id="NKn-gs-Z9X"/>
                         <outlet property="pavilionsCollectionView" destination="X2h-g6-IYs" id="pBK-o8-6sB"/>
                         <outlet property="trendingProductCollectionView" destination="LtV-Rr-H8K" id="fkQ-CU-WC4"/>
+                        <segue destination="EEI-TI-Uii" kind="show" identifier="navigateToCategory" id="yau-cU-6eL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXN-Fx-iXi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1207,6 +1209,6 @@
         <image name="shopping_cart_loaded" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OUK-O7-Nrp"/>
+        <segue reference="yau-cU-6eL"/>
     </inferredMetricsTieBreakers>
 </document>

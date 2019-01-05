@@ -51,12 +51,12 @@ enum ProductRouter : APIConfiguration {
             return "" // TODO CHANGE THE PATH featureds
         case .getDiscounted:
             return "" // TODO CHANGE THE PATH TO discounted
-        case .getByType(let typeId):
-            return "?typeId=\(typeId)"
-        case .getByMark(let markId):
-            return "?markId=\(markId)"
-        case .getByTypeAndMark(let typeId,let markId):
-            return "?typeId=\(typeId)&markId=\(markId)"
+        case .getByType:
+            return ""
+        case .getByMark:
+            return ""
+        case .getByTypeAndMark:
+            return ""
         }
     }
     
@@ -71,12 +71,12 @@ enum ProductRouter : APIConfiguration {
             return nil
         case .getDiscounted:
             return nil
-        case .getByType:
-            return nil
-        case .getByMark:
-            return nil
-        case .getByTypeAndMark:
-            return nil
+        case .getByType(let typeId):
+            return ["typeId" : typeId]
+        case .getByMark(let markId):
+            return ["markId" : markId]
+        case .getByTypeAndMark(let typeId,let markId):
+            return ["typeId" : typeId,"markId" : markId]
         }
     }
     
@@ -84,7 +84,7 @@ enum ProductRouter : APIConfiguration {
     func asURLRequest() throws -> URLRequest {
         let url = try ProductionServer.baseURL.asURL()
         
-        var urlRequest = URLRequest(url: url.appendingPathComponent("/products"+path))
+        var urlRequest = URLRequest(url: url.appendingPathComponent("/products\(path)"))
         
         // HTTP Method
         urlRequest.httpMethod = method.rawValue
@@ -96,7 +96,11 @@ enum ProductRouter : APIConfiguration {
         // Parameters
         if let parameters = parameters {
             do {
-                urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
+                if method == .get{
+                    urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
+                }else{
+                    urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
+                }
             } catch {
                 throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
             }
