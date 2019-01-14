@@ -31,11 +31,11 @@ class StatisticsRemoteRepository {
     }
     
     func changeToCodable(products : [ProductInBasket]) -> [ProductInBasketCodable] {
-        return products.map {  ProductInBasketCodable(productId: $0.productId.description) }
+        return products.map {  ProductInBasketCodable(productId: $0.productId.description, name: $0.name ?? "", quantity: Int($0.quantity)) }
     }
     
     
-    //getProductsStatisticsByPrice
+    //TODO getProductsStatisticsByPrice
     //getProductStatisticByMarket
     //saveStatistics
     
@@ -43,8 +43,12 @@ class StatisticsRemoteRepository {
 
 struct ProductInBasketCodable:Codable {
     let productId:String
-    
-    init(productId: String) {
+    let quantity: Int
+    let name:String
+    	
+    init(productId: String, name:String, quantity:Int) {
         self.productId = productId
+        self.quantity = quantity
+        self.name = name
     }
 }
