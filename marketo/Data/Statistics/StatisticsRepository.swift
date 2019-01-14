@@ -25,7 +25,7 @@ extension StatisticsRepository {
     }
     
     func getProductsStatisticsByMarket(productsInBasket: ProductsInBasket,completion:@escaping (Result<[ProductStatisticsByMarket]>)->Void) {
-        remoteRepository.getProductsStatisticsByMarket(productsInBasket: productsInBasket,completion: completion)
-    }
+        remoteRepository.getProductsStatisticsByMarket	(productsInBasket: productsInBasket,completion: completion)
+    }	
 
 }
