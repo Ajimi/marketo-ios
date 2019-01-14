@@ -20,12 +20,18 @@ class StatisticsRemoteRepository {
         }
     }
     
-    func getProductsStatisticsByPrice(productsInBasket: ProductsInBasket,completion:@escaping (Result<[ProductStatisticsByPrice]>)->Void) {
-        performRequest(route: StatisticsRouter.getStatisticsByPrices(basket: productsInBasket),completion: completion)
+    func getProductsStatisticsByPrice(productsInBasket: [ProductInBasket],completion:@escaping (Result<[ProductStatisticsByPrice]>)->Void) {
+        let productCodable = changeToCodable(products: productsInBasket)
+        performRequest(route: StatisticsRouter.getStatisticsByPrices(basket: productCodable),completion: completion)
     }
     
-    func getProductStatisticByMarket(productsInBasket: ProductsInBasket,completion:@escaping (Result<[ProductStatisticsByMarket]>)->Void) {
-        performRequest(route: StatisticsRouter.getStatisticsByMarkets(basket: productsInBasket),completion: completion)
+    func getProductsStatisticsByMarket(productsInBasket: [ProductInBasket],completion:@escaping (Result<[ProductStatisticsByMarket]>)->Void) {
+        let productCodable = changeToCodable(products: productsInBasket)
+        performRequest(route: StatisticsRouter.getStatisticsByMarkets(basket: productCodable),completion: completion)
+    }
+    
+    func changeToCodable(products : [ProductInBasket]) -> [ProductInBasketCodable] {
+        return products.map {  ProductInBasketCodable(productId: $0.productId.description) }
     }
     
     
@@ -33,4 +39,12 @@ class StatisticsRemoteRepository {
     //getProductStatisticByMarket
     //saveStatistics
     
+}
+
+struct ProductInBasketCodable:Codable {
+    let productId:String
+    
+    init(productId: String) {
+        self.productId = productId
+    }
 }

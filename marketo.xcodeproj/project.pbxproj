@@ -52,7 +52,7 @@
 		8434060321BD476F00A4851D /* FavoriteProductTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8434060221BD476F00A4851D /* FavoriteProductTableViewCellDelegate.swift */; };
 		8434060621BD4E7600A4851D /* TrendingProductCollectionViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8434060521BD4E7600A4851D /* TrendingProductCollectionViewCellDelegate.swift */; };
 		844F7F7521EC86FB00FE1309 /* LoadAllStatisticsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F7F7421EC86FB00FE1309 /* LoadAllStatisticsUseCase.swift */; };
-		844F7F7721EC871D00FE1309 /* LoadStatisticsByMakertUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F7F7621EC871D00FE1309 /* LoadStatisticsByMakertUseCase.swift */; };
+		844F7F7721EC871D00FE1309 /* LoadStatisticsByMarketUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F7F7621EC871D00FE1309 /* LoadStatisticsByMarketUseCase.swift */; };
 		844F7F7921EC872E00FE1309 /* LoadStatisticsByPriceUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F7F7821EC872E00FE1309 /* LoadStatisticsByPriceUseCase.swift */; };
 		844F7F7B21EC873E00FE1309 /* SaveStatisticsToHistoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F7F7A21EC873E00FE1309 /* SaveStatisticsToHistoryUseCase.swift */; };
 		844F7F7E21EC8B9300FE1309 /* ProductStatisticByMarket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F7F7D21EC8B9300FE1309 /* ProductStatisticByMarket.swift */; };
@@ -214,7 +214,7 @@
 		8434060221BD476F00A4851D /* FavoriteProductTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProductTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		8434060521BD4E7600A4851D /* TrendingProductCollectionViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingProductCollectionViewCellDelegate.swift; sourceTree = "<group>"; };
 		844F7F7421EC86FB00FE1309 /* LoadAllStatisticsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadAllStatisticsUseCase.swift; sourceTree = "<group>"; };
-		844F7F7621EC871D00FE1309 /* LoadStatisticsByMakertUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadStatisticsByMakertUseCase.swift; sourceTree = "<group>"; };
+		844F7F7621EC871D00FE1309 /* LoadStatisticsByMarketUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadStatisticsByMarketUseCase.swift; sourceTree = "<group>"; };
 		844F7F7821EC872E00FE1309 /* LoadStatisticsByPriceUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadStatisticsByPriceUseCase.swift; sourceTree = "<group>"; };
 		844F7F7A21EC873E00FE1309 /* SaveStatisticsToHistoryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveStatisticsToHistoryUseCase.swift; sourceTree = "<group>"; };
 		844F7F7D21EC8B9300FE1309 /* ProductStatisticByMarket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductStatisticByMarket.swift; sourceTree = "<group>"; };
@@ -548,7 +548,7 @@
 			isa = PBXGroup;
 			children = (
 				844F7F7421EC86FB00FE1309 /* LoadAllStatisticsUseCase.swift */,
-				844F7F7621EC871D00FE1309 /* LoadStatisticsByMakertUseCase.swift */,
+				844F7F7621EC871D00FE1309 /* LoadStatisticsByMarketUseCase.swift */,
 				844F7F7821EC872E00FE1309 /* LoadStatisticsByPriceUseCase.swift */,
 				844F7F7A21EC873E00FE1309 /* SaveStatisticsToHistoryUseCase.swift */,
 			);
@@ -1387,7 +1387,7 @@
 				88B582AC21DBBF3F00F8E108 /* Mark.swift in Sources */,
 				8802E64C21BC3D00004BB179 /* BasketViewModel.swift in Sources */,
 				8802E66421BC41BA004BB179 /* ProductInBasket+CoreDataProperties.swift in Sources */,
-				844F7F7721EC871D00FE1309 /* LoadStatisticsByMakertUseCase.swift in Sources */,
+				844F7F7721EC871D00FE1309 /* LoadStatisticsByMarketUseCase.swift in Sources */,
 				843405EC21BC793F00A4851D /* ModifyQuantityForProductUseCase.swift in Sources */,
 				8858DFD621DE0ADE003971A7 /* LoadProductsByTypeAndMarkUseCase.swift in Sources */,
 				8855D7A021B3141C00B5F0E8 /* PavilionRepository .swift in Sources */,

@@ -7,3 +7,41 @@
 //
 
 import Foundation
+import Alamofire
+
+class LoadStatisticsByPriceUseCase {
+    
+    let statisticsRepository : StatisticsRepository
+    let loadProductsFromBasketUseCase: LoadProductsFromBasketUseCase
+    init(statisticsRepository: StatisticsRepository = StatisticsRepository(),
+         loadProductsFromBasketUseCase: LoadProductsFromBasketUseCase = LoadProductsFromBasketUseCase()){
+        self.statisticsRepository = statisticsRepository
+        self.loadProductsFromBasketUseCase = loadProductsFromBasketUseCase
+    }
+    
+    func execute(completion:@escaping (Result<[ProductStatisticsByPrice]>)->Void) {
+        
+        loadProductsFromBasketUseCase.execute { (result) in
+            switch result {
+            case .success(let products):
+                self.statisticsRepository.getProductsStatisticsByPrice(productsInBasket: products) { (response) in
+                    switch response {
+                    case .success(_):
+                        completion(response)
+                    case .failure(let error):
+                        completion(Result(value : {
+                            // TODO ERROR HANDLING HAPPEN HERE
+                            throw error
+                        }))
+                    }
+                    
+                }
+            case .failure(let error):
+                completion(Result(value : {
+                    // TODO ERROR HANDLING HAPPEN HERE
+                    throw error
+                }))
+            }
+        }
+    }
+}

@@ -11,8 +11,8 @@ import Alamofire
 
 enum StatisticsRouter: APIConfiguration{
     
-    case getStatisticsByMarkets(basket : ProductsInBasket)
-    case getStatisticsByPrices(basket : ProductsInBasket)
+    case getStatisticsByMarkets(basket : [ProductInBasketCodable])
+    case getStatisticsByPrices(basket : [ProductInBasketCodable])
     
     
     // MARK: - HTTPMethod
@@ -38,9 +38,9 @@ enum StatisticsRouter: APIConfiguration{
     // MARK: - Parameters
     var parameters: Parameters? {
         switch self {
-        case .getStatisticsByMarkets(let basket):
+        case .getStatisticsByMarkets:
             return nil
-        case .getStatisticsByPrices(let basket):
+        case .getStatisticsByPrices:
             return nil
         }
     }
@@ -58,16 +58,16 @@ enum StatisticsRouter: APIConfiguration{
         urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.acceptType.rawValue)
         urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
         
-        // Parameters
-        if let parameters = parameters {
-            do {
-                urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
-            } catch {
-                throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
-            }
-        }
         
-        return urlRequest
+        let encoder = JSONParameterEncoder(encoder: JSONEncoder())
+        
+        // Parameters
+        switch self {
+        case .getStatisticsByMarkets(let productBasket):
+            return try encoder.encode(productBasket, into: urlRequest)
+        case .getStatisticsByPrices(let productBasket):
+            return try encoder.encode(productBasket, into: urlRequest)
+        }
     }
     
 }
