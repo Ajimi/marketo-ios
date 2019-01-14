@@ -12,6 +12,8 @@ private let numberOfBasketProductReuseIdentifier = "numberOfBasketProductsCell"
 private let basketProductReuseIdentifier = "basketProductCell"
 private let checkoutButtonReuseIdentifier = "checkoutButtonCell"
 
+private let navigateToStatisticsSegueIdentifier = "showStatistics"
+
 class BasketViewController: UITableViewController, BasketProducTableViewCellDelegate , CheckoutTableViewCellDelegate{
     @IBOutlet weak var basketTableView : UITableView!
     
@@ -157,7 +159,11 @@ extension BasketViewController{
     // CheckoutButton
     func checkoutCellDidTapButton(_ sender: CheckoutTableViewCell) {
         // perform segue ya M3alem hhh
+        performSegue(withIdentifier: navigateToStatisticsSegueIdentifier, sender: nil)
+        
     }
+    
+
     
     
 }
