@@ -15,7 +15,7 @@ class ProductRemoteRepository{
     private func performRequest<T:Decodable>(route:ProductRouter, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (Result<T>)->Void) -> DataRequest {
         return AF.request(route)
             .validate(statusCode : 200..<300)
-            .responseJSONDecodable (decoder: decoder){ (response: DataResponse<T>) in
+            .responseDecodable (decoder: decoder){ (response: DataResponse<T>) in
                 print(response.result)
                 completion(response.result)
         }

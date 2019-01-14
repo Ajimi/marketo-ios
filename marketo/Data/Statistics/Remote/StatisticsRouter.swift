@@ -12,7 +12,7 @@ import Alamofire
 enum StatisticsRouter: APIConfiguration{
     
     case getStatisticsByMarkets(basket : ProductsInBasket)
-    case getgetStatisticsByPrices(basket : ProductsInBasket)
+    case getStatisticsByPrices(basket : ProductsInBasket)
     
     
     // MARK: - HTTPMethod
@@ -20,7 +20,7 @@ enum StatisticsRouter: APIConfiguration{
         switch self {
         case .getStatisticsByMarkets:
             return .post
-        case .getgetStatisticsByPrices:
+        case .getStatisticsByPrices:
             return .post
         }
     }
@@ -30,7 +30,7 @@ enum StatisticsRouter: APIConfiguration{
         switch self {
         case .getStatisticsByMarkets:
             return "/markets"
-        case .getgetStatisticsByPrices:
+        case .getStatisticsByPrices:
             return "/prices"
         }
     }
@@ -40,7 +40,7 @@ enum StatisticsRouter: APIConfiguration{
         switch self {
         case .getStatisticsByMarkets(let basket):
             return nil
-        case .getgetStatisticsByPrices(let basket):
+        case .getStatisticsByPrices(let basket):
             return nil
         }
     }

@@ -51,6 +51,12 @@
 		8434060021BD429200A4851D /* CheckoutTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843405FF21BD429200A4851D /* CheckoutTableViewCellDelegate.swift */; };
 		8434060321BD476F00A4851D /* FavoriteProductTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8434060221BD476F00A4851D /* FavoriteProductTableViewCellDelegate.swift */; };
 		8434060621BD4E7600A4851D /* TrendingProductCollectionViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8434060521BD4E7600A4851D /* TrendingProductCollectionViewCellDelegate.swift */; };
+		844F7F7521EC86FB00FE1309 /* LoadAllStatisticsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F7F7421EC86FB00FE1309 /* LoadAllStatisticsUseCase.swift */; };
+		844F7F7721EC871D00FE1309 /* LoadStatisticsByMakertUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F7F7621EC871D00FE1309 /* LoadStatisticsByMakertUseCase.swift */; };
+		844F7F7921EC872E00FE1309 /* LoadStatisticsByPriceUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F7F7821EC872E00FE1309 /* LoadStatisticsByPriceUseCase.swift */; };
+		844F7F7B21EC873E00FE1309 /* SaveStatisticsToHistoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F7F7A21EC873E00FE1309 /* SaveStatisticsToHistoryUseCase.swift */; };
+		844F7F7E21EC8B9300FE1309 /* ProductStatisticByMarket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F7F7D21EC8B9300FE1309 /* ProductStatisticByMarket.swift */; };
+		844F7F8021EC8BAB00FE1309 /* ProductStatisticsByPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F7F7F21EC8BAB00FE1309 /* ProductStatisticsByPrice.swift */; };
 		845F140821DF810100135A94 /* IsFavoriteProductUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F140721DF810100135A94 /* IsFavoriteProductUseCase.swift */; };
 		84F7C91B21BDB6000053DB1F /* FavoriteEmptyState.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F7C91A21BDB6000053DB1F /* FavoriteEmptyState.xib */; };
 		84F7C91D21BDB6610053DB1F /* UIViewFavoriteEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7C91C21BDB6610053DB1F /* UIViewFavoriteEmptyState.swift */; };
@@ -207,6 +213,12 @@
 		843405FF21BD429200A4851D /* CheckoutTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		8434060221BD476F00A4851D /* FavoriteProductTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProductTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		8434060521BD4E7600A4851D /* TrendingProductCollectionViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingProductCollectionViewCellDelegate.swift; sourceTree = "<group>"; };
+		844F7F7421EC86FB00FE1309 /* LoadAllStatisticsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadAllStatisticsUseCase.swift; sourceTree = "<group>"; };
+		844F7F7621EC871D00FE1309 /* LoadStatisticsByMakertUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadStatisticsByMakertUseCase.swift; sourceTree = "<group>"; };
+		844F7F7821EC872E00FE1309 /* LoadStatisticsByPriceUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadStatisticsByPriceUseCase.swift; sourceTree = "<group>"; };
+		844F7F7A21EC873E00FE1309 /* SaveStatisticsToHistoryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveStatisticsToHistoryUseCase.swift; sourceTree = "<group>"; };
+		844F7F7D21EC8B9300FE1309 /* ProductStatisticByMarket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductStatisticByMarket.swift; sourceTree = "<group>"; };
+		844F7F7F21EC8BAB00FE1309 /* ProductStatisticsByPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductStatisticsByPrice.swift; sourceTree = "<group>"; };
 		845F140721DF810100135A94 /* IsFavoriteProductUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsFavoriteProductUseCase.swift; sourceTree = "<group>"; };
 		84F7C91A21BDB6000053DB1F /* FavoriteEmptyState.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteEmptyState.xib; sourceTree = "<group>"; };
 		84F7C91C21BDB6610053DB1F /* UIViewFavoriteEmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewFavoriteEmptyState.swift; sourceTree = "<group>"; };
@@ -347,9 +359,10 @@
 		2C038F4921B15D5000B84B0E /* domain */ = {
 			isa = PBXGroup;
 			children = (
+				844F7F7321EC86B000FE1309 /* statistics */,
 				8858DFCE21DE0970003971A7 /* mark */,
 				8858DFC921DE080C003971A7 /* type */,
-				8858DFC421DE0602003971A7 /* categpry */,
+				8858DFC421DE0602003971A7 /* category */,
 				88295E5B21BC60B800EF937E /* basket */,
 				2C84FB6921B52D2500BA6173 /* favorite */,
 				88175FB521B42819003C76C7 /* login */,
@@ -529,6 +542,17 @@
 				8434060521BD4E7600A4851D /* TrendingProductCollectionViewCellDelegate.swift */,
 			);
 			path = delegates;
+			sourceTree = "<group>";
+		};
+		844F7F7321EC86B000FE1309 /* statistics */ = {
+			isa = PBXGroup;
+			children = (
+				844F7F7421EC86FB00FE1309 /* LoadAllStatisticsUseCase.swift */,
+				844F7F7621EC871D00FE1309 /* LoadStatisticsByMakertUseCase.swift */,
+				844F7F7821EC872E00FE1309 /* LoadStatisticsByPriceUseCase.swift */,
+				844F7F7A21EC873E00FE1309 /* SaveStatisticsToHistoryUseCase.swift */,
+			);
+			path = statistics;
 			sourceTree = "<group>";
 		};
 		849EC38D6BF19C3DA52A17C0 /* Frameworks */ = {
@@ -851,6 +875,8 @@
 				88B582A721DBBF1600F8E108 /* Type.swift */,
 				88B582A921DBBF2A00F8E108 /* Market.swift */,
 				88B582AB21DBBF3F00F8E108 /* Mark.swift */,
+				844F7F7D21EC8B9300FE1309 /* ProductStatisticByMarket.swift */,
+				844F7F7F21EC8BAB00FE1309 /* ProductStatisticsByPrice.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -890,13 +916,13 @@
 			path = Remote;
 			sourceTree = "<group>";
 		};
-		8858DFC421DE0602003971A7 /* categpry */ = {
+		8858DFC421DE0602003971A7 /* category */ = {
 			isa = PBXGroup;
 			children = (
 				8858DFC521DE066D003971A7 /* LoadCategoriesByPavilionUseCase.swift */,
 				8858DFC721DE0693003971A7 /* LoadCategoriesUseCase.swift */,
 			);
-			path = categpry;
+			path = category;
 			sourceTree = "<group>";
 		};
 		8858DFC921DE080C003971A7 /* type */ = {
@@ -1185,7 +1211,6 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
@@ -1200,7 +1225,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
@@ -1259,6 +1283,7 @@
 				2C038F7221B1947100B84B0E /* BasketRouter.swift in Sources */,
 				8800F02421DBC87F00D5738E /* MarketRepository.swift in Sources */,
 				885537742197622E0007B3B5 /* SignUpViewController.swift in Sources */,
+				844F7F7521EC86FB00FE1309 /* LoadAllStatisticsUseCase.swift in Sources */,
 				8802E64A21BC371E004BB179 /* BasketViewController.swift in Sources */,
 				88E9985C2198769C00D3FE04 /* ApiConfiguration.swift in Sources */,
 				8855376D219752EA0007B3B5 /* LoginViewModel.swift in Sources */,
@@ -1289,9 +1314,11 @@
 				8802E66821BC41BA004BB179 /* Basket+CoreDataProperties.swift in Sources */,
 				8858DFD221DE09C2003971A7 /* LoadMarksByTypeUseCase.swift in Sources */,
 				8800F03221DBC93000D5738E /* MarketRouter.swift in Sources */,
+				844F7F7921EC872E00FE1309 /* LoadStatisticsByPriceUseCase.swift in Sources */,
 				8800F03821DBCB3600D5738E /* TypeLocalRepositry.swift in Sources */,
 				88B582A621DBBF0300F8E108 /* Category.swift in Sources */,
 				843405EA21BC789A00A4851D /* FavoriteViewModel.swift in Sources */,
+				844F7F8021EC8BAB00FE1309 /* ProductStatisticsByPrice.swift in Sources */,
 				88B582B121DBC08100F8E108 /* TypeRepository.swift in Sources */,
 				2C038F5221B15DF200B84B0E /* SaveProductToBaskeUseCase.swift in Sources */,
 				8802E66321BC41BA004BB179 /* ProductInBasket+CoreDataClass.swift in Sources */,
@@ -1329,6 +1356,7 @@
 				8858DFC821DE0693003971A7 /* LoadCategoriesUseCase.swift in Sources */,
 				8800F02621DBC89200D5738E /* MarkRepository.swift in Sources */,
 				2C038F6021B191B900B84B0E /* CategoryRepository.swift in Sources */,
+				844F7F7E21EC8B9300FE1309 /* ProductStatisticByMarket.swift in Sources */,
 				2C84FB7621B530C400BA6173 /* FavoriteRemoteRepository.swift in Sources */,
 				8434060321BD476F00A4851D /* FavoriteProductTableViewCellDelegate.swift in Sources */,
 				8800F02C21DBC8EB00D5738E /* MarkLocalRepository.swift in Sources */,
@@ -1359,6 +1387,7 @@
 				88B582AC21DBBF3F00F8E108 /* Mark.swift in Sources */,
 				8802E64C21BC3D00004BB179 /* BasketViewModel.swift in Sources */,
 				8802E66421BC41BA004BB179 /* ProductInBasket+CoreDataProperties.swift in Sources */,
+				844F7F7721EC871D00FE1309 /* LoadStatisticsByMakertUseCase.swift in Sources */,
 				843405EC21BC793F00A4851D /* ModifyQuantityForProductUseCase.swift in Sources */,
 				8858DFD621DE0ADE003971A7 /* LoadProductsByTypeAndMarkUseCase.swift in Sources */,
 				8855D7A021B3141C00B5F0E8 /* PavilionRepository .swift in Sources */,
@@ -1371,6 +1400,7 @@
 				84F7C91D21BDB6610053DB1F /* UIViewFavoriteEmptyState.swift in Sources */,
 				2C038F5021B15DE600B84B0E /* LoadDiscountedProductUseCase.swift in Sources */,
 				8855D79821B3111400B5F0E8 /* Products.swift in Sources */,
+				844F7F7B21EC873E00FE1309 /* SaveStatisticsToHistoryUseCase.swift in Sources */,
 				2C08161221BE67B200F94FB6 /* CategoryViewController.swift in Sources */,
 				8855D79B21B3130A00B5F0E8 /* LoadPavilionUseCase.swift in Sources */,
 				888368C721E0F2D60069B3C0 /* ProductListViewModel.swift in Sources */,

@@ -22,19 +22,14 @@ class ProductListViewModel: ViewModel {
     var uiProductsState = Dynamic<UiState<Products>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
     
     func updateUI(){
-        if let mark = selectedMark && let type = selectedType {
-            loadProductsByTypeAndMark()
+        if let mark = selectedMark , let type = selectedType {
+    //        loadProductsByTypeAndMark()
         }else if let type = selectedType{
             
         }else if let mark = selectedMark{
             
         }
     }
-    
-    1
-    2
-    3
-    4
     
     
     
