@@ -10,27 +10,43 @@ import Foundation
 
 typealias ProductStatisticsByPrices = [ProductStatisticsByPrice]
 
-struct ProductStatisticsByPrice :Codable{
-    let id: String
-    let description:String
-    let image :String
-    let quantity: Int
-    let unitPrices: Prices
-    let mark:Mark
-    let type:Type
-    let bestPrice: Price
+class ProductStatisticsByPrice : Codable {
+    let id: Int?
+    let name: String?
+    let image: String?
+    let description: String?
+    let type: Mark?
+    let mark: Mark?
+    let quantity: Int?
+    let unitPrices: [Price]?
+    let bestPrice: Price?
+    let prices: [Price]?
     
-    init(id:String, description:String, image:String, quantity:Int, unitPrices: Prices, mark:Mark, type:Type, bestPrice:Price){
-        self.id = id
-        self.description = description
-        self.image = image
-        self.quantity = quantity
-        self.unitPrices = unitPrices
-        self.mark = mark
-        self.type = type
-        self.bestPrice = bestPrice
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case name = "name"
+        case image = "image"
+        case description = "description"
+        case type = "type"
+        case mark = "mark"
+        case quantity = "quantity"
+        case unitPrices = "unitPrices"
+        case bestPrice = "bestPrice"
+        case prices = "prices"
     }
     
+    init(id: Int?, name: String?, image: String?, description: String?, type: Mark?, mark: Mark?, quantity: Int?, unitPrices: [Price]?, bestPrice: Price?, prices: [Price]?) {
+        self.id = id
+        self.name = name
+        self.image = image
+        self.description = description
+        self.type = type
+        self.mark = mark
+        self.quantity = quantity
+        self.unitPrices = unitPrices
+        self.bestPrice = bestPrice
+        self.prices = prices
+    }
 }
 
 
