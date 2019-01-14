@@ -8,10 +8,22 @@
 
 import UIKit
 
-class ProductTableViewCell: UITableViewCell {
-
+class ProductTableViewCell: UITableViewCell,Configurable {
+    
+    typealias DataType = Product
+    
     @IBOutlet weak var productName : UILabel!
     @IBOutlet weak var productImage : UIImageView!
     @IBOutlet weak var bestPrice : UILabel!
+    
+    func configure(with content: Product) {
+        productName.text = content.name
+        //TODO: Add Image
+        bestPrice.text = content.prices?.min(by: { (a, b) -> Bool in
+            a.value>b.value
+        })?.value.description ?? "no price"
+    }
+    
 
 }
+

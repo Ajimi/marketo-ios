@@ -12,35 +12,59 @@ private let productReuseIdentifier = "productCell"
 
 class ProductListViewController: UITableViewController {
     
+    private let viewModel : ProductListViewModel = ProductListViewModel()
+    
     @IBOutlet weak var productsTableView : UITableView!
+    
+    var mark : Mark?
+    var type : Type?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel.updateUI()
 
-        // Do any additional setup after loading the view.
+        viewModel.uiProductsState.bindAndFire { (uiModel) in
+            if (uiModel.showProgress){
+                print("In progress product list")
+            }
+            if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
+                print("there Was an error loading product list \(errorMessage)")
+            }
+            
+            if let showSucces = uiModel.showSuccess, !showSucces.consumed, let _ = showSucces.consume() {
+                DispatchQueue.main.async {
+                    self.productsTableView.reloadData()
+                }
+            }
+        }
+        
+        launchLoadProducts()
+
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func launchLoadProducts(){
+        if let mark = self.mark , let type = self.type{
+            viewModel.loadProductsByMarkAndType(mark: mark, type: type)
+        }else if let mark = self.mark{
+            viewModel.loadProductsByMark(mark: mark)
+        }else if let type = self.type{
+            viewModel.loadProductsByType(type: type)
+        }
     }
-    */
 
 }
 
 extension ProductListViewController{
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return viewModel.products.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = productsTableView.dequeueReusableCell(withIdentifier: productReuseIdentifier) as! ProductTableViewCell
+        
+        cell.configure(with: viewModel.products[indexPath.row])
         
         return cell
     }

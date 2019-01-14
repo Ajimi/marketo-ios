@@ -13,23 +13,51 @@ class ProductListViewModel: ViewModel {
     let loadProductsByMarkUseCase :LoadProductsByMarkUseCase = LoadProductsByMarkUseCase()
     let loadProductsByTypeUseCase :LoadProductsByTypeUseCase = LoadProductsByTypeUseCase()
     let loadProductsByTypeAndMarkUseCase :LoadProductsByTypeAndMarkUseCase = LoadProductsByTypeAndMarkUseCase()
-
-    var selectedMark : Mark?
-    var selectedType : Type?
     
     var products : Products = Products()
     
     var uiProductsState = Dynamic<UiState<Products>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
     
     func updateUI(){
-        if let mark = selectedMark , let type = selectedType {
-    //        loadProductsByTypeAndMark()
-        }else if let type = selectedType{
-            
-        }else if let mark = selectedMark{
-            
+        
+    }
+    
+    func loadProductsByMark(mark : Mark){
+        loadProductsByMarkUseCase.execute(markId: mark.id.description) { (response) in
+            switch response {
+            case .success(let products):
+                self.products = products
+                self.uiProductsState.value = self.emitUiState(showSuccess: Event(with: products))
+            case .failure(let error):
+                self.uiProductsState.value = self.emitUiState(showError: Event(with: error.localizedDescription))
+            }
         }
     }
+    
+    func loadProductsByType(type: Type){
+        loadProductsByTypeUseCase.execute(typeId: type.id.description) { (response) in
+            switch response {
+            case .success(let products):
+                self.products = products
+                self.uiProductsState.value = self.emitUiState(showSuccess: Event(with: products))
+            case .failure(let error):
+                self.uiProductsState.value = self.emitUiState(showError: Event(with: error.localizedDescription))
+            }
+        }
+    }
+    
+    func loadProductsByMarkAndType(mark: Mark,type: Type){
+        loadProductsByTypeAndMarkUseCase.execute(typeId: type.id.description,markId: mark.id.description) { (response) in
+            switch response {
+            case .success(let products):
+                self.products = products
+                self.uiProductsState.value = self.emitUiState(showSuccess: Event(with: products))
+            case .failure(let error):
+                self.uiProductsState.value = self.emitUiState(showError: Event(with: error.localizedDescription))
+            }
+        }
+    }
+    
     
     
     

@@ -11,7 +11,7 @@ import UIKit
 private let markReuseIdentifier = "markCell"
 private let typeReuseIdentifier = "typeCell"
 private let categoryReuseIdentifier = "categoryCell"
-
+private let navigateToProductListSegueIdentifier = "showProducts"
 
 class CategoryViewController: UIViewController {
     
@@ -101,7 +101,7 @@ extension CategoryViewController: UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showProducts", sender: nil)
+        performSegue(withIdentifier: navigateToProductListSegueIdentifier, sender: indexPath)
     }
     
 }
@@ -140,6 +140,18 @@ extension CategoryViewController: UICollectionViewDelegate,UICollectionViewDataS
             viewModel.selectedCategory = viewModel.categories[indexPath.item]
         }else{
             viewModel.selectedType = viewModel.types[indexPath.item]
+        }
+    }
+}
+
+extension CategoryViewController{
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == navigateToProductListSegueIdentifier{
+            if let destinationViewController = segue.destination as? ProductListViewController{
+                let indexPath = sender as! IndexPath
+                destinationViewController.mark = viewModel.marks[indexPath.row]
+                destinationViewController.type = viewModel.selectedType
+            }
         }
     }
 }
