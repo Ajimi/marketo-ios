@@ -16,6 +16,14 @@ class PavilionCollectionViewCell: UICollectionViewCell {
     func configure(with pavilion: Pavilion) {
         self.label.text = pavilion.name
         // TODO ADD IMAGE WITH ALAMOFIRE IMAGE
+        image.kf.setImage(
+            with: URL(string: pavilion.image!),
+            placeholder: UIImage(named: "logo"),
+            options: [
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ])
     }
     
 }

@@ -30,6 +30,14 @@ class TrendingProductCollectionViewCell: UICollectionViewCell,Configurable {
     func configure(with product: Product){
         self.product = product	
         name.text = product.name
-        // TODO ADD IMAGE
+        
+        image.kf.setImage(
+                with: URL(string: product.image!),
+                placeholder: UIImage(named: "logo"),
+                options: [
+                    .scaleFactor(UIScreen.main.scale),
+                    .transition(.fade(1)),
+                    .cacheOriginalImage
+                ])
     }
 }

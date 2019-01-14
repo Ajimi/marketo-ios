@@ -7,9 +7,13 @@ target 'marketo' do
 
   # Pods for marketo
   
+ pod 'FoldingCell'
+ pod 'EasyPeasy'
  
  pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'alamofire5'
  pod 'Result', '~> 4.0.0'
+ pod 'Kingfisher', '~> 5.0'
+ 
  
  pod 'FacebookCore'
  pod 'FacebookLogin'

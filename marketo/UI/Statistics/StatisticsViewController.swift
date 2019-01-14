@@ -11,9 +11,14 @@ import UIKit
 class StatisticsViewController: UIViewController {
 
     private let viewModel : StatisticsViewModel = StatisticsViewModel()
+    @IBOutlet weak var button : UIButton!
+    @IBOutlet weak var btn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        btn.addTarget(self, action: #selector(clicked), for: .touchUpInside)
         viewModel.updateUI()
 
         viewModel.uiState.bindAndFire { (uiModel) in
@@ -29,11 +34,16 @@ class StatisticsViewController: UIViewController {
                     print(mes)
                 }
             }
+            
         }
         
-        
+    
     }
     
+    @objc func clicked()  {
+        let vc = DemoTableViewController()
+        self.present(vc, animated: true, completion: nil)
+    }
 
  
 

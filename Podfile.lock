@@ -6,6 +6,7 @@ PODS:
   - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
+  - EasyPeasy (1.8.0)
   - FacebookCore (0.5.0):
     - Bolts (~> 1.9)
     - FBSDKCoreKit (~> 4.37)
@@ -18,6 +19,7 @@ PODS:
     - Bolts (~> 1.9)
   - FBSDKLoginKit (4.39.1):
     - FBSDKCoreKit
+  - FoldingCell (4.0.2)
   - GoogleSignIn (4.4.0):
     - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
     - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
@@ -31,25 +33,32 @@ PODS:
     - "GoogleToolboxForMac/NSString+URLArguments (= 2.2.0)"
   - "GoogleToolboxForMac/NSString+URLArguments (2.2.0)"
   - GTMSessionFetcher/Core (1.2.1)
+  - Kingfisher (5.1.0)
   - Result (4.0.1)
 
 DEPENDENCIES:
   - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `alamofire5`)
+  - EasyPeasy
   - FacebookCore
   - FacebookLogin
+  - FoldingCell
   - GoogleSignIn
+  - Kingfisher (~> 5.0)
   - Result (~> 4.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Bolts
+    - EasyPeasy
     - FacebookCore
     - FacebookLogin
     - FBSDKCoreKit
     - FBSDKLoginKit
+    - FoldingCell
     - GoogleSignIn
     - GoogleToolboxForMac
     - GTMSessionFetcher
+    - Kingfisher
     - Result
 
 EXTERNAL SOURCES:
@@ -65,15 +74,18 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 2ef6d6c984c5d21c366e9b41a9ae7dfee2b67a44
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  EasyPeasy: bfffe5d47bbaaef3e32888c250a196768484b43a
   FacebookCore: 74288d0add931d361b1596beae787ab72c438249
   FacebookLogin: ebcf34714a1cb9f0759d9f071cfb01ed500996cf
   FBSDKCoreKit: f442aa96179cc9b382bb4abeb7e340a47cca8f91
   FBSDKLoginKit: c3079d9a4db27c492287b1eed7a4272b28cf8a59
+  FoldingCell: 352f0211a53f957b885a1b37d5ffa875da90bca5
   GoogleSignIn: 7ff245e1a7b26d379099d3243a562f5747e23d39
   GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
+  Kingfisher: fcec238063d17404fca89bf0a850583211c4cbf6
   Result: a6e784bebf48b471d59cddc1adb81f41f678c487
 
-PODFILE CHECKSUM: 8e55abbcb16a982a2887820324991696608696f7
+PODFILE CHECKSUM: a83c03be5661bf259b94caa58db42b086e1cbe73
 
 COCOAPODS: 1.5.3

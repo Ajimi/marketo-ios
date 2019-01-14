@@ -7,13 +7,21 @@
 //
 
 import UIKit
-
+import Kingfisher
 class PavilionHomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var name: UILabel!
     
     func configure(with pavilion: Pavilion){
         self.name.text = pavilion.name
+        image.kf.setImage(
+            with: URL(string: pavilion.image!),
+            placeholder: UIImage(named: "logo"),
+            options: [
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ])
         // TODO ALAMOFIRE IMAGE
     }
     

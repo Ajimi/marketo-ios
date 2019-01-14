@@ -518,6 +518,7 @@
                     </view>
                     <connections>
                         <outlet property="categoriesCollectionView" destination="0AH-IV-bnC" id="dGq-44-yPc"/>
+                        <outlet property="image" destination="gr9-oN-DAP" id="lHN-H0-DIh"/>
                         <outlet property="marksTableView" destination="hMG-fg-9WO" id="Aon-Nn-ce6"/>
                         <outlet property="typesCollectionView" destination="Kdu-3B-1YE" id="u0h-5o-mgM"/>
                         <segue destination="Is8-Pk-Frl" kind="show" identifier="showProducts" id="0gA-D3-lez"/>
@@ -540,13 +541,21 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Market"/>
-                                    <segment title="Price"/>
+                                    <segment title="Second"/>
                                 </segments>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Oy-ws-pli">
+                                <rect key="frame" x="202" y="433" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6uO-hh-aTw"/>
                     </view>
+                    <connections>
+                        <outlet property="btn" destination="4Oy-ws-pli" id="SVz-0s-6cW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4a5-5K-JDr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -904,6 +913,7 @@
                                             <constraint firstAttribute="top" secondItem="a59-UH-46b" secondAttribute="top" id="smN-sA-G6d"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="image" destination="tvE-1b-20U" id="Fpa-cV-1JA"/>
                                             <outlet property="name" destination="3Zo-F1-TwZ" id="RCq-5l-m61"/>
                                         </connections>
                                     </collectionViewCell>
@@ -1149,6 +1159,6 @@
         <image name="shopping_cart_loaded" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yau-cU-6eL"/>
+        <segue reference="OUK-O7-Nrp"/>
     </inferredMetricsTieBreakers>
 </document>

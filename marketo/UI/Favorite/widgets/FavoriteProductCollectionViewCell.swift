@@ -10,8 +10,8 @@ import UIKit
 
 class FavoriteProductCollectionViewCell: UICollectionViewCell,Configurable {
 
-    @IBOutlet weak var imageProduct: UIImageView!
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var image: UIImageView!
     
 
     weak var delegate: FavoriteProductTableViewCellDelegate?
@@ -23,6 +23,14 @@ class FavoriteProductCollectionViewCell: UICollectionViewCell,Configurable {
         self.favoriteProduct = favoriteProduct
         name.text = favoriteProduct.name
         print("Product ", favoriteProduct.name!)
+        /*image.kf.setImage(
+            with: URL(string: product.image!),
+            placeholder: UIImage(named: "logo"),
+            options: [
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ])*/
     }
 
     @IBAction func didTapRemove(_ sender: Any){

@@ -31,6 +31,14 @@ class BasketProductTableViewCell: UITableViewCell,Configurable{
         productImage.image = UIImage(named: "") // Todo get Image
         productName.text = product.name!
         quantity.text = Int(stepper.value).description
+        productImage.kf.setImage(
+            with: URL(string: product.image!),
+            placeholder: UIImage(named: "logo"),
+            options: [
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ])
     }
     
     

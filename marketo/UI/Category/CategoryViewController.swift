@@ -20,6 +20,7 @@ class CategoryViewController: UIViewController {
     @IBOutlet weak var categoriesCollectionView : UICollectionView!
     @IBOutlet weak var typesCollectionView : UICollectionView!
     @IBOutlet weak var marksTableView : UITableView!
+    @IBOutlet weak var image: UIImageView!
     
     var pavilion : Pavilion?
     
@@ -27,6 +28,14 @@ class CategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.selectedPavilion = pavilion
+        image.kf.setImage(
+            with: URL(string: pavilion!.image!),
+            placeholder: UIImage(named: "logo"),
+            options: [
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ])
         
         viewModel.updateUI()
         
