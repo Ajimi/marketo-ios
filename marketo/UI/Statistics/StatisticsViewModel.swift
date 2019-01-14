@@ -17,21 +17,19 @@ class StatisticsViewModel: ViewModel {
     
     // Dynamic Data LiveData
     var uiState = Dynamic<UiState<String>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
-    var statisticsResult: Dynamic<StatisticsResult>?{
-        didSet{
-            uiState.value = emitUiState(showProgress: false, showError: nil, showSuccess: Event(with: "Completed"))
-        }
-    }
+    var statisticsResult: Dynamic<StatisticsResult> = Dynamic<StatisticsResult>(StatisticsResult(statisticsByPrice: nil,statisticsByMarket: nil))
     
 
     var productStatByPrice : [ProductStatisticsByPrice]? {
         didSet{
+            print("Stat by price")
             incrementCombinedStatistics()
         }
     }
     
     var productStatByMarket : [ProductStatisticsByMarket]? {
         didSet{
+            print("stat by market")
             incrementCombinedStatistics()
         }
     }
@@ -40,7 +38,9 @@ class StatisticsViewModel: ViewModel {
         combinedStatCount += 1
         if combinedStatCount % 2 == 0 {
             if let statByPrice = productStatByPrice, let statByMarket = productStatByMarket {
-                statisticsResult?.value = StatisticsResult(statisticsByPrice:statByPrice , statisticsByMarket: statByMarket)
+                print("Hey")
+                statisticsResult.value = StatisticsResult(statisticsByPrice:statByPrice , statisticsByMarket: statByMarket)
+                uiState.value = emitUiState(showSuccess: Event(with: "Success message"))
             }
         }
     }
@@ -85,6 +85,6 @@ class StatisticsViewModel: ViewModel {
 }
 
 struct StatisticsResult {
-    let statisticsByPrice: [ProductStatisticsByPrice]
-    let statisticsByMarket: [ProductStatisticsByMarket]
+    let statisticsByPrice: [ProductStatisticsByPrice]?
+    let statisticsByMarket: [ProductStatisticsByMarket]?
 }
