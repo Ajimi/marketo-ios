@@ -13,7 +13,8 @@ target 'marketo' do
  pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'alamofire5'
  pod 'Result', '~> 4.0.0'
  pod 'Kingfisher', '~> 5.0'
- 
+ pod 'PKHUD', '~> 5.0'
+ pod 'SkeletonView'
  
  pod 'FacebookCore'
  pod 'FacebookLogin'

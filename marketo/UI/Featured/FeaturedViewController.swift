@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import PKHUD
 
 private let pavilionHomeReuseIdentifier = "PavilionHomeCell"
 
@@ -27,15 +27,20 @@ class FeaturedViewController: UIViewController {
     
     @IBOutlet weak var discountedProductCollectionView: UICollectionView!
     
+  
     let viewModel = FeaturedViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        HUD.dimsBackground = false
+        HUD.allowsInteraction = false
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         viewModel.updateUI()
-        
+        	
         // Trending PRODUCTS
         viewModel.uiTrendingState.bindAndFire(listener: { (uiModel) in
             if (uiModel.showProgress) {
@@ -80,10 +85,27 @@ class FeaturedViewController: UIViewController {
             }
             
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let pavilionsResponse = showSucces.consume() {
-                print("hhhhhhhh")
-                //print(pavilionsResponse)
+
                 DispatchQueue.main.async {
                     self.pavilionsCollectionView.reloadData()
+                }
+            }
+        })
+        
+        viewModel.uiMessageState.bindAndFire(listener: { (uiModel) in
+            if (uiModel.showProgress) {
+                print("In progress")
+            }
+            if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
+                print("there Was an error \(errorMessage)")
+            }
+            
+            if let showSucces = uiModel.showSuccess, !showSucces.consumed, let messageResponse = showSucces.consume() {
+                //print(productsResponse)
+                DispatchQueue.main.async {
+                    PKHUD.sharedHUD.show()
+                    PKHUD.sharedHUD.contentView = PKHUDSuccessView(title: "Success!", subtitle: messageResponse)
+                    PKHUD.sharedHUD.hide(afterDelay: 1.0)
                 }
             }
         })

@@ -24,7 +24,9 @@ class FeaturedViewModel: ViewModel {
     var uiPavilionsState = Dynamic<UiState<Pavilions>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
     var uiTrendingState = Dynamic<UiState<Products>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
     var uiDiscountedState = Dynamic<UiState<Products>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
-
+    
+    var uiMessageState = Dynamic<UiState<String>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
+    
     var products:Products = Products()
     var pavilions:Pavilions = Pavilions()
     var trendingProducts:Products = Products()
@@ -52,7 +54,6 @@ class FeaturedViewModel: ViewModel {
     }
     
     func loadAllProducts() {
-        
         self.uiProductState.value = self.emitUiState(showProgress: true)
         loadProductUseCase.execute { (response) in
             switch response {
@@ -96,9 +97,10 @@ class FeaturedViewModel: ViewModel {
         saveProductToBasketUseCase.execute(product: trendingProducts[indexPath.row]) { (response) in
             switch response {
             case .success(let suc):
+                self.uiMessageState.value = self.emitUiState(showSuccess: Event(with: "Product added to Basket"))
                 print(suc)
             case.failure(let error):
-                print(error.localizedDescription)
+                self.uiMessageState.value = self.emitUiState(showError: Event(with: "OoPs"))
             }
         }
     }
@@ -107,9 +109,10 @@ class FeaturedViewModel: ViewModel {
         addProductToFavoriteUseCase.execute(with: trendingProducts[indexPath.row]) { response in
             switch response {
             case .success(let suc):
+                self.uiMessageState.value = self.emitUiState(showSuccess: Event(with: "Product added to favorite"))
                 print(suc)
             case.failure(let error):
-                print(error.localizedDescription)
+                self.uiMessageState.value = self.emitUiState(showError: Event(with: "OoPs"))
             }
         }
     }
