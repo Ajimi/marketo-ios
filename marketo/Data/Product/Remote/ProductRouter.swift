@@ -44,19 +44,19 @@ enum ProductRouter : APIConfiguration {
     var path: String {
         switch self {
         case .getAll:
-            return ""
+            return "/products"
         case .get(let id):
-            return "/\(id)"
+            return "/products/\(id)"
         case .getFeatured:
-            return "" // TODO CHANGE THE PATH featureds
+            return "/products" // TODO CHANGE THE PATH featureds
         case .getDiscounted:
-            return "" // TODO CHANGE THE PATH TO discounted
+            return "/discounts"
         case .getByType:
-            return ""
+            return "/products"
         case .getByMark:
-            return ""
+            return "/products"
         case .getByTypeAndMark:
-            return ""
+            return "/products"
         }
     }
     
@@ -83,8 +83,8 @@ enum ProductRouter : APIConfiguration {
     // MARK: - URLRequestConvertible
     func asURLRequest() throws -> URLRequest {
         let url = try ProductionServer.baseURL.asURL()
-        
-        var urlRequest = URLRequest(url: url.appendingPathComponent("/products\(path)"))
+       
+        var urlRequest = URLRequest(url: url.appendingPathComponent("\(path)"))
         
         // HTTP Method
         urlRequest.httpMethod = method.rawValue

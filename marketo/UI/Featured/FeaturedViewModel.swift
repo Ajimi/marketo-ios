@@ -114,4 +114,3 @@ class FeaturedViewModel: ViewModel {
         }
     }
 }
-

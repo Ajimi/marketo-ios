@@ -16,8 +16,7 @@ class LoadDiscountedProductUseCase {
     }
 
     func execute(completion:@escaping (Result<Products>)->Void) {
-        
-        productRepository.getTrending { (response) in
+        productRepository.getDiscounted { (response) in
             switch response {
             case .success(_):
                 completion(response)
