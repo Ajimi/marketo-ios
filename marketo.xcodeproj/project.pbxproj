@@ -35,7 +35,7 @@
 		2C5F9E3621AC094800BE9E1C /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F9E3521AC094800BE9E1C /* PersistenceManager.swift */; };
 		2C84FB6B21B52D6000BA6173 /* DeleteProductFromFavoriteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84FB6A21B52D6000BA6173 /* DeleteProductFromFavoriteUseCase.swift */; };
 		2C84FB6E21B5307E00BA6173 /* FavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84FB6D21B5307E00BA6173 /* FavoriteRepository.swift */; };
-		2C84FB7221B530A000BA6173 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		2C84FB7221B530A000BA6173 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		2C84FB7621B530C400BA6173 /* FavoriteRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84FB7521B530C400BA6173 /* FavoriteRemoteRepository.swift */; };
 		2C84FB7821B530D700BA6173 /* FavoriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84FB7721B530D700BA6173 /* FavoriteRouter.swift */; };
 		843405EA21BC789A00A4851D /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843405E921BC789A00A4851D /* FavoriteViewModel.swift */; };
@@ -138,6 +138,9 @@
 		8858DFD821DE0AF9003971A7 /* LoadProductsByMarkUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8858DFD721DE0AF9003971A7 /* LoadProductsByMarkUseCase.swift */; };
 		8858DFDA21DE0C72003971A7 /* LoadProductByIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8858DFD921DE0C72003971A7 /* LoadProductByIdUseCase.swift */; };
 		8858DFDC21DE0D07003971A7 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8858DFDB21DE0D07003971A7 /* CategoryViewModel.swift */; };
+		885B105D21EE90E200A5BBDE /* StatByMarketProductPricesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B105C21EE90E200A5BBDE /* StatByMarketProductPricesTableViewCell.swift */; };
+		888156A821EE233A0055D92F /* StatsByMarketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888156A721EE233A0055D92F /* StatsByMarketCell.swift */; };
+		888156AC21EE2F4E0055D92F /* MarketStatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888156AB21EE2F4E0055D92F /* MarketStatsTableViewController.swift */; };
 		888368C721E0F2D60069B3C0 /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888368C621E0F2D60069B3C0 /* ProductListViewModel.swift */; };
 		88B582A421DBBEEF00F8E108 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B582A321DBBEEF00F8E108 /* Price.swift */; };
 		88B582A621DBBF0300F8E108 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B582A521DBBF0300F8E108 /* Category.swift */; };
@@ -311,6 +314,9 @@
 		8858DFD721DE0AF9003971A7 /* LoadProductsByMarkUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadProductsByMarkUseCase.swift; sourceTree = "<group>"; };
 		8858DFD921DE0C72003971A7 /* LoadProductByIdUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadProductByIdUseCase.swift; sourceTree = "<group>"; };
 		8858DFDB21DE0D07003971A7 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		885B105C21EE90E200A5BBDE /* StatByMarketProductPricesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatByMarketProductPricesTableViewCell.swift; sourceTree = "<group>"; };
+		888156A721EE233A0055D92F /* StatsByMarketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsByMarketCell.swift; sourceTree = "<group>"; };
+		888156AB21EE2F4E0055D92F /* MarketStatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketStatsTableViewController.swift; sourceTree = "<group>"; };
 		888368C621E0F2D60069B3C0 /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
 		88B582A321DBBEEF00F8E108 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		88B582A521DBBF0300F8E108 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -567,6 +573,9 @@
 			isa = PBXGroup;
 			children = (
 				844454BE21ECCE7200DA19A3 /* DemoFoldingCell.swift */,
+				888156A721EE233A0055D92F /* StatsByMarketCell.swift */,
+				888156AB21EE2F4E0055D92F /* MarketStatsTableViewController.swift */,
+				885B105C21EE90E200A5BBDE /* StatByMarketProductPricesTableViewCell.swift */,
 			);
 			path = widget;
 			sourceTree = "<group>";
@@ -1246,7 +1255,7 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/ShimmerSwift/ShimmerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -1265,7 +1274,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ShimmerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkeletonView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1347,7 +1356,7 @@
 				87FECD9B21AAC7FC00805944 /* Event.swift in Sources */,
 				88014E6021DCDB8A009D28F5 /* StatisticsRepository.swift in Sources */,
 				87A4772F219735B4005937AD /* LoginViewController.swift in Sources */,
-				2C84FB7221B530A000BA6173 /* BuildFile in Sources */,
+				2C84FB7221B530A000BA6173 /* (null) in Sources */,
 				88553772219761F00007B3B5 /* SignUpViewModel.swift in Sources */,
 				2C038F6E21B1942900B84B0E /* BasketLocalRepository.swift in Sources */,
 				8802E66821BC41BA004BB179 /* Basket+CoreDataProperties.swift in Sources */,
@@ -1362,6 +1371,7 @@
 				2C038F5221B15DF200B84B0E /* SaveProductToBaskeUseCase.swift in Sources */,
 				8802E66321BC41BA004BB179 /* ProductInBasket+CoreDataClass.swift in Sources */,
 				87FF639221977B22008EE969 /* UserRouter.swift in Sources */,
+				885B105D21EE90E200A5BBDE /* StatByMarketProductPricesTableViewCell.swift in Sources */,
 				843405FB21BD2E2600A4851D /* BasketProducTableViewCellDelegate.swift in Sources */,
 				2C038F4E21B15DB100B84B0E /* LoadTrendingProductUseCase.swift in Sources */,
 				87A47735219735B4005937AD /* marketo.xcdatamodeld in Sources */,
@@ -1369,8 +1379,10 @@
 				8855D7A421B3147F00B5F0E8 /* PavilionLocalRepository .swift in Sources */,
 				88295E5A21BC59D500EF937E /* FavoriteLocalRepository.swift in Sources */,
 				8858DFCB21DE082E003971A7 /* LoadTypesUseCase.swift in Sources */,
+				888156AC21EE2F4E0055D92F /* MarketStatsTableViewController.swift in Sources */,
 				87FF639421977C44008EE969 /* UserRemoteRepository.swift in Sources */,
 				2C038F4C21B15D7F00B84B0E /* LoadProductUseCase.swift in Sources */,
+				888156A821EE233A0055D92F /* StatsByMarketCell.swift in Sources */,
 				844454C121ECD11400DA19A3 /* DemoTableViewController.swift in Sources */,
 				88175FB721B42847003C76C7 /* LoginFacebookUseCase.swift in Sources */,
 				88C7A44C21B2AB3A005BDF16 /* Configurable.swift in Sources */,

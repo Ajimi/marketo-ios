@@ -34,7 +34,9 @@ PODS:
   - "GoogleToolboxForMac/NSString+URLArguments (2.2.0)"
   - GTMSessionFetcher/Core (1.2.1)
   - Kingfisher (5.1.0)
+  - PKHUD (5.2.0)
   - Result (4.0.1)
+  - SkeletonView (1.4.1)
 
 DEPENDENCIES:
   - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `alamofire5`)
@@ -44,7 +46,9 @@ DEPENDENCIES:
   - FoldingCell
   - GoogleSignIn
   - Kingfisher (~> 5.0)
+  - PKHUD (~> 5.0)
   - Result (~> 4.0.0)
+  - SkeletonView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -59,7 +63,9 @@ SPEC REPOS:
     - GoogleToolboxForMac
     - GTMSessionFetcher
     - Kingfisher
+    - PKHUD
     - Result
+    - SkeletonView
 
 EXTERNAL SOURCES:
   Alamofire:
@@ -84,8 +90,10 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   Kingfisher: fcec238063d17404fca89bf0a850583211c4cbf6
+  PKHUD: dd5357ac65f26115c35c4a68e9b328053326c5fe
   Result: a6e784bebf48b471d59cddc1adb81f41f678c487
+  SkeletonView: 60d6ce7edb0cb4c7758db33c74add50392b3c475
 
-PODFILE CHECKSUM: a83c03be5661bf259b94caa58db42b086e1cbe73
+PODFILE CHECKSUM: b285158a43c3eb2688d309d7f4e26f508b2f68eb
 
 COCOAPODS: 1.5.3
