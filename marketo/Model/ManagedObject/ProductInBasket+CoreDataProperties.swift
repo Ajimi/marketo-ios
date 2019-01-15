@@ -2,7 +2,7 @@
 //  ProductInBasket+CoreDataProperties.swift
 //  marketo
 //
-//  Created by Admin on 1/14/19.
+//  Created by Moncef Guettat on 1/15/19.
 //  Copyright © 2019 selim ajimi. All rights reserved.
 //
 //
@@ -17,9 +17,9 @@ extension ProductInBasket {
         return NSFetchRequest<ProductInBasket>(entityName: "ProductInBasket")
     }
 
-    @NSManaged public var productId: Int32
     @NSManaged public var image: String?
     @NSManaged public var name: String?
+    @NSManaged public var productId: Int32
     @NSManaged public var quantity: Int32
     @NSManaged public var basket: Basket?
 
