@@ -8,6 +8,7 @@
 
 import UIKit
 import PKHUD
+import SkeletonView
 
 private let pavilionHomeReuseIdentifier = "PavilionHomeCell"
 
@@ -35,6 +36,10 @@ class FeaturedViewController: UIViewController {
         
         HUD.dimsBackground = false
         HUD.allowsInteraction = false
+        pavilionsCollectionView.isSkeletonable = true
+        trendingProductCollectionView.isSkeletonable = true
+        discountedProductCollectionView.isSkeletonable = true
+        
         
     }
     
@@ -44,7 +49,9 @@ class FeaturedViewController: UIViewController {
         // Trending PRODUCTS
         viewModel.uiTrendingState.bindAndFire(listener: { (uiModel) in
             if (uiModel.showProgress) {
-                print("In progress")
+                self.trendingProductCollectionView.showAnimatedGradientSkeleton()
+            } else {
+                self.trendingProductCollectionView.hideSkeleton()
             }
             if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
                 print("there Was an error \(errorMessage)")
@@ -61,7 +68,9 @@ class FeaturedViewController: UIViewController {
         // Discounted PRODUCTS
         viewModel.uiDiscountedState.bindAndFire(listener: { (uiModel) in
             if (uiModel.showProgress) {
-                print("In progress")
+                self.discountedProductCollectionView.showAnimatedGradientSkeleton()
+            }else {
+                self.discountedProductCollectionView.hideSkeleton()
             }
             if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
                 print("there Was an error \(errorMessage)")
@@ -79,6 +88,9 @@ class FeaturedViewController: UIViewController {
         viewModel.uiPavilionsState.bindAndFire(listener: { (uiModel) in
             if (uiModel.showProgress) {
                 print("In progress")
+                self.pavilionsCollectionView.showAnimatedGradientSkeleton()
+            }else {
+                self.pavilionsCollectionView.hideSkeleton()
             }
             if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
                 print("there Was an error \(errorMessage)")
@@ -131,29 +143,7 @@ extension FeaturedViewController : UICollectionViewDataSource,UICollectionViewDe
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        if (collectionView == self.pavilionsCollectionView){
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: pavilionHomeReuseIdentifier, for: indexPath) as! PavilionHomeCollectionViewCell
-            
-            cell.configure(with: viewModel.pavilions[indexPath.item])
-            return cell;
-        }
-        else if (collectionView == self.trendingProductCollectionView){
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: productHomeTrendingReuseIdentifier, for: indexPath) as! TrendingProductCollectionViewCell
-            
-            cell.configure(with: viewModel.trendingProducts[indexPath.item])
-            cell.delegate = self
-            return cell;
-        }
-        else{
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: productHomeDiscountedReuseIdentifier, for: indexPath) as! DiscountedProductCollectionViewCell
-            
-            cell.configure(with: viewModel.discountedProducts[indexPath.item])
-            
-            return cell;
-        }
-    }
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("dkhal")
@@ -195,4 +185,46 @@ extension FeaturedViewController : UICollectionViewDataSource,UICollectionViewDe
 }
 
 
-
+extension FeaturedViewController: SkeletonCollectionViewDataSource {
+    func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        
+        if (skeletonView == self.pavilionsCollectionView){
+          return pavilionHomeReuseIdentifier
+        } else if (skeletonView == self.trendingProductCollectionView){
+            return productHomeTrendingReuseIdentifier
+        }
+        else{
+            return productHomeDiscountedReuseIdentifier
+        }
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if (collectionView == self.pavilionsCollectionView){
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: pavilionHomeReuseIdentifier, for: indexPath) as! PavilionHomeCollectionViewCell
+            
+            cell.configure(with: viewModel.pavilions[indexPath.item])
+            return cell;
+        }
+        else if (collectionView == self.trendingProductCollectionView){
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: productHomeTrendingReuseIdentifier, for: indexPath) as! TrendingProductCollectionViewCell
+            
+            cell.configure(with: viewModel.trendingProducts[indexPath.item])
+            cell.delegate = self
+            return cell;
+        }
+        else{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: productHomeDiscountedReuseIdentifier, for: indexPath) as! DiscountedProductCollectionViewCell
+            
+            cell.configure(with: viewModel.discountedProducts[indexPath.item])
+            
+            return cell;
+        }
+    }
+    
+    
+}
