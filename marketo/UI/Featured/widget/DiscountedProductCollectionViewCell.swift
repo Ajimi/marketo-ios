@@ -13,9 +13,21 @@ class DiscountedProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var productName : UILabel!
     @IBOutlet weak var marketName : UILabel!
     @IBOutlet weak var discount : UILabel!
-    
-    func configure(with product: Product){
 
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        isSkeletonable = true
+        image.isSkeletonable = true
+        productName.isSkeletonable = true
+        marketName.isSkeletonable = true
+        discount.isSkeletonable = true
+        
+    }
+    func configure(with product: Product){
+        
+        
         productName.text = product.name
         marketName.text = getBestDiscountPrice(product: product).market?.text
         discount.text = (getBestDiscountPrice(product: product).discount! * Float(100)).clean + "%"

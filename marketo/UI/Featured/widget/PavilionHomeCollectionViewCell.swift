@@ -8,11 +8,23 @@
 
 import UIKit
 import Kingfisher
+import SkeletonView
+
 class PavilionHomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var name: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        isSkeletonable = true
+        image.isSkeletonable = true
+        name.isSkeletonable = true
+        
+    }
+    
     func configure(with pavilion: Pavilion){
+        
         self.name.text = pavilion.name
         image.kf.setImage(
             with: URL(string: pavilion.image!),

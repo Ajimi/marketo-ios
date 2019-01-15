@@ -22,13 +22,27 @@ class TrendingProductCollectionViewCell: UICollectionViewCell,Configurable {
         delegate?.trendingCellDidTapFavorite(self)
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        isSkeletonable = true
+        image.isSkeletonable = true
+        name.isSkeletonable = true
+        
+    }
+    
     
     @IBAction func addToBasket(_ sender: UIButton) {
         delegate?.trendingCellDidTapBasket(self)
     }
     
     func configure(with product: Product){
-        self.product = product	
+        self.product = product
+        
+     //   isSkeletonable = true
+        name.isSkeletonable = true
+        image.isSkeletonable = true
+        
         name.text = product.name
         
         image.kf.setImage(
