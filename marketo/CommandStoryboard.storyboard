@@ -14,11 +14,11 @@
             <objects>
                 <viewController title="Home" id="aPb-3n-qoJ" customClass="FeaturedViewController" customModule="marketo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kaa-bb-ViV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="880"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="giM-59-Etq">
-                                <rect key="frame" x="0.0" y="64" width="375" height="767"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="687"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home1" translatesAutoresizingMaskIntoConstraints="NO" id="i2C-PF-Anp">
                                         <rect key="frame" x="16" y="8" width="343" height="165"/>
@@ -27,7 +27,7 @@
                                         </constraints>
                                     </imageView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X2h-g6-IYs">
-                                        <rect key="frame" x="16" y="210" width="343" height="64"/>
+                                        <rect key="frame" x="16" y="212.5" width="343" height="64"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="zj8-9e-DsD"/>
@@ -51,7 +51,7 @@
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1z-9P-89M">
                                                             <rect key="frame" x="0.0" y="53" width="64" height="9"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -79,54 +79,51 @@
                                         </connections>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pavilon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCC-at-pkV">
-                                        <rect key="frame" x="16" y="181" width="343" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="16" y="181" width="343" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="17"/>
                                         <color key="textColor" red="0.95670200442602737" green="0.29680281359315069" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trending Products" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bY6-kp-0GN">
-                                        <rect key="frame" x="16" y="282" width="141" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="16" y="284.5" width="115.5" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="17"/>
                                         <color key="textColor" red="0.95670200439999997" green="0.29680281359999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" indicatorStyle="black" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LtV-Rr-H8K">
-                                        <rect key="frame" x="16" y="311" width="343" height="170"/>
+                                        <rect key="frame" x="16" y="316" width="343" height="170"/>
                                         <color key="backgroundColor" red="0.95705527067184448" green="0.9446147084236145" blue="0.92136144638061523" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="170" id="dWW-9D-68G"/>
                                         </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Qzh-Fq-i1w">
-                                            <size key="itemSize" width="124" height="170"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="20" id="Qzh-Fq-i1w">
+                                            <size key="itemSize" width="134" height="170"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductTrendingHomeCell" id="cg6-oo-GRP" customClass="TrendingProductCollectionViewCell" customModule="marketo" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="124" height="170"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="134" height="170"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="124" height="170"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="134" height="170"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="zie-4A-gGl">
-                                                            <rect key="frame" x="0.0" y="0.0" width="124" height="170"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="134" height="170"/>
                                                             <color key="backgroundColor" red="1" green="0.97254901959999995" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DxB-Jr-eHH">
-                                                            <rect key="frame" x="0.0" y="149" width="124" height="21"/>
-                                                            <color key="backgroundColor" white="1" alpha="0.21219499143835616" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="21" id="AvK-vV-kWw"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DxB-Jr-eHH">
+                                                            <rect key="frame" x="0.0" y="148" width="134" height="22"/>
+                                                            <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nE-Bd-VCK">
-                                                            <rect key="frame" x="62" y="0.0" width="62" height="30"/>
-                                                            <color key="backgroundColor" white="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <rect key="frame" x="72" y="0.0" width="62" height="30"/>
+                                                            <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="62" id="IO5-fr-nWP"/>
                                                             </constraints>
@@ -138,8 +135,8 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTf-8N-tYM">
-                                                            <rect key="frame" x="0.0" y="0.0" width="62" height="30"/>
-                                                            <color key="backgroundColor" white="1" alpha="0.19586365582191778" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
+                                                            <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <state key="normal" image="heart"/>
                                                             <connections>
                                                                 <action selector="addToFavorite:" destination="cg6-oo-GRP" eventType="touchUpInside" id="Bm2-Oe-WLL"/>
@@ -173,45 +170,84 @@
                                         </connections>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Discounts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgr-ip-yV2">
-                                        <rect key="frame" x="16" y="489" width="343" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="16" y="494" width="343" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="17"/>
                                         <color key="textColor" red="0.95670200439999997" green="0.29680281359999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="a70-0X-BJO">
-                                        <rect key="frame" x="16" y="518" width="343" height="127"/>
+                                        <rect key="frame" x="16" y="525.5" width="343" height="150"/>
                                         <color key="backgroundColor" red="0.95705527069999996" green="0.94461470839999995" blue="0.92136144639999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="127" id="zqb-OE-9vS"/>
+                                            <constraint firstAttribute="height" constant="150" id="zqb-OE-9vS"/>
                                         </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="b07-K5-Dei">
-                                            <size key="itemSize" width="192" height="111"/>
+                                            <size key="itemSize" width="192" height="142"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductDiscountedHomeCell" id="AUe-Li-Zf9" customClass="DiscountedProductCollectionViewCell" customModule="marketo" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="8" width="192" height="111"/>
+                                                <rect key="frame" x="0.0" y="4" width="192" height="142"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="192" height="111"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="192" height="142"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Deu-6Q-BHd">
-                                                            <rect key="frame" x="0.0" y="0.0" width="192" height="111"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Deu-6Q-BHd">
+                                                            <rect key="frame" x="0.0" y="0.0" width="192" height="142"/>
                                                         </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gj8-Nv-2n5">
+                                                            <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+                                                            <color key="backgroundColor" red="0.64848282629999998" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="42" id="60q-v7-7nU"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pRU-uL-d6X">
+                                                            <rect key="frame" x="42" y="0.0" width="150" height="21"/>
+                                                            <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="341-qL-oYN"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzu-TW-tk1">
+                                                            <rect key="frame" x="0.0" y="120" width="192" height="22"/>
+                                                            <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                 </view>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="pRU-uL-d6X" secondAttribute="trailing" id="1wq-x8-vr4"/>
+                                                    <constraint firstItem="Gj8-Nv-2n5" firstAttribute="baseline" secondItem="pRU-uL-d6X" secondAttribute="baseline" id="6dv-uy-suf"/>
+                                                    <constraint firstItem="Gj8-Nv-2n5" firstAttribute="leading" secondItem="Mzu-TW-tk1" secondAttribute="leading" id="CEm-cK-3RZ"/>
                                                     <constraint firstAttribute="trailing" secondItem="Deu-6Q-BHd" secondAttribute="trailing" id="EX9-EE-mC1"/>
+                                                    <constraint firstItem="pRU-uL-d6X" firstAttribute="top" secondItem="AUe-Li-Zf9" secondAttribute="top" id="Rhg-Eu-ZuZ"/>
+                                                    <constraint firstItem="pRU-uL-d6X" firstAttribute="leading" secondItem="Gj8-Nv-2n5" secondAttribute="trailing" id="UCe-Kq-f7j"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Mzu-TW-tk1" secondAttribute="bottom" id="WQZ-uH-whh"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Mzu-TW-tk1" secondAttribute="trailing" id="cfu-9j-snB"/>
+                                                    <constraint firstItem="Mzu-TW-tk1" firstAttribute="leading" secondItem="AUe-Li-Zf9" secondAttribute="leading" id="nM0-dn-yn6"/>
                                                     <constraint firstAttribute="bottom" secondItem="Deu-6Q-BHd" secondAttribute="bottom" id="rpm-QY-nkl"/>
+                                                    <constraint firstItem="Gj8-Nv-2n5" firstAttribute="top" secondItem="Deu-6Q-BHd" secondAttribute="top" id="xFE-ey-0ax"/>
                                                     <constraint firstItem="Deu-6Q-BHd" firstAttribute="leading" secondItem="AUe-Li-Zf9" secondAttribute="leading" id="zAh-u7-weE"/>
                                                     <constraint firstItem="Deu-6Q-BHd" firstAttribute="top" secondItem="AUe-Li-Zf9" secondAttribute="top" id="zkQ-is-yv4"/>
                                                 </constraints>
-                                                <size key="customSize" width="192" height="111"/>
+                                                <size key="customSize" width="192" height="142"/>
                                                 <connections>
+                                                    <outlet property="discount" destination="Gj8-Nv-2n5" id="Px4-f7-p3c"/>
                                                     <outlet property="image" destination="Deu-6Q-BHd" id="du0-4N-rWN"/>
+                                                    <outlet property="marketName" destination="pRU-uL-d6X" id="ZYz-5P-DXg"/>
+                                                    <outlet property="productName" destination="Mzu-TW-tk1" id="xE0-aV-s8x"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -234,6 +270,7 @@
                                     <constraint firstItem="i2C-PF-Anp" firstAttribute="trailing" secondItem="SCC-at-pkV" secondAttribute="trailing" id="Vlw-SQ-ABy"/>
                                     <constraint firstItem="i2C-PF-Anp" firstAttribute="leading" secondItem="SCC-at-pkV" secondAttribute="leading" id="cpG-nJ-V4G"/>
                                     <constraint firstItem="wgr-ip-yV2" firstAttribute="trailing" secondItem="a70-0X-BJO" secondAttribute="trailing" id="eMa-Uv-CNf"/>
+                                    <constraint firstAttribute="bottom" secondItem="a70-0X-BJO" secondAttribute="bottom" constant="19" id="fil-tc-0Wv"/>
                                     <constraint firstItem="SCC-at-pkV" firstAttribute="leading" secondItem="X2h-g6-IYs" secondAttribute="leading" id="gNm-a6-SOa"/>
                                     <constraint firstItem="X2h-g6-IYs" firstAttribute="leading" secondItem="bY6-kp-0GN" secondAttribute="leading" id="jn7-lO-sLv"/>
                                     <constraint firstItem="LtV-Rr-H8K" firstAttribute="top" secondItem="bY6-kp-0GN" secondAttribute="bottom" constant="8" symbolic="YES" id="jp4-J1-21Y"/>
@@ -241,7 +278,6 @@
                                     <constraint firstItem="bY6-kp-0GN" firstAttribute="top" secondItem="X2h-g6-IYs" secondAttribute="bottom" constant="8" symbolic="YES" id="lsM-2U-Oec"/>
                                     <constraint firstItem="bY6-kp-0GN" firstAttribute="leading" secondItem="LtV-Rr-H8K" secondAttribute="leading" id="mQG-MU-LWq"/>
                                     <constraint firstItem="a70-0X-BJO" firstAttribute="top" secondItem="wgr-ip-yV2" secondAttribute="bottom" constant="8" symbolic="YES" id="prV-nB-Kur"/>
-                                    <constraint firstAttribute="bottom" secondItem="a70-0X-BJO" secondAttribute="bottom" constant="122" id="uhg-Ta-ctj"/>
                                     <constraint firstItem="X2h-g6-IYs" firstAttribute="trailing" secondItem="LtV-Rr-H8K" secondAttribute="trailing" id="urq-Qs-e5J"/>
                                     <constraint firstItem="i2C-PF-Anp" firstAttribute="top" secondItem="giM-59-Etq" secondAttribute="topMargin" id="vJW-z8-YIy"/>
                                 </constraints>
@@ -260,7 +296,7 @@
                         <viewLayoutGuide key="safeArea" id="rxk-9e-7Ro"/>
                     </view>
                     <navigationItem key="navigationItem" title="Featued" id="po2-t8-EiP"/>
-                    <size key="freeformSize" width="375" height="880"/>
+                    <size key="freeformSize" width="375" height="800"/>
                     <connections>
                         <outlet property="discountedProductCollectionView" destination="a70-0X-BJO" id="NKn-gs-Z9X"/>
                         <outlet property="pavilionsCollectionView" destination="X2h-g6-IYs" id="pBK-o8-6sB"/>
