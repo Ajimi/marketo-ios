@@ -9,29 +9,42 @@
 import UIKit
 import FoldingCell
 
+private let statByMarketReuseIdentifier = "statByMarketReuseIdentifier"
+private let statByPriceReuseIdentifier = "statByPriceReuseIdentifier"
+
+
 class StatisticsViewController: UIViewController {
 
     private let viewModel : StatisticsViewModel = StatisticsViewModel()
     @IBOutlet weak var statByMarketsTableView: UITableView!
+    @IBOutlet weak var statByPricesTableView: UITableView!
+    
     @IBAction func switchStat(_ sender: UISegmentedControl) {
         
         if sender.selectedSegmentIndex == 0 {
             statByMarketsTableView.isHidden = false
+            statByPricesTableView.isHidden = true
         }else{
             statByMarketsTableView.isHidden = true
+            statByPricesTableView.isHidden = false
         }
         
     }
     
     
-    var cellHeights = (0..<1).map { _ in C.CellHeight.close }
+    var cellHeightsMarkets = (0..<1).map { _ in C.CellHeight.close }
+    var cellHeightsPrices = (0..<1).map { _ in C.CellHeight.close }
 
     
      override func viewDidLoad() {
         super.viewDidLoad()
         statByMarketsTableView.delegate = self
         statByMarketsTableView.dataSource = self
+        
+        statByPricesTableView.delegate = self
+        statByPricesTableView.dataSource = self
 
+        statByPricesTableView.isHidden = true
         
         viewModel.updateUI()
 
@@ -45,8 +58,13 @@ class StatisticsViewController: UIViewController {
             
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let _ = showSucces.consume() {
                 DispatchQueue.main.async {
-                    self.cellHeights = (0..<self.viewModel.productStatByMarket!.count).map { _ in C.CellHeight.close }
+                    self.cellHeightsMarkets = (0..<self.viewModel.productStatByMarket!.count).map { _ in C.CellHeight.close }
+                    self.cellHeightsPrices = (0..<self.viewModel.productStatByPrice!.count).map { _ in P.CellHeight.close }
+                    
                     self.statByMarketsTableView.reloadData()
+                    self.statByPricesTableView.reloadData()
+                    
+                    
                 }
             }
             
@@ -60,7 +78,23 @@ class StatisticsViewController: UIViewController {
 
 extension StatisticsViewController: UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "selim") as! StatsByMarketCell
+        
+        
+        if tableView == statByPricesTableView{
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: statByPriceReuseIdentifier) as! StatsByPriceTableViewCell
+            
+            let durations: [TimeInterval] = [0.26, 0.2, 0.2]
+            cell.durationsForExpandedState = durations
+            cell.durationsForCollapsedState = durations
+            
+            cell.configure(with: viewModel.productStatByPrice![indexPath.row])
+            
+            return cell
+            
+        }
+            
+        let cell = tableView.dequeueReusableCell(withIdentifier: statByMarketReuseIdentifier) as! StatsByMarketTableViewCell
         
         let durations: [TimeInterval] = [0.26, 0.2, 0.2]
         cell.durationsForExpandedState = durations
@@ -73,6 +107,7 @@ extension StatisticsViewController: UITableViewDataSource,UITableViewDelegate{
         cell.configure(market: viewModel.productStatByMarket![indexPath.row], bestTotal: bestTotal!)
         
         return cell
+        
     }
     
     
@@ -81,6 +116,13 @@ extension StatisticsViewController: UITableViewDataSource,UITableViewDelegate{
         struct CellHeight {
             static let close: CGFloat = 116 // equal or greater foregroundView height
             static let open: CGFloat = 254 // equal or greater containerView height
+        }
+    }
+    
+    fileprivate struct P {
+        struct CellHeight {
+            static let close: CGFloat = 143 // equal or greater foregroundView height
+            static let open: CGFloat = 425 // equal or greater containerView height
         }
     }
     
@@ -96,12 +138,18 @@ extension StatisticsViewController: UITableViewDataSource,UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if tableView == statByPricesTableView{
+            return viewModel.productStatByPrice?.count ?? 0
+        }
         return viewModel.productStatByMarket?.count ?? 0
     }
     
     
      func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return cellHeights[indexPath.row]
+        if tableView == statByPricesTableView{
+            return cellHeightsPrices[indexPath.row]
+        }
+        return cellHeightsMarkets[indexPath.row]
         
     }
     
@@ -115,16 +163,30 @@ extension StatisticsViewController: UITableViewDataSource,UITableViewDelegate{
         }
         
         var duration = 0.0
-        let cellIsCollapsed = cellHeights[indexPath.row] == C.CellHeight.close
-        if cellIsCollapsed {
-            cellHeights[indexPath.row] = C.CellHeight.open
-            cell.unfold(true, animated: true, completion: nil)
-            duration = 0.5
-        } else {
-            cellHeights[indexPath.row] = C.CellHeight.close
-            cell.unfold(false, animated: true, completion: nil)
-            duration = 0.8
+        if tableView == statByPricesTableView{
+            let cellIsCollapsed = cellHeightsPrices[indexPath.row] == P.CellHeight.close
+            if cellIsCollapsed {
+                cellHeightsPrices[indexPath.row] = P.CellHeight.open
+                cell.unfold(true, animated: true, completion: nil)
+                duration = 0.5
+            } else {
+                cellHeightsPrices[indexPath.row] = P.CellHeight.close
+                cell.unfold(false, animated: true, completion: nil)
+                duration = 0.8
+            }
+        }else {
+            let cellIsCollapsed = cellHeightsMarkets[indexPath.row] == C.CellHeight.close
+            if cellIsCollapsed {
+                cellHeightsMarkets[indexPath.row] = C.CellHeight.open
+                cell.unfold(true, animated: true, completion: nil)
+                duration = 0.5
+            } else {
+                cellHeightsMarkets[indexPath.row] = C.CellHeight.close
+                cell.unfold(false, animated: true, completion: nil)
+                duration = 0.8
+            }
         }
+        
         
         UIView.animate(withDuration: duration, delay: 0,options: .curveEaseOut, animations: {
             tableView.beginUpdates()
@@ -135,17 +197,37 @@ extension StatisticsViewController: UITableViewDataSource,UITableViewDelegate{
     
      func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        guard case let cell as StatsByMarketCell = cell else {
-            return
+        if tableView == statByPricesTableView{
+            
+            guard case let cell as StatsByPriceTableViewCell = cell else {
+                return
+            }
+            
+            cell.backgroundColor = .clear
+            
+            if cellHeightsPrices[indexPath.row] == P.CellHeight.close {
+                cell.unfold(false, animated: false, completion: nil)
+            } else {
+                cell.unfold(true, animated: false, completion: nil)
+            }
+            
+        }else {
+            
+            guard case let cell as StatsByMarketTableViewCell = cell else {
+                return
+            }
+            
+            cell.backgroundColor = .clear
+            
+            if cellHeightsMarkets[indexPath.row] == C.CellHeight.close {
+                cell.unfold(false, animated: false, completion: nil)
+            } else {
+                cell.unfold(true, animated: false, completion: nil)
+            }
+            
         }
         
-        cell.backgroundColor = .clear
         
-        if cellHeights[indexPath.row] == C.CellHeight.close {
-            cell.unfold(false, animated: false, completion: nil)
-        } else {
-            cell.unfold(true, animated: false, completion: nil)
-        }
         
         
     }

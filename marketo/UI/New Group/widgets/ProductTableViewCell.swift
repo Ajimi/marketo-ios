@@ -18,7 +18,14 @@ class ProductTableViewCell: UITableViewCell,Configurable {
     
     func configure(with content: Product) {
         productName.text = content.name
-        //TODO: Add Image
+        productImage.kf.setImage(
+            with: URL(string: content.image!),
+            placeholder: UIImage(named: "logo"),
+            options: [
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ])
         bestPrice.text = content.prices?.min(by: { (a, b) -> Bool in
             a.value>b.value
         })?.value.description ?? "no price"

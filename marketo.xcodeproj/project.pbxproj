@@ -119,6 +119,8 @@
 		88175FC021B44D17003C76C7 /* IsLoggedInUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88175FBF21B44D17003C76C7 /* IsLoggedInUseCase.swift */; };
 		88175FC221B459B0003C76C7 /* LogoutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88175FC121B459B0003C76C7 /* LogoutUseCase.swift */; };
 		88295E5A21BC59D500EF937E /* FavoriteLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88295E5921BC59D500EF937E /* FavoriteLocalRepository.swift */; };
+		883CA8F321EF6050005B8615 /* StatsByPriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883CA8F221EF6050005B8615 /* StatsByPriceTableViewCell.swift */; };
+		883CA8F521EF79B7005B8615 /* StatByPriceMarketPriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883CA8F421EF79B7005B8615 /* StatByPriceMarketPriceTableViewCell.swift */; };
 		8854E24B21B47BDF00FBCC31 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8854E24A21B47BDF00FBCC31 /* FavoriteViewController.swift */; };
 		8854E24E21B47CDD00FBCC31 /* FavoriteProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8854E24D21B47CDD00FBCC31 /* FavoriteProductCollectionViewCell.swift */; };
 		8855376D219752EA0007B3B5 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8855376C219752EA0007B3B5 /* LoginViewModel.swift */; };
@@ -144,7 +146,7 @@
 		8858DFDA21DE0C72003971A7 /* LoadProductByIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8858DFD921DE0C72003971A7 /* LoadProductByIdUseCase.swift */; };
 		8858DFDC21DE0D07003971A7 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8858DFDB21DE0D07003971A7 /* CategoryViewModel.swift */; };
 		885B105D21EE90E200A5BBDE /* StatByMarketProductPricesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B105C21EE90E200A5BBDE /* StatByMarketProductPricesTableViewCell.swift */; };
-		888156A821EE233A0055D92F /* StatsByMarketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888156A721EE233A0055D92F /* StatsByMarketCell.swift */; };
+		888156A821EE233A0055D92F /* StatsByMarketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888156A721EE233A0055D92F /* StatsByMarketTableViewCell.swift */; };
 		888156AC21EE2F4E0055D92F /* MarketStatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888156AB21EE2F4E0055D92F /* MarketStatsTableViewController.swift */; };
 		888368C721E0F2D60069B3C0 /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888368C621E0F2D60069B3C0 /* ProductListViewModel.swift */; };
 		88B582A421DBBEEF00F8E108 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B582A321DBBEEF00F8E108 /* Price.swift */; };
@@ -300,6 +302,8 @@
 		88175FBF21B44D17003C76C7 /* IsLoggedInUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsLoggedInUseCase.swift; sourceTree = "<group>"; };
 		88175FC121B459B0003C76C7 /* LogoutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutUseCase.swift; sourceTree = "<group>"; };
 		88295E5921BC59D500EF937E /* FavoriteLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteLocalRepository.swift; sourceTree = "<group>"; };
+		883CA8F221EF6050005B8615 /* StatsByPriceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsByPriceTableViewCell.swift; sourceTree = "<group>"; };
+		883CA8F421EF79B7005B8615 /* StatByPriceMarketPriceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatByPriceMarketPriceTableViewCell.swift; sourceTree = "<group>"; };
 		8854E24A21B47BDF00FBCC31 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		8854E24D21B47CDD00FBCC31 /* FavoriteProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		8855376C219752EA0007B3B5 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -325,7 +329,7 @@
 		8858DFD921DE0C72003971A7 /* LoadProductByIdUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadProductByIdUseCase.swift; sourceTree = "<group>"; };
 		8858DFDB21DE0D07003971A7 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		885B105C21EE90E200A5BBDE /* StatByMarketProductPricesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatByMarketProductPricesTableViewCell.swift; sourceTree = "<group>"; };
-		888156A721EE233A0055D92F /* StatsByMarketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsByMarketCell.swift; sourceTree = "<group>"; };
+		888156A721EE233A0055D92F /* StatsByMarketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsByMarketTableViewCell.swift; sourceTree = "<group>"; };
 		888156AB21EE2F4E0055D92F /* MarketStatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketStatsTableViewController.swift; sourceTree = "<group>"; };
 		888368C621E0F2D60069B3C0 /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
 		88B582A321DBBEEF00F8E108 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
@@ -584,9 +588,11 @@
 			isa = PBXGroup;
 			children = (
 				844454BE21ECCE7200DA19A3 /* DemoFoldingCell.swift */,
-				888156A721EE233A0055D92F /* StatsByMarketCell.swift */,
+				888156A721EE233A0055D92F /* StatsByMarketTableViewCell.swift */,
 				888156AB21EE2F4E0055D92F /* MarketStatsTableViewController.swift */,
 				885B105C21EE90E200A5BBDE /* StatByMarketProductPricesTableViewCell.swift */,
+				883CA8F221EF6050005B8615 /* StatsByPriceTableViewCell.swift */,
+				883CA8F421EF79B7005B8615 /* StatByPriceMarketPriceTableViewCell.swift */,
 			);
 			path = widget;
 			sourceTree = "<group>";
@@ -1405,7 +1411,7 @@
 				888156AC21EE2F4E0055D92F /* MarketStatsTableViewController.swift in Sources */,
 				87FF639421977C44008EE969 /* UserRemoteRepository.swift in Sources */,
 				2C038F4C21B15D7F00B84B0E /* LoadProductUseCase.swift in Sources */,
-				888156A821EE233A0055D92F /* StatsByMarketCell.swift in Sources */,
+				888156A821EE233A0055D92F /* StatsByMarketTableViewCell.swift in Sources */,
 				844454C121ECD11400DA19A3 /* DemoTableViewController.swift in Sources */,
 				88175FB721B42847003C76C7 /* LoginFacebookUseCase.swift in Sources */,
 				88C7A44C21B2AB3A005BDF16 /* Configurable.swift in Sources */,
@@ -1413,6 +1419,7 @@
 				2C038F5921B15FA400B84B0E /* TrendingProductCollectionViewCell.swift in Sources */,
 				88BD11E421BD21F3004A3816 /* BasketProductTableViewCell.swift in Sources */,
 				8858DFDA21DE0C72003971A7 /* LoadProductByIdUseCase.swift in Sources */,
+				883CA8F321EF6050005B8615 /* StatsByPriceTableViewCell.swift in Sources */,
 				8858DFDC21DE0D07003971A7 /* CategoryViewModel.swift in Sources */,
 				87A4772D219735B4005937AD /* AppDelegate.swift in Sources */,
 				843405F821BD161F00A4851D /* CreateBasketUseCase.swift in Sources */,
@@ -1471,6 +1478,7 @@
 				844F7F7721EC871D00FE1309 /* LoadStatisticsByMarketUseCase.swift in Sources */,
 				843405EC21BC793F00A4851D /* ModifyQuantityForProductUseCase.swift in Sources */,
 				8858DFD621DE0ADE003971A7 /* LoadProductsByTypeAndMarkUseCase.swift in Sources */,
+				883CA8F521EF79B7005B8615 /* StatByPriceMarketPriceTableViewCell.swift in Sources */,
 				844454BF21ECCE7200DA19A3 /* DemoFoldingCell.swift in Sources */,
 				8855D7A021B3141C00B5F0E8 /* PavilionRepository .swift in Sources */,
 				8434060621BD4E7600A4851D /* TrendingProductCollectionViewCellDelegate.swift in Sources */,
