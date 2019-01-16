@@ -15,6 +15,7 @@ target 'marketo' do
  pod 'Kingfisher', '~> 5.0'
  pod 'PKHUD', '~> 5.0'
  pod 'SkeletonView'
+ pod 'JWTDecode', '~> 2.2'
  
  pod 'FacebookCore'
  pod 'FacebookLogin'
