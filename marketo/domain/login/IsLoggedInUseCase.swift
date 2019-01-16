@@ -17,9 +17,7 @@ class IsLoggedInUseCase {
     }
     
     func execute() -> Bool{
-        
         return loginRepository.isLoggedIn()
-        
     }
     
 }
