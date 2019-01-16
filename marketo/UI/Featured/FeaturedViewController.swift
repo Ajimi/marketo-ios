@@ -126,7 +126,7 @@ class FeaturedViewController: UIViewController {
                 print("In progress")
                 HUD.show(.progress)
             } else {
-                 HUD.flash(.success, delay: 1.0)
+                HUD.hide()
             }
             if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
                 print("there Was an error \(errorMessage)")
