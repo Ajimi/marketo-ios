@@ -72,4 +72,8 @@ class UserRepository {
         return localRepository.isLoggedIn()
     }
     
+    func getUser() -> User? {
+        return localRepository.user
+    }
+    
 }

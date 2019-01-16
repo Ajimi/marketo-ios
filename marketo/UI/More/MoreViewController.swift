@@ -10,21 +10,32 @@ import UIKit
 
 class MoreViewController: UIViewController {
 
+    let viewModel = MoreViewModel()
+    var isUserLoggedIn = false
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.uiUserState.bindAndFire { (uiModel) in
+            if (uiModel.showProgress){
+                print("In progress stat")
+            }
+            if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
+                self.isUserLoggedIn = false
+                print("there Was an error loading stat \(errorMessage)")
+                // TODO user is not connected
+            }
+            
+            if let showSucces = uiModel.showSuccess, !showSucces.consumed, let _ = showSucces.consume() {
+                // TODO user is connected display change
+                self.isUserLoggedIn = true
+            }
+        }
     }
-    */
-
+    
 }
