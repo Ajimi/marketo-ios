@@ -106,6 +106,39 @@ extension BasketLocalRepository{
         }
     }
     
+    func removeProduct(productId:Int,completion:@escaping (Result<Bool>)->Void){
+        getBasket { response in
+            switch response {
+            case .success(let basket):
+                
+                if let products = basket.products as? Set<ProductInBasket>, products.count > 0 {
+                    let filteredProduct = products.filter{ $0.productId == productId}
+                    if filteredProduct.count > 0 {
+                        basket.removeFromProducts(filteredProduct.first!)
+                        self.persistenceManager.save()
+                        completion(Result{
+                            return true
+                        })
+                    }else {
+                        completion(Result{
+                            return false
+                        })
+                    }
+                } else {
+                    completion(Result{
+                        return false
+                    })
+                }
+                
+            case .failure(let error):
+                completion(Result{
+                    throw error
+                })
+            }
+        }
+    }
+    
+    
     func deleteAll(completion:@escaping (Result<Bool>)->Void){
         getBasket { response in
             switch response {
@@ -140,6 +173,37 @@ extension BasketLocalRepository{
                 })
             }
         }
+    }
+    
+    func isBasketProduct(productId: Int, completion:@escaping (Result<Bool>)->Void) {
+        getBasket { response in
+            switch response {
+            case .success(let basket):
+                
+                if let products = basket.products as? Set<ProductInBasket>, products.count > 0 {
+                    let filteredProduct = products.filter{ $0.productId == productId}
+                    if filteredProduct.count > 0 {
+                        completion(Result{
+                            return true
+                        })
+                    }else {
+                        completion(Result{
+                            return false
+                        })
+                    }
+                } else {
+                    completion(Result{
+                        return false
+                    })
+                }
+                
+            case .failure(let error):
+                completion(Result{
+                    throw error
+                })
+            }
+        }
+
     }
     
     func buildProductInBasket(product:Product) -> ProductInBasket {

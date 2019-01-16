@@ -40,6 +40,23 @@ extension FavoriteLocalRepository{
         })
     }
     
+    func removeProduct(productId:Int,completion:@escaping (Result<Bool>)->Void){
+        
+
+        let products = persistenceManager.fetchById(FavoriteProduct.self, productId)
+        
+        if(products.isEmpty) {
+            completion(Result{
+                return false
+            })
+        } else {
+            persistenceManager.delete(products.first!)
+            completion(Result{
+                return true
+            })
+        }
+    }
+    
     func addProduct(product:Product,completion:@escaping (Result<Bool>)->Void){
         
         let favorite = FavoriteProduct(context: persistenceManager.context)
@@ -47,7 +64,6 @@ extension FavoriteLocalRepository{
         favorite.name = product.name
         favorite.imageName = product.image
         persistenceManager.save()
-        print("Addproduct : to favorite")
         completion(Result{
             return true
         })
@@ -56,11 +72,17 @@ extension FavoriteLocalRepository{
     func isFavoriteProduct(productId: String, completion:@escaping (Result<Bool>)->Void){
         
       
-        persistenceManager.save()
-        print("Addproduct : to favorite")
-        completion(Result{
-            return true
-        })
+        let products = persistenceManager.fetchById(FavoriteProduct.self, Int(productId)!)
+        
+        if(products.isEmpty) {
+            completion(Result{
+                return false
+            })
+        } else {
+            completion(Result{
+                return true
+            })
+        }
     }
 }
 

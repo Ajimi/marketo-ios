@@ -38,6 +38,14 @@ extension BasketRepository{
         localRepository.deleteProduct(product: product, completion: completion)
     }
     
+    func removeProduct(productId:Int,completion:@escaping (Result<Bool>)->Void){
+        localRepository.removeProduct(productId: productId, completion: completion)
+    }
+    
+    func isBasketProduct(productId:Int,completion:@escaping (Result<Bool>)->Void){
+        localRepository.isBasketProduct(productId: productId, completion: completion)
+    }
+    
     func deleteAll(completion:@escaping (Result<Bool>)->Void){
         localRepository.deleteAll(completion: completion)
     }
