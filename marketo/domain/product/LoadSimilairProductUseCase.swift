@@ -18,7 +18,7 @@ class LoadSimilairProductUseCase {
     
     func execute(product: Product,completion:@escaping (Result<Products>)->Void) {
         
-        productRepository.getSimilair(id: product.type?.id) { (response) in
+        productRepository.getSimilair(id: (product.type?.id)!) { (response) in
             switch response {
             case .success(_):
                 completion(response)
