@@ -43,8 +43,20 @@ class UserRepository {
         
     }
     
-    func loginSocialMedia(with type : String, withAccessToken accessToken : String){
-        localRepository.login(a: User(fullName: "", username: "", password: "", email: "") , withAccessToken: accessToken)
+  
+    
+    func loginSocialMedia(a user:User, with type : String, withAccessToken accessToken : String){
+        localRepository.login(a: user , withAccessToken: accessToken)
+        self.register(a:user, completion: checkResponseFor)
+    }
+    
+    func checkResponseFor(response : Result<User>) {
+        switch response {
+        case .success(let user):
+            print(user)
+        case .failure(let error):
+            print(error)
+        }
     }
     
     func register(a user: User, completion:@escaping (Result<User>)->Void){
