@@ -73,7 +73,7 @@ class MarketStatsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if case let foldingCell as StatsByMarketCell = cell {
+        if case let foldingCell as StatsByMarketTableViewCell = cell {
             if cellHeights[indexPath.row] == C.CellHeight.close {
                 foldingCell.setSelected(false, animated: false)
             } else {

@@ -28,7 +28,6 @@ class BasketProductTableViewCell: UITableViewCell,Configurable{
     func configure(with product: ProductInBasket) {
         self.product = product
 
-        productImage.image = UIImage(named: "") // Todo get Image
         productName.text = product.name!
         quantity.text = Int(stepper.value).description
         productImage.kf.setImage(

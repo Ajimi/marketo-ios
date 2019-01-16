@@ -13,7 +13,7 @@ private let statByMarketProductPriceReuseIdentifier = "statByMarketProductPriceR
 private let statByMarketProductPriceHeaderReuseIdentifier = "statByMarketProductPriceHeaderReuseIdentifier"
 
 
-class StatsByMarketCell: FoldingCell {
+class StatsByMarketTableViewCell: FoldingCell {
     
     var market : ProductStatisticsByMarket?
     
@@ -66,7 +66,7 @@ class StatsByMarketCell: FoldingCell {
 
 }
 
-extension StatsByMarketCell: UITableViewDataSource{
+extension StatsByMarketTableViewCell: UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
