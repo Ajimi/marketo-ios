@@ -18,6 +18,7 @@ enum ProductRouter : APIConfiguration {
     case getByMark(markId: String)
     case getByTypeAndMark(typeId: String,markId: String)
     case get(id : Int)
+    case getSimilair(id : Int)
     
     
     // MARK: - HTTPMethod
@@ -36,6 +37,8 @@ enum ProductRouter : APIConfiguration {
         case .getByMark:
             return .get
         case .getByTypeAndMark:
+            return .get
+        case .getSimilair:
             return .get
         }
     }
@@ -57,6 +60,9 @@ enum ProductRouter : APIConfiguration {
             return "/products"
         case .getByTypeAndMark:
             return "/products"
+        
+        case .getSimilair:
+            return "/products"
         }
     }
     
@@ -77,6 +83,8 @@ enum ProductRouter : APIConfiguration {
             return ["markId" : markId]
         case .getByTypeAndMark(let typeId,let markId):
             return ["typeId" : typeId,"markId" : markId]
+        case .getSimilair(let id):
+            return ["typeId" : id]
         }
     }
     

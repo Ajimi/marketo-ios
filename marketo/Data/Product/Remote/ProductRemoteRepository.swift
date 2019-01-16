@@ -31,7 +31,11 @@ extension ProductRemoteRepository{
     func get(id : Int,completion:@escaping (Result<Product>)->Void) {
         performRequest(route : ProductRouter.get(id : id), completion:completion)
     }
-    
+
+    func getSimilair(id : Int,completion:@escaping (Result<Products>)->Void) {
+        performRequest(route : ProductRouter.getSimilair(id : id), completion:completion)
+    }
+
     func getTrending(completion:@escaping (Result<Products>)->Void) {
         performRequest(route: ProductRouter.getFeatured(), completion: completion)
     }

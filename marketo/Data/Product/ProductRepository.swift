@@ -39,6 +39,10 @@ extension ProductRepository {
         remoteRepository.getTrending(completion: completion)
     }
     
+    func getSimilair(id: Int, completion:@escaping (Result<Products>)->Void) {
+        remoteRepository.getSimilair(id: id, completion: completion)
+    }
+    
     
     func getDiscounted(completion:@escaping (Result<Products>)->Void) {
         remoteRepository.getDiscounted(completion: completion)
