@@ -26,8 +26,10 @@ class LoginViewModel: NSObject {
             switch result{
             case .success(let accessToken):
                 print(accessToken)
-                self.emitUiState(showProgress: false,showSuccess: Event(with: "Connected"))
+                print("hihihiii")
+                self.emitUiState(showSuccess: Event(with: "Connected"))
             case .failure(let error):
+                print("Error")
                 self.emitUiState(showError: Event(with: error.localizedDescription))
             }
         }

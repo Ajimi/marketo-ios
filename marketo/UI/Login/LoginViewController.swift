@@ -43,8 +43,12 @@ class LoginViewController: UIViewController,GIDSignInUIDelegate  {
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let successMessage = showSucces.consume() {
                 DispatchQueue.main.async {
                     alert.dismiss(animated: true, completion: {
+                        print("Heeeeeeeeeeeeeeeeeeeee")
                         self.navigationController?.popToRootViewController(animated: true)
                     })
+                    alert.dismiss(animated: true, completion: nil)
+                    self.navigationController?.popToRootViewController(animated: true)
+                    
                 }
             }
         })
