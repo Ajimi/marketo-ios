@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import PKHUD
 
 let favoriteProdCell = "favoriteProductCell"
 typealias FavoriteProducts =  [FavoriteProduct]
@@ -27,6 +28,9 @@ class FavoriteViewController: UIViewController,UICollectionViewDelegate,UICollec
         
         favoriteProductsCollecionView.delegate = self
         favoriteProductsCollecionView.dataSource = self
+        
+        HUD.dimsBackground = false
+        HUD.allowsInteraction = false
         viewModel.updateUI()
         favoriteProductsState()
         deleteFavoriteProductState()
@@ -78,6 +82,9 @@ class FavoriteViewController: UIViewController,UICollectionViewDelegate,UICollec
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let indexPath = showSucces.consume() {
                 DispatchQueue.main.async {
                     self.favoriteProductsCollecionView.deleteItems(at: [indexPath])
+                    PKHUD.sharedHUD.show()
+                    PKHUD.sharedHUD.contentView = PKHUDSuccessView(title: "Deleted!", subtitle: nil)
+                    PKHUD.sharedHUD.hide(afterDelay: 2.0)
                     self.updateEmptyState()
                 }
             }

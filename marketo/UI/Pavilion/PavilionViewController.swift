@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 private let pavilionReuseIdentifier = "PavilionCell"
 private let navigateToCategorySegueIdentifier = "navigateToCategories"
@@ -21,10 +22,16 @@ class PavilionViewController: UIViewController {
         super.viewDidLoad()
         viewModel.updateUI()
         
+        HUD.dimsBackground = false
+        HUD.allowsInteraction = false
+        
+        
         // Pavilion
         viewModel.uiPavilionsState.bindAndFire(listener: { (uiModel) in
             if (uiModel.showProgress) {
-                print("In progress")
+                HUD.show(.progress)
+            } else {
+                HUD.flash(.success, delay: 1.0)
             }
             if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
                 print("there Was an error \(errorMessage)")
@@ -73,3 +80,4 @@ extension PavilionViewController: UICollectionViewDataSource,UICollectionViewDel
     }
     
 }
+

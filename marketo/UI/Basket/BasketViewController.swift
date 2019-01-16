@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 private let numberOfBasketProductReuseIdentifier = "numberOfBasketProductsCell"
 private let basketProductReuseIdentifier = "basketProductCell"
@@ -26,7 +27,9 @@ class BasketViewController: UITableViewController, BasketProducTableViewCellDele
         
         basketTableView.dataSource = self
         basketTableView.delegate = self
-        
+        	
+        HUD.dimsBackground = false
+        HUD.allowsInteraction = false
         viewModel.updateUI()
         basketProductsState()
         deleteProductState()
@@ -80,6 +83,10 @@ class BasketViewController: UITableViewController, BasketProducTableViewCellDele
                         self.basketTableView.deleteRows(at: [indexPath], with: .fade)
                     }
                     self.basketTableView.reloadRows(at: [self.firstRowIndexPath], with: .fade)
+                    
+                    PKHUD.sharedHUD.show()
+                    PKHUD.sharedHUD.contentView = PKHUDSuccessView(title: "Deleted!", subtitle: nil)
+                    PKHUD.sharedHUD.hide(afterDelay: 2.0)
                 }
             }
         }

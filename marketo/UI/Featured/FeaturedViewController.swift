@@ -40,7 +40,7 @@ class FeaturedViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         viewModel.updateUI()
-        	
+        
         // Trending PRODUCTS
         viewModel.uiTrendingState.bindAndFire(listener: { (uiModel) in
             if (uiModel.showProgress) {
