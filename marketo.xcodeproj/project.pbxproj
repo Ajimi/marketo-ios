@@ -65,6 +65,8 @@
 		84B3310521EF6434007E1646 /* RemoveProductFromFavoriteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3310421EF6434007E1646 /* RemoveProductFromFavoriteUseCase.swift */; };
 		84B3310721EF6958007E1646 /* RemoveProductFromBasketUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3310621EF6958007E1646 /* RemoveProductFromBasketUseCase.swift */; };
 		84B3310921EF7035007E1646 /* IsBasketUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3310821EF7035007E1646 /* IsBasketUseCase.swift */; };
+		84B3310C21EF82A3007E1646 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3310B21EF82A3007E1646 /* MoreViewController.swift */; };
+		84B3310E21EF82E8007E1646 /* MoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3310D21EF82E8007E1646 /* MoreViewModel.swift */; };
 		84F7C91B21BDB6000053DB1F /* FavoriteEmptyState.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F7C91A21BDB6000053DB1F /* FavoriteEmptyState.xib */; };
 		84F7C91D21BDB6610053DB1F /* UIViewFavoriteEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7C91C21BDB6610053DB1F /* UIViewFavoriteEmptyState.swift */; };
 		87041AA72198144300312FBF /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AA62198144300312FBF /* UserRepository.swift */; };
@@ -237,6 +239,8 @@
 		84B3310421EF6434007E1646 /* RemoveProductFromFavoriteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveProductFromFavoriteUseCase.swift; sourceTree = "<group>"; };
 		84B3310621EF6958007E1646 /* RemoveProductFromBasketUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveProductFromBasketUseCase.swift; sourceTree = "<group>"; };
 		84B3310821EF7035007E1646 /* IsBasketUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsBasketUseCase.swift; sourceTree = "<group>"; };
+		84B3310B21EF82A3007E1646 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		84B3310D21EF82E8007E1646 /* MoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewModel.swift; sourceTree = "<group>"; };
 		84F7C91A21BDB6000053DB1F /* FavoriteEmptyState.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteEmptyState.xib; sourceTree = "<group>"; };
 		84F7C91C21BDB6610053DB1F /* UIViewFavoriteEmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewFavoriteEmptyState.swift; sourceTree = "<group>"; };
 		87041AA62198144300312FBF /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
@@ -607,6 +611,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		84B3310A21EF824A007E1646 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				84B3310B21EF82A3007E1646 /* MoreViewController.swift */,
+				84B3310D21EF82E8007E1646 /* MoreViewModel.swift */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
 		87041AA42198136100312FBF /* Remote */ = {
 			isa = PBXGroup;
 			children = (
@@ -654,6 +667,7 @@
 		8717BADF2198663E00D7F5C9 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				84B3310A21EF824A007E1646 /* More */,
 				844454B821ECAEC000DA19A3 /* Statistics */,
 				2C08161A21BE6D7E00F94FB6 /* ProductList */,
 				2C08161021BE677800F94FB6 /* Category */,
@@ -1427,6 +1441,7 @@
 				885537772197649F0007B3B5 /* User.swift in Sources */,
 				8434060021BD429200A4851D /* CheckoutTableViewCellDelegate.swift in Sources */,
 				88E998512198483900D3FE04 /* Extension.swift in Sources */,
+				84B3310C21EF82A3007E1646 /* MoreViewController.swift in Sources */,
 				88BC8F5721AB24540013D4EB /* AlertExtension.swift in Sources */,
 				2C5F9E3421AC04B200BE9E1C /* UseCase.swift in Sources */,
 				8800F03021DBC91900D5738E /* MarkRouter.swift in Sources */,
@@ -1441,6 +1456,7 @@
 				845F140821DF810100135A94 /* IsFavoriteProductUseCase.swift in Sources */,
 				8858DFD821DE0AF9003971A7 /* LoadProductsByMarkUseCase.swift in Sources */,
 				88175FB921B4286D003C76C7 /* LoginGoogleUseCase.swift in Sources */,
+				84B3310E21EF82E8007E1646 /* MoreViewModel.swift in Sources */,
 				8802E66A21BC45A1004BB179 /* LocalRepository.swift in Sources */,
 				8858DFCD21DE084E003971A7 /* LoadTypesByCategoryUseCase.swift in Sources */,
 				84B3310721EF6958007E1646 /* RemoveProductFromBasketUseCase.swift in Sources */,
