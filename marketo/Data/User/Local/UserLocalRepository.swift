@@ -19,7 +19,7 @@ class UserLocalRepository{
             guard userId != nil, username != nil else {
                 return nil
             }
-            return User(fullName: "",username: username!,password: "",email: "")
+            return User(fullName: user?.fullName ?? "",username: username!,password: "",email: user?.email ?? "", type: user?.type ?? "local")
         }
         set(value) {
             if let user = value {
