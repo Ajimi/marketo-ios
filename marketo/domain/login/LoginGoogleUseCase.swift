@@ -31,19 +31,17 @@ class LoginGoogleUseCase: NSObject,GIDSignInDelegate {
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if (error == nil) {
-            // Perform any operations on signed in user here.
-            //let userId = user.userID                  // For client-side use only!
             let idToken = user.authentication.idToken // Safe to send to the server
             //let fullName = user.profile.name
             //let givenName = user.profile.givenName
             //let familyName = user.profile.familyName
             //let email = user.profile.email
             print(idToken!)
-            self.loginRepository.loginSocialMedia(with: "google", withAccessToken: idToken!)
+            self.loginRepository.loginSocialMedia(a: User(fullName: user.profile.name, username: user.userID, password: user.userID, email: user.profile.email, type: "google"),with: "google", withAccessToken: idToken!)
             self.completion!(Result(value : {
                 return "Login Successful"
             }))
-            // ...
+            
         } else {
             self.completion!(Result(value : {
                 throw error
