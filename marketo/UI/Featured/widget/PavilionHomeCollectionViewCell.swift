@@ -17,10 +17,6 @@ class PavilionHomeCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        isSkeletonable = true
-        image.isSkeletonable = true
-        name.isSkeletonable = true
-        
     }
     
     func configure(with pavilion: Pavilion){

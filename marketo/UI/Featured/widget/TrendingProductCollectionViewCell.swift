@@ -25,10 +25,6 @@ class TrendingProductCollectionViewCell: UICollectionViewCell,Configurable {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        isSkeletonable = true
-        image.isSkeletonable = true
-        name.isSkeletonable = true
-        
     }
     
     
@@ -39,10 +35,7 @@ class TrendingProductCollectionViewCell: UICollectionViewCell,Configurable {
     func configure(with product: Product){
         self.product = product
         
-     //   isSkeletonable = true
-        name.isSkeletonable = true
-        image.isSkeletonable = true
-        
+
         name.text = product.name
         
         image.kf.setImage(

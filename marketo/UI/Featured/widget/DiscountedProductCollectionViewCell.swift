@@ -18,12 +18,6 @@ class DiscountedProductCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        isSkeletonable = true
-        image.isSkeletonable = true
-        productName.isSkeletonable = true
-        marketName.isSkeletonable = true
-        discount.isSkeletonable = true
-        
     }
     func configure(with product: Product){
         
