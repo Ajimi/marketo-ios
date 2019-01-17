@@ -10,6 +10,7 @@ import UIKit
 
 class SignInUserTableViewCell: UITableViewCell, Configurable  {
     
+    @IBOutlet weak var profileImage: UIImageView!
     weak var delegate: SignInUserTableViewCellDelegate?
     
     var content:String?

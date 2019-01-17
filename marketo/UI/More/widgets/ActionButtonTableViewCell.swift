@@ -24,7 +24,7 @@ class ActionButtonTableViewCell: UITableViewCell, Configurable {
 //        icon.image =  UIImage(named: content.image)
     }
     
-    @IBAction func didTapActionButton(_ sender: Any){
+    func didTapActionButton(){
         delegate?.didTapActionButton(self)
     }
 }

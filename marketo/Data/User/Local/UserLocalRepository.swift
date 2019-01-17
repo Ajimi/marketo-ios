@@ -14,17 +14,25 @@ class UserLocalRepository{
     
     var user:User? {
         get {
-            let userId = UserDefaults.standard.string(forKey: AuthenticationKey.keyUserId) ?? nil
+            let userId = UserDefaults.standard.integer(forKey: AuthenticationKey.keyUserId) ?? nil
             let username = UserDefaults.standard.string(forKey: AuthenticationKey.keyUserName) ?? nil
-            guard userId != nil, username != nil else {
+            let email = UserDefaults.standard.string(forKey: "email") ?? nil
+            let type = UserDefaults.standard.string(forKey: "type") ?? nil
+            guard userId != nil, username != nil, type != nil else {
+                print("nullable")
                 return nil
             }
-            return User(fullName: user?.fullName ?? "",username: username!,password: "",email: user?.email ?? "", type: user?.type ?? "local")
+            print("getting user")
+            return User(fullName: username! ,username: username!,password: "",email: email!, type: type!)
         }
         set(value) {
+            print("Sign in user")
+            print(value)
             if let user = value {
                 UserDefaults.standard.set(user.id ,forKey: AuthenticationKey.keyUserId)
                 UserDefaults.standard.set(user.username ,forKey: AuthenticationKey.keyUserName)
+                UserDefaults.standard.set(user.email ?? "",forKey: "email")
+                UserDefaults.standard.set(user.type ?? "local",forKey: "type")
             }
         }
     }
@@ -43,6 +51,9 @@ extension UserLocalRepository{
         authTokenRepository.clearData()
         UserDefaults.standard.removeObject(forKey: AuthenticationKey.keyUserId)
         UserDefaults.standard.removeObject(forKey: AuthenticationKey.keyUserName)
+        UserDefaults.standard.removeObject(forKey: "email")
+        UserDefaults.standard.removeObject(forKey: "type")
+        
     }
     
     func isLoggedIn() -> Bool{

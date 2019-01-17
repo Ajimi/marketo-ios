@@ -30,6 +30,7 @@ class UserRemoteRepository{
 extension UserRemoteRepository{
     
     func login(a user: User, completion:@escaping (Result<AccessToken>)->Void)  {
+        //  TODO get user details
         self.login(username: user.username!, password: user.password! , completion: completion)
     }
     

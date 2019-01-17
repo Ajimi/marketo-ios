@@ -25,7 +25,7 @@ class UserNameTableViewCell: UITableViewCell, Configurable{
         
     }
     
-    @IBAction func didTapUsername(_ sender: Any){
+    func didTapUsername(){
         delegate?.didTapUserName(self)
     }
 }

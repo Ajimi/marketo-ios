@@ -35,8 +35,10 @@ class MoreViewModel: ViewModel {
         uiUserState.value = emitUiState(showProgress:true)
         if let user = loggedInUserUseCase.execute(){
             self.user = user
+            print("online")
             uiUserState.value = emitUiState(showSuccess: Event(with: user))
         } else {
+            print("Offline ")
             uiUserState.value = emitUiState(showError: Event(with: "User offline"))
         }
     }

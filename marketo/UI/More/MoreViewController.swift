@@ -84,7 +84,11 @@ class MoreViewController: UIViewController {
                 return
             }
             if !event.consumed, let _ = event.consume() {
-                self.performSegue(withIdentifier: "navigateToSignIn", sender: nil)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                if let vc = storyboard.instantiateViewController(withIdentifier: "SignInView") as? LoginViewController {
+                    self.present(vc, animated: true, completion: nil)
+                }
+                //self.performSegue(withIdentifier: "navigateToSignIn", sender: nil)
             }
         }
         
@@ -93,7 +97,11 @@ class MoreViewController: UIViewController {
                 return
             }
             if !event.consumed, let _ = event.consume() {
-                self.performSegue(withIdentifier: "navigateToFavorite", sender: nil)
+                let storyboard = UIStoryboard(name: "CommandStoryboard", bundle: nil)
+                if let vc = storyboard.instantiateViewController(withIdentifier: "FavoriteView") as? FavoriteViewController {
+                    self.present(vc, animated: true, completion: nil)
+                }
+                //                self.performSegue(withIdentifier: "navigateToFavorite", sender: nil)
             }
         }
         
@@ -112,7 +120,11 @@ class MoreViewController: UIViewController {
             }
             if !event.consumed, let _ = event.consume() {
                 self.disconnect()
-                self.performSegue(withIdentifier: "navigateToHome", sender:nil)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                if let vc = storyboard.instantiateViewController(withIdentifier: "HomeView") as? HomeViewController {
+                    self.present(vc, animated: true, completion: nil)
+                }
+                //self.performSegue(withIdentifier: "navigateToHome", sender:nil)
             }
         }
         
@@ -173,6 +185,7 @@ extension MoreViewController: UITableViewDelegate , UITableViewDataSource {
                 let content = MoreCellDetail(image: user?.id?.description ?? "", label: user?.username ?? " " , type:.username )
                 
                 cell.configure(with: content)
+                return cell
             } else {
                 let cell = moreTableView.dequeueReusableCell(withIdentifier: signInUserCell, for: indexPath) as! SignInUserTableViewCell
                 cell.delegate = self
@@ -188,24 +201,42 @@ extension MoreViewController: UITableViewDelegate , UITableViewDataSource {
         cell.delegate = self
         return cell
     }
-}
-
-extension MoreViewController: SignInUserTableViewCellDelegate, UserNameTableViewDelegate, ActionButtonTableViewCellDelegate {
-    func didTapSignIn(_ sender: SignInUserTableViewCell) {
-        // performSegue
-        viewModel.checkTapAction(with: CellType.signin)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) else {
+            return
+        }
         
-    }
-    
-    func didTapUserName(_ sender: UserNameTableViewCell) {
-        viewModel.checkTapAction(with: CellType.username)
-    }
-    
-    func didTapActionButton(_ sender: ActionButtonTableViewCell) {
-        if let detail = sender.cellDetail {
-                viewModel.checkTapAction(with: detail.type)
+        if cell.isKind(of: ActionButtonTableViewCell.self) {
+            if let actionCell = cell as? ActionButtonTableViewCell {
+                actionCell.didTapActionButton() // This will call the delegate
+            }
+            return
+        }
+        
+        if cell.isKind(of: UserNameTableViewCell.self){
+            if let actionCell = cell as? UserNameTableViewCell {
+                actionCell.didTapUsername()
+            }
+            return
         }
     }
 }
 
-
+extension MoreViewController: SignInUserTableViewCellDelegate, UserNameTableViewDelegate, ActionButtonTableViewCellDelegate {
+    func didTapSignIn(_ sender: SignInUserTableViewCell) {
+        viewModel.checkTapAction(with: CellType.signin)
+        print(CellType.signin)
+    }
+    
+    func didTapUserName(_ sender: UserNameTableViewCell) {
+        viewModel.checkTapAction(with: CellType.username)
+        print(CellType.username)
+    }
+    
+    func didTapActionButton(_ sender: ActionButtonTableViewCell) {
+        if let detail = sender.cellDetail {
+            viewModel.checkTapAction(with: detail.type)
+            print(detail.type)	
+        }
+    }
+}
