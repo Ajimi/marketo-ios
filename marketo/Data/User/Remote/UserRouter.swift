@@ -61,7 +61,14 @@ enum UserRouter: APIConfiguration {
                      APIUserParameterKey.username: user.username as! String,
                      APIUserParameterKey.type: user.type as! String]
         case .modifyPassword(let id, let user, let token):
+            /*print(user.password)
+            if let password = user.password {
+                return [APIUserParameterKey.password : password]
+                
+            }*/
             return [APIUserParameterKey.password : user.password]
+    
+            
         }
     }
     

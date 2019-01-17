@@ -42,11 +42,10 @@ class UserRepository {
                         //print(accesst)
                         self.localRepository.login(a: currentUser, withAccessToken: accessToken.accessToken)
                         completion(result)
-                        print("success")
+
 
                     case .failure(let error):
-                        print("error")
-                        print(error)
+                        // TODO Throw Error
                         completion(result)
                     }
                 })
@@ -101,7 +100,8 @@ class UserRepository {
         return localRepository.user
     }
     
-    func modifyPassword(password: String, id: Int){
+    func modifyPassword(password: String, id: Int) {
+        print(password)
         remoteRepository.modifyPassword(user: PasswordChangeRequest(password: password, userId: id), token: localRepository.authTokenRepository.authToken!)
     }
 }

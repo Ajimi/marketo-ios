@@ -169,7 +169,7 @@ class MoreViewController: UIViewController {
             guard let alertController = alertController, let textField = alertController.textFields?.first else { return }
             
             // Change password print()
-            self.viewModel.changePassword(password: String(describing: textField.text))
+            self.viewModel.changePassword(password: textField.text!)
         }
         alertController.addAction(confirmAction)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)

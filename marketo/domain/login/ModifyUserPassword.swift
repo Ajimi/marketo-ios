@@ -17,7 +17,6 @@ class ModifyUserPassword {
     func execute(password: String)  {
         
         if let user = userRepository.getUser() {
-            // TODO
             userRepository.modifyPassword(password: password, id: user.id!)
         }
         

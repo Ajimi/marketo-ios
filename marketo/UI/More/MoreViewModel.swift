@@ -71,9 +71,8 @@ class MoreViewModel: ViewModel {
     
     
     func changePassword(password: String){
-        
-        print(password)
-        modifyUserPasswordUseCase.execute(password: password.trimmingCharacters(in: .whitespacesAndNewlines))
+        print(password.trimmingCharacters(in: .whitespacesAndNewlines))
+        modifyUserPasswordUseCase.execute(password:password.trimmingCharacters(in: .whitespacesAndNewlines) )
     }
     
     func logout() {
