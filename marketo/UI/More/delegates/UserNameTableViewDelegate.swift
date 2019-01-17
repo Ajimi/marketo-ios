@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol UserNameTableViewDelegate: class{
+    func didTapUserName(_ sender: UserNameTableViewCell)
+}

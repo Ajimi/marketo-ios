@@ -7,3 +7,6 @@
 //
 
 import Foundation
+protocol ActionButtonTableViewCellDelegate: class{
+    func didTapActionButton(_ sender: ActionButtonTableViewCell)
+}

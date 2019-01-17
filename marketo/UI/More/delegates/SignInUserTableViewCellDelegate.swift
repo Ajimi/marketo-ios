@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol SignInUserTableViewCellDelegate: class{
+    func didTapSignIn(_ sender: SignInUserTableViewCell)
+}
