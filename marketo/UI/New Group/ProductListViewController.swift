@@ -79,12 +79,18 @@ extension ProductListViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == navigateToProductDetailSegueIdentifier {
-            if let destinationViewController = segue.destination as? ProductDetailViewController{
+            
+            if let destinationNavigationController = segue.destination as? UINavigationController {
                 
-                let indexPath = sender as! IndexPath
-                destinationViewController.product = viewModel.products[indexPath.row]
+                if let targetController = destinationNavigationController.topViewController as? ProductDetailViewController{
+                    
+                    let indexPath = sender as! IndexPath
+                    targetController.product = viewModel.products[indexPath.row]
+                    
+                }
                 
             }
+            
         }
     }
     

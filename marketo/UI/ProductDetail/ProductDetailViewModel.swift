@@ -28,6 +28,7 @@ class ProductDetailViewModel: ViewModel {
     }
     
     func loadSimilarProduct(product : Product){
+        self.uiSimilarProductsState.value = self.emitUiState(showProgress: true)
         loadSimilarProductsUseCase.execute(product: product) { (response) in
             switch response {
             case .success(let products):
