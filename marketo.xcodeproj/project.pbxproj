@@ -633,10 +633,18 @@
 		84B3310A21EF824A007E1646 /* More */ = {
 			isa = PBXGroup;
 			children = (
+				84B3311321F08674007E1646 /* widgets */,
 				84B3310B21EF82A3007E1646 /* MoreViewController.swift */,
 				84B3310D21EF82E8007E1646 /* MoreViewModel.swift */,
 			);
 			path = More;
+			sourceTree = "<group>";
+		};
+		84B3311321F08674007E1646 /* widgets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = widgets;
 			sourceTree = "<group>";
 		};
 		87041AA42198136100312FBF /* Remote */ = {
