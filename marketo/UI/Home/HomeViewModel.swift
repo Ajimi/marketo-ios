@@ -23,7 +23,6 @@ class HomeViewModel : ViewModel {
         self.uiLogoutState.value = self.emitUiState(showProgress: true)
         let result = logoutUseCase.execute()
         self.uiLogoutState.value = self.emitUiState(showSuccess: Event(with: result))
-        
     }
     
 }

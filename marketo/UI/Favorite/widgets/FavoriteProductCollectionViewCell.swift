@@ -22,15 +22,14 @@ class FavoriteProductCollectionViewCell: UICollectionViewCell,Configurable {
     func configure(with favoriteProduct: FavoriteProduct) {
         self.favoriteProduct = favoriteProduct
         name.text = favoriteProduct.name
-        print("Product ", favoriteProduct.name!)
-        /*image.kf.setImage(
-            with: URL(string: product.image!),
+        image.kf.setImage(
+            with: URL(string: favoriteProduct.imageName!),
             placeholder: UIImage(named: "logo"),
             options: [
                 .scaleFactor(UIScreen.main.scale),
                 .transition(.fade(1)),
                 .cacheOriginalImage
-            ])*/
+            ])
     }
 
     @IBAction func didTapRemove(_ sender: Any){

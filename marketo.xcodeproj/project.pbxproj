@@ -69,6 +69,12 @@
 		84B3310E21EF82E8007E1646 /* MoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3310D21EF82E8007E1646 /* MoreViewModel.swift */; };
 		84B3311021EFA91B007E1646 /* LoadSimilairProductUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3310F21EFA91B007E1646 /* LoadSimilairProductUseCase.swift */; };
 		84B3311221EFB5B5007E1646 /* LoggedInUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3311121EFB5B5007E1646 /* LoggedInUserUseCase.swift */; };
+		84B3311521F086E7007E1646 /* SignInUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3311421F086E7007E1646 /* SignInUserTableViewCell.swift */; };
+		84B3311721F08709007E1646 /* UserNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3311621F08709007E1646 /* UserNameTableViewCell.swift */; };
+		84B3311921F0872B007E1646 /* ActionButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3311821F0872B007E1646 /* ActionButtonTableViewCell.swift */; };
+		84B3311C21F08833007E1646 /* SignInUserTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3311B21F08833007E1646 /* SignInUserTableViewCellDelegate.swift */; };
+		84B3311E21F089A6007E1646 /* UserNameTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3311D21F089A6007E1646 /* UserNameTableViewDelegate.swift */; };
+		84B3312021F08A3E007E1646 /* ActionButtonTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3311F21F08A3E007E1646 /* ActionButtonTableViewCellDelegate.swift */; };
 		84F7C91B21BDB6000053DB1F /* FavoriteEmptyState.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F7C91A21BDB6000053DB1F /* FavoriteEmptyState.xib */; };
 		84F7C91D21BDB6610053DB1F /* UIViewFavoriteEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7C91C21BDB6610053DB1F /* UIViewFavoriteEmptyState.swift */; };
 		87041AA72198144300312FBF /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87041AA62198144300312FBF /* UserRepository.swift */; };
@@ -251,6 +257,12 @@
 		84B3310D21EF82E8007E1646 /* MoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewModel.swift; sourceTree = "<group>"; };
 		84B3310F21EFA91B007E1646 /* LoadSimilairProductUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadSimilairProductUseCase.swift; sourceTree = "<group>"; };
 		84B3311121EFB5B5007E1646 /* LoggedInUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInUserUseCase.swift; sourceTree = "<group>"; };
+		84B3311421F086E7007E1646 /* SignInUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUserTableViewCell.swift; sourceTree = "<group>"; };
+		84B3311621F08709007E1646 /* UserNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameTableViewCell.swift; sourceTree = "<group>"; };
+		84B3311821F0872B007E1646 /* ActionButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonTableViewCell.swift; sourceTree = "<group>"; };
+		84B3311B21F08833007E1646 /* SignInUserTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUserTableViewCellDelegate.swift; sourceTree = "<group>"; };
+		84B3311D21F089A6007E1646 /* UserNameTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameTableViewDelegate.swift; sourceTree = "<group>"; };
+		84B3311F21F08A3E007E1646 /* ActionButtonTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		84F7C91A21BDB6000053DB1F /* FavoriteEmptyState.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteEmptyState.xib; sourceTree = "<group>"; };
 		84F7C91C21BDB6610053DB1F /* UIViewFavoriteEmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewFavoriteEmptyState.swift; sourceTree = "<group>"; };
 		87041AA62198144300312FBF /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
@@ -633,6 +645,7 @@
 		84B3310A21EF824A007E1646 /* More */ = {
 			isa = PBXGroup;
 			children = (
+				84B3311A21F08755007E1646 /* delegates */,
 				84B3311321F08674007E1646 /* widgets */,
 				84B3310B21EF82A3007E1646 /* MoreViewController.swift */,
 				84B3310D21EF82E8007E1646 /* MoreViewModel.swift */,
@@ -643,8 +656,21 @@
 		84B3311321F08674007E1646 /* widgets */ = {
 			isa = PBXGroup;
 			children = (
+				84B3311421F086E7007E1646 /* SignInUserTableViewCell.swift */,
+				84B3311621F08709007E1646 /* UserNameTableViewCell.swift */,
+				84B3311821F0872B007E1646 /* ActionButtonTableViewCell.swift */,
 			);
 			path = widgets;
+			sourceTree = "<group>";
+		};
+		84B3311A21F08755007E1646 /* delegates */ = {
+			isa = PBXGroup;
+			children = (
+				84B3311B21F08833007E1646 /* SignInUserTableViewCellDelegate.swift */,
+				84B3311D21F089A6007E1646 /* UserNameTableViewDelegate.swift */,
+				84B3311F21F08A3E007E1646 /* ActionButtonTableViewCellDelegate.swift */,
+			);
+			path = delegates;
 			sourceTree = "<group>";
 		};
 		87041AA42198136100312FBF /* Remote */ = {
@@ -1440,11 +1466,13 @@
 				8800F03821DBCB3600D5738E /* TypeLocalRepositry.swift in Sources */,
 				88B582A621DBBF0300F8E108 /* Category.swift in Sources */,
 				843405EA21BC789A00A4851D /* FavoriteViewModel.swift in Sources */,
+				84B3311721F08709007E1646 /* UserNameTableViewCell.swift in Sources */,
 				844F7F8021EC8BAB00FE1309 /* ProductStatisticsByPrice.swift in Sources */,
 				88B582B121DBC08100F8E108 /* TypeRepository.swift in Sources */,
 				2C038F5221B15DF200B84B0E /* SaveProductToBaskeUseCase.swift in Sources */,
 				8802E66321BC41BA004BB179 /* ProductInBasket+CoreDataClass.swift in Sources */,
 				87FF639221977B22008EE969 /* UserRouter.swift in Sources */,
+				84B3311921F0872B007E1646 /* ActionButtonTableViewCell.swift in Sources */,
 				885B105D21EE90E200A5BBDE /* StatByMarketProductPricesTableViewCell.swift in Sources */,
 				843405FB21BD2E2600A4851D /* BasketProducTableViewCellDelegate.swift in Sources */,
 				2C038F4E21B15DB100B84B0E /* LoadTrendingProductUseCase.swift in Sources */,
@@ -1455,6 +1483,7 @@
 				8858DFCB21DE082E003971A7 /* LoadTypesUseCase.swift in Sources */,
 				888156AC21EE2F4E0055D92F /* MarketStatsTableViewController.swift in Sources */,
 				87FF639421977C44008EE969 /* UserRemoteRepository.swift in Sources */,
+				84B3312021F08A3E007E1646 /* ActionButtonTableViewCellDelegate.swift in Sources */,
 				2C038F4C21B15D7F00B84B0E /* LoadProductUseCase.swift in Sources */,
 				888156A821EE233A0055D92F /* StatsByMarketTableViewCell.swift in Sources */,
 				844454C121ECD11400DA19A3 /* DemoTableViewController.swift in Sources */,
@@ -1478,6 +1507,7 @@
 				87FECD9921AABC5C00805944 /* Dynamic.swift in Sources */,
 				84B3310521EF6434007E1646 /* RemoveProductFromFavoriteUseCase.swift in Sources */,
 				88C7A44A21B2A933005BDF16 /* PavilionCollectionViewCell.swift in Sources */,
+				84B3311521F086E7007E1646 /* SignInUserTableViewCell.swift in Sources */,
 				2C08161521BE692A00F94FB6 /* MarkTableViewCell.swift in Sources */,
 				843405F421BD11BD00A4851D /* LoadFavoriteProductUseCase.swift in Sources */,
 				2C038F6421B191D800B84B0E /* CategoryRemoteRepository.swift in Sources */,
@@ -1507,6 +1537,7 @@
 				8855D7A221B3144000B5F0E8 /* PavilionRemoteRepository.swift in Sources */,
 				88B582AA21DBBF2A00F8E108 /* Market.swift in Sources */,
 				845F140821DF810100135A94 /* IsFavoriteProductUseCase.swift in Sources */,
+				84B3311C21F08833007E1646 /* SignInUserTableViewCellDelegate.swift in Sources */,
 				8858DFD821DE0AF9003971A7 /* LoadProductsByMarkUseCase.swift in Sources */,
 				88175FB921B4286D003C76C7 /* LoginGoogleUseCase.swift in Sources */,
 				84B3310E21EF82E8007E1646 /* MoreViewModel.swift in Sources */,
@@ -1514,6 +1545,7 @@
 				8858DFCD21DE084E003971A7 /* LoadTypesByCategoryUseCase.swift in Sources */,
 				84B3310721EF6958007E1646 /* RemoveProductFromBasketUseCase.swift in Sources */,
 				2C038F4821B15CBE00B84B0E /* FeaturedViewModel.swift in Sources */,
+				84B3311E21F089A6007E1646 /* UserNameTableViewDelegate.swift in Sources */,
 				8800F02821DBC8BB00D5738E /* MarkRemoteRepository.swift in Sources */,
 				2C038F7421B1948600B84B0E /* BasketRepository.swift in Sources */,
 				87041AB321982F2600312FBF /* UserLocalRepository.swift in Sources */,
