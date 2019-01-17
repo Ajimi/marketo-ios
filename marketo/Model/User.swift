@@ -26,6 +26,15 @@ struct User: Codable {
         self.type = type
     }
     
+    init(fullName : String? = "", username : String? = "",password : String? = "", email:String? = "",type : String? = "", id: Int = 9) {
+        self.fullName = fullName
+        self.username = username
+        self.password = password
+        self.email = email
+        self.type = type
+        self.id = id
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id
         case email, createdAt, updatedAt

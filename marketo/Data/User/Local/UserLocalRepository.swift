@@ -22,8 +22,10 @@ class UserLocalRepository{
                 print("nullable")
                 return nil
             }
+            
             print("getting user")
-            return User(fullName: username! ,username: username!,password: "",email: email!, type: type!)
+            
+            return User(fullName: username! ,username: username!,password: "",email: email!, type: type!, id: userId!)
         }
         set(value) {
             print("Sign in user")

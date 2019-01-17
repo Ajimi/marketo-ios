@@ -30,11 +30,21 @@ class UserRemoteRepository{
 extension UserRemoteRepository{
     
     func login(a user: User, completion:@escaping (Result<AccessToken>)->Void)  {
-        //  TODO get user details
         self.login(username: user.username!, password: user.password! , completion: completion)
+    }
+    
+    func readUser(id:Int, token:String, completion:@escaping (Result<User>)->Void) {
+        performRequest(route: UserRouter.readUser(id: id, token:token), completion: completion)
     }
     
     func register(a user: User, completion:@escaping (Result<User>)->Void)  {
         performRequest(route: UserRouter.createUser(user: user), completion: completion)
+    }
+    func modifyPassword(user: PasswordChangeRequest, token: String) {
+        performRequest(route: UserRouter.modifyPassword(id: user.userId, user: user, token: token), completion: checkResponse)
+    }
+    
+    func checkResponse(result : Result<User>) -> Void {
+        print("Result")
     }
 }
