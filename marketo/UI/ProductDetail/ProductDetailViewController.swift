@@ -78,13 +78,13 @@ class ProductDetailViewController: UIViewController {
     
     @IBAction func addToFavorite(_ sender: Any) {
         
-        // viewModel.toggleTrendingProductFavorite(at: tappedIndexPath)
+        viewModel.toggleProductFavorite()
 
     }
     
     @IBAction func addToBasket(_ sender: Any) {
         
-        //viewModel.toggleTrendingProductBasket
+        viewModel.toggleProductBasket()
 
         
     }
