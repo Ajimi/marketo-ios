@@ -19,7 +19,7 @@ class StatByPriceMarketPriceTableViewCell: UITableViewCell {
         if let dis = unit.discount{
             marketName.textColor = UIColor.green
             unitPrice.textColor = UIColor.green
-            total.textColor = UIColor.green
+            totol.textColor = UIColor.green
             marketName.text = (price.market?.text)! + " " + dis.percentage
         }else{
             marketName.text = price.market?.text
