@@ -21,7 +21,7 @@ class ActionButtonTableViewCell: UITableViewCell, Configurable {
     func configure(with content: MoreCellDetail) {
         self.cellDetail = content
         label.text = content.label
-//        icon.image =  UIImage(named: content.image)
+        icon.image = UIImage(named: content.image)
     }
     
     func didTapActionButton(){

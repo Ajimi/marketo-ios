@@ -21,8 +21,7 @@ class UserNameTableViewCell: UITableViewCell, Configurable{
     func configure(with content: MoreCellDetail ) {
         self.profileDetail = content
         userName.text = content.label
-        // TODO load user Profile
-        
+        profileImage.image = UIImage(named: "user_male")
     }
     
     func didTapUsername(){

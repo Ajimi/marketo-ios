@@ -16,7 +16,14 @@ class StatByMarketProductPricesTableViewCell: UITableViewCell {
     @IBOutlet weak var quantity: UILabel!
     
     func configure(priceParam : Price , unitPriceParam : Price){
-        marketName.text = priceParam.product!.name
+        if let dis = unitPriceParam.discount{
+            marketName.textColor = UIColor.green
+            unitPrice.textColor = UIColor.green
+            price.textColor = UIColor.green
+            marketName.text = priceParam.product!.name + " " + dis.percentage
+        }else{
+            marketName.text = priceParam.product!.name
+        }
         unitPrice.text = "$ " + unitPriceParam.value.description
         price.text = "$ " + priceParam.value.description
         quantity.text = priceParam.quantity?.description

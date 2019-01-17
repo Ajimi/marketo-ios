@@ -17,7 +17,7 @@ class SignInUserTableViewCell: UITableViewCell, Configurable  {
     
     func configure(with content: String) {
         self.content = content
-        
+        profileImage.image = UIImage(named: "user_male")
     }
     
     @IBAction func didTapSignIn(_ sender: Any){

@@ -16,7 +16,14 @@ class StatByPriceMarketPriceTableViewCell: UITableViewCell {
     @IBOutlet weak var diff: UILabel!
     
     func configure(price : Price, unit : Price , worst : Int) {
-        marketName.text = price.market?.text
+        if let dis = unit.discount{
+            marketName.textColor = UIColor.green
+            unitPrice.textColor = UIColor.green
+            total.textColor = UIColor.green
+            marketName.text = (price.market?.text)! + " " + dis.percentage
+        }else{
+            marketName.text = price.market?.text
+        }
         unitPrice.text = "$ " + unit.value.description
         totol.text = "$ " + price.value.description
         diff.text = "$ " + (worst - price.value).description
@@ -34,3 +41,5 @@ class StatByPriceMarketPriceTableViewCell: UITableViewCell {
     }
 
 }
+
+

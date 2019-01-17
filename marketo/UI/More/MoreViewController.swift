@@ -33,10 +33,10 @@ private let usernameButtonCell = "usernameButtonCell"
 
 
 private let tableData = [
-    MoreCellDetail(image: "favorite", label: "My Favorite Products",type:  .favorite),
-    MoreCellDetail(image: "favorite", label: "Give us feedback", type: .feedback),
-    MoreCellDetail(image: "favorite", label: "Change password", type: .password),
-    MoreCellDetail(image: "favorite", label: "Disconnect", type: .disconnect),
+    MoreCellDetail(image: "shopping_cart", label: "My Basket",type:  .favorite),
+    MoreCellDetail(image: "thumbs_up", label: "Give us feedback", type: .feedback),
+    MoreCellDetail(image: "pencil", label: "Change password", type: .password),
+    MoreCellDetail(image: "lock", label: "Disconnect", type: .disconnect),
 ]
 
 class MoreViewController: UIViewController {
@@ -230,6 +230,18 @@ extension MoreViewController: UITableViewDelegate , UITableViewDataSource {
             }
             return
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            if isUserLoggedIn {
+                return 189
+            } else {
+                return 136
+            }
+        }
+        
+        return 67
     }
 }
 
