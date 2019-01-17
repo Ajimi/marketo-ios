@@ -8,12 +8,15 @@
 
 import UIKit
 import PKHUD
+import Alamofire
 
 private let numberOfBasketProductReuseIdentifier = "numberOfBasketProductsCell"
 private let basketProductReuseIdentifier = "basketProductCell"
 private let checkoutButtonReuseIdentifier = "checkoutButtonCell"
 
 private let navigateToStatisticsSegueIdentifier = "showStatistics"
+private let navigateToProductDetailSegueIdentifier = "navigateToProductDetail"
+
 
 class BasketViewController: UITableViewController, BasketProducTableViewCellDelegate , CheckoutTableViewCellDelegate{
     @IBOutlet weak var basketTableView : UITableView!
@@ -149,6 +152,25 @@ extension BasketViewController{
             cell.delegate = self
             
             return cell
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row != 0 && indexPath.row != viewModel.products.count + 1 {
+            performSegue(withIdentifier: navigateToProductDetailSegueIdentifier, sender: indexPath)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == navigateToProductDetailSegueIdentifier{
+            if let destinationNavigationController = segue.destination as? UINavigationController {
+                
+                if let targetController = destinationNavigationController.topViewController as? ProductDetailViewController{
+                    let indexPath = sender as! IndexPath
+                    targetController.productId = Int(viewModel.products[indexPath.row-1].productId)
+                }
+            }
         }
     }
     

@@ -9,8 +9,11 @@
 import UIKit
 import CoreData
 import PKHUD
+import Alamofire
 
-let favoriteProdCell = "favoriteProductCell"
+private let favoriteProdCell = "favoriteProductCell"
+private let navigateToProductDetailSegueIdentifier = "navigateToProductDetail"
+
 typealias FavoriteProducts =  [FavoriteProduct]
 
 
@@ -112,6 +115,26 @@ extension FavoriteViewController {
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: navigateToProductDetailSegueIdentifier, sender: indexPath)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == navigateToProductDetailSegueIdentifier{
+            if let destinationNavigationController = segue.destination as? UINavigationController {
+                
+                if let targetController = destinationNavigationController.topViewController as? ProductDetailViewController{
+                    let indexPath = sender as! IndexPath
+                    targetController.productId = Int(viewModel.favoriteProducts[indexPath.row].id)
+                }
+            }
+        }
+    }
+    
 }
 
 

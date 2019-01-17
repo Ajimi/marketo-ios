@@ -18,6 +18,8 @@ private let productHomeDiscountedReuseIdentifier = "ProductDiscountedHomeCell"
 
 private let navigateToCategorySegueIdentifier = "navigateToCategory"
 
+private let navigateToProductDetailSegueIdentifier = "navigateToProductDetail"
+
 
 class FeaturedViewController: UIViewController {
     
@@ -28,7 +30,7 @@ class FeaturedViewController: UIViewController {
     
     @IBOutlet weak var discountedProductCollectionView: UICollectionView!
     
-  
+    var selectedCollectionView : UICollectionView?
     let viewModel = FeaturedViewModel()
     
     override func viewDidLoad() {
@@ -173,10 +175,12 @@ extension FeaturedViewController:UICollectionViewDataSource,UICollectionViewDele
             print("1")
             performSegue(withIdentifier: navigateToCategorySegueIdentifier, sender: indexPath)
         case self.trendingProductCollectionView:
-            print("2")
+            selectedCollectionView = collectionView
+            performSegue(withIdentifier: navigateToProductDetailSegueIdentifier, sender: indexPath)
             return
         case self.discountedProductCollectionView:
-            print("3")
+            selectedCollectionView = collectionView
+            performSegue(withIdentifier: navigateToProductDetailSegueIdentifier, sender: indexPath)
             return
         default:
             print("all")
@@ -200,6 +204,21 @@ extension FeaturedViewController:UICollectionViewDataSource,UICollectionViewDele
             if let destinationViewController = segue.destination as? CategoryViewController{
                 let indexPath = sender as! IndexPath
                 destinationViewController.pavilion = viewModel.pavilions[indexPath.item]
+            }
+        }
+        if segue.identifier == navigateToProductDetailSegueIdentifier{
+            if let destinationNavigationController = segue.destination as? UINavigationController {
+                
+                if let targetController = destinationNavigationController.topViewController as? ProductDetailViewController{
+                let indexPath = sender as! IndexPath
+                if let collection = selectedCollectionView {
+                    if collection == trendingProductCollectionView{
+                        targetController.product = viewModel.trendingProducts[indexPath.item]
+                    }else{
+                        targetController.product = viewModel.discountedProducts[indexPath.item]
+                    }
+                }
+                }
             }
         }
     }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class FavoriteViewModel: ViewModel {
     let deleteProductFromFavoriteUseCase = DeleteProductFromFavoriteUseCase()
@@ -27,6 +28,8 @@ class FavoriteViewModel: ViewModel {
     func updateUI() {
         loadFavoriteProducts()
     }
+    
+
     
     func loadFavoriteProducts() {
         loadFavoriteProductUseCase.execute { (response) in

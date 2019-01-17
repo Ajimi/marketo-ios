@@ -31,6 +31,11 @@ class ProductDetailViewController: UIViewController {
         }
     }
 
+    var productId : Int? {
+        didSet{
+            viewModel.loadProduct(id: productId!)
+        }
+    }
     
     
     override func viewDidLoad() {
@@ -58,6 +63,26 @@ class ProductDetailViewController: UIViewController {
             }
         }
         
+        viewModel.uiProductState.bindAndFire { (uiModel) in
+            if (uiModel.showProgress){
+                HUD.show(.progress)
+            } else {
+                HUD.hide()
+            }
+            if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
+                print("there Was an error loading similar product \(errorMessage)")
+            }
+            
+            if let showSucces = uiModel.showSuccess, !showSucces.consumed, let prod = showSucces.consume() {
+                DispatchQueue.main.async {
+                    self.product = prod
+                    self.initiateView()
+                    self.pricesTableView.reloadData()
+                    self.similarProductsColectionView.reloadData()
+                }
+            }
+        }
+        
         viewModel.uiMessageState.bindAndFire(listener: { (uiModel) in
             if (uiModel.showProgress) {
             }
@@ -78,12 +103,14 @@ class ProductDetailViewController: UIViewController {
     }
     
     private func initiateView() {
-        productName.text = product?.name
-        productMarl.text = product?.mark?.name
-        productBestPrice.text = "$ " + (product?.prices?.min(by: { (price1, price2) -> Bool in
-            return price1.value < price2.value
-        })?.value.description)!
-        productDescription.text = product?.description
+        if let prod = product{
+            productName.text = prod.name
+            productMarl.text = prod.mark?.name
+            productBestPrice.text = "$ " + (prod.prices?.min(by: { (price1, price2) -> Bool in
+                return price1.value < price2.value
+            })?.value.description)!
+            productDescription.text = prod.description
+        }
     }
     
     @IBAction func dimissDetail(_ sender: Any) {

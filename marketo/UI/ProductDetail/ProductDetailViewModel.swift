@@ -11,6 +11,8 @@ import Foundation
 class ProductDetailViewModel: ViewModel {
     
     let loadSimilarProductsUseCase : LoadSimilairProductUseCase = LoadSimilairProductUseCase()
+    let loadProductUseCase : LoadProductByIdUseCase = LoadProductByIdUseCase()
+
     
     let saveProductToBasketUseCase =  SaveProductToBasketUseCase()
     let addProductToFavoriteUseCase =  AddProductToFavoriteUseCase()
@@ -18,6 +20,7 @@ class ProductDetailViewModel: ViewModel {
     let removeProductFromBasketUseCase =  RemoveProductFromBasketUseCase()
     let isFavoriteProductUseCase = IsFavoriteProductUseCase()
     let isBasketProductUseCase = IsBasketProductUseCase()
+
     
     var product : Product? {
         didSet{
@@ -25,10 +28,12 @@ class ProductDetailViewModel: ViewModel {
         }
     }
     
+    
     var similarProducts : Products = Products()
     
     
     var uiSimilarProductsState = Dynamic<UiState<Products>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
+    var uiProductState = Dynamic<UiState<Product>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
     var uiMessageState = Dynamic<UiState<String>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
     
     func updateUi(){
@@ -44,6 +49,19 @@ class ProductDetailViewModel: ViewModel {
                 self.uiSimilarProductsState.value = self.emitUiState(showSuccess: Event(with: products))
             case .failure(let error):
                 self.uiSimilarProductsState.value = self.emitUiState(showError: Event(with: error.localizedDescription))
+            }
+        }
+    }
+    
+    
+    func loadProduct(id : Int) {
+        self.uiProductState.value = self.emitUiState(showProgress: true)
+        loadProductUseCase.execute(id: id) { (response) in
+            switch response {
+            case .success(let product):
+                self.uiProductState.value = self.emitUiState(showSuccess: Event(with: product))
+            case .failure(let error):
+                self.uiProductState.value = self.emitUiState(showError: Event(with: error.localizedDescription))
             }
         }
     }
