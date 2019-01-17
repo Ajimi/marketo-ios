@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 private let productDetailPricesHeaderReuseIdentifier = "productDetailPricesHeaderReuseIdentifier"
 
@@ -27,29 +28,31 @@ class ProductDetailViewController: UIViewController {
     var product : Product?{
         didSet{
             viewModel.product = product
-            productName.text = product?.name
-            productMarl.text = product?.mark?.name
-            productBestPrice.text = product?.prices?.min(by: { (price1, price2) -> Bool in
-                return price1.value < price2.value
-            })?.value.description
-            productDescription.text = product?.description
         }
     }
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        initiateView()
         
         viewModel.updateUi()
         
         viewModel.uiSimilarProductsState.bindAndFire { (uiModel) in
             if (uiModel.showProgress){
-                print("In progress similar product")
+                print("taw")
+                HUD.show(.progress)
+            } else {
+                HUD.hide()
             }
             if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
                 print("there Was an error loading similar product \(errorMessage)")
             }
             
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let _ = showSucces.consume() {
+                print("c bon")
                 DispatchQueue.main.async {
                     self.similarProductsColectionView.reloadData()
                 }
@@ -57,10 +60,37 @@ class ProductDetailViewController: UIViewController {
         }
         
     }
+    
+    private func initiateView() {
+        productName.text = product?.name
+        productMarl.text = product?.mark?.name
+        productBestPrice.text = "$ " + (product?.prices?.min(by: { (price1, price2) -> Bool in
+            return price1.value < price2.value
+        })?.value.description)!
+        productDescription.text = product?.description
+    }
+    
+    @IBAction func dimissDetail(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func addToFavorite(_ sender: Any) {
+        
+        viewModel.toggleTrendingProductFavorite(at: tappedIndexPath)
 
+    }
+    
+    @IBAction func addToBasket(_ sender: Any) {
+        
+        viewModel.toggleTrendingProductBasket
+
+        
+    }
 }
 
-extension ProductDetailViewController: UITableViewDataSource,UICollectionViewDataSource{
+extension ProductDetailViewController: UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.similarProducts.count
     }
@@ -71,6 +101,12 @@ extension ProductDetailViewController: UITableViewDataSource,UICollectionViewDat
         cell.configure(with: viewModel.similarProducts[indexPath.row])
         
         return cell
+    }
+        
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.product = viewModel.similarProducts[indexPath.item]
+        pricesTableView.reloadData()
+        self.initiateView()
     }
     
     
