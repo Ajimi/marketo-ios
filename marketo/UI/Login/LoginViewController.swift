@@ -44,10 +44,10 @@ class LoginViewController: UIViewController,GIDSignInUIDelegate  {
                 DispatchQueue.main.async {
                     alert.dismiss(animated: true, completion: {
                         print("Heeeeeeeeeeeeeeeeeeeee")
-                        self.navigationController?.popToRootViewController(animated: true)
+                        self.navigationController?.popViewController(animated: true)
                     })
                     alert.dismiss(animated: true, completion: nil)
-                    self.navigationController?.popToRootViewController(animated: true)
+                    self.navigationController?.popViewController(animated: true)
                     
                 }
             }

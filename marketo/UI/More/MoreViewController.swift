@@ -86,7 +86,8 @@ class MoreViewController: UIViewController {
             if !event.consumed, let _ = event.consume() {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 if let vc = storyboard.instantiateViewController(withIdentifier: "SignInView") as? LoginViewController {
-                    self.present(vc, animated: true, completion: nil)
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    
                 }
                 //self.performSegue(withIdentifier: "navigateToSignIn", sender: nil)
             }
@@ -97,10 +98,11 @@ class MoreViewController: UIViewController {
                 return
             }
             if !event.consumed, let _ = event.consume() {
-                let storyboard = UIStoryboard(name: "CommandStoryboard", bundle: nil)
-                if let vc = storyboard.instantiateViewController(withIdentifier: "FavoriteView") as? FavoriteViewController {
-                    self.present(vc, animated: true, completion: nil)
-                }
+//                let storyboard = UIStoryboard(name: "CommandStoryboard", bundle: nil)
+//                if let vc = storyboard.instantiateViewController(withIdentifier: "FavoriteView") as? FavoriteViewController {
+//                    self.present(vc, animated: true, completion: nil)
+//                }
+                self.tabBarController?.selectedIndex = 3
                 //                self.performSegue(withIdentifier: "navigateToFavorite", sender: nil)
             }
         }
@@ -160,7 +162,7 @@ class MoreViewController: UIViewController {
         let confirmAction = UIAlertAction(title: "Confirm the modification", style: .default) { [weak alertController] _ in
             guard let alertController = alertController, let textField = alertController.textFields?.first else { return }
             print("Current password \(String(describing: textField.text))")
-            // TODO check password
+            // self.viewModel.changePassword(String(describing: textField.text))
         }	
         alertController.addAction(confirmAction)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
