@@ -115,7 +115,7 @@ extension StatisticsViewController: UITableViewDataSource,UITableViewDelegate{
     fileprivate struct C {
         struct CellHeight {
             static let close: CGFloat = 116 // equal or greater foregroundView height
-            static let open: CGFloat = 254 // equal or greater containerView height
+            static let open: CGFloat = 257 // equal or greater containerView height
         }
     }
     

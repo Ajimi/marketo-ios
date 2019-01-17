@@ -22,6 +22,9 @@ class ProductListViewModel: ViewModel {
         
     }
     
+    
+    
+    
     func loadProductsByMark(mark : Mark){
         loadProductsByMarkUseCase.execute(markId: mark.id.description) { (response) in
             switch response {

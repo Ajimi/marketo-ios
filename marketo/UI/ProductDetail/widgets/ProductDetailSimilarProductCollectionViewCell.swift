@@ -1,20 +1,23 @@
 //
-//  ProductTableViewCell.swift
+//  ProductDetailSimilarProductCollectionViewCell.swift
 //  marketo
 //
-//  Created by Othmen on 12/10/18.
-//  Copyright © 2018 selim ajimi. All rights reserved.
+//  Created by Moncef Guettat on 1/16/19.
+//  Copyright © 2019 selim ajimi. All rights reserved.
 //
 
 import UIKit
 
-class ProductTableViewCell: UITableViewCell,Configurable {
+class ProductDetailSimilarProductCollectionViewCell: UICollectionViewCell,Configurable {
+    
     
     typealias DataType = Product
     
-    @IBOutlet weak var productName : UILabel!
-    @IBOutlet weak var productImage : UIImageView!
-    @IBOutlet weak var bestPrice : UILabel!
+    
+    
+    @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var productName: UILabel!
+    
     
     func configure(with content: Product) {
         productName.text = content.name
@@ -26,10 +29,6 @@ class ProductTableViewCell: UITableViewCell,Configurable {
                 .transition(.fade(1)),
                 .cacheOriginalImage
             ])
-        bestPrice.text = content.prices?.min(by: { (a, b) -> Bool in
-            a.value>b.value
-        })?.value.description ?? "no price"
     }
-
+    
 }
-

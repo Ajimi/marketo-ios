@@ -9,6 +9,7 @@
 import UIKit
 
 private let productReuseIdentifier = "productCell"
+private let navigateToProductDetailSegueIdentifier = "navigateToProductDetail"
 
 class ProductListViewController: UITableViewController {
     
@@ -67,6 +68,24 @@ extension ProductListViewController{
         cell.configure(with: viewModel.products[indexPath.row])
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: navigateToProductDetailSegueIdentifier, sender: indexPath)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == navigateToProductDetailSegueIdentifier {
+            if let destinationViewController = segue.destination as? ProductDetailViewController{
+                
+                let indexPath = sender as! IndexPath
+                destinationViewController.product = viewModel.products[indexPath.row]
+                
+            }
+        }
     }
     
 }
