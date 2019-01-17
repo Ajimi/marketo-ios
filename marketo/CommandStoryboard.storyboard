@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -302,6 +302,7 @@
                         <outlet property="pavilionsCollectionView" destination="X2h-g6-IYs" id="pBK-o8-6sB"/>
                         <outlet property="trendingProductCollectionView" destination="LtV-Rr-H8K" id="fkQ-CU-WC4"/>
                         <segue destination="EEI-TI-Uii" kind="show" identifier="navigateToCategory" id="yau-cU-6eL"/>
+                        <segue destination="RkJ-uJ-zBb" kind="presentation" identifier="navigateToProductDetail" id="S3r-1M-1e5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXN-Fx-iXi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -562,7 +563,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SYy-wo-GKX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3654" y="2091"/>
+            <point key="canvasLocation" x="2913" y="2848"/>
         </scene>
         <!--Statistics-->
         <scene sceneID="nmD-xb-EIn">
@@ -1505,7 +1506,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4a5-5K-JDr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4420" y="2095.0524737631185"/>
+            <point key="canvasLocation" x="5188" y="2109"/>
         </scene>
         <!--Products-->
         <scene sceneID="kkh-Ju-gcV">
@@ -1891,7 +1892,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xJE-vX-Viw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5188" y="2898"/>
+            <point key="canvasLocation" x="4420" y="2898"/>
         </scene>
         <!--BASKET-->
         <scene sceneID="RRW-Ci-NZN">
@@ -2052,6 +2053,7 @@
                     <connections>
                         <outlet property="basketTableView" destination="Zfz-fR-qLW" id="HiC-xR-8dM"/>
                         <segue destination="aGT-vo-0KB" kind="show" identifier="showStatistics" id="ynL-1f-J43"/>
+                        <segue destination="RkJ-uJ-zBb" kind="presentation" identifier="navigateToProductDetail" id="WCk-Wt-caY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gkr-II-iUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2159,6 +2161,7 @@
                     <connections>
                         <outlet property="emptyState" destination="nRQ-9Y-7Ax" id="cgM-43-lYz"/>
                         <outlet property="favoriteProductsCollecionView" destination="Huu-mx-zGt" id="fUt-ha-oFo"/>
+                        <segue destination="RkJ-uJ-zBb" kind="presentation" identifier="navigateToProductDetail" id="tm6-5k-7CU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Obe-Jh-Ga5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2473,7 +2476,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ws8-et-X9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4420" y="2848"/>
+            <point key="canvasLocation" x="4420" y="2196"/>
         </scene>
     </scenes>
     <resources>
@@ -2488,6 +2491,7 @@
         <image name="shopping_cart_loaded" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="S3r-1M-1e5"/>
         <segue reference="yau-cU-6eL"/>
     </inferredMetricsTieBreakers>
 </document>
