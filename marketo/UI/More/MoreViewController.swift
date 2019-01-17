@@ -53,7 +53,7 @@ class MoreViewController: UIViewController {
         super.viewDidLoad()
         moreTableView.delegate = self
         moreTableView.dataSource = self
-        viewModel.updateUI()
+        
         
         moreTableView.estimatedRowHeight = moreTableView.rowHeight
         moreTableView.rowHeight = UITableView.automaticDimension
@@ -61,13 +61,13 @@ class MoreViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         moreTableView.reloadData()
+        viewModel.updateUI()
         viewModel.uiUserState.bindAndFire { (uiModel) in
             if (uiModel.showProgress){
                 print("In progress stat")
             }
             if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
                 self.isUserLoggedIn = false
-                // TODO user is not connected
                 self.moreTableView.reloadData()
             }
             
@@ -129,10 +129,12 @@ class MoreViewController: UIViewController {
             if !event.consumed, let _ = event.consume() {
                 self.disconnect()
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                if let vc = storyboard.instantiateViewController(withIdentifier: "HomeView") as? HomeViewController {
-                    self.present(vc, animated: true, completion: nil)
-                }
                 
+                if let vc = storyboard.instantiateViewController(withIdentifier: "HomeView") as? HomeViewController {
+                    var navController = UINavigationController(rootViewController: vc)
+                    navController.navigationBar.barTintColor = self.hexStringToUIColor(hex: "#ED8E00")
+                    self.present(navController, animated: true, completion: nil)
+                }
             }
         }
         
@@ -248,4 +250,29 @@ extension MoreViewController: SignInUserTableViewCellDelegate, UserNameTableView
             print(detail.type)	
         }
     }
+    
+    func hexStringToUIColor (hex:String) -> UIColor {
+        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+        
+        if ((cString.count) != 6) {
+            return UIColor.gray
+        }
+        
+        var rgbValue:UInt32 = 0
+        Scanner(string: cString).scanHexInt32(&rgbValue)
+        
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+    
 }
+
+
