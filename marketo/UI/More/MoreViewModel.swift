@@ -13,6 +13,7 @@ class MoreViewModel: ViewModel {
     
     // Use cases
     let loggedInUserUseCase = LoggedInUserUseCase()
+    let modifyUserPasswordUseCase = ModifyUserPassword()
 
     // uiState
     var uiUserState = Dynamic<UiState<User>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
@@ -67,8 +68,15 @@ class MoreViewModel: ViewModel {
         }
     }
     
+    
+    
+    func changePassword(password: String){
+        print(password.trimmingCharacters(in: .whitespacesAndNewlines))
+        modifyUserPasswordUseCase.execute(password:password.trimmingCharacters(in: .whitespacesAndNewlines) )
+    }
+    
     func logout() {
         let logoutUseCase = LogoutUseCase()
-        let result = logoutUseCase.execute()
+        logoutUseCase.execute()
     }
 }

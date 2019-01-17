@@ -60,6 +60,7 @@ class MoreViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        moreTableView.reloadData()
         viewModel.uiUserState.bindAndFire { (uiModel) in
             if (uiModel.showProgress){
                 print("In progress stat")
@@ -86,10 +87,10 @@ class MoreViewController: UIViewController {
             if !event.consumed, let _ = event.consume() {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 if let vc = storyboard.instantiateViewController(withIdentifier: "SignInView") as? LoginViewController {
+                    vc.hidesBottomBarWhenPushed = true
                     self.navigationController?.pushViewController(vc, animated: true)
                     
                 }
-                //self.performSegue(withIdentifier: "navigateToSignIn", sender: nil)
             }
         }
         
@@ -102,7 +103,12 @@ class MoreViewController: UIViewController {
 //                if let vc = storyboard.instantiateViewController(withIdentifier: "FavoriteView") as? FavoriteViewController {
 //                    self.present(vc, animated: true, completion: nil)
 //                }
-                self.tabBarController?.selectedIndex = 3
+                //self.dismiss(animated: true, completion:{
+                    self.navigationController?.tabBarController?.selectedIndex = 2
+               // })
+                
+                
+                
                 //                self.performSegue(withIdentifier: "navigateToFavorite", sender: nil)
             }
         }
@@ -112,7 +118,7 @@ class MoreViewController: UIViewController {
                 return
             }
             if !event.consumed, let _ = event.consume() {
-                
+              // TODO add Change FeedBack
             }
         }
         
@@ -126,7 +132,7 @@ class MoreViewController: UIViewController {
                 if let vc = storyboard.instantiateViewController(withIdentifier: "HomeView") as? HomeViewController {
                     self.present(vc, animated: true, completion: nil)
                 }
-                //self.performSegue(withIdentifier: "navigateToHome", sender:nil)
+                
             }
         }
         
@@ -161,12 +167,14 @@ class MoreViewController: UIViewController {
         }
         let confirmAction = UIAlertAction(title: "Confirm the modification", style: .default) { [weak alertController] _ in
             guard let alertController = alertController, let textField = alertController.textFields?.first else { return }
-            print("Current password \(String(describing: textField.text))")
-            // self.viewModel.changePassword(String(describing: textField.text))
-        }	
+            
+            // Change password print()
+            self.viewModel.changePassword(password: textField.text!)
+        }
         alertController.addAction(confirmAction)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
+        // Present the alert
         present(alertController, animated: true, completion: nil)
     }
 }
@@ -182,16 +190,15 @@ extension MoreViewController: UITableViewDelegate , UITableViewDataSource {
         if indexPath.row == 0 {
             if isUserLoggedIn {
                 let cell = moreTableView.dequeueReusableCell(withIdentifier: usernameButtonCell, for: indexPath) as! UserNameTableViewCell
-                
+
                 cell.delegate = self
                 let content = MoreCellDetail(image: user?.id?.description ?? "", label: user?.username ?? " " , type:.username )
-                
+
                 cell.configure(with: content)
                 return cell
             } else {
                 let cell = moreTableView.dequeueReusableCell(withIdentifier: signInUserCell, for: indexPath) as! SignInUserTableViewCell
                 cell.delegate = self
-            
                 cell.configure(with: "user")
                 return cell
             }
