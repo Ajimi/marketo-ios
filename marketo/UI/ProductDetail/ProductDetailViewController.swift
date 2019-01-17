@@ -42,7 +42,6 @@ class ProductDetailViewController: UIViewController {
         
         viewModel.uiSimilarProductsState.bindAndFire { (uiModel) in
             if (uiModel.showProgress){
-                print("taw")
                 HUD.show(.progress)
             } else {
                 HUD.hide()
@@ -58,6 +57,23 @@ class ProductDetailViewController: UIViewController {
                 }
             }
         }
+        
+        viewModel.uiMessageState.bindAndFire(listener: { (uiModel) in
+            if (uiModel.showProgress) {
+            }
+            if let showError = uiModel.showError, !showError.consumed, let errorMessage = showError.consume() {
+                print("there Was an error message product detail \(errorMessage)")
+            }
+            
+            if let showSucces = uiModel.showSuccess, !showSucces.consumed, let messageResponse = showSucces.consume() {
+                //print(productsResponse)
+                DispatchQueue.main.async {
+                    PKHUD.sharedHUD.show()
+                    PKHUD.sharedHUD.contentView = PKHUDSuccessView(title: "Success!", subtitle: messageResponse)
+                    PKHUD.sharedHUD.hide(afterDelay: 2.0)
+                }
+            }
+        })
         
     }
     
@@ -78,7 +94,7 @@ class ProductDetailViewController: UIViewController {
     
     @IBAction func addToFavorite(_ sender: Any) {
         
-        viewModel.toggleProductFavorite()
+        viewModel.toggletProductFavorite()
 
     }
     
