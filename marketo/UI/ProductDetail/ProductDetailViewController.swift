@@ -24,6 +24,7 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet weak var productMarl: UILabel!
     @IBOutlet weak var productBestPrice: UILabel!
     @IBOutlet weak var productDescription: UITextView!
+    @IBOutlet weak var productImage: UIImageView!
     
     var product : Product?{
         didSet{
@@ -109,6 +110,14 @@ class ProductDetailViewController: UIViewController {
             productBestPrice.text = "$ " + (prod.prices?.min(by: { (price1, price2) -> Bool in
                 return price1.value < price2.value
             })?.value.description)!
+            productImage.kf.setImage(
+                with: URL(string: prod.image!),
+                placeholder: UIImage(named: "logo"),
+                options: [
+                    .scaleFactor(UIScreen.main.scale),
+                    .transition(.fade(1)),
+                    .cacheOriginalImage
+                ])
             productDescription.text = prod.description
         }
     }
