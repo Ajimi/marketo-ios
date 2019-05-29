@@ -9,7 +9,7 @@
 import Foundation
 
 struct ProductionServer {
-    static let baseURL = "https://marketo-ws.herokuapp.com"
+    static let baseURL = "http://41.226.11.252:11825"
 }
 struct AuthenticationKey{
     static let keyAccessToken = "AccessToken"
