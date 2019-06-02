@@ -35,7 +35,7 @@
 		2C5F9E3621AC094800BE9E1C /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F9E3521AC094800BE9E1C /* PersistenceManager.swift */; };
 		2C84FB6B21B52D6000BA6173 /* DeleteProductFromFavoriteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84FB6A21B52D6000BA6173 /* DeleteProductFromFavoriteUseCase.swift */; };
 		2C84FB6E21B5307E00BA6173 /* FavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84FB6D21B5307E00BA6173 /* FavoriteRepository.swift */; };
-		2C84FB7221B530A000BA6173 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		2C84FB7221B530A000BA6173 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
 		2C84FB7621B530C400BA6173 /* FavoriteRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84FB7521B530C400BA6173 /* FavoriteRemoteRepository.swift */; };
 		2C84FB7821B530D700BA6173 /* FavoriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84FB7721B530D700BA6173 /* FavoriteRouter.swift */; };
 		843405EA21BC789A00A4851D /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843405E921BC789A00A4851D /* FavoriteViewModel.swift */; };
@@ -1317,20 +1317,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-marketo/Pods-marketo-resources.sh",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-marketo/Pods-marketo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-marketo/Pods-marketo-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-marketo/Pods-marketo-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-marketo/Pods-marketo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		64DC6782856E8B16ADAADDB5 /* [CP] Embed Pods Frameworks */ = {
@@ -1339,48 +1334,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-marketo/Pods-marketo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/EasyPeasy/EasyPeasy.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
-				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
-				"${BUILT_PRODUCTS_DIR}/FoldingCell/FoldingCell.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/JWTDecode/JWTDecode.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-marketo/Pods-marketo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyPeasy.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FoldingCell.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JWTDecode.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkeletonView.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-marketo/Pods-marketo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-marketo/Pods-marketo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-marketo/Pods-marketo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A7160BF05A7CF20A225E51D6 /* [CP] Check Pods Manifest.lock */ = {
@@ -1459,7 +1421,7 @@
 				87FECD9B21AAC7FC00805944 /* Event.swift in Sources */,
 				88014E6021DCDB8A009D28F5 /* StatisticsRepository.swift in Sources */,
 				87A4772F219735B4005937AD /* LoginViewController.swift in Sources */,
-				2C84FB7221B530A000BA6173 /* (null) in Sources */,
+				2C84FB7221B530A000BA6173 /* BuildFile in Sources */,
 				88553772219761F00007B3B5 /* SignUpViewModel.swift in Sources */,
 				2C038F6E21B1942900B84B0E /* BasketLocalRepository.swift in Sources */,
 				8802E66821BC41BA004BB179 /* Basket+CoreDataProperties.swift in Sources */,

@@ -15,7 +15,7 @@ class StatByPriceMarketPriceTableViewCell: UITableViewCell {
     @IBOutlet weak var totol: UILabel!
     @IBOutlet weak var diff: UILabel!
     
-    func configure(price : Price, unit : Price , worst : Int) {
+    func configure(price : Price, unit : Price , worst : Float) {
         if let dis = unit.discount{
             marketName.textColor = UIColor.green
             unitPrice.textColor = UIColor.green

@@ -33,7 +33,7 @@ class StatsByPriceTableViewCell: FoldingCell,Configurable {
     @IBOutlet weak var detailImage: UIImageView!
     
     var product : ProductStatisticsByPrice?
-    var worst : Int?
+    var worst : Float?
     
     func configure(with content: ProductStatisticsByPrice) {
         
@@ -89,7 +89,7 @@ class StatsByPriceTableViewCell: FoldingCell,Configurable {
 
 extension StatsByPriceTableViewCell{
 
-    func getWorstPrice(prices : Prices) -> Int {
+    func getWorstPrice(prices : Prices) -> Float {
         
         return prices.max { (price1, price2) -> Bool in
             return price1.value < price2.value

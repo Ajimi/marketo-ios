@@ -67,6 +67,15 @@ class CategoryViewController: UIViewController {
             if let showSucces = uiModel.showSuccess, !showSucces.consumed, let _ = showSucces.consume() {
                 DispatchQueue.main.async {
                     self.typesCollectionView.reloadData()
+                    self.image.kf.setImage(
+                        with: URL(string: (self.viewModel.selectedCategory?.image!)!),
+                        placeholder: UIImage(named: "logo"),
+                        options: [
+                            .scaleFactor(UIScreen.main.scale),
+                            .transition(.fade(1)),
+                            .cacheOriginalImage
+                        ])
+                    
                 }
             }
         }

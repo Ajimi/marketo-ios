@@ -22,18 +22,7 @@ class FeaturedViewModel: ViewModel {
     let isFavoriteProductUseCase = IsFavoriteProductUseCase()
     let isBasketProductUseCase = IsBasketProductUseCase()
     
-    
-    var loadingStateCount = 0 {
-        didSet {
-            if loadingStateCount == 3 {
-                loadingStateCount = 0
-                uiLoadingState.value = emitUiState(showProgress: false)
-            } else {
-                uiLoadingState.value = emitUiState(showProgress: true)
-            }
-        }
-    }
-    
+        
     var uiProductState =  Dynamic<UiState<Products>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
     var uiPavilionsState = Dynamic<UiState<Pavilions>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
     var uiTrendingState = Dynamic<UiState<Products>>(UiState(showProgress: false, showError: nil,showSuccess: nil))
@@ -56,13 +45,13 @@ class FeaturedViewModel: ViewModel {
     }
     
     func loadAllPavilions() {
-        
+        self.uiLoadingState.value = self.emitUiState(showProgress: true)
         self.uiPavilionsState.value = self.emitUiState(showProgress: true)
         loadPavilionUseCase.execute { (response) in
             switch response {
             case .success(let pavilions):
                 self.pavilions = pavilions
-                self.loadingStateCount += 1
+                self.uiLoadingState.value = self.emitUiState(showProgress: false)
                 self.uiPavilionsState.value = self.emitUiState(showSuccess: Event(with: pavilions))
             case .failure(let error):
                 self.uiPavilionsState.value = self.emitUiState(showProgress: false, showError: Event(with: error.localizedDescription))
@@ -84,12 +73,13 @@ class FeaturedViewModel: ViewModel {
     }
     
     func loadTrendingProducts() {
+        self.uiLoadingState.value = self.emitUiState(showProgress: true)
         self.uiTrendingState.value = self.emitUiState(showProgress: true)
         loadTrendingProductUseCase.execute { (response) in
             switch response {
             case .success(let products):
                 self.trendingProducts = products
-                self.loadingStateCount += 1
+                self.uiLoadingState.value = self.emitUiState(showProgress: false)
                 self.uiTrendingState.value = self.emitUiState(showSuccess: Event(with: products))
             case .failure(let error):
                 self.uiTrendingState.value = self.emitUiState(showProgress: false, showError: Event(with: error.localizedDescription))
@@ -102,11 +92,13 @@ class FeaturedViewModel: ViewModel {
     
     func loadDiscountedProducts() {
         self.uiDiscountedState.value = self.emitUiState(showProgress: true)
+        self.uiLoadingState.value = self.emitUiState(showProgress: true)
+
         loadDiscountedProductUseCase.execute { (response) in
             switch response {
             case .success(let products):
                 self.discountedProducts = products
-                self.loadingStateCount += 1
+                self.uiLoadingState.value = self.emitUiState(showProgress: false)
                 self.uiDiscountedState.value = self.emitUiState(showSuccess: Event(with: products))
             case .failure(let error):
                 self.uiDiscountedState.value = self.emitUiState(showProgress: false, showError: Event(with: error.localizedDescription))

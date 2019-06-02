@@ -12,7 +12,7 @@ typealias Prices = [Price]
 
 class Price: Codable {
     
-    let value: Int
+    let value: Float
     let market: Market?
     let product: Product?
     let quantity: Int?
@@ -30,7 +30,7 @@ class Price: Codable {
         case quantity
     }
     
-    init(value: Int,market: Market?,product: Product?,quantity: Int?,productId: Int?,marketId: Int?,discount: Float? ,createdAt: String,updatedAt: String){
+    init(value: Float,market: Market?,product: Product?,quantity: Int?,productId: Int?,marketId: Int?,discount: Float? ,createdAt: String,updatedAt: String){
         self.value = value
         self.market = market
         self.product = product

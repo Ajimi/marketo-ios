@@ -60,7 +60,6 @@ enum ProductRouter : APIConfiguration {
             return "/products"
         case .getByTypeAndMark:
             return "/products"
-        
         case .getSimilair:
             return "/products"
         }
