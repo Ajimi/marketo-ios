@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -35,7 +35,7 @@
 		2C5F9E3621AC094800BE9E1C /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F9E3521AC094800BE9E1C /* PersistenceManager.swift */; };
 		2C84FB6B21B52D6000BA6173 /* DeleteProductFromFavoriteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84FB6A21B52D6000BA6173 /* DeleteProductFromFavoriteUseCase.swift */; };
 		2C84FB6E21B5307E00BA6173 /* FavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84FB6D21B5307E00BA6173 /* FavoriteRepository.swift */; };
-		2C84FB7221B530A000BA6173 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		2C84FB7221B530A000BA6173 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		2C84FB7621B530C400BA6173 /* FavoriteRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84FB7521B530C400BA6173 /* FavoriteRemoteRepository.swift */; };
 		2C84FB7821B530D700BA6173 /* FavoriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84FB7721B530D700BA6173 /* FavoriteRouter.swift */; };
 		843405EA21BC789A00A4851D /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843405E921BC789A00A4851D /* FavoriteViewModel.swift */; };
@@ -1421,7 +1421,7 @@
 				87FECD9B21AAC7FC00805944 /* Event.swift in Sources */,
 				88014E6021DCDB8A009D28F5 /* StatisticsRepository.swift in Sources */,
 				87A4772F219735B4005937AD /* LoginViewController.swift in Sources */,
-				2C84FB7221B530A000BA6173 /* BuildFile in Sources */,
+				2C84FB7221B530A000BA6173 /* (null) in Sources */,
 				88553772219761F00007B3B5 /* SignUpViewModel.swift in Sources */,
 				2C038F6E21B1942900B84B0E /* BasketLocalRepository.swift in Sources */,
 				8802E66821BC41BA004BB179 /* Basket+CoreDataProperties.swift in Sources */,
@@ -1705,12 +1705,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G96V29LG5G;
 				INFOPLIST_FILE = marketo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = sway.io.marketo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.esprit.marketo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1723,12 +1724,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G96V29LG5G;
 				INFOPLIST_FILE = marketo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = sway.io.marketo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.esprit.marketo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
